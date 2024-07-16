@@ -1,0 +1,422 @@
+
+
+header{
+    background-color: white;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 10px rgba(221, 221, 221, 0.593);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    .Logo{
+        width: 110px;
+        height: 80px;
+        position: relative;
+        margin-left: 20px;
+    }
+
+    .header-right{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        padding-right: 20px;
+
+        .header-right-pages{
+            display: flex;
+            align-items: center;
+            gap: 55px;
+
+            a{
+                font-weight: 800;
+                color: rgb(87, 87, 87);
+                transition: .3s all linear;
+                -webkit-transition: .3s all linear;
+                -moz-transition: .3s all linear;
+                -ms-transition: .3s all linear;
+                -o-transition: .3s all linear;
+
+                &:hover{
+                    color: var(--Primary-Color);
+                }
+}
+        }
+
+        .header-right-buttons{
+            display: flex;
+            gap: 10px;
+
+            button{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 7px;
+                height: 55px;
+                width: 200px;
+                font-weight: 700;
+                border: 1px solid transparent;
+                .Icon{
+                    font-size: 20px;
+                }
+                transition: .3s linear;
+                -webkit-transition: .3s linear;
+                -moz-transition: .3s linear;
+                -ms-transition: .3s linear;
+                -o-transition: .3s linear;
+}
+
+
+            button:last-child{
+                background-color: var(--Primary-Color);
+                color: white;
+
+            }
+
+            button:first-child{
+                background-color: transparent;
+                color: var(--Primary-Color);
+                border: 1px solid var(--Primary-Color);
+
+                &:hover{
+                    background-color: var(--Primary-Color);
+                    color: white;
+                }
+            }
+        }
+    }
+
+
+    .mobile-header{
+        height: 100%;
+        display: none;
+        
+        .bars{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            .mobile-bars{
+                font-size: 25px;
+                cursor: pointer;
+              
+            }
+        }
+
+
+        @keyframes ActiveMenu {
+            from{
+                right: -230px;
+            }to{
+                right: 0;
+            }
+        }
+
+
+        @keyframes OffMenu {
+            from{
+                right: 0;
+            }to{
+                right: -230px;
+            }
+        }
+
+
+        @keyframes backgroundActive {
+            from{
+                display: none;
+            }to{
+                display: block;
+            }
+        }
+
+
+        @keyframes backgroundOff {
+            from{
+                display: block;
+            }to{
+                display: none;
+            }
+        }
+
+
+        .mobile-menu{
+            position: fixed;
+            right: 0;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.081);
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(2px);
+        
+
+            .inner-mobile-menu{
+                width: 230px;
+                height: 100%;
+                background-color: white;
+                box-shadow: -5px 0 10px -5px rgba(0, 0, 0, 0.289);
+                position: absolute;
+                top: 0;
+
+                .mobile-header-pages{
+                    display: flex;
+                    flex-direction: column-reverse;
+
+                    a{
+                        width: 100%;
+                        text-align: right;
+                        height: 55px;
+                        background-color: transparent;
+                        border-bottom: 1px solid rgba(128, 128, 128, 0.299);
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        font-size: 14px;
+                        gap: 10px;
+                        font-weight: 600;
+                        color: rgb(58, 58, 58);
+                        transition: .3s all linear;
+                        -webkit-transition: .3s all linear;
+                        -moz-transition: .3s all linear;
+                        -ms-transition: .3s all linear;
+                        -o-transition: .3s all linear;
+
+                        .icon{
+                            font-size: 16px;
+                            margin-right: 15px;
+                        }
+
+                        &:hover{
+                            background-color: var(--Primary-Color);
+                            color: white;
+                        }
+
+
+
+                    }
+
+                    .active{
+                        background-color: var(--Primary-Color);
+                        color: white;
+                    }
+                }
+            }
+
+            .active{
+                animation: .3s ActiveMenu ease-in-out forwards;
+                -webkit-animation: .3s ActiveMenu ease-in-out forwards;
+            }
+
+            .off-menu{
+                animation: .3s OffMenu ease-in-out forwards;
+                -webkit-animation: .3s OffMenu ease-in-out forwards;
+            }
+        }
+
+
+        .active-menu-background{
+            animation: .3s backgroundActive linear forwards;
+            -webkit-animation: .3s backgroundActive linear forwards;
+        }
+
+
+        .off-menu-background{
+            animation: .3s backgroundOff linear forwards;
+            -webkit-animation: .3s backgroundOff linear forwards;
+        }
+        
+    }
+}
+
+
+@media (max-width: 2048px) {
+    header{
+        height: 90px;
+
+        .Logo{
+            width: 100px;
+            height: 70px;
+            margin-left: 20px;
+        }
+
+        .header-right{
+            gap: 40px;
+            padding-right: 20px;
+
+            .header-right-pages{
+                gap: 50px;
+    
+                a{
+                    font-size: 14px;
+                }
+            }
+    
+            .header-right-buttons{
+                gap: 10px;
+    
+                button{
+
+                    gap: 7px;
+                    height: 53px;
+                    width: 190px;
+                    font-size: 13px;
+                    .Icon{
+                        font-size: 17px;
+                    }
+
+                }
+    
+    
+               
+            }
+        }
+    }
+}
+
+@media (max-width: 1921px) {
+    header{
+        height: 80px;
+
+        .Logo{
+            width: 90px;
+            height: 70px;
+            margin-left: 20px;
+        }
+
+        .header-right{
+            gap: 40px;
+            padding-right: 20px;
+
+            .header-right-pages{
+                gap: 50px;
+    
+                a{
+                    font-size: 14px;
+                }
+            }
+    
+            .header-right-buttons{
+                gap: 10px;
+    
+                button{
+
+                    gap: 7px;
+                    height: 51px;
+                    width: 180px;
+                    font-size: 12px;
+                    .Icon{
+                        font-size: 16px;
+                    }
+
+                }
+    
+    
+               
+            }
+        }
+    }
+}
+
+@media (max-width: 1707px){
+    header{
+        height: 70px;
+
+        .Logo{
+            width: 80px;
+            height: 60px;
+            margin-left: 20px;
+        }
+
+        .header-right{
+            gap: 40px;
+            padding-right: 20px;
+
+            .header-right-pages{
+                gap: 50px;
+    
+                a{
+                    font-size: 12px;
+                }
+            }
+    
+            .header-right-buttons{
+                gap: 10px;
+    
+                button{
+
+                    gap: 7px;
+                    height: 46px;
+                    width: 170px;
+                    font-size: 11px;
+                    .Icon{
+                        font-size: 15px;
+                    }
+
+                }
+    
+    
+               
+            }
+        }
+    }
+}
+
+@media (max-width: 1537px){
+    header{
+        height: 65px;
+
+        .Logo{
+            width: 70px;
+            height: 50px;
+            margin-left: 20px;
+        }
+
+        .header-right{
+            gap: 40px;
+            padding-right: 20px;
+
+            .header-right-pages{
+                gap: 30px;
+    
+                a{
+                    font-size: 11px;
+                }
+            }
+    
+            .header-right-buttons{
+                gap: 10px;
+    
+                button{
+
+                    gap: 7px;
+                    height: 43px;
+                    width: 155px;
+                    font-size: 10px;
+                    .Icon{
+                        font-size: 13px;
+                    }
+
+                }
+    
+    
+               
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1107px) {
+    header{
+        .header-right{
+            display: none;
+        }
+
+        .mobile-header{
+            display: block;
+        }
+    }
+}

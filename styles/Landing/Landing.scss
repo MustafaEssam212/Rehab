@@ -1,0 +1,3302 @@
+
+
+.intro-info{
+    display: flex;
+    height: 80px;
+    justify-content: space-evenly;
+    border-bottom: 1px solid rgba(223, 223, 223, 0.842);
+
+    .intro-info-left, .intro-info-right{
+        display: flex;
+        align-items: center;
+    }
+
+    .intro-info-left{
+        gap: 15px;
+        margin-top: 15px;
+        .social-Icon{
+            font-size: 35px;
+            color: var(--Gray-Color);
+            transition: .3s all linear;
+            -webkit-transition: .3s all linear;
+            -moz-transition: .3s all linear;
+            -ms-transition: .3s all linear;
+            -o-transition: .3s all linear;
+
+            &:hover{
+                color: var(--Primary-Color);
+            }
+        }
+
+        .tiktok{
+            font-size: 39px;
+        }
+    }
+
+    .intro-info-right{
+        gap: 25px;
+        p{
+            display: flex;
+            align-items: center;
+            flex-direction: row-reverse;
+            gap: 5px;
+            font-weight: 600;
+            color: var(--Regular-Font-Color);
+
+            .icon{
+                color: var(--Primary-Color);
+                font-size: 18px;
+            }
+
+            .phoneIcon{
+                transform: rotate(270deg);
+                -webkit-transform: rotate(270deg);
+                -moz-transform: rotate(270deg);
+                -ms-transform: rotate(270deg);
+                -o-transform: rotate(270deg);
+            }
+        }
+    }
+}
+
+
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    cursor: default;
+    outline: none;
+
+    .carousel-btns{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    
+
+        button{
+            background-color: rgba(255, 255, 255, 0.179);
+            width: 70px;
+            height: 70px;
+            margin: 0px 20px;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: .3s all linear;
+            -webkit-transition: .3s all linear;
+            -moz-transition: .3s all linear;
+            -ms-transition: .3s all linear;
+            -o-transition: .3s all linear;
+            outline: none;
+
+            .icon{
+                font-size: 30px;
+            }
+
+
+            &:hover{
+                background-color: #12161E;
+            }
+}
+    }
+
+      .carouselInner {
+        display: flex;
+        transition: transform 0.5s ease;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: transform 0.5s ease;
+        -moz-transition: transform 0.5s ease;
+        -ms-transition: transform 0.5s ease;
+        -o-transition: transform 0.5s ease;
+        position: relative;
+
+        .carouselItem {
+            min-width: 100%;
+            min-height: 100vh;
+            user-select: none;
+
+            .inner-item{
+                height: 100%;
+                width: 100%;
+                position: relative;
+                .img-container{
+                    position: relative;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                .layer-on{
+                    background-color: #309c5264;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    
+                    .layer-on-left{
+                        position: relative;
+                        height: 100%;
+                        width: 50%;
+                        align-self: center;
+                        .layer-on-asset{
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            z-index: 1;
+                        }
+                    }
+
+                    .layer-on-right{
+                        color: white;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        text-align: center;
+                        justify-content: center;
+                        width: 50%;
+                       
+            
+                        h2{
+                            font-weight: 300;
+                            font-size: 55px;
+
+}
+            
+                        h1{
+                            font-weight: 700;
+                            font-size: 75px;
+                        }
+            
+            
+                        h3{
+                            font-weight: 200;
+                            width: 70%;
+                        }
+            
+            
+                        button{
+                            background-color: white;
+                            color: var(--Primary-Color);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 7px;
+                            height: 55px;
+                            width: 200px;
+                            font-weight: 700;
+                            border: 1px solid transparent;
+                            transition: .3s linear;
+                            -webkit-transition: .3s linear;
+                            -moz-transition: .3s linear;
+                            -ms-transition: .3s linear;
+                            -o-transition: .3s linear;
+                            margin-top: 25px;
+                            outline: none;
+
+                            .Icon{
+                                font-size: 20px;
+                            }
+            
+                            &:hover{
+                                background-color: var(--Primary-Color);
+                                border: 1px solid white;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        
+    }
+
+  }
+  
+.carousel:active {
+    cursor: grabbing;
+}
+
+
+.statistics-landing-page{
+    height: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -170px;
+
+    .innter-statistics-landing-page{
+        height: 100%;
+        width: 85%;
+        position: relative;
+        background-color: white;
+        box-shadow: 0px 0px 30px 0px rgb(221, 221, 221);
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        overflow: hidden;
+
+        .img-container{
+            position: relative;
+            height: 100%;
+            width: 100%;
+
+        }
+
+
+
+        .statistics-layer-on{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            .statistics-section{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                justify-content: center;
+                .icon{
+                    font-size: 75px;
+                    color: var(--Primary-Color);
+                }
+
+                h1{
+                    font-size: 55px;
+                    color: var(--Primary-Color);
+                }
+
+                h2{
+                    color: var(--Regular-Font-Color);
+                    font-weight: 700;
+                }
+            }
+            
+        }
+
+}
+}
+  
+.global-headline{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    h1{
+        font-weight: 800;
+        font-size: 40px;
+        color: var(--Headlines-Color);
+    }
+
+    .global-headline-line{
+        width: 150px;
+        height: 8px;
+        background-color: var(--Main-Color);
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+}
+}
+
+.landing-services-container{
+    width: 85%;
+    margin: 100px auto 0px auto ;
+    
+    .landing-services-content{
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+        .service-section{
+            width: 400px;
+            height: 360px;
+            background-color: white;
+            box-shadow: 0 0 25px 0 rgba(221, 221, 221, 0.816);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
+            border-radius: 15px;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            -ms-border-radius: 15px;
+            -o-border-radius: 15px;
+            padding: 0px 20px;
+            cursor: default;
+            transition: .3s all linear;
+            -webkit-transition: .3s all linear;
+            -moz-transition: .3s all linear;
+            -ms-transition: .3s all linear;
+            -o-transition: .3s all linear;
+
+            .icon{
+                font-size: 75px;
+                color: var(--Primary-Color);
+                transition: .3s all linear;
+                -webkit-transition: .3s all linear;
+                -moz-transition: .3s all linear;
+                -ms-transition: .3s all linear;
+                -o-transition: .3s all linear;
+            }
+
+            h1{
+                color: var(--Headlines-Color);
+                transition: .3s all linear;
+                -webkit-transition: .3s all linear;
+                -moz-transition: .3s all linear;
+                -ms-transition: .3s all linear;
+                -o-transition: .3s all linear;
+            }
+
+
+            h4{
+                font-weight: 400;
+                color: var(--Regular-Font-Color);
+                transition: .3s all linear;
+                -webkit-transition: .3s all linear;
+                -moz-transition: .3s all linear;
+                -ms-transition: .3s all linear;
+                -o-transition: .3s all linear;
+            }
+
+
+            &:hover{
+                background-color: var(--Primary-Color);
+                
+                .icon{
+                    color: white;
+                }
+
+                h1{
+                    color: white;
+                }
+
+                h4{
+                    color: white;
+                }
+            }
+
+        }
+
+    }
+
+}
+
+
+.doctor-landing-container{
+    margin: 100px auto 0px auto ;
+    width: 85%;
+
+    .doctor-landing-inner{
+        width: 100%;
+        display: flex;
+        
+        .doctor-landing-left, .doctor-landing-right{
+            width: 50%;
+        }
+
+        .doctor-landing-left{
+            height: 750px;
+            position: relative;
+
+            .background-doctor{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                .background-one, .background-two{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    background-color: #cbcbcb48;
+                    border-radius: 10px;
+                    -webkit-border-radius: 10px;
+                    -moz-border-radius: 10px;
+                    -ms-border-radius: 10px;
+                    -o-border-radius: 10px;
+                }
+                
+            }
+
+            .img-container{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                -ms-border-radius: 10px;
+                -o-border-radius: 10px;
+                overflow: hidden;
+                background-color: var(--Gray-Color);
+            }
+        }
+
+        .doctor-landing-right{
+            padding: 0px 50px;
+
+            .doctor-right-container{
+                position: relative;
+                height: 100%;
+
+                .background-doctor-right{
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+
+                .layer-on-background{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: fit-content;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    height: 100%;
+                    h1{
+                        font-size: 55px;
+                        color: var(--Headlines-Color);
+                        text-align: right;
+                    }
+
+                    h2{
+                        font-size: 35px;
+                        font-weight: 300;
+                        color: var(--Primary-Color);
+                        text-align: right;
+                    }
+
+
+                    .layer-on-notes{
+                        margin-top: 100px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-end;
+                        
+
+                        .note{
+                            display: flex;
+                            gap: 7px;
+                            flex-direction: row-reverse;
+                            align-items: flex-start;
+                            .dot{
+                                width: 11px;
+                                height: 11px;
+                                border-radius: 50%;
+                                -webkit-border-radius: 50%;
+                                -moz-border-radius: 50%;
+                                -ms-border-radius: 50%;
+                                -o-border-radius: 50%;
+                                background-color: var(--Main-Color);
+                                margin-top: 12px;
+                            }
+
+                            h3{
+                                text-align: right;
+                                color: var(--Headlines-Color);
+                            }
+                        }
+                    }
+                }
+            }   
+        }
+    }
+}
+
+
+.video-main-landing-container{
+    margin-top: 100px;
+    height: 700px;
+    width: 100%;
+
+    .video-main-landing-container-inner{
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        .layer-on-video-main{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #309c5295;
+            height: 100%;
+            width: 100%;
+            transition: .3s all linear;
+            -webkit-transition: .3s all linear;
+            -moz-transition: .3s all linear;
+            -ms-transition: .3s all linear;
+            -o-transition: .3s all linear;
+            cursor: pointer;
+    
+    
+    
+    
+    
+            .button-area, .bottom-data{
+                height: 50%;
+            }
+    
+    
+    
+            .button-area{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+    
+    
+                button{
+                    background-color: white;
+                    border: none;
+                    outline: none;
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: .3s all linear;
+                    -webkit-transition: .3s all linear;
+                    -moz-transition: .3s all linear;
+                    -ms-transition: .3s all linear;
+                    -o-transition: .3s all linear;
+    
+                    .icon{
+                        font-size: 35px;
+                    }
+                }
+    
+    
+    
+    
+    
+    
+    
+            }
+    
+    
+            .bottom-data{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 15px;
+                position: relative;
+    
+                h1, h3{
+                    margin-right: 50px;
+                }
+    
+                h1{
+                    font-size: 55px;
+                    color: white;
+                }
+    
+                h3{
+                    width: 50%;
+                    text-align: right;
+                    font-size: 20px;
+                    color: white;
+                    font-weight: 300;
+                }
+    
+    
+                &::before{
+                    content: '';
+                    position: absolute;
+                    right: 20px;
+                    top: 0;
+                    height: 63%;
+                    width: 8px;
+                    background-color: white;
+                    border-radius: 10px;
+                    -webkit-border-radius: 10px;
+                    -moz-border-radius: 10px;
+                    -ms-border-radius: 10px;
+                    -o-border-radius: 10px;
+    }
+            }
+    
+    
+            &:hover{
+                background-color: #309c52c1;
+    
+                .button-area{
+                    button{
+                        background-color: var(--Headlines-Color);
+                        color: white;
+                    }
+                }
+            }
+        }
+        
+    }
+
+
+    .video-modal{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.233);
+        backdrop-filter: blur(4px);
+        top: 0;
+        left: 0;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        .inner-video-modal{
+            width: 50%;
+            height: 70%;
+            background-color: white;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+
+            video{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+
+            .pause-play{
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+
+                button{
+                    background-color: white;
+                    border: none;
+                    outline: none;
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: .3s all linear;
+                    -webkit-transition: .3s all linear;
+                    -moz-transition: .3s all linear;
+                    -ms-transition: .3s all linear;
+                    -o-transition: .3s all linear;
+
+
+                    .icon{
+                        font-size: 35px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .loading-video{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.233);
+        backdrop-filter: blur(4px);
+        top: 0;
+        left: 0;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+
+.landing-our-doctors-container{
+    width: 85%;
+    margin: 100px auto 0px auto ;
+
+
+    .landing-our-doctors-content{
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-evenly;
+
+
+        .doctor-card{
+            width: 600px;
+            height: 750px;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 25px 0 rgba(221, 221, 221, 0.816);
+            cursor: pointer;
+            transition: .3s all linear;
+            -webkit-transition: .3s all linear;
+            -moz-transition: .3s all linear;
+            -ms-transition: .3s all linear;
+            -o-transition: .3s all linear;
+
+
+
+            .top-doctor-card{
+                width: 100%;
+                height: 80%;
+                position: relative;
+                border-radius: 10px;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                -ms-border-radius: 10px;
+                -o-border-radius: 10px;
+                overflow: hidden;
+                background-color: white;
+ 
+            }
+
+
+            .bottom-doctor-card{
+                height: 20%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                
+                h2{
+                    display: flex;
+                    flex-direction: row-reverse;
+                    gap: 5px;
+                    color: var(--Headlines-Color);
+
+                    span{
+                        color: var(--Main-Color);
+                    }
+                }
+
+                h3{
+                    color: var(--Regular-Font-Color);
+                    font-weight: 300;
+                }
+
+            }
+
+
+            &:hover{
+                background-color: var(--Primary-Color);
+
+                .bottom-doctor-card{
+                    h2{
+                        color: white;
+                        span{
+                            color: white;
+                        }
+                    }
+
+                    h3{
+                        color: white;
+                    }
+                }
+            }
+
+}
+    }
+}
+
+
+.reviews-landing-container{
+    width: 85%;
+    margin: 100px auto 0px auto ;
+
+    .inner-reviews-container{
+        margin-top: 50px;
+        width: 100%;
+        height: 600px;
+        box-shadow: 0 0 25px 0 rgba(221, 221, 221, 0.816);
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        display: flex;
+
+        .review-section{
+            width: calc(100% / 3);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+ 
+
+            .profile{
+                width: 200px;
+                height: 200px;
+                border: 3px solid var(--Primary-Color);
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .icon{
+                    font-size: 85px;
+                    color: var(--Primary-Color);
+                }
+
+            }
+
+            .stars-checker{
+                display: flex;
+                gap: 10px;
+                margin: 30px 0px;
+
+                .icon{
+                    font-size: 30px;
+                    color: var(--Main-Color);
+                }
+            }
+
+            h2{
+                width: 70%;
+                text-align: center;
+                color: var(--Headlines-Color);
+            }
+
+        }
+    }
+
+    .link{
+
+        text-align: center;
+        margin-top: 20px;
+        a{
+            color: var(--Headlines-Color);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            justify-content: center;
+            transition: .3s all linear;
+            -webkit-transition: .3s all linear;
+            -moz-transition: .3s all linear;
+            -ms-transition: .3s all linear;
+            -o-transition: .3s all linear;
+            &:hover{
+                gap: 10px;
+            }
+        }
+
+
+    }
+}
+
+.recent-blogs-landing-container{
+    width: 85%;
+    margin: 100px auto 100px auto ;
+
+    .inner-recent-blogs{
+        width: 100%;
+        height: fit-content;
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-evenly;
+
+        .blog{
+            width: 600px;
+            height: 750px;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            box-shadow: 0 0 25px 0 rgba(221, 221, 221, 0.816);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+
+            .blog-img{
+                width: 100%;
+                height: 50%;
+                position: relative;
+                overflow: hidden;
+
+                img{
+                    transition: .3s all linear;
+                    -webkit-transition: .3s all linear;
+                    -moz-transition: .3s all linear;
+                    -ms-transition: .3s all linear;
+                    -o-transition: .3s all linear;
+                }
+
+
+            }
+
+            .blog-info{
+                width: 100%;
+                height: 33%;
+                color: var(--Headlines-Color);
+                display: block;
+                overflow: hidden;
+                h2{
+                    text-align: right;
+                    margin: 20px;
+                }
+
+                h3{
+                    font-weight: 400;
+                    text-align: right;
+                    margin: 0px 20px;
+                }
+            }
+
+            .blog-details{
+                width: 100%;
+                height: calc(16%);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                p, a{
+                    display: flex;
+                    align-items: center;
+                    gap: 7px;
+                    color: var(--Primary-Color);
+                    font-weight: 600;
+                    .icon{
+                        font-size: 18px;
+                    }
+                }
+
+                p{
+                    margin-left: 20px;
+                }
+
+                a{
+                    margin-right: 20px;
+                    flex-direction: row-reverse;
+                }
+            }
+
+            .blog-line{
+                height: 1%;
+                width: 95%;
+                margin: 0px auto;
+                .inner-line{
+                    width: 100%;
+                    height: 1px;
+                    background-color: rgb(228, 228, 228);
+                }
+            }
+
+
+            &:hover{
+                .blog-img{
+                    img{
+                      transform: scale(1.1);
+                      -webkit-transform: scale(1.1);
+                      -moz-transform: scale(1.1);
+                      -ms-transform: scale(1.1);
+                      -o-transform: scale(1.1);
+}
+                }
+            }
+        }
+    }
+}
+
+
+
+//////////// Start Desktop Screens ////////////
+
+
+// 75%
+@media (max-width: 2048px) {
+    .intro-info{
+        height: 80px;
+
+        .intro-info-left{
+            gap: 10px;
+            margin-top: 10px;
+            .social-Icon{
+                font-size: 30px;
+             
+            }
+    
+            .tiktok{
+                font-size: 34px;
+            }
+        }
+    
+        .intro-info-right{
+            gap: 25px;
+            p{
+                font-size: 14px;
+                .icon{
+                    font-size: 17px;
+                }
+    
+
+            }
+        }
+    }
+
+
+    .statistics-landing-page{
+    
+        margin-top: -170px;
+    
+        .innter-statistics-landing-page{
+       
+
+    
+            .statistics-layer-on{
+            
+    
+                .statistics-section{
+         
+                    gap: 20px;
+                
+                    .icon{
+                        font-size: 65px;
+                    }
+    
+                    h1{
+                        font-size: 50px;
+                    }
+    
+                    h2{
+                        font-size: 22px;
+                    }
+                }
+                
+            }
+    
+    }
+    }
+
+
+    .global-headline{
+
+        h1{
+            font-size: 30px;
+        }
+    
+        .global-headline-line{
+            width: 150px;
+            height: 8px;
+         }
+    }
+
+    .landing-services-container{
+   
+        
+        .landing-services-content{
+         
+            gap: 20px;
+            .service-section{
+                width: 350px;
+                height: 310px;
+                gap: 15px;
+                padding: 0px 20px;
+    
+                .icon{
+                    font-size: 60px;
+                }
+    
+                h1{
+                    font-size: 25px;
+                }
+    
+    
+                h4{
+                    font-size: 15px;
+                }
+
+    
+            }
+    
+        }
+    
+    }
+
+
+    .landing-our-doctors-container{
+
+    
+    
+        .landing-our-doctors-content{
+
+    
+    
+            .doctor-card{
+                width: 500px;
+                height: 650px;
+            
+    
+    
+    
+                .top-doctor-card{
+                 
+                    height: 80%;
+           
+     
+                }
+    
+    
+                .bottom-doctor-card{
+                    height: 20%;
+                
+                    h2{
+
+                        gap: 5px;
+
+
+                    }
+
+    
+                }
+    
+
+    
+    }
+        }
+    }
+
+
+    .reviews-landing-container{
+
+        .inner-reviews-container{
+        
+            width: 100%;
+            height: 500px;
+         
+    
+            .review-section{
+          
+     
+    
+                .profile{
+                    width: 170px;
+                    height: 170px;
+                
+    
+                    .icon{
+                        font-size: 65px;
+                    }
+    
+                }
+    
+                .stars-checker{
+               
+                    gap: 10px;
+                    margin: 30px 0px;
+    
+                    .icon{
+                        font-size: 25px;
+                    }
+                }
+    
+                h2{
+                    width: 70%;
+                    font-size: 20px;
+                }
+    
+            }
+        }
+    
+        .link{
+
+            a{
+                font-size: 16px;
+                gap: 5px;
+             
+            }
+    
+    
+        }
+    }
+
+    .recent-blogs-landing-container{
+
+    
+        .inner-recent-blogs{
+       
+    
+            .blog{
+                width: 500px;
+                height: 650px;
+           
+    
+
+    
+                .blog-info{
+
+
+                    h2{
+                      
+                        margin: 20px 20px 15px 20px;
+                        font-size: 20px;
+                    }
+    
+                    h3{
+                        font-size: 16px;
+                        margin: 0px 20px;
+                    }
+                }
+    
+                .blog-details{
+           
+    
+                    p, a{
+                        font-size: 15px;
+                        .icon{
+                            font-size: 16px;
+                        }
+                    }
+    
+               
+                }
+    
+
+    
+
+            }
+        }
+    }
+}
+
+// 80%
+@media (max-width: 1921px) {
+    .intro-info{
+        height: 70px;
+
+        .intro-info-left{
+            gap: 10px;
+            margin-top: 10px;
+            .social-Icon{
+                font-size: 30px;
+             
+            }
+    
+            .tiktok{
+                font-size: 34px;
+            }
+        }
+    
+        .intro-info-right{
+            gap: 25px;
+            p{
+                font-size: 14px;
+                .icon{
+                    font-size: 17px;
+                }
+    
+
+            }
+        }
+    }
+
+    .landing-services-container{
+   
+        
+        .landing-services-content{
+         
+            gap: 20px;
+            .service-section{
+                width: 320px;
+                height: 300px;
+                gap: 15px;
+                padding: 0px 20px;
+    
+                .icon{
+                    font-size: 55px;
+                }
+    
+                h1{
+                    font-size: 23px;
+                }
+    
+    
+                h4{
+                    font-size: 14px;
+                }
+
+    
+            }
+    
+        }
+    
+    }
+
+
+    .doctor-landing-container{
+   
+    
+        .doctor-landing-inner{
+       
+
+    
+            .doctor-landing-left{
+                height: 650px;
+                
+            }
+    
+            .doctor-landing-right{
+                padding: 0px 50px;
+    
+                .doctor-right-container{
+                 
+
+    
+                    .layer-on-background{
+
+                        h1{
+                            font-size: 45px;
+
+                        }
+    
+                        h2{
+                            font-size: 30px;
+
+                        }
+    
+    
+                        .layer-on-notes{
+                            margin-top: 100px;
+
+                            
+    
+                            .note{
+                       
+                                gap: 7px;
+
+                                .dot{
+                                    width: 11px;
+                                    height: 11px;
+
+                                }
+    
+                                h3{
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                }   
+            }
+        }
+    }
+
+
+    .video-main-landing-container{
+        margin-top: 100px;
+        height: 600px;
+     
+    
+        .video-main-landing-container-inner{
+        
+    
+            .layer-on-video-main{
+       
+        
+
+        
+        
+        
+                .button-area{
+               
+        
+                    button{
+                  
+                        width: 130px;
+                        height: 130px;
+                 
+                        .icon{
+                            font-size: 30px;
+                        }
+                    }
+        
+        
+        
+        
+        
+        
+        
+                }
+        
+        
+                .bottom-data{
+             
+                    gap: 15px;
+              
+        
+                    h1, h3{
+                        margin-right: 50px;
+                    }
+        
+                    h1{
+                        font-size: 45px;
+                        
+                    }
+        
+                    h3{
+                        width: 50%;
+                   
+                        font-size: 18px;
+
+                    }
+        
+        
+                    &::before{
+                   
+                        right: 20px;
+                        top: 0;
+                        height: 63%;
+                        width: 7px;
+                        
+        }
+                }
+        
+
+        }
+    
+        }
+    
+    
+
+    
+
+    
+    }
+
+
+    .landing-our-doctors-container{
+
+    
+    
+        .landing-our-doctors-content{
+
+    
+    
+            .doctor-card{
+                width: 450px;
+                height: 600px;
+            
+    
+    
+    
+                .top-doctor-card{
+                 
+                    height: 80%;
+           
+     
+                }
+    
+    
+                .bottom-doctor-card{
+                    height: 20%;
+                
+                    h2{
+                        font-size: 20px;
+                        gap: 5px;
+
+
+                    }
+
+                    h3{
+                        font-size: 17px;
+                    }
+
+    
+                }
+    
+
+    
+    }
+        }
+    }
+
+
+    .reviews-landing-container{
+
+        .inner-reviews-container{
+        
+            width: 100%;
+            height: 450px;
+         
+    
+            .review-section{
+          
+     
+    
+                .profile{
+                    width: 150px;
+                    height: 150px;
+                
+    
+                    .icon{
+                        font-size: 60px;
+                    }
+    
+                }
+    
+                .stars-checker{
+               
+                    gap: 10px;
+                    margin: 30px 0px;
+    
+                    .icon{
+                        font-size: 23px;
+                    }
+                }
+    
+                h2{
+                    width: 70%;
+                    font-size: 18px;
+                }
+    
+            }
+        }
+    
+        .link{
+
+            a{
+                font-size: 15px;
+                gap: 5px;
+             
+            }
+    
+    
+        }
+    }
+}
+
+// 90%
+@media (max-width: 1707px) {
+    .intro-info{
+        height: 60px;
+
+        .intro-info-left{
+            gap: 10px;
+            margin-top: 10px;
+            .social-Icon{
+                font-size: 25px;
+             
+            }
+    
+            .tiktok{
+                font-size: 29px;
+            }
+        }
+    
+        .intro-info-right{
+            gap: 25px;
+            p{
+                font-size: 12px;
+                .icon{
+                    font-size: 15px;
+                }
+    
+
+            }
+        }
+    }
+
+
+    .carousel {
+      
+        .carousel-btns{
+         
+        
+    
+            button{
+            
+                width: 60px;
+                height: 60px;
+              
+    
+                .icon{
+                    font-size: 25px;
+                }
+    
+    
+    }
+        }
+    
+          .carouselInner {
+         
+            .carouselItem {
+         
+    
+                .inner-item{
+              
+              
+    
+                    .layer-on{
+                   
+                        
+                        .layer-on-left{
+                 
+                            height: 100%;
+                            width: 50%;
+           
+                          
+                        }
+    
+                        .layer-on-right{
+                          
+                            width: 50%;
+                           
+                
+                            h2{
+        
+                                font-size: 40px;
+    
+    }
+                
+                            h1{
+                        
+                                font-size: 60px;
+                            }
+                
+                
+                            h3{
+                                font-size: 15px;
+                                width: 70%;
+                            }
+                
+                
+                            button{
+                           
+                                gap: 7px;
+                                height: 55px;
+                                width: 175px;
+                                font-size: 12px;
+                                
+                                .Icon{
+                                    font-size: 15px;
+                                }
+                
+                       
+                            }
+                        }
+                    }
+                }
+            }
+    
+    
+            
+        }
+    
+      }
+
+
+      .statistics-landing-page{
+        height: 300px;
+        margin-top: -150px;
+    
+        .innter-statistics-landing-page{
+       
+
+    
+            .statistics-layer-on{
+            
+    
+                .statistics-section{
+         
+                    gap: 20px;
+                
+                    .icon{
+                        font-size: 55px;
+                    }
+    
+                    h1{
+                        font-size: 45px;
+                    }
+    
+                    h2{
+                        font-size: 20px;
+                    }
+                }
+                
+            }
+    
+    }
+    }
+
+
+    .landing-services-container{
+   
+        
+        .landing-services-content{
+         
+            gap: 20px;
+            .service-section{
+                width: 300px;
+                height: 280px;
+                gap: 15px;
+                padding: 0px 20px;
+    
+                .icon{
+                    font-size: 50px;
+                }
+    
+                h1{
+                    font-size: 21px;
+                }
+    
+    
+                h4{
+                    font-size: 12px;
+                }
+
+    
+            }
+    
+        }
+    
+    }
+
+
+    .doctor-landing-container{
+   
+    
+        .doctor-landing-inner{
+       
+
+    
+            .doctor-landing-left{
+                height: 550px;
+                
+            }
+    
+            .doctor-landing-right{
+                padding: 0px 50px;
+    
+                .doctor-right-container{
+                 
+
+    
+                    .layer-on-background{
+
+                        h1{
+                            font-size: 40px;
+
+                        }
+    
+                        h2{
+                            font-size: 25px;
+
+                        }
+    
+    
+                        .layer-on-notes{
+                            margin-top: 100px;
+
+                            
+    
+                            .note{
+                       
+                                gap: 7px;
+
+                                .dot{
+                                    width: 9px;
+                                    height: 9px;
+                                    margin-top: 9px;
+                                }
+    
+                                h3{
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }   
+            }
+        }
+    }
+
+
+    .video-main-landing-container{
+        margin-top: 100px;
+        height: 500px;
+     
+    
+        .video-main-landing-container-inner{
+        
+    
+            .layer-on-video-main{
+       
+        
+
+        
+        
+        
+                .button-area{
+               
+        
+                    button{
+                  
+                        width: 110px;
+                        height: 110px;
+                 
+                        .icon{
+                            font-size: 25px;
+                        }
+                    }
+        
+        
+        
+        
+        
+        
+        
+                }
+        
+        
+                .bottom-data{
+             
+                    gap: 15px;
+              
+        
+                    h1, h3{
+                        margin-right: 50px;
+                    }
+        
+                    h1{
+                        font-size: 40px;
+                        
+                    }
+        
+                    h3{
+                        width: 50%;
+                   
+                        font-size: 16px;
+
+                    }
+        
+        
+                    &::before{
+                   
+                        right: 20px;
+                        top: 0;
+                        height: 63%;
+                        width: 6px;
+                        
+        }
+                }
+        
+
+        }
+    
+        }
+    
+    
+
+    
+
+    
+    }
+
+
+    .landing-our-doctors-container{
+
+    
+    
+        .landing-our-doctors-content{
+
+    
+    
+            .doctor-card{
+                width: 400px;
+                height: 550px;
+            
+    
+    
+    
+                .top-doctor-card{
+                 
+                    height: 80%;
+           
+     
+                }
+    
+    
+                .bottom-doctor-card{
+                    height: 20%;
+                
+                    h2{
+                        font-size: 18px;
+                        gap: 5px;
+
+
+                    }
+
+                    h3{
+                        font-size: 16px;
+                    }
+
+    
+                }
+    
+
+    
+    }
+        }
+    }
+
+
+    .reviews-landing-container{
+
+        .inner-reviews-container{
+        
+            width: 100%;
+            height: 400px;
+         
+    
+            .review-section{
+          
+     
+    
+                .profile{
+                    width: 140px;
+                    height: 140px;
+                
+    
+                    .icon{
+                        font-size: 55px;
+                    }
+    
+                }
+    
+                .stars-checker{
+               
+                    gap: 10px;
+                    margin: 30px 0px;
+    
+                    .icon{
+                        font-size: 23px;
+                    }
+                }
+    
+                h2{
+                    width: 70%;
+                    font-size: 16px;
+                }
+    
+            }
+        }
+    
+        .link{
+
+            a{
+                font-size: 13px;
+                gap: 5px;
+             
+            }
+    
+    
+        }
+    }
+
+
+    .recent-blogs-landing-container{
+
+    
+        .inner-recent-blogs{
+       
+    
+            .blog{
+                width: 400px;
+                height: 550px;
+           
+    
+
+    
+                .blog-info{
+
+
+                    h2{
+                      
+                        margin: 20px 20px 15px 20px;
+                        font-size: 16px;
+                    }
+    
+                    h3{
+                        font-size: 13px;
+                        margin: 0px 20px;
+                    }
+                }
+    
+                .blog-details{
+           
+    
+                    p, a{
+                        font-size: 12px;
+                        .icon{
+                            font-size: 15px;
+                        }
+                    }
+    
+               
+                }
+    
+
+    
+
+            }
+        }
+    }
+
+
+    .global-headline{
+
+        h1{
+            font-size: 25px;
+        }
+    
+        .global-headline-line{
+            width: 100px;
+            height: 7px;
+         }
+    }
+}
+
+// 100%
+@media (max-width: 1537px) {
+    .intro-info{
+        height: 50px;
+
+        .intro-info-left{
+            gap: 10px;
+            margin-top: 10px;
+            .social-Icon{
+                font-size: 22px;
+             
+            }
+    
+            .tiktok{
+                font-size: 26px;
+            }
+        }
+    
+        .intro-info-right{
+            gap: 25px;
+            p{
+                font-size: 11px;
+                .icon{
+                    font-size: 13px;
+                }
+    
+
+            }
+        }
+    }
+
+    .carousel {
+      
+        .carousel-btns{
+         
+        
+    
+            button{
+            
+                width: 55px;
+                height: 55px;
+              
+    
+                .icon{
+                    font-size: 23px;
+                }
+    
+    
+    }
+        }
+    
+          .carouselInner {
+         
+            .carouselItem {
+         
+    
+                .inner-item{
+              
+              
+    
+                    .layer-on{
+                   
+                        
+                        .layer-on-left{
+                 
+                            height: 100%;
+                            width: 50%;
+           
+                          
+                        }
+    
+                        .layer-on-right{
+                          
+                            width: 50%;
+                           
+                
+                            h2{
+        
+                                font-size: 30px;
+    
+    }
+                
+                            h1{
+                        
+                                font-size: 50px;
+                            }
+                
+                
+                            h3{
+                                font-size: 13px;
+                                width: 70%;
+                            }
+                
+                
+                            button{
+                           
+                                gap: 7px;
+                                height: 50px;
+                                width: 155px;
+                                font-size: 10px;
+                                
+                                .Icon{
+                                    font-size: 13px;
+                                }
+                
+                       
+                            }
+                        }
+                    }
+                }
+            }
+    
+    
+            
+        }
+    
+      }
+
+      .statistics-landing-page{
+        height: 250px;
+        margin-top: -120px;
+    
+        .innter-statistics-landing-page{
+       
+
+    
+            .statistics-layer-on{
+            
+    
+                .statistics-section{
+         
+                    gap: 20px;
+                
+                    .icon{
+                        font-size: 50px;
+                    }
+    
+                    h1{
+                        font-size: 35px;
+                    }
+    
+                    h2{
+                        font-size: 17px;
+                    }
+                }
+                
+            }
+    
+    }
+    }
+
+
+    .global-headline{
+
+        h1{
+            font-size: 22px;
+        }
+    
+        .global-headline-line{
+            width: 80px;
+            height: 5px;
+         }
+    }
+
+    .landing-services-container{
+   
+        
+        .landing-services-content{
+         
+            gap: 20px;
+            .service-section{
+                width: 250px;
+                height: 240px;
+                gap: 15px;
+                padding: 0px 20px;
+    
+                .icon{
+                    font-size: 40px;
+                }
+    
+                h1{
+                    font-size: 18px;
+                }
+    
+    
+                h4{
+                    font-size: 10px;
+                }
+
+    
+            }
+    
+        }
+    
+    }
+
+
+    .doctor-landing-container{
+   
+    
+        .doctor-landing-inner{
+       
+
+    
+            .doctor-landing-left{
+                height: 450px;
+
+            }
+    
+            .doctor-landing-right{
+                padding: 0px 50px;
+    
+                .doctor-right-container{
+                 
+
+    
+                    .layer-on-background{
+
+                        h1{
+                            font-size: 35px;
+
+                        }
+    
+                        h2{
+                            font-size: 23px;
+
+                        }
+    
+    
+                        .layer-on-notes{
+                            margin-top: 100px;
+
+                            .note{
+                       
+                                gap: 7px;
+
+                                .dot{
+                                    width: 8px;
+                                    height: 8px;
+                                    margin-top: 7px;
+                                }
+    
+                                h3{
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }   
+            }
+        }
+    }
+
+
+    .video-main-landing-container{
+        margin-top: 100px;
+        height: 450px;
+     
+    
+        .video-main-landing-container-inner{
+        
+    
+            .layer-on-video-main{
+       
+        
+
+        
+        
+        
+                .button-area{
+               
+        
+                    button{
+                  
+                        width: 100px;
+                        height: 100px;
+                 
+                        .icon{
+                            font-size: 23px;
+                        }
+                    }
+        
+        
+        
+        
+        
+        
+        
+                }
+        
+        
+                .bottom-data{
+             
+                    gap: 15px;
+              
+        
+                    h1, h3{
+                        margin-right: 50px;
+                    }
+        
+                    h1{
+                        font-size: 35px;
+                        
+                    }
+        
+                    h3{
+                        width: 50%;
+                   
+                        font-size: 14px;
+
+                    }
+        
+        
+                    &::before{
+                   
+                        right: 20px;
+                        top: 5px;
+                        height: 60%;
+                        width: 6px;
+                        
+        }
+                }
+        
+
+        }
+    
+        }
+    
+    
+
+    
+
+    
+    }
+
+
+    .landing-our-doctors-container{
+
+    
+    
+        .landing-our-doctors-content{
+
+    
+    
+            .doctor-card{
+                width: 400px;
+                height: 500px;
+            
+    
+    
+    
+    
+    
+                .bottom-doctor-card{
+        
+                
+                    h2{
+                        font-size: 16px;
+                        gap: 5px;
+
+
+                    }
+
+                    h3{
+                        font-size: 13px;
+                    }
+
+    
+                }
+    
+
+    
+    }
+        }
+    }
+
+
+    .reviews-landing-container{
+
+        .inner-reviews-container{
+        
+            width: 100%;
+            height: 350px;
+         
+    
+            .review-section{
+          
+     
+    
+                .profile{
+                    width: 120px;
+                    height: 120px;
+                
+    
+                    .icon{
+                        font-size: 45px;
+                    }
+    
+                }
+    
+                .stars-checker{
+               
+                    gap: 7px;
+                    margin: 30px 0px;
+    
+                    .icon{
+                        font-size: 20px;
+                    }
+                }
+    
+                h2{
+                    width: 70%;
+                    font-size: 14px;
+                }
+    
+            }
+        }
+    
+        .link{
+
+            a{
+                font-size: 11px;
+                gap: 5px;
+             
+            }
+    
+    
+        }
+    }
+
+
+    .recent-blogs-landing-container{
+
+    
+        .inner-recent-blogs{
+       
+    
+            .blog{
+                width: 350px;
+                height: 500px;
+           
+    
+
+    
+                .blog-info{
+
+
+                    h2{
+                      
+                        margin: 20px 20px 15px 20px;
+                        font-size: 14px;
+                    }
+    
+                    h3{
+                        font-size: 11px;
+                        margin: 0px 20px;
+                    }
+                }
+    
+                .blog-details{
+           
+    
+                    p, a{
+                        font-size: 11px;
+                        .icon{
+                            font-size: 13px;
+                        }
+                    }
+    
+               
+                }
+    
+
+    
+
+            }
+        }
+    }
+}
+
+
+//////////// Start Tablet Screens //////////// 
+
+@media (max-width: 1107px) {
+    .intro-info{
+        display: none;
+    }
+
+
+    .carousel {
+      
+        .carousel-btns{
+         
+        
+    
+            button{
+            
+                width: 55px;
+                height: 55px;
+              
+    
+                .icon{
+                    font-size: 23px;
+                }
+    
+    
+    }
+        }
+    
+          .carouselInner {
+         
+            .carouselItem {
+         
+    
+                .inner-item{
+              
+              
+    
+                    .layer-on{
+                   
+                        
+                        .layer-on-left{
+                            display: none;
+
+                        }
+    
+                        .layer-on-right{
+                          
+                            width: 100%;
+                            padding: 20px;
+                
+                            h2{
+        
+                                font-size: 30px;
+    
+    }
+                
+                            h1{
+                        
+                                font-size: 50px;
+                            }
+                
+                
+                            h3{
+                                font-size: 13px;
+                                width: 100%;
+                            }
+                
+                
+                            button{
+                           
+                                gap: 7px;
+                                height: 45px;
+                                width: 145px;
+                                font-size: 10px;
+                                
+                                .Icon{
+                                    font-size: 13px;
+                                }
+                
+                       
+                            }
+                        }
+                    }
+                }
+            }
+    
+    
+            
+        }
+    
+     }
+
+
+      .statistics-landing-page{
+        height: 230px;
+        margin-top: 30px;
+    
+        .innter-statistics-landing-page{
+            
+            width: 100%;
+            margin: 0px 20px;
+
+    
+            .statistics-layer-on{
+            
+    
+                .statistics-section{
+         
+                    gap: 20px;
+                
+                    .icon{
+                        font-size: 40px;
+                    }
+    
+                    h1{
+                        font-size: 30px;
+                    }
+    
+                    h2{
+                        font-size: 15px;
+                    }
+                }
+                
+            }
+    
+    }
+    }
+
+    .landing-services-container{
+        margin: 50px 0px;
+        width: 100%;
+
+        .landing-services-content{
+            justify-content: center;
+            gap: 20px;
+            .service-section{
+                width: 250px;
+                height: 240px;
+                gap: 15px;
+                padding: 0px 20px;
+    
+                .icon{
+                    font-size: 40px;
+                }
+    
+                h1{
+                    font-size: 18px;
+                }
+    
+    
+                h4{
+                    font-size: 10px;
+                }
+
+    
+            }
+    
+        }
+    
+    }
+
+    .global-headline{
+
+       margin-right: 20px;
+    }
+
+
+    .doctor-landing-container{
+        margin: 50px 0px;
+        width: 100%;
+    
+        .doctor-landing-inner{
+            
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+
+
+    
+            .doctor-landing-left{
+                height: 450px;
+                width: 95%;
+                .img-container{
+                    box-shadow: 0 0 25px 0 rgba(221, 221, 221, 0.816);
+                }
+                
+                .background-doctor{
+                    display: none;
+                }
+
+            }
+    
+            .doctor-landing-right{
+                padding: 0px;
+                height: 500px;
+                width: 100%;
+                .doctor-right-container{
+                    
+                    
+    
+                    .layer-on-background{
+
+                        align-items: center;
+                    
+
+                        h1{
+                            font-size: 35px;
+                            text-align: center;
+                        }
+    
+                        h2{
+                            font-size: 23px;
+                        }
+    
+    
+                        .layer-on-notes{
+                            margin-top: 50px;
+
+                            .note{
+                       
+                                gap: 7px;
+                                margin: 0px 5px;
+                                .dot{
+                                    width: 8px;
+                                    height: 8px;
+                                    margin-top: 7px;
+                                    flex-shrink: 0;
+                                }
+    
+                                h3{
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }   
+            }
+        }
+    }
+
+
+    .video-main-landing-container{
+    
+        height: 400px;
+     
+    
+        .video-main-landing-container-inner{
+        
+    
+            .layer-on-video-main{
+       
+        
+
+                .button-area{
+                    height: 40%;
+                }
+        
+        
+
+        
+        
+                .bottom-data{
+                    height: 60%;
+                    gap: 10px;
+                    padding: 0px 20px;
+                    
+                    h1, h3{
+                        margin-right: 0;
+                        text-align: center;
+                        width: 100%;
+                
+                    }
+        
+                    h1{
+                        font-size: 35px;
+                        
+                    }
+        
+                    h3{
+                   
+                        font-size: 14px;
+
+                    }
+        
+        
+                    &::before{
+                   
+                        display: none;
+                        
+                    }
+                }
+        
+
+        }
+    
+        }
+    
+    
+
+    
+
+    
+    }
+
+
+    .recent-blogs-landing-container{
+
+    
+        .inner-recent-blogs{
+            
+            flex-wrap: wrap;
+            gap: 25px;
+    
+            .blog{
+                width: 350px;
+                height: 500px;
+           
+    
+
+    
+                .blog-info{
+
+
+                    h2{
+                      
+                        margin: 20px 20px 15px 20px;
+                        font-size: 14px;
+                    }
+    
+                    h3{
+                        font-size: 11px;
+                        margin: 0px 20px;
+                    }
+                }
+    
+                .blog-details{
+           
+    
+                    p, a{
+                        font-size: 11px;
+                        .icon{
+                            font-size: 13px;
+                        }
+                    }
+    
+               
+                }
+    
+
+    
+
+            }
+        }
+    }
+
+
+    .reviews-landing-container{
+
+        .inner-reviews-container{
+        
+            width: 100%;
+            height: 350px;
+         
+    
+            .review-section{
+          
+     
+    
+                .profile{
+                    width: 110px;
+                    height: 110px;
+                
+    
+                    .icon{
+                        font-size: 40px;
+                    }
+    
+                }
+    
+                .stars-checker{
+               
+                    gap: 7px;
+                    margin: 30px 0px;
+    
+                    .icon{
+                        font-size: 18px;
+                    }
+                }
+    
+                h2{
+                    width: 70%;
+                    font-size: 13px;
+                }
+    
+            }
+        }
+    
+        .link{
+
+            a{
+                font-size: 11px;
+                gap: 5px;
+             
+            }
+    
+    
+        }
+    }
+
+}
+
+@media (max-width: 960px) {
+    
+
+    .landing-our-doctors-container{
+
+    
+    
+        .landing-our-doctors-content{
+
+    
+    
+            .doctor-card{
+                width: 350px;
+                height: 450px;
+            
+    
+    
+    
+    
+    
+                .bottom-doctor-card{
+        
+                
+                    h2{
+                        font-size: 16px;
+                        gap: 5px;
+
+
+                    }
+
+                    h3{
+                        font-size: 13px;
+                    }
+
+    
+                }
+    
+
+    
+    }
+        }
+    }
+
+
+
+}
+
+
+@media (max-width: 850px) {
+    
+
+    .landing-our-doctors-container{
+
+    
+    
+        .landing-our-doctors-content{
+
+    
+    
+            .doctor-card{
+                width: 300px;
+                height: 400px;
+            
+    
+    
+    
+    
+    
+                .bottom-doctor-card{
+        
+                
+                    h2{
+                        font-size: 16px;
+                        gap: 5px;
+
+
+                    }
+
+                    h3{
+                        font-size: 13px;
+                    }
+
+    
+                }
+    
+
+    
+    }
+        }
+    }
+
+    .reviews-landing-container{
+
+        .inner-reviews-container{
+        
+            width: 100%;
+            height: fit-content;
+            flex-wrap: wrap;
+            gap: 25px;
+            padding: 20px 0px;
+            .review-section{
+          
+                width: 100%;
+    
+                .profile{
+                    width: 110px;
+                    height: 110px;
+                
+    
+                    .icon{
+                        font-size: 40px;
+                    }
+    
+                }
+    
+                .stars-checker{
+               
+                    gap: 7px;
+                    margin: 30px 0px;
+    
+                    .icon{
+                        font-size: 18px;
+                    }
+                }
+    
+                h2{
+                    width: 70%;
+                    font-size: 13px;
+                }
+    
+            }
+        }
+    
+        .link{
+
+            a{
+                font-size: 11px;
+                gap: 5px;
+             
+            }
+    
+    
+        }
+    }
+
+}
+
+
+@media (max-width: 746px) {
+    
+
+    .landing-our-doctors-container{
+
+        width: 100%;
+    
+        .landing-our-doctors-content{
+
+            width: 100%;
+      
+    
+            .doctor-card{
+                width: 280px;
+                height: 400px;
+            
+    
+    
+    
+    
+    
+                .bottom-doctor-card{
+        
+                
+                    h2{
+                        font-size: 16px;
+                        gap: 5px;
+
+
+                    }
+
+                    h3{
+                        font-size: 13px;
+                    }
+
+    
+                }
+    
+
+    
+    }
+        }
+    }
+
+
+
+}
+
+//////////// Start Mobile Screens //////////// 
+
+
+@media (max-width: 573px) {
+    
+
+    .landing-our-doctors-container{
+
+        width: 100%;
+    
+        .landing-our-doctors-content{
+
+            width: 100%;
+            flex-wrap: wrap;
+            gap: 25px;
+            .doctor-card{
+                width: 280px;
+                height: 400px;
+            
+    
+    
+    
+    
+    
+                .bottom-doctor-card{
+        
+                
+                    h2{
+                        font-size: 16px;
+                        gap: 5px;
+
+
+                    }
+
+                    h3{
+                        font-size: 13px;
+                    }
+
+    
+                }
+    
+
+    
+    }
+        }
+    }
+
+    .statistics-landing-page{
+        height: 615px;
+        margin-top: 30px;
+    
+        .innter-statistics-landing-page{
+            
+            width: 100%;
+            margin: 0px 20px;
+
+    
+            .statistics-layer-on{
+               flex-direction: column;
+               justify-content: unset;
+                padding: 20px 0px;
+                gap: 25px;
+                .statistics-section{
+                    width: 100%;
+                    gap: 0px;
+                
+                    .icon{
+                        font-size: 40px;
+                    }
+    
+                    h1{
+                        font-size: 30px;
+                    }
+    
+                    h2{
+                        font-size: 15px;
+                    }
+                }
+                
+            }
+    
+    }
+    }
+
+}
+
+
+@media (max-width: 432px) {
+    .video-main-landing-container{
+
+        height: 500px;
+     
+
+    }
+}

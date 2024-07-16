@@ -1,0 +1,442 @@
+
+footer{
+
+    background-color: var(--Primary-Color);
+
+    color: white;
+    padding: 20px;
+
+    .footer-top{
+        display: flex;
+
+
+        .footer-top-middle, .footer-top-left, .footer-top-right{
+            width: calc(100% / 3);
+        }
+
+
+
+        .footer-top-right{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            .Logo{
+                width: 200px;
+                height: 200px;
+                position: relative;
+            }
+            text-align: right;
+
+            p{
+                margin: 10px;
+                width: 70%;
+            }
+        }
+
+        .footer-top-middle{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+
+            a{
+                color: white;
+                margin-top: 10px;
+            }
+        }
+        
+
+        .footer-top-left{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            p{
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                gap: 7px;
+                margin-top: 10px;
+
+                
+                .phone{
+                    transform: rotate(270deg);
+                    -webkit-transform: rotate(270deg);
+                    -moz-transform: rotate(270deg);
+                    -ms-transform: rotate(270deg);
+                    -o-transform: rotate(270deg);
+}
+            }
+
+            .footer-top-left-socials{
+                display: flex;
+                gap: 15px;
+                margin-top: 15px;
+                align-items: center;
+                .social-Icon{
+                    font-size: 35px;
+                    color: white;
+                }
+
+                .tiktok{
+                    font-size: 39px;
+                }
+            }
+        }
+    }
+
+
+
+
+}
+
+
+
+@media (max-width: 1921px){
+    footer{
+
+        padding: 20px;
+    
+        .footer-top{
+         
+
+    
+    
+            .footer-top-right{
+          
+                .Logo{
+                    width: 150px;
+                    height: 150px;
+                }
+             
+                p{
+                    font-size: 15px;
+                    margin: 10px;
+                    width: 70%;
+                }
+            }
+    
+            .footer-top-middle{
+        
+    
+    
+                a{
+                    font-size: 15px;
+                    margin-top: 10px;
+                }
+            }
+            
+    
+            .footer-top-left{
+           
+    
+                p{
+                    font-size: 15px;
+                    gap: 7px;
+                    margin-top: 10px;
+    
+                    
+
+                }
+    
+                .footer-top-left-socials{
+             
+                    gap: 15px;
+                    margin-top: 15px;
+               
+                    .social-Icon{
+                        font-size: 30px;
+                    }
+    
+                    .tiktok{
+                        font-size: 34px;
+                    }
+                }
+            }
+        }
+    
+    
+    
+    
+    }
+}
+
+
+@media (max-width: 1707px){
+    footer{
+
+        padding: 20px;
+    
+        .footer-top{
+         
+
+            .footer-top-right, .footer-top-middle, .footer-top-left{
+                h2{
+                    font-size: 19px;
+                }
+            }
+    
+            .footer-top-right{
+          
+                .Logo{
+                    width: 130px;
+                    height: 130px;
+                }
+             
+                p{
+                    font-size: 12px;
+                    margin: 10px;
+                    width: 70%;
+                }
+            }
+    
+            .footer-top-middle{
+        
+    
+    
+                a{
+                    font-size: 13px;
+                    margin-top: 10px;
+                }
+            }
+            
+    
+            .footer-top-left{
+           
+    
+                p{
+                    font-size: 13px;
+                    gap: 7px;
+                    margin-top: 10px;
+    
+                    
+
+                }
+    
+                .footer-top-left-socials{
+             
+                    gap: 15px;
+                    margin-top: 15px;
+               
+                    .social-Icon{
+                        font-size: 25px;
+                    }
+    
+                    .tiktok{
+                        font-size: 29px;
+                    }
+                }
+            }
+        }
+    
+    
+    
+    
+    }
+}
+
+
+@media (max-width: 1537px){
+    footer{
+
+        padding: 20px;
+    
+        .footer-top{
+         
+
+            .footer-top-right, .footer-top-middle, .footer-top-left{
+                h2{
+                    font-size: 17px;
+                }
+            }
+    
+            .footer-top-right{
+          
+                .Logo{
+                    width: 110px;
+                    height: 110px;
+                }
+             
+                p{
+                    font-size: 10px;
+                    margin: 10px;
+                    width: 70%;
+                }
+            }
+    
+            .footer-top-middle{
+        
+    
+    
+                a{
+                    font-size: 11px;
+                    margin-top: 10px;
+                }
+            }
+            
+    
+            .footer-top-left{
+           
+    
+                p{
+                    font-size: 11px;
+                    gap: 7px;
+                    margin-top: 10px;
+    
+                    
+
+                }
+    
+                .footer-top-left-socials{
+             
+                    gap: 15px;
+                    margin-top: 15px;
+               
+                    .social-Icon{
+                        font-size: 23px;
+                    }
+    
+                    .tiktok{
+                        font-size: 27px;
+                    }
+                }
+            }
+        }
+    
+    
+    
+    
+    }
+}
+
+
+//////////// Start Tablet Screens //////////// 
+
+
+@media (max-width: 1107px){
+    footer{
+
+        padding: 20px;
+    
+        .footer-top{
+            
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 35px;
+            justify-content: center;
+
+            .footer-top-right, .footer-top-middle, .footer-top-left{
+                width: 100%;
+                align-items: center;
+                h2{
+                    font-size: 17px;
+                }
+            }
+    
+            .footer-top-right{
+                text-align: center;
+                .Logo{
+                    width: 110px;
+                    height: 110px;
+                }
+             
+                p{
+                    font-size: 10px;
+                    margin: 10px;
+                    width: 70%;
+                }
+            }
+    
+            .footer-top-middle{
+        
+    
+    
+                a{
+                    font-size: 11px;
+                    margin-top: 10px;
+                }
+            }
+            
+    
+            .footer-top-left{
+           
+    
+                p{
+                    font-size: 11px;
+                    gap: 5px;
+                    margin-top: 10px;
+                    align-items: center;
+                    text-align: center;
+
+
+
+
+                }
+    
+                .footer-top-left-socials{
+             
+                    gap: 15px;
+                    margin-top: 15px;
+               
+                    .social-Icon{
+                        font-size: 23px;
+                    }
+    
+                    .tiktok{
+                        font-size: 27px;
+                    }
+                }
+            }
+        }
+    
+    
+    
+    
+    }
+}
+
+
+
+/////////// Start Mobile Screens ////////////
+
+@media (max-width: 428px) {
+    footer{
+
+
+    
+        .footer-top{
+
+            .footer-top-left{
+           
+    
+                p{
+                    font-size: 11px;
+                    gap: 5px;
+                    margin-top: 10px;
+                    align-items: center;
+                    text-align: center;
+
+
+                    .location, span{
+                        align-self: flex-start;
+                        flex-shrink: 0;
+                    }
+
+                    .location{
+                        margin-top: 5px;
+                    }
+
+       
+
+                }
+    
+
+            }
+        }
+    
+    
+    
+    
+    }
+}

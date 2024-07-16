@@ -114,7 +114,7 @@ input[type=number] {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 2000;
 
     .spinner{
         width: 60px;
@@ -148,4 +148,43 @@ input[type=number] {
         }
     }
 }
-  
+
+
+
+
+@media (max-width: 1063px) {
+    .cookies-acceptace-container{
+        height: 50px;
+        justify-content: space-between;
+
+        .Icon{
+            font-size: 25px;
+            flex-shrink: 0;
+            margin-left: 20px;
+        }
+    
+        p{
+            font-size: 13px;
+            margin-right: 20px;
+        }
+      }
+}
+
+
+@media (max-width: 821px) {
+    .cookies-acceptace-container{
+        height: fit-content;
+        justify-content: space-between;
+        padding: 20px 0px;
+        .Icon{
+            font-size: 20px;
+            flex-shrink: 0;
+            margin: 0px 20px;
+        }
+    
+        p{
+            font-size: 12px;
+ 
+        }
+      }
+}

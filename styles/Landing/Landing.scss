@@ -3053,6 +3053,47 @@
     }
 
 
+    .video-main-landing-container{
+
+    
+    
+        .video-modal{
+       
+    
+    
+            .inner-video-modal{
+                width: 95%;
+                height: fit-content;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                video{
+                    object-fit: contain;
+                }
+             
+    
+                .pause-play{
+
+    
+                    button{
+
+                        width: 110px;
+                        height: 110px;
+             
+                        
+    
+                        .icon{
+                            font-size: 25px;
+                        }
+                    }
+                }
+            }
+        }
+    
+    
+
+    }
 
 }
 

@@ -74,8 +74,9 @@ const Header = () => {
                                 <Link className={router.pathname === '/' ? "active" : ""} title="الصفحة الرئيسية" href="/">الرئيسية <FaHome className="icon" /></Link>
                             </div>
 
-                            <div className="mobile-header-info">
-
+                            <div className="mobile-header-btns">
+                                <button>احجز الأن <FiCalendar className="Icon" /></button>
+                                <button>التسجيل <FiUser className="Icon" /></button>
                             </div>
 
                     </div>

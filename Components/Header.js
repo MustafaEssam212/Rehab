@@ -14,6 +14,7 @@ const Header = () => {
     const [openMobileHeader, setOpenMobileHeader] = useState(false);
     const innerMenuRef = useRef();
     const router = useRouter();
+    const [displayBehaviour, setDisplayBehaviour] = useState(0)
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -32,7 +33,16 @@ const Header = () => {
 
     useEffect(() => {
         setOpenMobileHeader(false);
-    }, [router.pathname])
+    }, [router.pathname]);
+
+
+    useEffect(()=> {
+        if(router.isReady){
+            setTimeout(()=> {
+                setDisplayBehaviour(1)
+            }, 1000)
+        }
+    }, [router.isReady])
 
     return( 
 
@@ -62,7 +72,7 @@ const Header = () => {
             <div className="mobile-header">
                 <div className="bars"><HiBars3 onClick={()=> setOpenMobileHeader(true)} className="mobile-bars" /></div>
 
-                <div className={openMobileHeader ? "mobile-menu active-menu-background" : "mobile-menu off-menu-background"}>
+                <div style={{opacity: displayBehaviour}} className={openMobileHeader ? "mobile-menu active-menu-background" : "mobile-menu off-menu-background"}>
                     <div ref={innerMenuRef} className={openMobileHeader ? "inner-mobile-menu active" : "inner-mobile-menu off-menu"}>
 
 

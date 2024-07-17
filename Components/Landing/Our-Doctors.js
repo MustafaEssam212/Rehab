@@ -1,6 +1,6 @@
 import Image from "next/image";
-import DocOne from '../../public/doc1.jpg';
-import DocTwo from '../../public/doc2.jpg';
+import DocOne from '../../public/doc-mohamed-2.png';
+import DocTwo from '../../public/doc2.png';
 
 const OurDoctors = () => {
     return(

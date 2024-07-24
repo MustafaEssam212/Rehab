@@ -53,9 +53,8 @@ const Header = () => {
             <div className="header-right">
 
                 <div className="header-right-pages">
-                    <Link title="معلومات عن مركز ريهاب" href="#">معلومات عنا</Link>
-                    <Link title="مدوناتنا" href="#">مدوناتنا</Link>
-                    <Link title="آراء عملائنا" href="#">آراء عملائنا</Link>
+                    <Link title="معلومات عن مركز ريهاب" href="/about">معلومات عنا</Link>
+                    <Link title="مدوناتنا" href="/blogs">مدوناتنا</Link>
                     <Link title="تواصل معنا" href="/contact">تواصل معنا</Link>
                     <Link title="الصفحة الرئيسية" href="/">الرئيسية</Link>
                 </div>
@@ -79,7 +78,6 @@ const Header = () => {
                             <div className="mobile-header-pages">
                                 <Link className={router.pathname === '/about' ? "active" : ""} title="معلومات عن مركز ريهاب" href="#">معلومات عنا <FaInfo className="icon" /></Link>
                                 <Link className={router.pathname === '/blogs' ? "active" : ""} title="مدوناتنا" href="#">مدوناتنا <FaBloggerB className="icon" /></Link>
-                                <Link className={router.pathname === '/reviews' ? "active" : ""} title="آراء عملائنا" href="#">آراء عملائنا <FaCommentDots className="icon" /></Link>
                                 <Link className={router.pathname === '/contact' ? "active" : ""} title="تواصل معنا" href="/contact">تواصل معنا <FaPhone className="icon" /></Link>
                                 <Link className={router.pathname === '/' ? "active" : ""} title="الصفحة الرئيسية" href="/">الرئيسية <FaHome className="icon" /></Link>
                             </div>

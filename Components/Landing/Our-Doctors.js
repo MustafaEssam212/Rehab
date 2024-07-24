@@ -15,12 +15,12 @@ const OurDoctors = () => {
                     <div className="doctor-card">
                         
                         <div className="top-doctor-card">
-                            <Image src={DocOne.src} fill style={{objectFit: 'contain'}} alt="Doctor In Rehab EG Center"></Image>
+                            <Image sizes="(min-width: 2060px) 600px, (min-width: 1940px) 500px, (min-width: 1720px) 450px, (min-width: 980px) 400px, (min-width: 860px) 350px, (min-width: 760px) 300px, 280px" loading="lazy" src={DocOne.src} fill style={{objectFit: 'contain'}} alt="Doctor In Rehab EG Center"></Image>
                         </div>
 
                         <div className="bottom-doctor-card">
                             <h2><span>/د</span> محمد يحي جمال الدين</h2>
-                            <h3>اخصائي علاج طبيعي</h3>
+                            <h3>دكتوراه علاج طبيعي</h3>
                         </div>
 
                     </div>
@@ -29,7 +29,7 @@ const OurDoctors = () => {
                     <div className="doctor-card">
                         
                         <div className="top-doctor-card">
-                            <Image src={DocTwo.src} fill style={{objectFit: 'contain'}} alt="Doctor In Rehab EG Center"></Image>
+                            <Image sizes="(min-width: 2060px) 600px, (min-width: 1940px) 500px, (min-width: 1720px) 450px, (min-width: 980px) 400px, (min-width: 860px) 350px, (min-width: 760px) 300px, 280px" loading="lazy" src={DocTwo.src} fill style={{objectFit: 'contain'}} alt="Doctor In Rehab EG Center"></Image>
                         </div>
 
                         <div className="bottom-doctor-card">

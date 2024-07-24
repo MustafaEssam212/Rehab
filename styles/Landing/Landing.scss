@@ -457,7 +457,7 @@
                     height: 100%;
                     top: 0;
                     left: 0;
-                    background-color: var(--Gray-Color);
+                    background-color: #cbcbcb48;
                     border-radius: 10px;
                     -webkit-border-radius: 10px;
                     -moz-border-radius: 10px;
@@ -477,7 +477,7 @@
                 -ms-border-radius: 10px;
                 -o-border-radius: 10px;
                 overflow: hidden;
-                background-color: #F2F2F2;
+                background-color: var(--Gray-Color)
             }
         }
 
@@ -1643,7 +1643,7 @@
         }
     }
 }
-
+    
 // 90%
 @media (max-width: 1707px) {
     .intro-info{

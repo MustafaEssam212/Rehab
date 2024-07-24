@@ -31,7 +31,7 @@ const Statistics = () => {
     return(
         <div className="statistics-landing-page">
             <div ref={countRef} className="innter-statistics-landing-page">
-                <div className='img-container'><Image src={DotsBG.src} fill style={{objectFit: 'cover'}} alt='Rehab EG Clinic'></Image></div>
+                <div className='img-container'><Image sizes="(min-width: 1120px) 85vw, calc(100vw - 40px)" src={DotsBG.src} fill style={{objectFit: 'cover'}} alt='Rehab EG Clinic'></Image></div>
 
                 <div className='statistics-layer-on'>
                     <div className='statistics-section'><i className="icofont-patient-bed icon"></i> <h1>{isCountingStarted && <CountUp end={4} duration={4} />}</h1> <h2>سرير متاح</h2></div>

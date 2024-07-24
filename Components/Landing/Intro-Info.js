@@ -8,10 +8,10 @@ const IntroInfo = () => {
     return(
         <div className="intro-info">
                 <div className="intro-info-left">
-                    <Link href="#"><FaWhatsappSquare className="social-Icon" /></Link>
-                    <Link href="#"><FaInstagramSquare className="social-Icon" /></Link>
-                    <Link href="#"><AiFillTikTok className="social-Icon tiktok" /></Link>
-                    <Link href="#"><FaFacebookSquare className="social-Icon" /></Link>
+                    <Link href="https://www.wa.link/mtmbq6" target="_blank"><FaWhatsappSquare className="social-Icon" /></Link>
+                    <Link href="https://www.instagram.com/rehabclinic11" target="_blank"><FaInstagramSquare className="social-Icon" /></Link>
+                    <Link href="https://www.tiktok.com/@rehabclinic11" target="_blank"><AiFillTikTok className="social-Icon tiktok" /></Link>
+                    <Link href="https://www.facebook.com/rehabclinic11" target="_blank"><FaFacebookSquare className="social-Icon" /></Link>
                 </div>
 
                 <div className="intro-info-right">

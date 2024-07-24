@@ -16,7 +16,7 @@ const DoctorProfile = () => {
 
                     <div className="background-doctor"><motion.div initial={{y: 0, x: 0}} animate={{y: 30, x: 30}} transition={{ease: 'linear', duration: 1.5, repeat: Infinity, repeatType:"reverse"}} className="background-one"></motion.div> <motion.div initial={{y: 0, x: 0}} animate={{y: -30, x: -30}} transition={{ease: 'linear', duration: 1.5, repeat: Infinity, repeatType:"reverse"}} className="background-two"></motion.div></div>
                     <div className="img-container">
-                        <Image src={DoctorProfileImage.src} fill style={{objectFit: 'contain'}} alt="Doctor In Rehab EG Center"></Image>
+                        <Image sizes="(min-width: 1120px) calc(42.5vw - 50px), 95vw" src={DoctorProfileImage.src} fill style={{objectFit: 'contain'}} alt="Doctor In Rehab EG Center"></Image>
                     </div>
 
                 </div>

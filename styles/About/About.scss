@@ -1,0 +1,922 @@
+
+
+
+.about-page-container{
+
+    .about-page-intro{
+        height: 600px;
+        width: 100%;
+        position: relative;
+
+        .img-container{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .layer-on{
+            position: absolute;
+            background-color: #309c526a;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            h1{
+                font-weight: 800;
+                font-size: 65px;
+                color: white;
+                margin-top: 25px;
+                text-shadow: 0px 0px 4px black;
+            }
+        }
+    }
+
+    .expert-about-page{
+        margin-top: 100px;
+        display: flex;
+        align-items: center;
+
+        .expert-right{
+            position: relative;
+            height: 100%;
+            width: 30%;
+            height: 1000px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            overflow: hidden;
+        }
+
+        .expert-left{
+            width: 70%;
+
+
+
+
+
+            .sections-container{
+
+                width: 70%;
+                margin: 0 auto;
+
+                .expert-left-headline{
+                    font-weight: 800;
+                    text-align: right;
+                    color: var(--Headlines-Color);
+                    font-size: 55px;
+                    margin-right: 20px;
+                }
+
+                .inner-sections-container{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 25px;
+                    margin-top: 25px;
+
+                    .section{
+                        background-color: white;
+                        box-shadow: 0px 0px 30px 0px rgb(221, 221, 221);
+                        width: 520px;
+                        height: 310px;
+                        border-radius: 10px;
+                        -webkit-border-radius: 10px;
+                        -moz-border-radius: 10px;
+                        -ms-border-radius: 10px;
+                        -o-border-radius: 10px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        gap: 15px;
+                        cursor: default;
+
+                        .icon-container{
+                            background-color: #e9eef5cc;
+                            width: fit-content;
+                            width: 60px;
+                            height: 60px;
+                            border-radius: 50%;
+                            -webkit-border-radius: 50%;
+                            -moz-border-radius: 50%;
+                            -ms-border-radius: 50%;
+                            -o-border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-left: 25px;
+                            transition: .3s all linear;
+                            -webkit-transition: .3s all linear;
+                            -moz-transition: .3s all linear;
+                            -ms-transition: .3s all linear;
+                            -o-transition: .3s all linear;
+
+                            .icon{
+                                font-size: 35px;
+                                color: var(--Primary-Color);
+                                transition: .3s all linear;
+                                -webkit-transition: .3s all linear;
+                                -moz-transition: .3s all linear;
+                                -ms-transition: .3s all linear;
+                                -o-transition: .3s all linear;
+                            }
+
+}
+
+                        h1{
+                            color: var(--Headlines-Color);
+                            margin: 0px 25px;
+                        }
+
+                        h3{
+                            font-weight: 500;
+                            color: var(--Regular-Font-Color);
+                            margin: 0px 25px;
+                        }
+
+
+                        &:hover{
+                            .icon-container{
+                                background-color: var(--Primary-Color);
+                                .icon{
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+            }
+
+            
+        }
+    
+    }
+
+}
+
+
+//////////// Start Desktop Screens ////////////
+
+
+// 75%
+@media (max-width: 2048px){
+    .about-page-container{
+        .about-page-intro{
+            height: 500px;
+
+            .layer-on{
+
+    
+                h1{
+
+                    font-size: 55px;
+
+                }
+            }
+        }
+
+
+        .expert-about-page{
+            margin-top: 100px;
+
+    
+            .expert-right{
+             
+                width: 30%;
+                height: 900px;
+          
+            }
+    
+            .expert-left{
+                width: 70%;
+    
+    
+    
+    
+    
+                .sections-container{
+    
+                    width: 70%;
+                    margin: 0 auto;
+    
+                    .expert-left-headline{
+                        font-size: 45px;
+                        margin-right: 20px;
+                    }
+    
+                    .inner-sections-container{
+              
+                        gap: 25px;
+                        margin-top: 25px;
+    
+                        .section{
+                        
+                            width: 450px;
+                            height: 290px;
+                          
+                            gap: 15px;
+
+    
+                            .icon-container{
+                            
+                                width: 55px;
+                                height: 55px;
+                          
+    
+                                .icon{
+                                    font-size: 30px;
+                          
+                                }
+    
+    }
+    
+                            h1{
+                                font-size: 29px;
+                                margin: 0px 25px;
+                            }
+    
+                            h3{
+                                font-size: 16px;
+                                margin: 0px 25px;
+                            }
+
+                        }
+                    }
+    
+    
+                }
+    
+                
+            }
+        
+        }
+
+    }
+}
+
+
+// 80%
+@media (max-width: 1921px){
+    .about-page-container{
+        .about-page-intro{
+            height: 450px;
+
+            .layer-on{
+
+    
+                h1{
+
+                    font-size: 50px;
+
+                }
+            }
+        }
+    }
+}
+
+
+// 90%
+@media (max-width: 1707px){
+    .about-page-container{
+        .about-page-intro{
+            height: 400px;
+
+            .layer-on{
+
+    
+                h1{
+
+                    font-size: 45px;
+
+                }
+            }
+        }
+
+
+        .expert-about-page{
+            margin-top: 100px;
+
+    
+            .expert-right{
+             
+                width: 25%;
+                height: 800px;
+          
+            }
+    
+            .expert-left{
+                width: 75%;
+    
+    
+    
+    
+    
+                .sections-container{
+    
+                    width: 70%;
+                    margin: 0 auto;
+    
+                    .expert-left-headline{
+                        font-size: 40px;
+                        margin-right: 20px;
+                    }
+    
+                    .inner-sections-container{
+              
+                        gap: 25px;
+                        margin-top: 25px;
+    
+                        .section{
+                        
+                            width: 410px;
+                            height: 250px;
+                          
+                            gap: 15px;
+
+    
+                            .icon-container{
+                            
+                                width: 45px;
+                                height: 45px;
+                          
+    
+                                .icon{
+                                    font-size: 25px;
+                          
+                                }
+    
+    }
+    
+                            h1{
+                                font-size: 25px;
+                                margin: 0px 25px;
+                            }
+    
+                            h3{
+                                font-size: 14px;
+                                margin: 0px 25px;
+                            }
+
+                        }
+                    }
+    
+    
+                }
+    
+                
+            }
+        
+        }
+    }
+}
+
+
+@media (max-width: 1609px) {
+    
+    .about-page-container{
+        .expert-about-page{
+            margin-top: 100px;
+
+    
+            .expert-right{
+             
+                width: 25%;
+                height: 800px;
+          
+            }
+    
+            .expert-left{
+                width: 75%;
+    
+    
+    
+    
+    
+                .sections-container{
+    
+                    width: 70%;
+                    margin: 0 auto;
+    
+                    .expert-left-headline{
+                        font-size: 40px;
+                        margin-right: 20px;
+                    }
+    
+                    .inner-sections-container{
+              
+                        gap: 25px;
+                        margin-top: 25px;
+    
+                        .section{
+                        
+                            width: 390px;
+                            height: 230px;
+                          
+                            gap: 15px;
+
+    
+                            .icon-container{
+                            
+                                width: 45px;
+                                height: 45px;
+                          
+    
+                                .icon{
+                                    font-size: 25px;
+                          
+                                }
+    
+    }
+    
+                            h1{
+                                font-size: 23px;
+                                margin: 0px 25px;
+                            }
+    
+                            h3{
+                                font-size: 13px;
+                                margin: 0px 25px;
+                            }
+
+                        }
+                    }
+    
+    
+                }
+    
+                
+            }
+        
+        }
+    }
+
+}
+
+
+// 100%
+@media (max-width: 1537px){
+    .about-page-container{
+        .about-page-intro{
+            height: 350px;
+
+            .layer-on{
+
+    
+                h1{
+
+                    font-size: 35px;
+
+                }
+            }
+        }
+
+        .expert-about-page{
+            margin-top: 100px;
+
+    
+            .expert-right{
+             
+                width: 25%;
+                height: 700px;
+          
+            }
+    
+            .expert-left{
+                width: 75%;
+    
+    
+    
+    
+    
+                .sections-container{
+    
+                    width: 70%;
+                    margin: 0 auto;
+    
+                    .expert-left-headline{
+                        font-size: 35px;
+                        margin-right: 20px;
+                    }
+    
+                    .inner-sections-container{
+              
+                        gap: 25px;
+                        margin-top: 25px;
+    
+                        .section{
+                        
+                            width: 360px;
+                            height: 210px;
+                          
+                            gap: 10px;
+
+    
+                            .icon-container{
+                            
+                                width: 40px;
+                                height: 40px;
+                          
+    
+                                .icon{
+                                    font-size: 20px;
+                          
+                                }
+    
+    }
+    
+                            h1{
+                                font-size: 22px;
+                                margin: 0px 25px;
+                            }
+    
+                            h3{
+                                font-size: 12px;
+                                margin: 0px 25px;
+                            }
+
+                        }
+                    }
+    
+    
+                }
+    
+                
+            }
+        
+        }
+    }
+}
+
+
+@media (max-width: 1419px) {
+    .about-page-container{
+        .expert-about-page{
+            margin-top: 100px;
+
+    
+            .expert-right{
+             
+                width: 25%;
+                height: 650px;
+          
+            }
+    
+            .expert-left{
+                width: 75%;
+    
+    
+    
+    
+    
+                .sections-container{
+    
+                    width: 90%;
+                    margin: 0 auto;
+    
+                    .expert-left-headline{
+                        font-size: 35px;
+                        margin-right: 20px;
+                    }
+    
+                    .inner-sections-container{
+              
+                        gap: 25px;
+                        margin-top: 25px;
+    
+                        .section{
+                        
+                            width: 360px;
+                            height: 210px;
+                          
+                            gap: 10px;
+
+    
+                            .icon-container{
+                            
+                                width: 40px;
+                                height: 40px;
+                          
+    
+                                .icon{
+                                    font-size: 20px;
+                          
+                                }
+    
+    }
+    
+                            h1{
+                                font-size: 22px;
+                                margin: 0px 25px;
+                            }
+    
+                            h3{
+                                font-size: 12px;
+                                margin: 0px 25px;
+                            }
+
+                        }
+                    }
+    
+    
+                }
+    
+                
+            }
+        
+        }
+    }
+}
+
+
+
+//////////// Start Tablet Screens //////////// 
+
+
+@media (max-width: 1107px){
+    .about-page-container{
+        .about-page-intro{
+            height: 300px;
+
+            .layer-on{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                h1{
+                    margin-top: 0px;
+                    font-size: 30px;
+
+                }
+            }
+        }
+        .expert-about-page{
+            margin-top: 100px;
+
+    
+            .expert-right{
+                
+                display: none;
+          
+            }
+    
+            .expert-left{
+                width: 100%;
+                height: 600px;
+    
+    
+    
+    
+                .sections-container{
+    
+                    width: 90%;
+                    margin: 0 auto;
+    
+                    .expert-left-headline{
+                        font-size: 35px;
+                        margin-right: 20px;
+                    }
+    
+                    .inner-sections-container{
+              
+                        gap: 25px;
+                        margin-top: 25px;
+    
+                        .section{
+                        
+                            width: 360px;
+                            height: 210px;
+                          
+                            gap: 10px;
+
+    
+                            .icon-container{
+                            
+                                width: 40px;
+                                height: 40px;
+                          
+    
+                                .icon{
+                                    font-size: 20px;
+                          
+                                }
+    
+    }
+    
+                            h1{
+                                font-size: 22px;
+                                margin: 0px 25px;
+                            }
+    
+                            h3{
+                                font-size: 12px;
+                                margin: 0px 25px;
+                            }
+
+                        }
+                    }
+    
+    
+                }
+    
+                
+            }
+        
+        }
+    }
+}
+
+
+@media (max-width: 848px) {
+    .about-page-container{
+        .expert-about-page{
+            margin-top: 100px;
+
+    
+            .expert-right{
+                
+                display: none;
+          
+            }
+    
+            .expert-left{
+                width: 100%;
+                height: 550px;
+    
+    
+    
+    
+                .sections-container{
+    
+                    width: 90%;
+                    margin: 0 auto;
+    
+                    .expert-left-headline{
+                        font-size: 30px;
+                        margin-right: 20px;
+                    }
+    
+                    .inner-sections-container{
+              
+                        gap: 25px;
+                        margin-top: 25px;
+    
+                        .section{
+                        
+                            width: 320px;
+                            height: 190px;
+                          
+                            gap: 10px;
+
+    
+                            .icon-container{
+                            
+                                width: 35px;
+                                height: 35px;
+                          
+    
+                                .icon{
+                                    font-size: 18   px;
+                          
+                                }
+    
+    }
+    
+                            h1{
+                                font-size: 18px;
+                                margin: 0px 25px;
+                            }
+    
+                            h3{
+                                font-size: 11px;
+                                margin: 0px 25px;
+                            }
+
+                        }
+                    }
+    
+    
+                }
+    
+                
+            }
+        
+        }
+    }
+}
+
+
+@media (max-width: 802px) {
+    .about-page-container{
+        .about-page-intro{
+            height: 250px;
+
+            .layer-on{
+
+    
+                h1{
+
+                    font-size: 25px;
+
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 739px) {
+    .about-page-container{
+        .expert-about-page{
+            margin-top: 100px;
+
+    
+            .expert-left{
+                width: 100%;
+                height: 970px;
+    
+    
+    
+    
+                .sections-container{
+    
+                    width: 90%;
+                    margin: 0 auto;
+    
+                    .expert-left-headline{
+                        font-size: 30px;
+                        margin-right: 20px;
+                    }
+    
+                    .inner-sections-container{
+              
+                        gap: 25px;
+                        margin-top: 25px;
+    
+                        .section{
+                        
+                            width: 320px;
+                            height: 190px;
+                          
+                            gap: 10px;
+
+    
+                            .icon-container{
+                            
+                                width: 35px;
+                                height: 35px;
+                          
+    
+                                .icon{
+                                    font-size: 18   px;
+                          
+                                }
+    
+    }
+    
+                            h1{
+                                font-size: 18px;
+                                margin: 0px 25px;
+                            }
+    
+                            h3{
+                                font-size: 11px;
+                                margin: 0px 25px;
+                            }
+
+                        }
+                    }
+    
+    
+                }
+    
+                
+            }
+        
+        }
+    }
+}
+
+//////////// Start Mobile Screens //////////// 
+
+
+@media (max-width: 564px) {
+    .about-page-container{
+        .about-page-intro{
+            height: 200px;
+
+            .layer-on{
+
+    
+                h1{
+
+                    font-size: 23px;
+
+                }
+            }
+        }
+    }
+}

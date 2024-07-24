@@ -1,0 +1,1375 @@
+
+
+.contact-page-container{
+
+
+
+    .contact-page-intro{
+        height: 600px;
+        width: 100%;
+        position: relative;
+
+        .img-container{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .layer-on{
+            position: absolute;
+            background-color: #309c526a;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            z-index: 1;
+
+            h1{
+                font-weight: 800;
+                font-size: 65px;
+                color: white;
+                text-align: center;
+                margin-top: 25px;
+                text-shadow: 0px 0px 4px black;
+            }
+        }
+    }
+
+
+    .contact-info-section{
+        height: 500px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: -170px;
+
+
+        .inner-contact-info-section{
+            position: relative;
+            height: 100%;
+            width: 85%;
+            background-color: white;
+            box-shadow: 0px 0px 30px 0px rgb(221, 221, 221);
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            overflow: hidden;
+            z-index: 2;
+
+            .img-container{
+                position: relative;
+                height: 100%;
+                width: 100%;
+                opacity: .7;
+            }
+
+            .layer-on{
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                
+
+                .layer-on-section{
+                    height: 100%;
+                    width: calc(100% / 3);
+                    margin: auto;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    .icon-container{
+                        width: 120px;
+                        height: 120px;
+                        background-color: var(--Primary-Color);
+                        border-radius: 50%;
+                        -webkit-border-radius: 50%;
+                        -moz-border-radius: 50%;
+                        -ms-border-radius: 50%;
+                        -o-border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+
+                        .icon{
+                            font-size: 45px;
+                            color: white;
+                        }
+
+
+                    }
+
+                    .section-info{
+                        height: 60%;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        h1{
+                            color: var(--Headlines-Color);
+                            margin-top: 20px;
+                        }
+    
+                        h3{
+                            font-weight: 400;
+                            color: var(--Regular-Font-Color);
+                            text-align: center;
+                            margin: 10px 20px 0px 20px;                 
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+
+    .contact-send-message{
+        width: 100%;
+        display: flex;
+        background-color: #F5F5F5;
+        margin-top: 100px;
+
+        .send-message-left{
+            height: 1000px;
+            width: 40%;
+            position: relative;
+        }
+
+        .send-message-right{
+            width: 60%;
+            height: 1000px;
+            position: relative;
+
+            .img-container{
+                position: relative;
+                height: 100%;
+                width: 100%;
+            }
+
+            .layer-on{
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .inner-layer-on{
+                    width: 70%;
+                    h1{
+                        font-weight: 800;
+                        color: var(--Headlines-Color);
+                        text-align: center;
+                    }
+    
+                    form{
+                        margin: 20px;
+    
+                        .two-inputs{
+                            display: flex;
+                            margin-top: 25px;
+                            .input{ 
+                                    width: 50%;
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                input{
+                                    box-shadow: 0 0 15px 0 rgba(221, 221, 221, .6392156863);
+                                    height: 60px;
+                                    width: 90%;
+                                    padding-right: 20px;
+                                    border-radius: 10px;
+                                    -webkit-border-radius: 10px;
+                                    -moz-border-radius: 10px;
+                                    -ms-border-radius: 10px;
+                                    -o-border-radius: 10px;
+}
+                                p{
+                                    color: rgb(218, 27, 27);
+                                    font-weight: 600;
+                                    margin: 15px 0px;
+                                    text-align: right;
+                                    width: 90%;
+                                }
+                            }
+    
+                        }
+
+
+                        .text-area{
+                            margin-top: 25px;
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            textarea{
+                                width: 90%;
+                                max-width: 90%;
+                                margin: 0;
+                                padding: 0;
+                                border: none;
+                                outline: none;
+                                box-shadow: 0 0 15px 0 rgba(221, 221, 221, .6392156863);
+                                border-radius: 10px;
+                                -webkit-border-radius: 10px;
+                                -moz-border-radius: 10px;
+                                -ms-border-radius: 10px;
+                                -o-border-radius: 10px;
+                                height: 250px;
+                                max-height: 250px;
+                                padding: 20px;
+
+                                
+                                
+                            }
+
+                            p{
+                                color: rgb(218, 27, 27);
+                                font-weight: 600;
+                                margin: 15px 0px;
+                                text-align: right;
+                                width: 90%;
+                            }
+                        }
+
+                        .form-btn{
+                            width: 100%;
+                            display: flex;
+                            justify-content: flex-end;
+                            margin-top: 25px;
+
+                            button{
+                                height: 70px;
+                                width: 200px;
+                                font-weight: 800;
+                                font-size: 19px;
+                                color: white;
+                                background-color: var(--Primary-Color);
+                                margin-right: 20px;
+                            }
+                        }
+    
+                    }
+
+                    .main-alert{
+                        font-weight: 700;
+                        text-align: right;
+                        margin-right: 20px;
+                        color: rgb(218, 27, 27);
+                    }
+
+                    .success{
+                        color: var(--Primary-Color);
+                    }
+                }
+
+            }
+        }
+    
+
+
+    
+    }
+
+    .contact-map{
+        height: 800px;
+
+        iframe{
+            border: none;
+            outline: none;
+        }
+    }
+    
+}
+
+
+//////////// Start Desktop Screens ////////////
+
+
+// 75%
+@media (max-width: 2048px){
+    .contact-page-container{
+        .contact-page-intro{
+            height: 500px;
+
+            .layer-on{
+
+    
+                h1{
+
+                    font-size: 55px;
+
+                }
+            }
+        }
+
+        .contact-info-section{
+            height: 400px;
+            margin-top: -170px;
+    
+    
+            .inner-contact-info-section{
+             
+                width: 85%;
+             
+
+    
+                .layer-on{
+
+                    
+    
+                    .layer-on-section{
+                    
+                        width: calc(100% / 3);
+
+                        .icon-container{
+                            width: 110px;
+                            height: 110px;
+                         
+    
+    
+                            .icon{
+                                font-size: 40px;
+                            }
+    
+    
+                        }
+    
+                        .section-info{
+                            height: 60%;
+                       
+                            h1{
+
+                                font-size: 29px;
+                            }
+        
+                            h3{
+                                font-size: 17px;
+                                margin: 10px 20px 0px 20px;                 
+                            }
+    
+                        }
+                    }
+                }
+            }
+        }
+
+
+        .contact-send-message{
+        
+    
+            .send-message-left{
+                height: 900px;
+                width: 35%;
+               
+            }
+    
+            .send-message-right{
+                width: 65%;
+                height: 900px;
+              
+
+    
+                .layer-on{
+                  
+                    .inner-layer-on{
+                        width: 70%;
+                        h1{
+                            font-size: 29px;
+                        }
+        
+                        form{
+                            margin: 20px;
+        
+                            .two-inputs{
+                              
+                                margin-top: 25px;
+                                .input{ 
+                                        width: 50%;
+                                      
+                                    input{
+                                 
+                                        height: 60px;
+                                        width: 90%;
+                                    
+                                    }
+                                    p{
+                                   
+                                        margin: 15px 0px;
+                                        width: 90%;
+                                    }
+                                }
+        
+                            }
+    
+    
+                            .text-area{
+                                margin-top: 25px;
+                                width: 100%;
+                              
+                                textarea{
+                                    width: 90%;
+                                    max-width: 90%;
+                                    height: 250px;
+                                    max-height: 250px;
+                                }
+    
+                                p{
+                                    margin: 15px 0px;
+                                    width: 90%;
+                                }
+                            }
+    
+                            .form-btn{
+
+                                margin-top: 25px;
+    
+                                button{
+                                    height: 60px;
+                                    width: 180px;
+                                    font-size: 17px;
+                                    margin-right: 20px;
+                                }
+                            }
+        
+                        }
+    
+                        .main-alert{
+                            margin-right: 20px;
+                        }
+    
+
+                    }
+    
+                }
+            }
+        
+    
+    
+        
+        }
+
+        .contact-map{
+            height: 700px;
+        }
+    }
+}
+
+
+// 80%
+@media (max-width: 1921px){
+    .contact-page-container{
+        .contact-page-intro{
+            height: 450px;
+
+            .layer-on{
+
+    
+                h1{
+
+                    font-size: 50px;
+
+                }
+            }
+        }
+
+        .contact-info-section{
+            height: 380px;
+            margin-top: -140px;
+    
+    
+            .inner-contact-info-section{
+             
+                width: 85%;
+             
+
+    
+                .layer-on{
+
+                    
+    
+                    .layer-on-section{
+                    
+                        width: calc(100% / 3);
+
+                        .icon-container{
+                            width: 100px;
+                            height: 100px;
+                         
+    
+    
+                            .icon{
+                                font-size: 35px;
+                            }
+    
+    
+                        }
+    
+                        .section-info{
+                            height: 60%;
+                       
+                            h1{
+
+                                font-size: 27px;
+                            }
+        
+                            h3{
+                                font-size: 15px;
+                                margin: 10px 20px 0px 20px;                 
+                            }
+    
+                        }
+                    }
+                }
+            }
+        }
+
+        .contact-send-message{
+        
+    
+            .send-message-left{
+                height: 900px;
+                width: 35%;
+               
+            }
+    
+            .send-message-right{
+                width: 65%;
+                height: 900px;
+              
+
+    
+                .layer-on{
+                  
+                    .inner-layer-on{
+                        width: 70%;
+                        h1{
+                            font-size: 29px;
+                        }
+        
+                        form{
+                            margin: 20px;
+        
+                            .two-inputs{
+                              
+                                margin-top: 25px;
+                                .input{ 
+                                        width: 50%;
+                                      
+                                    input{
+                                 
+                                        height: 60px;
+                                        width: 90%;
+                                    
+                                    }
+                                    p{
+                                   
+                                        margin: 15px 0px;
+                                        width: 90%;
+                                    }
+                                }
+        
+                            }
+    
+    
+                            .text-area{
+                                margin-top: 25px;
+                                width: 100%;
+                              
+                                textarea{
+                                    width: 90%;
+                                    max-width: 90%;
+                                    height: 250px;
+                                    max-height: 250px;
+                                }
+    
+                                p{
+                                    margin: 15px 0px;
+                                    width: 90%;
+                                }
+                            }
+    
+                            .form-btn{
+
+                                margin-top: 25px;
+    
+                                button{
+                                    height: 60px;
+                                    width: 175px;
+                                    font-size: 16px;
+                                    margin-right: 20px;
+                                }
+                            }
+        
+                        }
+    
+                        .main-alert{
+                            margin-right: 20px;
+                        }
+    
+
+                    }
+    
+                }
+            }
+        
+    
+    
+        
+        }
+
+        .contact-map{
+            height: 600px;
+        }
+    }
+}
+
+
+// 90%
+@media (max-width: 1707px) {
+    .contact-page-container{
+        .contact-page-intro{
+            height: 400px;
+
+            .layer-on{
+
+    
+                h1{
+
+                    font-size: 45px;
+
+                }
+            }
+        }
+
+        .contact-info-section{
+            height: 350px;
+            margin-top: -140px;
+    
+    
+            .inner-contact-info-section{
+             
+                width: 85%;
+             
+
+    
+                .layer-on{
+
+                    
+    
+                    .layer-on-section{
+                    
+                        width: calc(100% / 3);
+
+                        .icon-container{
+                            width: 90px;
+                            height: 90px;
+                         
+    
+    
+                            .icon{
+                                font-size: 30px;
+                            }
+    
+    
+                        }
+    
+                        .section-info{
+                            height: 60%;
+                       
+                            h1{
+
+                                font-size: 25px;
+                            }
+        
+                            h3{
+                                font-size: 13px;
+                                margin: 10px 20px 0px 20px;                 
+                            }
+    
+                        }
+                    }
+                }
+            }
+        }
+
+        .contact-send-message{
+        
+    
+            .send-message-left{
+                height: 800px;
+                width: 35%;
+               
+            }
+    
+            .send-message-right{
+                width: 65%;
+                height: 800px;
+              
+
+    
+                .layer-on{
+                  
+                    .inner-layer-on{
+                        width: 70%;
+                        h1{
+                            font-size: 27px;
+                        }
+        
+                        form{
+                            margin: 20px;
+        
+                            .two-inputs{
+                              
+                                margin-top: 25px;
+                                .input{ 
+                                        width: 50%;
+                                      
+                                    input{
+                                 
+                                        height: 55px;
+                                        width: 90%;
+                                        font-size: 12px;
+                                    
+                                    }
+                                    p{
+                                        font-size: 14px;
+                                        margin: 15px 0px;
+                                        width: 90%;
+                                    }
+                                }
+        
+                            }
+    
+    
+                            .text-area{
+                                margin-top: 25px;
+                                width: 100%;
+                              
+                                textarea{
+                                    width: 90%;
+                                    max-width: 90%;
+                                    height: 200px;
+                                    max-height: 200px;
+                                    font-size: 12px;
+                                }
+    
+                                p{
+                                    font-size: 14px;
+                                    margin: 15px 0px;
+                                    width: 90%;
+                                }
+                            }
+    
+                            .form-btn{
+
+                                margin-top: 25px;
+    
+                                button{
+                                    height: 55px;
+                                    width: 160px;
+                                    font-size: 14px;
+                                    margin-right: 20px;
+                                }
+                            }
+        
+                        }
+    
+                        .main-alert{
+                            margin-right: 20px;
+                            font-size: 14px;
+                        }
+    
+
+                    }
+    
+                }
+            }
+        
+    
+    
+        
+        }
+
+        .contact-map{
+            height: 500px;
+        }
+    }
+}
+
+
+// 100%
+@media (max-width: 1537px){
+    .contact-page-container{
+        .contact-page-intro{
+            height: 350px;
+
+            .layer-on{
+
+    
+                h1{
+
+                    font-size: 35px;
+
+                }
+            }
+        }
+
+        .contact-info-section{
+            height: 320px;
+            margin-top: -140px;
+    
+    
+            .inner-contact-info-section{
+             
+                width: 85%;
+             
+
+    
+                .layer-on{
+
+                    
+    
+                    .layer-on-section{
+                    
+                        width: calc(100% / 3);
+
+                        .icon-container{
+                            width: 80px;
+                            height: 80px;
+                         
+    
+    
+                            .icon{
+                                font-size: 25px;
+                            }
+    
+    
+                        }
+    
+                        .section-info{
+                            height: 60%;
+                       
+                            h1{
+
+                                font-size: 22px;
+                            }
+        
+                            h3{
+                                font-size: 12px;
+                                margin: 10px 20px 0px 20px;                 
+                            }
+    
+                        }
+                    }
+                }
+            }
+        }
+
+
+        .contact-send-message{
+        
+    
+            .send-message-left{
+                height: 800px;
+                width: 35%;
+               
+            }
+    
+            .send-message-right{
+                width: 65%;
+                height: 800px;
+              
+
+    
+                .layer-on{
+                  
+                    .inner-layer-on{
+                        width: 70%;
+                        h1{
+                            font-size: 23px;
+                        }
+        
+                        form{
+                            margin: 20px;
+        
+                            .two-inputs{
+                              
+                                margin-top: 25px;
+                                .input{ 
+                                        width: 50%;
+                                      
+                                    input{
+                                 
+                                        height: 50px;
+                                        width: 90%;
+                                        font-size: 10px;
+                                    
+                                    }
+                                    p{
+                                        font-size: 12px;
+                                        margin: 15px 0px;
+                                        width: 90%;
+                                    }
+                                }
+        
+                            }
+    
+    
+                            .text-area{
+                                margin-top: 25px;
+                                width: 100%;
+                              
+                                textarea{
+                                    width: 90%;
+                                    max-width: 90%;
+                                    height: 180px;
+                                    max-height: 180px;
+                                    font-size: 10px;
+                                }
+    
+                                p{
+                                    font-size: 12px;
+                                    margin: 15px 0px;
+                                    width: 90%;
+                                }
+                            }
+    
+                            .form-btn{
+
+                                margin-top: 25px;
+    
+                                button{
+                                    height: 50px;
+                                    width: 150px;
+                                    font-size: 12px;
+                                    margin-right: 20px;
+                                }
+                            }
+        
+                        }
+    
+                        .main-alert{
+                            margin-right: 20px;
+                            font-size: 12px;
+                        }
+    
+
+                    }
+    
+                }
+            }
+        
+    
+    
+        
+        }
+
+        .contact-map{
+            height: 450px;
+        }
+    }
+}
+
+
+
+//////////// Start Tablet Screens //////////// 
+
+
+
+@media (max-width: 1107px){
+    .contact-page-container{
+        .contact-page-intro{
+            height: 300px;
+
+            .layer-on{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                h1{
+                    margin-top: 0px;
+                    font-size: 30px;
+
+                }
+            }
+        }
+
+        .contact-info-section{
+            height: 300px;
+            margin-top: 50px;
+    
+    
+            .inner-contact-info-section{
+             
+                width: 100%;
+                margin: 0px 25px;
+
+    
+                .layer-on{
+
+                    
+    
+                    .layer-on-section{
+                    
+                        width: calc(100% / 3);
+
+                        .icon-container{
+                            width: 70px;
+                            height: 70px;
+                         
+    
+    
+                            .icon{
+                                font-size: 20px;
+                            }
+    
+    
+                        }
+    
+                        .section-info{
+                            height: 60%;
+                       
+                            h1{
+
+                                font-size: 20px;
+                            }
+        
+                            h3{
+                                font-size: 12px;
+                                margin: 5px 20px 0px 20px;                 
+                            }
+    
+                        }
+                    }
+                }
+            }
+        }
+
+        .contact-send-message{
+        
+            margin-top: 50px;
+
+            .send-message-left{
+
+                display: none;
+            }
+    
+            .send-message-right{
+                width: 100%;
+                height: 700px;
+              
+
+    
+                .layer-on{
+                  
+                    .inner-layer-on{
+                        width: 100%;
+                        h1{
+                            font-size: 18px;
+                        }
+        
+                        form{
+                            margin: 20px;
+        
+                            .two-inputs{
+                               gap: 55px;
+                                margin-top: 15px;
+                                .input{ 
+                                        width: 100%;
+                                      
+                                    input{
+                                 
+                                        height: 50px;
+                                        width: 100%;
+                                        font-size: 10px;
+                                    
+                                    }
+                                    p{
+                                        font-size: 11px;
+                                        margin: 15px 0px;
+                                        width: 90%;
+                                    }
+                                }
+        
+                            }
+    
+    
+                            .text-area{
+                                margin-top: 15px;
+                                width: 100%;
+  
+                                textarea{
+                                    width: 96%;
+                                    max-width: 96%;
+                                    height: 150px;
+                                    max-height: 150px;
+                                    font-size: 10px;
+ 
+                                }
+    
+                                p{
+                                    font-size: 11px;
+                                    margin: 15px 0px;
+                                    width: 90%;
+                                }
+                            }
+    
+                            .form-btn{
+
+                                margin-top: 15px;
+    
+                                button{
+                                    height: 50px;
+                                    width: 130px;
+                                    font-size: 10px;
+                                    margin-right: 20px;
+                                }
+                            }
+        
+                        }
+    
+                        .main-alert{
+                            margin-right: 20px;
+                            font-size: 11px;
+                        }
+    
+
+                    }
+    
+                }
+            }
+        
+    
+    
+        
+        }
+
+        .contact-map{
+            height: 350px;
+        }
+    }
+}
+
+
+@media (max-width: 802px) {
+    .contact-page-container{
+        .contact-page-intro{
+            height: 250px;
+
+            .layer-on{
+
+    
+                h1{
+
+                    font-size: 25px;
+
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 702px){
+    .contact-page-container{
+        .contact-info-section{
+            height: 690px;
+            margin-top: 50px;
+    
+    
+            .inner-contact-info-section{
+             
+                width: 100%;
+                margin: 0px 25px;
+
+    
+                .layer-on{
+
+                    flex-direction: column;
+
+                       
+                    .layer-on-section{
+                        width: 100%;
+                        height: fit-content;
+                        margin: 25px 0px;
+
+                        .icon-container{
+                            width: 70px;
+                            height: 70px;
+                         
+    
+    
+                            .icon{
+                                font-size: 20px;
+                            }
+    
+    
+                        }
+    
+                        .section-info{
+                            height: fit-content;
+                       
+                            h1{
+                                margin-top: 15px;
+                                font-size: 20px;
+                            }
+        
+                            h3{
+                                font-size: 12px;
+                                margin: 5px 20px 0px 20px;                 
+                            }
+    
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+//////////// Start Mobile Screens //////////// 
+
+
+@media (max-width: 564px) {
+    .contact-page-container{
+        .contact-page-intro{
+            height: 200px;
+
+            .layer-on{
+
+    
+                h1{
+
+                    font-size: 23px;
+
+                }
+            }
+        }
+
+
+        .contact-info-section{
+            height: 640px;
+            margin-top: 50px;
+    
+    
+            .inner-contact-info-section{
+             
+                width: 100%;
+                margin: 0px 25px;
+
+    
+                .layer-on{
+
+                    flex-direction: column;
+
+                       
+                    .layer-on-section{
+                        width: 100%;
+                        height: fit-content;
+                        margin: 25px 0px;
+
+                        .icon-container{
+                            width: 60px;
+                            height: 60px;
+                         
+    
+    
+                            .icon{
+                                font-size: 17px;
+                            }
+    
+    
+                        }
+    
+                        .section-info{
+                            height: fit-content;
+                       
+                            h1{
+                                margin-top: 15px;
+                                font-size: 18px;
+                            }
+        
+                            h3{
+                                font-size: 11px;
+                                margin: 5px 20px 0px 20px;                 
+                            }
+    
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+@media (max-width: 515px) {
+    .contact-page-container{
+        .contact-info-section{
+            height: 650px;
+        }
+    }
+}
+
+
+@media (max-width: 429px) {
+    .contact-page-container{
+        .contact-send-message{
+        
+
+            .send-message-right{
+    
+                height: 750px;
+
+            }
+        
+    
+    
+        
+        }
+    }
+}
+
+
+@media (max-width: 338px) {
+    .contact-page-container{
+        .contact-send-message{
+        
+
+            .send-message-right{
+    
+                height: 800px;
+
+            }
+        
+    
+    
+        
+        }
+    }
+}
+
+
+
+@media (max-width: 314px) {
+    .contact-page-container{
+        .contact-info-section{
+            height: 670px;
+        }
+    }
+}

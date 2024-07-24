@@ -19,17 +19,17 @@ const Footer = () => {
 
                             <h2>تواصل</h2>
                             <p><MdEmail className="icon" /> support@rehabeg.clinic</p>
-                            <p><MdLocationPin className="icon location" /> <span>6</span> من اكتوبر - المحور المركزي - جولدن مول - اعلى مطعم رسلان وصيدليات مصر </p>
+                            <p><MdLocationPin className="icon location" /> السادس من اكتوبر - المحور المركزي - جولدن مول - اعلى مطعم رسلان وصيدليات مصر </p>
                             <p><MdPhone className="icon phone" /> +20 1204515349</p>
                             <p><MdPhone className="icon phone" /> +20 1507110041</p>
                             <p><MdPhone className="icon phone" /> +20 1066205166</p>
                             <p><MdPhone className="icon phone" /> +20 1125902099</p>
 
                             <div className="footer-top-left-socials">
-                                <Link title="فيس بوك" href="https://www.google.com" target="_blank"><FaFacebookSquare className="social-Icon" /></Link>
-                                <Link title="تيك توك" href="https://www.google.com" target="_blank"><AiFillTikTok className="social-Icon tiktok" /></Link>
-                                <Link title="إنستجرام" href="https://www.google.com" target="_blank"><FaInstagramSquare className="social-Icon" /></Link>
-                                <Link title="واتس آب" href="#" target="_blank"><FaWhatsappSquare className="social-Icon" /></Link>
+                                <Link title="فيس بوك" href="https://www.facebook.com/rehabclinic11" target="_blank"><FaFacebookSquare className="social-Icon" /></Link>
+                                <Link title="تيك توك" href="https://www.tiktok.com/@rehabclinic11" target="_blank"><AiFillTikTok className="social-Icon tiktok" /></Link>
+                                <Link title="إنستجرام" href="https://www.instagram.com/rehabclinic11" target="_blank"><FaInstagramSquare className="social-Icon" /></Link>
+                                <Link title="واتس آب" href="https://www.wa.link/mtmbq6" target="_blank"><FaWhatsappSquare className="social-Icon" /></Link>
                             </div>
 
                         </div>
@@ -39,8 +39,9 @@ const Footer = () => {
 
                             <h2>الموقع</h2>
                             <Link href="/">الرئيسية</Link>
-                            <Link href="#">معلومات عنا</Link>
+                            <Link href="/about">معلومات عنا</Link>
                             <Link href="/contact">تواصل معنا</Link>
+                            <Link title="مدوناتنا" href="/blogs">مدوناتنا</Link>
 
                         </div>
         

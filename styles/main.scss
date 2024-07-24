@@ -3,7 +3,10 @@
 @use './Header/Header.scss';
 @use './Footer/Footer.scss';
 @use './Landing/Landing.scss';
-
+@use './Contact/Contact.scss';
+@use './Blog/Blog.scss';
+@use './Blogs/Blogs.scss';
+@use './About/About.scss';
 
 :root{
     --Input-Background: rgb(241, 241, 241);
@@ -49,6 +52,16 @@ input{
     }
 }
 
+textarea{
+    font-family: 'Noto Kufi Arabic';
+    font-weight: 600;
+    text-align: right;
+
+    &::placeholder{
+        text-align: right;
+    }
+
+}
 
 a{
     text-decoration: none;

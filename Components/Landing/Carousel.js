@@ -28,7 +28,7 @@ const Carousel = () => {
           </div>
           <div className='layer-on'>
             <div className='layer-on-left'>
-              <Image sizes="(min-width: 1120px) calc(42.5vw - 50px), 95vw" src={BackgroundAssetFive.src} fill style={{ objectFit: 'contain' }} alt='Rehab EG Clinic' />
+              <Image sizes="50vw" src={BackgroundAssetFive.src} fill style={{ objectFit: 'contain' }} alt='Rehab EG Clinic' />
               <div className='layer-on-asset'></div>
             </div>
             <div className='layer-on-right'>

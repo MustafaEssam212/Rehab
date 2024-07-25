@@ -6,6 +6,7 @@ import { MdLocationOn, MdEmail, MdPhone } from "react-icons/md";
 import ContactMessagePic from '../public/contact-message.png';
 import ContactBG from '../public/contact.png';
 import { useState, useEffect } from "react";
+import { NextSeo } from 'next-seo';
 
 const Contact = () => {
 
@@ -56,6 +57,9 @@ const Contact = () => {
 
     return(
         <div className="contact-page-container">
+
+            <NextSeo title={'تواصل معنا - مركز ريهاب للعلاج الطبيعي والتأهيل'} />
+
             <div className="contact-page-intro">
                 <div className="img-container"><Image src={ContactCover.src} fill style={{objectFit: 'cover'}} alt="Rehab EG Center"></Image></div>
                 <div className="layer-on">

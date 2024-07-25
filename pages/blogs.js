@@ -7,11 +7,13 @@ import BlogPicThree from '../public/blog3.webp';
 import Link from "next/link";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { FaRegCalendarDays } from "react-icons/fa6";
-
+import { NextSeo } from 'next-seo';
 
 const Blogs = () => {
     return(
         <div className="blogs-page-container">
+
+        <NextSeo title={'مدوناتنا - مركز ريهاب للعلاج الطبيعي والتأهيل'} />
 
             <div className="blogs-page-intro">
                 <div className="img-container"><Image src={BlogCover.src} fill style={{objectFit: 'cover'}} alt="Rehab EG Center"></Image></div>

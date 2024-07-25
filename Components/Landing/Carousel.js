@@ -162,11 +162,11 @@ const Carousel = () => {
       onTouchEnd={handleDragEnd}
     >
       <div className='carousel-btns'>
-        <button className='prevButton' onClick={goToPreviousSlide}>
-          <MdNavigateBefore className='icon' />
+        <button className='prevButton' onClick={goToPreviousSlide} aria-label="Go to previous slide">
+            <MdNavigateBefore className='icon' />
         </button>
-        <button className='nextButton' onClick={goToNextSlide}>
-          <MdNavigateNext className='icon' />
+        <button className='nextButton' onClick={goToNextSlide} aria-label="Go to next slide">
+            <MdNavigateNext className='icon' />
         </button>
       </div>
 

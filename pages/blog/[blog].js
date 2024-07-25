@@ -6,6 +6,8 @@ import BlogOneImage from '../../public/blog1.png';
 import BlogTwoImage from '../../public/blog2.jpg';
 import BlogThreeImage from '../../public/blog3.webp';
 import Link from "next/link";
+import { NextSeo } from 'next-seo';
+
 
 export async function getServerSideProps(context) {
     const { blog } = context.params;
@@ -177,6 +179,8 @@ const BlogPost = ({ data }) => {
 
     return (
         <div className="blog-page-container">
+
+          <NextSeo title={data.title + ' - ' + "مركز ريهاب للعلاج الطبيعي والتأهيل"} />
 
             <div className="blog-page-intro">
                 <div className="img-container"><Image src={BlogCover.src} fill style={{objectFit: 'cover'}} alt="Rehab EG Center"></Image></div>

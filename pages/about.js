@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import ToolPic from '../public/tool.png';
 import ExpertPic from '../public/about-wall.png';
 import { FaRegCircleCheck } from "react-icons/fa6";
+import { NextSeo } from 'next-seo';
+
 
 const About = () => {
 
@@ -14,6 +16,9 @@ const About = () => {
 
     return(
         <div className="about-page-container">
+
+            <NextSeo title={'معلومات عنا - مركز ريهاب للعلاج الطبيعي والتأهيل'} />
+
             <div className="about-page-intro">
                 <div className="img-container"><Image src={AboutCoverPic.src} fill style={{objectFit: 'cover'}} alt="Rehab EG Center"></Image></div>
                 <div className="layer-on">

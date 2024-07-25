@@ -1,0 +1,9 @@
+# Allow all search engines to crawl everything
+User-agent: *
+Disallow:
+
+# Specifically allow the /public/ folder (which is accessible as /)
+Allow: /public/
+
+# Specify the location of your sitemap
+Sitemap: https://www.rehabeg.clinic/sitemap.xml

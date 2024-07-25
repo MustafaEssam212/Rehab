@@ -61,8 +61,8 @@ const Header = () => {
 
                 <div className="header-right-buttons">
 
-                    <button>احجز الأن <FiCalendar className="Icon" /></button>
-                    <button>التسجيل <FiUser className="Icon" /></button>
+                    <button aria-label="احجز الأن">احجز الأن <FiCalendar className="Icon" /></button>
+                    <button aria-label="التسجيل">التسجيل <FiUser className="Icon" /></button>
 
                 </div>
 
@@ -83,8 +83,8 @@ const Header = () => {
                             </div>
 
                             <div className="mobile-header-btns">
-                                <button>احجز الأن <FiCalendar className="Icon" /></button>
-                                <button>التسجيل <FiUser className="Icon" /></button>
+                                <button aria-label="احجز الأن">احجز الأن <FiCalendar className="Icon" /></button>
+                                <button aria-label="التسجيل">التسجيل <FiUser className="Icon" /></button>
                             </div>
 
                     </div>

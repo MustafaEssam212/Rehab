@@ -27,7 +27,7 @@ const VideoMain = () => {
                         <div onClick={()=> AppContxt.setVideoModal(true)} className="layer-on-video-main">
                             
                             <div className="button-area">
-                                <button><FaPlay className="icon" /></button>
+                                <button aria-label="تشغيل"><FaPlay className="icon" /></button>
                             </div>
 
                             <div className="bottom-data">

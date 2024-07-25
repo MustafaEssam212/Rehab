@@ -50,7 +50,7 @@ const VideoModal = () => {
                 </video>
 
                 <div className="pause-play">
-                    {paused && <button><FaPlay className="icon" /></button>}
+                    {paused && <button aria-label="تشغيل"><FaPlay className="icon" /></button>}
                 </div>
 
             </div>

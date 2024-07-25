@@ -38,7 +38,7 @@ const Carousel = () => {
                 مركز ريهاب للعلاج الطبيعي وامراض المخ والاعصاب والعمود الفقري وخشونة المفاصل ولإعادة تأهيل إصابات النخاع الشوكي
                 والجلطات وغيرها من حالات العلاج الطبيعي. احجز الأن ميعادك من خلال موقعنا مع نُخبة من افضل الدكاترة في مصر
               </h3>
-              <button>
+              <button aria-label="احجز الأن">
                 احجز الأن <FiCalendar className='Icon' />
               </button>
             </div>
@@ -66,7 +66,7 @@ const Carousel = () => {
                 بأداء أحدث التقنيات بأحدث المعدات المبتكرة . لتسهيل إعادة التأهيل وإعادة المرضى إلى مستوى نشاطهم السابق بأسرع طريقة ممكنة
                 وأكثرها أمانًا.
               </h3>
-              <button>
+              <button aria-label="احجز الأن">
                 احجز الأن <FiCalendar className='Icon' />
               </button>
             </div>
@@ -93,7 +93,7 @@ const Carousel = () => {
                 يتكون فريقنا من أخصائيي العلاج الطبيعي والمدربين الرياضيين وأطباء القوة والأطباء الرياضيين وقد صمموا مجموعة كاملة من برامج
                 إعادة التأهيل والأداء الخاصة بالرياضات لمساعدتك
               </h3>
-              <button>
+              <button aria-label="احجز الأن">
                 احجز الأن <FiCalendar className='Icon' />
               </button>
             </div>
@@ -162,10 +162,10 @@ const Carousel = () => {
       onTouchEnd={handleDragEnd}
     >
       <div className='carousel-btns'>
-        <button className='prevButton' onClick={goToPreviousSlide} aria-label="Go to previous slide">
+        <button className='prevButton' onClick={goToPreviousSlide} aria-label="الذهاب للصورة السابقة">
             <MdNavigateBefore className='icon' />
         </button>
-        <button className='nextButton' onClick={goToNextSlide} aria-label="Go to next slide">
+        <button className='nextButton' onClick={goToNextSlide} aria-label="الذهاب للصورة التالية">
             <MdNavigateNext className='icon' />
         </button>
       </div>

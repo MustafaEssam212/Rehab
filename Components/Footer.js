@@ -26,10 +26,10 @@ const Footer = () => {
                             <p><MdPhone className="icon phone" /> +20 1125902099</p>
 
                             <div className="footer-top-left-socials">
-                                <Link title="فيس بوك" href="https://www.facebook.com/rehabclinic11" target="_blank"><FaFacebookSquare className="social-Icon" /></Link>
-                                <Link title="تيك توك" href="https://www.tiktok.com/@rehabclinic11" target="_blank"><AiFillTikTok className="social-Icon tiktok" /></Link>
-                                <Link title="إنستجرام" href="https://www.instagram.com/rehabclinic11" target="_blank"><FaInstagramSquare className="social-Icon" /></Link>
-                                <Link title="واتس آب" href="https://www.wa.link/mtmbq6" target="_blank"><FaWhatsappSquare className="social-Icon" /></Link>
+                                <Link title="فيس بوك" aria-label="Facebook" href="https://www.facebook.com/rehabclinic11" target="_blank"><FaFacebookSquare className="social-Icon" /></Link>
+                                <Link title="تيك توك" aria-label="Tiktok" href="https://www.tiktok.com/@rehabclinic11" target="_blank"><AiFillTikTok className="social-Icon tiktok" /></Link>
+                                <Link title="إنستجرام" aria-label="Instagram" href="https://www.instagram.com/rehabclinic11" target="_blank"><FaInstagramSquare className="social-Icon" /></Link>
+                                <Link title="واتس آب" aria-label="WhatsApp" href="https://www.wa.link/mtmbq6" target="_blank"><FaWhatsappSquare className="social-Icon" /></Link>
                             </div>
 
                         </div>

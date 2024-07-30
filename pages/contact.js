@@ -145,7 +145,7 @@ const Contact = () => {
             </div>
 
             <div className="contact-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.9219029414517!2d30.91598942494222!3d29.952924922902003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145857afcbabf70b%3A0xf2e55f869ed41f6!2z2YXYsdmD2LIg2LHZitmH2KfYqCDZhNmE2LnZhNin2Kwg2KfZhNi32KjZiti52Ykg2Ygg2KfZhNiq2K7Ys9mK2LM!5e0!3m2!1sar!2seg!4v1721492736304!5m2!1sar!2seg" width="100%" height="100%" allowfullScreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.9219029414517!2d30.91598942494222!3d29.952924922902003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145857afcbabf70b%3A0xf2e55f869ed41f6!2z2YXYsdmD2LIg2LHZitmH2KfYqCDZhNmE2LnZhNin2Kwg2KfZhNi32KjZiti52Ykg2Ygg2KfZhNiq2K7Ys9mK2LM!5e0!3m2!1sar!2seg!4v1721492736304!5m2!1sar!2seg" width="100%" height="100%" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     )

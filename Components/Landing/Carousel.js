@@ -24,7 +24,7 @@ const Carousel = () => {
       element: (
         <div className='inner-item'>
           <div className='img-container'>
-            <Image src={BackgroundTwo.src} fill style={{ objectFit: 'cover' }} alt='Rehab EG Clinic' />
+            <Image priority src={BackgroundTwo.src} fill style={{ objectFit: 'cover' }} alt='Rehab EG Clinic' />
           </div>
           <div className='layer-on'>
             <div className='layer-on-left'>
@@ -33,7 +33,7 @@ const Carousel = () => {
             </div>
             <div className='layer-on-right'>
               <h2>مركز ريهاب للعلاج الطبيعي</h2>
-              <h1>أفضل حل لحياة مؤلمة</h1>
+              <h1>أفضل حل للحياة المؤلمة</h1>
               <h3>
                 مركز ريهاب للعلاج الطبيعي وامراض المخ والاعصاب والعمود الفقري وخشونة المفاصل ولإعادة تأهيل إصابات النخاع الشوكي
                 والجلطات وغيرها من حالات العلاج الطبيعي. احجز الأن ميعادك من خلال موقعنا مع نُخبة من افضل الدكاترة في مصر
@@ -51,7 +51,7 @@ const Carousel = () => {
       element: (
         <div className='inner-item'>
           <div className='img-container'>
-            <Image src={BackgroundOne.src} fill style={{ objectFit: 'cover' }} alt='Rehab EG Clinic' />
+            <Image  src={BackgroundOne.src} fill style={{ objectFit: 'cover' }} alt='Rehab EG Clinic' />
           </div>
           <div className='layer-on'>
             <div className='layer-on-left'>
@@ -60,7 +60,7 @@ const Carousel = () => {
             </div>
             <div className='layer-on-right'>
               <h2>مركز ريهاب للعلاج الطبيعي</h2>
-              <h1>معاً لحياة صحية</h1>
+              <h1>نعيد تأهيلك لحياة أفضل</h1>
               <h3>
                 متخصص في علاج الإصابات الرياضية واضطرابات العمود الفقري. تتمثل مهمة المركز في تزويد المرضى بمرفق يقوم فيه الأطباء الخبراء
                 بأداء أحدث التقنيات بأحدث المعدات المبتكرة . لتسهيل إعادة التأهيل وإعادة المرضى إلى مستوى نشاطهم السابق بأسرع طريقة ممكنة

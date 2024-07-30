@@ -7,6 +7,7 @@ import { FiUser } from "react-icons/fi";
 import { HiBars3 } from "react-icons/hi2";
 import { useState, useRef, useEffect } from "react";
 import { FaHome, FaPhone, FaCommentDots, FaBloggerB, FaInfo } from "react-icons/fa";
+import { MdWork } from "react-icons/md";
 import { useRouter } from "next/router";
 
 const Header = () => {
@@ -54,6 +55,8 @@ const Header = () => {
 
                 <div className="header-right-pages">
                     <Link title="معلومات عن مركز ريهاب" href="/about">معلومات عنا</Link>
+                    <Link title="اراء عملائنا" href="/reviews">اراء عملائنا</Link>
+                    <Link title="سابقة اعمالنا" href="/previous-work">سابقة اعمالنا</Link>
                     <Link title="مدوناتنا" href="/blogs">مدوناتنا</Link>
                     <Link title="تواصل معنا" href="/contact">تواصل معنا</Link>
                     <Link title="الصفحة الرئيسية" href="/">الرئيسية</Link>
@@ -77,6 +80,8 @@ const Header = () => {
 
                             <div className="mobile-header-pages">
                                 <Link className={router.pathname === '/about' ? "active" : ""} title="معلومات عن مركز ريهاب" href="#">معلومات عنا <FaInfo className="icon" /></Link>
+                                <Link className={router.pathname === '/reviews' ? "active" : ""} title="اراء عملائنا" href="#">اراء عملائنا <FaCommentDots className="icon" /></Link>
+                                <Link className={router.pathname === '/previous-work' ? "active" : ""} title="سابقة اعمالنا" href="#">سابقة اعمالنا <MdWork className="icon" /></Link>
                                 <Link className={router.pathname === '/blogs' ? "active" : ""} title="مدوناتنا" href="#">مدوناتنا <FaBloggerB className="icon" /></Link>
                                 <Link className={router.pathname === '/contact' ? "active" : ""} title="تواصل معنا" href="/contact">تواصل معنا <FaPhone className="icon" /></Link>
                                 <Link className={router.pathname === '/' ? "active" : ""} title="الصفحة الرئيسية" href="/">الرئيسية <FaHome className="icon" /></Link>

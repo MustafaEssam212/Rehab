@@ -21,7 +21,7 @@ const VideoMain = () => {
             
                 <div className="video-main-landing-container-inner">
                             <div className="img-container">
-                                <Image src={PosterImage.src} fill style={{objectFit: 'cover'}} alt="Rehab EG Center"></Image>
+                                <Image priority={false} src={PosterImage.src} fill style={{objectFit: 'cover'}} alt="Rehab EG Center"></Image>
                             </div>
 
                         <div onClick={()=> AppContxt.setVideoModal(true)} className="layer-on-video-main">

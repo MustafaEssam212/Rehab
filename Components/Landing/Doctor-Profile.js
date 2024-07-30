@@ -27,7 +27,7 @@ const DoctorProfile = () => {
                         <motion.div initial={{y: 0}} animate={{y: 50}} transition={{ease: 'linear', duration: 1.5, repeat: Infinity, repeatType:"reverse"}} className="background-doctor-right"><Image sizes="(min-width: 1120px) calc(42.5vw - 50px), 100vw" src={ToolPic.src} fill style={{objectFit: 'contain'}} alt="Rehab EG Center"></Image></motion.div>
                         <div className="layer-on-background">
                             <h1>دكتور محمد يحي جمال الدين</h1>
-                            <h2>دكتوراه علاج طبيعي</h2>
+                            <h2>استشاري العلاج الطبيعي - دكتوراه علاج طبيعي وتأهيل</h2>
 
                             <div className="layer-on-notes">
                                 <div className="note"><span className="dot"></span> <h3>حاصل على دكتوراه اكلينيكية في العلاج الطبيعي لامراض المخ والاعصاب جامعة القاهره</h3></div>

@@ -7,6 +7,7 @@
 @use './Blog/Blog.scss';
 @use './Blogs/Blogs.scss';
 @use './About/About.scss';
+@use './Specialization/Specialization.scss';
 
 :root{
     --Input-Background: rgb(241, 241, 241);
@@ -164,6 +165,104 @@ input[type=number] {
 
 
 
+.whats-app-float{
+    position: fixed;
+    height: fit-content;
+    width: fit-content;
+    bottom: 50px;
+    right: 50px;
+    z-index: 5;
+    background-color: var(--Primary-Color);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    box-shadow: 0 0 5px 0 rgba(221, 221, 221, 0.596);
+    a{
+        width: 90px;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        .icon{
+            font-size: 50px;
+            color: white;
+        }
+    }
+}
+
+
+
+// 75%
+@media (max-width: 2048px) {
+    .whats-app-float{
+        bottom: 45px;
+        right: 45px;
+
+        a{
+            width: 80px;
+            height: 80px;
+    
+            .icon{
+                font-size: 45px;
+            }
+        }
+    }
+}
+
+// 80%
+@media (max-width: 1921px){
+    .whats-app-float{
+        bottom: 40px;
+        right: 40px;
+
+        a{
+            width: 70px;
+            height: 70px;
+    
+            .icon{
+                font-size: 40px;
+            }
+        }
+    }
+}
+
+// 90%
+@media (max-width: 1707px){
+    .whats-app-float{
+        bottom: 35px;
+        right: 35px;
+
+        a{
+            width: 70px;
+            height: 70px;
+    
+            .icon{
+                font-size: 40px;
+            }
+        }
+    }
+}
+
+// 100%
+@media (max-width: 1537px){
+    .whats-app-float{
+        bottom: 30px;
+        right: 30px;
+
+        a{
+            width: 60px;
+            height: 60px;
+    
+            .icon{
+                font-size: 35px;
+            }
+        }
+    }
+}
 
 @media (max-width: 1063px) {
     .cookies-acceptace-container{

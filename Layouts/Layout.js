@@ -4,7 +4,8 @@ import Footer from '@/Components/Footer';
 import Cookies from '@/Components/Cookies';
 import IntroInfo from "@/Components/Landing/Intro-Info";
 import Header from "@/Components/Header";
-
+import Link from 'next/link';
+import { FaWhatsapp } from "react-icons/fa";
 
 const Layout = ({children}) => {
 
@@ -18,6 +19,10 @@ const Layout = ({children}) => {
             <Header />
             
             {children}
+
+            <div className='whats-app-float'>
+                <Link target='_blank' href="https://www.wa.link/mtmbq6" title='تواصل معنا'><FaWhatsapp className='icon' /></Link>
+            </div>
 
             <Cookies />
 

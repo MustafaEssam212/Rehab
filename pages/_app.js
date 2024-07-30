@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 import '../styles/icofont/webapp.css';
 import '../styles/icofont/medical.css';
 import '../styles/icofont/person.css';
+import '../styles/icofont/device.css';
 import { DefaultSeo } from 'next-seo';
 import SEO from '../next-seo.config';
 

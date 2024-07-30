@@ -1,0 +1,837 @@
+
+
+.specialization-page-container{
+    .specialization-page-intro{
+        height: 600px;
+        width: 100%;
+        position: relative;
+
+        .img-container{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .layer-on{
+            position: absolute;
+            background-color: #309c526a;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            h1{
+                font-weight: 800;
+                font-size: 65px;
+                color: white;
+                margin-top: 25px;
+                text-shadow: 0px 0px 4px black;
+            }
+        }
+    }
+
+    .specialization-page-second-container{
+        display: flex;
+        margin-top: 100px;
+
+        .specializations-tags{
+          width: 30%;
+          
+            h2{
+                font-weight: 800;
+                text-align: right;
+                margin: 25px;
+            }
+
+            .recent-specializations{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                margin: 25px 25px 0px 0px;
+                gap: 25px;
+
+                .specialization{
+
+                    display: flex;
+                    align-items: center;
+                    gap: 25px;
+                    flex-direction: row-reverse;
+                    width: 100%;
+
+                    .img-container{
+                        position: relative;
+                        height: 160px;
+                        width: 190px;
+                        border-radius: 10px;
+                        -webkit-border-radius: 10px;
+                        -moz-border-radius: 10px;
+                        -ms-border-radius: 10px;
+                        -o-border-radius: 10px;
+                        overflow: hidden;
+                    }
+
+
+                    .specialization-info{
+                        width: 50%;
+                        display: flex;
+                        flex-direction: column;
+
+                        a{
+                            color: var(--Regular-Font-Color);
+                            font-weight: 700;
+                            font-size: 20px;
+                            align-self: flex-end;
+                            text-align: right;
+                        }
+
+                        .bottom-specialization-info{
+                            display: flex;
+                            justify-content: space-between;
+                            margin-top: 10px;
+                            p{
+                                display: flex;
+                                align-items: center;
+                                gap: 7px;
+                                font-weight: 700;
+                                color: var(--Primary-Color);
+                            }
+                        }
+                    }
+
+
+
+                }
+            }
+
+            .tags{
+                margin: 25px;
+                text-align: right;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                gap: 25px;
+
+                h3{
+                    background-color: var(--Primary-Color);
+                    color: white;
+                    border-radius: 10px;
+                    -webkit-border-radius: 10px;
+                    -moz-border-radius: 10px;
+                    -ms-border-radius: 10px;
+                    -o-border-radius: 10px;
+                    cursor: default;
+                    font-size: 16px;
+                    padding: 12px 15px;
+}
+            }
+        }
+
+        .specialization-page-info{
+            width: 70%;
+            text-align: right;
+            padding-bottom: 30px;
+            .img-container{
+                width: 70%;
+                height: 700px;
+                position: relative;
+                border-radius: 10px;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                -ms-border-radius: 10px;
+                -o-border-radius: 10px;
+                overflow: hidden;
+                margin: 0 auto;
+            }
+
+            ul {
+                list-style-position: inside;
+                direction: rtl;
+                padding: 0;
+            }
+
+
+            ul li {
+                padding-left: 20px;
+              }
+
+
+              h1, ul, p, h2, h3{
+                margin: 25px 25px 0px 25px;
+              }
+
+              h1{
+                text-align: center;
+              }
+
+        }
+
+    }
+}
+
+
+
+//////////// Start Desktop Screens ////////////
+
+
+// 75%
+@media (max-width: 2048px){
+    .specialization-page-container{
+        .specialization-page-intro{
+            height: 500px;
+
+            .layer-on{
+
+    
+                h1{
+
+                    font-size: 55px;
+
+                }
+            }
+        }
+
+        .specialization-page-second-container{
+
+    
+            .specializations-tags{
+              width: 30%;
+              
+                h2{
+
+                    margin: 25px;
+                }
+    
+                .recent-specializations{
+
+                    margin: 25px 25px 0px 0px;
+                    gap: 25px;
+    
+                    .specialization{
+
+                        gap: 25px;
+                        width: 100%;
+    
+                        .img-container{
+                       
+                            height: 140px;
+                            width: 180px;
+
+                        }
+    
+    
+                        .specialization-info{
+                            width: 50%;
+                      
+                            a{
+                                font-size: 18px;
+                            }
+    
+                            .bottom-specialization-info{
+
+                                p{
+                                    gap: 7px;
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+    
+    
+    
+                    }
+                }
+    
+                .tags{
+                    margin: 25px;
+                    gap: 25px;
+    
+                    h3{
+                        font-size: 14px;
+                        padding: 12px 15px;
+    }
+                }
+            }
+    
+            .specialization-page-info{
+                width: 70%;
+                padding-bottom: 30px;
+                .img-container{
+                    width: 70%;
+                    height: 600px;
+                }
+    
+
+    
+    
+                  h1, ul, p, h2, h3{
+                    margin: 25px 25px 0px 25px;
+                  }
+
+    
+            }
+    
+        }
+
+    }
+}
+
+
+// 80%
+@media (max-width: 1921px){
+    .specialization-page-container{
+        .specialization-page-intro{
+            height: 450px;
+
+            .layer-on{
+
+    
+                h1{
+
+                    font-size: 50px;
+
+                }
+            }
+        }
+    }
+}
+
+
+// 90%
+@media (max-width: 1707px){
+    .specialization-page-container{
+        .specialization-page-intro{
+            height: 400px;
+
+            .layer-on{
+
+    
+                h1{
+
+                    font-size: 45px;
+
+                }
+            }
+        }
+
+
+        .specialization-page-second-container{
+
+    
+            .specializations-tags{
+              width: 30%;
+              
+                h2{
+                    font-size: 20px;
+                    margin: 25px;
+                }
+    
+                .recent-specializations{
+
+                    margin: 25px 25px 0px 0px;
+                    gap: 25px;
+    
+                    .specialization{
+
+                        gap: 25px;
+                        width: 100%;
+    
+                        .img-container{
+                       
+                            height: 110px;
+                            width: 150px;
+
+                        }
+    
+    
+                        .specialization-info{
+                            width: 50%;
+                      
+                            a{
+                                font-size: 16px;
+                            }
+    
+                            .bottom-specialization-info{
+
+                                p{
+                                    gap: 7px;
+                                    font-size: 13px;
+                                }
+                            }
+                        }
+    
+    
+    
+                    }
+                }
+    
+                .tags{
+                    margin: 25px;
+                    gap: 25px;
+    
+                    h3{
+                        font-size: 11px;
+                        padding: 12px 15px;
+    }
+                }
+            }
+    
+            .specialization-page-info{
+                width: 70%;
+                padding-bottom: 30px;
+                .img-container{
+                    width: 70%;
+                    height: 500px;
+                }
+    
+
+    
+    
+                  h1, ul, p, h2, h3{
+                    margin: 25px 25px 0px 25px;
+                  }
+    
+
+    
+            }
+    
+        }
+
+    }
+}
+
+
+
+// 100%
+@media (max-width: 1537px){
+    .specialization-page-container{
+        .specialization-page-intro{
+            height: 350px;
+
+            .layer-on{
+
+    
+                h1{
+
+                    font-size: 35px;
+
+                }
+            }
+        }
+
+
+        .specialization-page-second-container{
+
+    
+            .specializations-tags{
+              width: 30%;
+              
+                h2{
+                    font-size: 18px;
+                    margin: 25px;
+                }
+    
+                .recent-specializations{
+
+                    margin: 25px 25px 0px 0px;
+                    gap: 25px;
+    
+                    .specialization{
+
+                        gap: 25px;
+                        width: 100%;
+    
+                        .img-container{
+                       
+                            height: 90px;
+                            width: 130px;
+
+                        }
+    
+    
+                        .specialization-info{
+                            width: 50%;
+                      
+                            a{
+                                font-size: 14px;
+                            }
+    
+                            .bottom-specialization-info{
+
+                                p{
+                                    gap: 7px;
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+    
+    
+    
+                    }
+                }
+    
+                .tags{
+                    margin: 25px;
+                    gap: 25px;
+    
+                    h3{
+                        font-size: 10px;
+                        padding: 10px 13px;
+    }
+                }
+            }
+    
+            .specialization-page-info{
+                width: 70%;
+                padding-bottom: 30px;
+                .img-container{
+                    width: 70%;
+                    height: 450px;
+                }
+    
+
+    
+    
+                  h1, ul, p, h2, h3{
+                    margin: 25px 25px 0px 25px;
+                  }
+    
+                  h1{
+                    font-size: 23px;
+                  }
+
+                  h2{
+                    font-size: 19px;
+                  }
+
+                  h3{
+                    font-size: 17px;
+                  }
+
+                  p{
+                    font-size: 14px;
+                  }
+    
+            }
+    
+        }
+
+    }
+}
+
+
+//////////// Start Tablet Screens //////////// 
+
+
+@media (max-width: 1107px){
+    .specialization-page-container{
+        .specialization-page-intro{
+            height: 300px;
+
+            .layer-on{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                h1{
+                    margin-top: 0px;
+                    font-size: 30px;
+
+                }
+            }
+        }
+
+        .specialization-page-second-container{
+            flex-direction: column;
+            
+    
+            .specializations-tags{
+              width: 100%;
+              order: 2;
+                h2{
+                    font-size: 18px;
+                    margin: 25px;
+                }
+    
+                .recent-specializations{
+
+                    margin: 25px 25px 0px 0px;
+                    gap: 25px;
+    
+                    .specialization{
+
+                        gap: 25px;
+                        width: 50%;
+    
+                        .img-container{
+                       
+                            height: 90px;
+                            width: 130px;
+
+                        }
+    
+    
+                        .specialization-info{
+                            width: 50%;
+                            
+                            a{
+                                font-size: 14px;
+                            }
+    
+                            .bottom-specialization-info{
+
+                                p{
+                                    gap: 7px;
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+    
+    
+    
+                    }
+                }
+    
+                .tags{
+                    margin: 25px;
+                    gap: 25px;
+                    justify-content: center;
+                    h3{
+                        font-size: 10px;
+                        padding: 10px 13px;
+    }
+                }
+            }
+    
+            .specialization-page-info{
+                width: 100%;
+                padding-bottom: 30px;
+                order: 1;
+                .img-container{
+                    width: 70%;
+                    height: 450px;
+                }
+    
+
+    
+    
+                  h1, ul, p, h2, h3{
+                    margin: 25px 25px 0px 25px;
+                  }
+    
+                  h1{
+                    font-size: 23px;
+                  }
+
+                  h2{
+                    font-size: 19px;
+                  }
+
+                  h3{
+                    font-size: 17px;
+                  }
+
+                  p{
+                    font-size: 14px;
+                  }
+    
+            }
+    
+        }
+    }
+}
+
+
+@media (max-width: 802px) {
+    .specialization-page-container{
+        .specialization-page-intro{
+            height: 250px;
+
+            .layer-on{
+
+    
+                h1{
+
+                    font-size: 25px;
+
+                }
+            }
+        }
+
+        .specialization-page-second-container{
+            flex-direction: column;
+            
+    
+            .specializations-tags{
+              width: 100%;
+              order: 2;
+                h2{
+                    font-size: 18px;
+                    margin: 25px;
+                }
+    
+                .recent-specializations{
+
+                    margin: 25px 25px 0px 0px;
+                    gap: 25px;
+    
+                    .specialization{
+
+                        gap: 25px;
+                        width: 70%;
+    
+                        .img-container{
+                       
+                            height: 90px;
+                            width: 130px;
+
+                        }
+    
+    
+                        .specialization-info{
+                            width: 50%;
+                            
+                            a{
+                                font-size: 14px;
+                            }
+    
+                            .bottom-specialization-info{
+
+                                p{
+                                    gap: 7px;
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+    
+    
+    
+                    }
+                }
+    
+                .tags{
+                    margin: 25px;
+                    gap: 25px;
+                    justify-content: center;
+                    h3{
+                        font-size: 10px;
+                        padding: 10px 13px;
+    }
+                }
+            }
+    
+            .specialization-page-info{
+                width: 100%;
+                padding-bottom: 30px;
+                order: 1;
+                .img-container{
+                    width: 70%;
+                    height: 450px;
+                }
+    
+
+    
+    
+                  h1, ul, p, h2, h3{
+                    margin: 25px 25px 0px 25px;
+                  }
+    
+                  h1{
+                    font-size: 23px;
+                  }
+
+                  h2{
+                    font-size: 19px;
+                  }
+
+                  h3{
+                    font-size: 17px;
+                  }
+
+                  p{
+                    font-size: 14px;
+                  }
+    
+            }
+    
+        }
+    }
+}
+
+
+//////////// Start Mobile Screens //////////// 
+
+
+@media (max-width: 591px) {
+    .specialization-page-container{
+        .specialization-page-second-container{
+
+            .specializations-tags{
+
+                .recent-specializations{
+
+    
+                    .specialization{
+                        width: 90%;
+                        .specialization-info{
+                            width: 70%;
+                            
+
+                        }
+    
+    
+    
+                    }
+                }
+    
+
+            }
+    
+            .specialization-page-info{
+
+                .img-container{
+                    width: 70%;
+                    height: 350px;
+                }
+    
+
+    
+            }
+    
+        }
+    }
+}
+
+@media (max-width: 564px) {
+    .specialization-page-container{
+        .specialization-page-intro{
+            height: 200px;
+
+            .layer-on{
+
+    
+                h1{
+
+                    font-size: 23px;
+
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 482px) {
+    .specialization-page-container{
+        .specialization-page-second-container{
+            margin-top: 50px;
+            .specialization-page-info{
+                .img-container{
+                    height: 250px;
+                }
+            }
+        }
+    }
+}

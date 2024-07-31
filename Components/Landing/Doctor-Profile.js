@@ -30,8 +30,9 @@ const DoctorProfile = () => {
                             <h2>استشاري العلاج الطبيعي - دكتوراه علاج طبيعي وتأهيل</h2>
 
                             <div className="layer-on-notes">
-                                <div className="note"><span className="dot"></span> <h3>حاصل على دكتوراه اكلينيكية في العلاج الطبيعي لامراض المخ والاعصاب جامعة القاهره</h3></div>
-                                <div className="note"><span className="dot"></span> <h3>حاصل علي دبلومة التاهيل من منظمة اصابات الحبل الشوكي الدوليه</h3></div>
+                                <div className="note"><span className="dot"></span> <h3>دكتوراه العلاج الطبيعي والتأهيل جامعة القاهرة</h3></div>
+                                <div className="note"><span className="dot"></span> <h3>(MSA) مدرس بكلية العلاج الطبيعي جامعة اكتوبر للعلوم الحديثة والآداب</h3></div>
+                                <div className="note"><span className="dot"></span> <h3>دبلومة التغذية العلاجية المعهد القومي للتغذية جامعة القاهرة</h3></div>
                             </div>
                         </div>
                     </div>

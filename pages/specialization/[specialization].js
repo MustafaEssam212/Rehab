@@ -9,6 +9,9 @@ import SpecializationNormalPicThree from '../../public/specialization3.webp';
 import Link from "next/link";
 import { FaUserDoctor, FaCalendar } from "react-icons/fa6";
 import { NextSeo } from 'next-seo';
+import BlogOneImage from '../../public/blog1.jpg';
+import BlogTwoImage from '../../public/blog2.jpg';
+import BlogThreeImage from '../../public/blog3.webp';
 
 
 export async function getServerSideProps(context) {
@@ -217,7 +220,7 @@ const Specialization = ({data}) => {
                         <div className="specialization">
                             <div className="img-container"><Image sizes="(min-width: 2060px) 190px, (min-width: 1720px) 180px, (min-width: 1540px) 150px, (min-width: 640px) 130px, calc(10.94vw + 62px)" loading="lazy" src={SpecializationNormalPicTwo.src} fill style={{objectFit: 'cover'}} alt="Rehab EG Clinic"></Image></div>
                             <div className="specialization-info">
-                             <Link href="/specialization/تأهييل_حالات_الأعصاب_والشلل_بأنواعه" title="تأهييل حالات الأعصاب والشلل بأنواعه">تأهييل حالات الاعصاب والشلل بأنواعه</Link>
+                             <Link href="/specialization/تأهيل_حالات_الأعصاب_والشلل_بأنواعه" title="تأهييل حالات الأعصاب والشلل بأنواعه">تأهيل حالات الاعصاب والشلل بأنواعه</Link>
                              <div className="bottom-specialization-info">
                                 <p><FaUserDoctor className="icon" />مسؤول</p>
                                 <p><FaCalendar className="icon" /> 21-7-2024</p>
@@ -228,7 +231,47 @@ const Specialization = ({data}) => {
                         <div className="specialization">
                             <div className="img-container"><Image sizes="(min-width: 2060px) 190px, (min-width: 1720px) 180px, (min-width: 1540px) 150px, (min-width: 640px) 130px, calc(10.94vw + 62px)" loading="lazy" src={SpecializationNormalPic.src} fill style={{objectFit: 'cover'}} alt="Rehab EG Clinic"></Image></div>
                             <div className="specialization-info">
-                             <Link href={`/specialization/تأهييل_حالات_العظام_والعمود_الفقري`} title="تأهييل حالات العظام والعمود الفقري">تأهييل حالات العظام والعمود الفقري</Link>
+                             <Link href={`/specialization/تأهيل_حالات_العظام_والعمود_الفقري`} title="تأهييل حالات العظام والعمود الفقري">تأهيل حالات العظام والعمود الفقري</Link>
+                             <div className="bottom-specialization-info">
+                                <p><FaUserDoctor className="icon" />مسؤول</p>
+                                <p><FaCalendar className="icon" /> 21-7-2024</p>
+                             </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <h2>احدث المدونات</h2>
+
+                    <div className="recent-specializations">
+
+                        <div className="specialization">
+                            <div className="img-container"><Image sizes="(min-width: 2060px) 190px, (min-width: 1720px) 180px, (min-width: 1540px) 150px, (min-width: 640px) 130px, calc(10.94vw + 62px)" loading="lazy" src={BlogThreeImage.src} fill style={{objectFit: 'cover'}} alt="Rehab EG Clinic"></Image></div>
+                            <div className="specialization-info">
+                            <Link href="/blog/تأهيل_حالات_ما_بعد_الجلطات" title="تأهيل حالات ما بعد الجلطات">تأهيل حالات ما بعد الجلطات</Link>
+                             <div className="bottom-specialization-info">
+                                <p><FaUserDoctor className="icon" />مسؤول</p>
+                                <p><FaCalendar className="icon" /> 21-7-2024</p>
+                             </div>
+                            </div>
+                        </div>
+
+
+                        <div className="specialization">
+                            <div className="img-container"><Image sizes="(min-width: 2060px) 190px, (min-width: 1720px) 180px, (min-width: 1540px) 150px, (min-width: 640px) 130px, calc(10.94vw + 62px)" loading="lazy" src={BlogTwoImage.src} fill style={{objectFit: 'cover'}} alt="Rehab EG Clinic"></Image></div>
+                            <div className="specialization-info">
+                            <Link href="/blog/تأهيل_حالات_الرباط_الصليبي_قبل_وبعد_العملية" title="تأهيل حالات الرباط الصليبي قبل وبعد العملية">تأهيل حالات الرباط الصليبي قبل وبعد العملية</Link>
+                             <div className="bottom-specialization-info">
+                                <p><FaUserDoctor className="icon" />مسؤول</p>
+                                <p><FaCalendar className="icon" /> 21-7-2024</p>
+                             </div>
+                            </div>
+                        </div>
+
+                        <div className="specialization">
+                            <div className="img-container"><Image sizes="(min-width: 2060px) 190px, (min-width: 1720px) 180px, (min-width: 1540px) 150px, (min-width: 640px) 130px, calc(10.94vw + 62px)" loading="lazy" src={BlogOneImage.src} fill style={{objectFit: 'cover'}} alt="Rehab EG Clinic"></Image></div>
+                            <div className="specialization-info">
+                            <Link href={`/blog/جهاز_شد_الفقرات_الإلكتروني`} title="جهاز شد الفقرات الإلكتروني">جهاز شد الفقرات الإلكتروني</Link>
                              <div className="bottom-specialization-info">
                                 <p><FaUserDoctor className="icon" />مسؤول</p>
                                 <p><FaCalendar className="icon" /> 21-7-2024</p>

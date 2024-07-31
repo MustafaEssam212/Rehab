@@ -7,7 +7,9 @@ import BlogTwoImage from '../../public/blog2.jpg';
 import BlogThreeImage from '../../public/blog3.webp';
 import Link from "next/link";
 import { NextSeo } from 'next-seo';
-
+import SpecializationNormalPic from '../../public/specialization1.png';
+import SpecializationNormalPicTwo from '../../public/specialization2.jpg';
+import SpecializationNormalPicThree from '../../public/specialization3.webp';
 
 export async function getServerSideProps(context) {
     const { blog } = context.params;
@@ -279,6 +281,46 @@ const BlogPost = ({ data }) => {
                             <div className="img-container"><Image sizes="(min-width: 2060px) 190px, (min-width: 1720px) 180px, (min-width: 1540px) 150px, (min-width: 640px) 130px, calc(10.94vw + 62px)" loading="lazy" src={BlogOneImage.src} fill style={{objectFit: 'cover'}} alt="Rehab EG Clinic"></Image></div>
                             <div className="blog-info">
                              <Link href={`/blog/جهاز_شد_الفقرات_الإلكتروني`} title="جهاز شد الفقرات الإلكتروني">جهاز شد الفقرات الإلكتروني</Link>
+                             <div className="bottom-blog-info">
+                                <p><FaUserDoctor className="icon" />مسؤول</p>
+                                <p><FaCalendar className="icon" /> 21-7-2024</p>
+                             </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <h2>التخصصات</h2>
+
+                    <div className="recent-blogs">
+
+                        <div className="blog">
+                            <div className="img-container"><Image sizes="(min-width: 2060px) 190px, (min-width: 1720px) 180px, (min-width: 1540px) 150px, (min-width: 640px) 130px, calc(10.94vw + 62px)" loading="lazy" src={SpecializationNormalPicThree.src} fill style={{objectFit: 'cover'}} alt="Rehab EG Clinic"></Image></div>
+                            <div className="blog-info">
+                            <Link href="/specialization/قسم_السمنة_وتنسيق_القوام" title="قسم السمنة وتنسيق القوام">قسم السمنة وتنسيق القوام</Link>
+                             <div className="bottom-blog-info">
+                                <p><FaUserDoctor className="icon" />مسؤول</p>
+                                <p><FaCalendar className="icon" /> 21-7-2024</p>
+                             </div>
+                            </div>
+                        </div>
+
+
+                        <div className="blog">
+                            <div className="img-container"><Image sizes="(min-width: 2060px) 190px, (min-width: 1720px) 180px, (min-width: 1540px) 150px, (min-width: 640px) 130px, calc(10.94vw + 62px)" loading="lazy" src={SpecializationNormalPicTwo.src} fill style={{objectFit: 'cover'}} alt="Rehab EG Clinic"></Image></div>
+                            <div className="blog-info">
+                            <Link href="/specialization/تأهيل_حالات_الأعصاب_والشلل_بأنواعه" title="تأهييل حالات الأعصاب والشلل بأنواعه">تأهيل حالات الاعصاب والشلل بأنواعه</Link>
+                             <div className="bottom-blog-info">
+                                <p><FaUserDoctor className="icon" />مسؤول</p>
+                                <p><FaCalendar className="icon" /> 21-7-2024</p>
+                             </div>
+                            </div>
+                        </div>
+
+                        <div className="blog">
+                            <div className="img-container"><Image sizes="(min-width: 2060px) 190px, (min-width: 1720px) 180px, (min-width: 1540px) 150px, (min-width: 640px) 130px, calc(10.94vw + 62px)" loading="lazy" src={SpecializationNormalPic.src} fill style={{objectFit: 'cover'}} alt="Rehab EG Clinic"></Image></div>
+                            <div className="blog-info">
+                            <Link href={`/specialization/تأهيل_حالات_العظام_والعمود_الفقري`} title="تأهييل حالات العظام والعمود الفقري">تأهيل حالات العظام والعمود الفقري</Link>
                              <div className="bottom-blog-info">
                                 <p><FaUserDoctor className="icon" />مسؤول</p>
                                 <p><FaCalendar className="icon" /> 21-7-2024</p>

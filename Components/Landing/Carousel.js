@@ -8,6 +8,7 @@ import BackgroundAssetSeven from '../../public/doc-mohamed-2.png';
 import BackgroundAssetEight from '../../public/doc-mohamed-3.png';
 import { FiCalendar } from 'react-icons/fi';
 import { MdNavigateNext, MdNavigateBefore } from 'react-icons/md';
+import Link from 'next/link';
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -17,12 +18,14 @@ const Carousel = () => {
   const [prevTranslate, setPrevTranslate] = useState(0);
   const [animation, setAnimation] = useState(true);
   const carouselInnerRef = useRef(null);
+  const reservationPageRef = useRef();
 
   const slides = [
     {
       key: 1,
       element: (
         <div className='inner-item'>
+          <Link className='reservation-page' ref={reservationPageRef} href={`/reservation`} title='احجز الأن' aria-label='احجز الأن'>احجز الأن</Link>
           <div className='img-container'>
             <Image priority src={BackgroundTwo.src} fill style={{ objectFit: 'cover' }} alt='Rehab EG Clinic' />
           </div>
@@ -38,7 +41,7 @@ const Carousel = () => {
                 مركز ريهاب للعلاج الطبيعي وامراض المخ والاعصاب والعمود الفقري وخشونة المفاصل ولإعادة تأهيل إصابات النخاع الشوكي
                 والجلطات وغيرها من حالات العلاج الطبيعي. احجز الأن ميعادك من خلال موقعنا مع نُخبة من افضل الدكاترة في مصر
               </h3>
-              <button aria-label="احجز الأن">
+              <button onClick={()=> reservationPageRef.current.click()} aria-label="احجز الأن">
                 احجز الأن <FiCalendar className='Icon' />
               </button>
             </div>
@@ -50,6 +53,7 @@ const Carousel = () => {
       key: 2,
       element: (
         <div className='inner-item'>
+          <Link className='reservation-page' ref={reservationPageRef} href={`/reservation`} title='احجز الأن' aria-label='احجز الأن'>احجز الأن</Link>
           <div className='img-container'>
             <Image  src={BackgroundOne.src} fill style={{ objectFit: 'cover' }} alt='Rehab EG Clinic' />
           </div>
@@ -66,7 +70,7 @@ const Carousel = () => {
                 بأداء أحدث التقنيات بأحدث المعدات المبتكرة . لتسهيل إعادة التأهيل وإعادة المرضى إلى مستوى نشاطهم السابق بأسرع طريقة ممكنة
                 وأكثرها أمانًا.
               </h3>
-              <button aria-label="احجز الأن">
+              <button onClick={()=> reservationPageRef.current.click()} aria-label="احجز الأن">
                 احجز الأن <FiCalendar className='Icon' />
               </button>
             </div>
@@ -78,6 +82,7 @@ const Carousel = () => {
       key: 3,
       element: (
         <div className='inner-item'>
+          <Link className='reservation-page' ref={reservationPageRef} href={`/reservation`} title='احجز الأن' aria-label='احجز الأن'>احجز الأن</Link>
           <div className='img-container'>
             <Image src={BackgroundThree.src} fill style={{ objectFit: 'cover' }} alt='Rehab EG Clinic' />
           </div>
@@ -93,7 +98,7 @@ const Carousel = () => {
                 يتكون فريقنا من أخصائيي العلاج الطبيعي والمدربين الرياضيين وأطباء القوة والأطباء الرياضيين وقد صمموا مجموعة كاملة من برامج
                 إعادة التأهيل والأداء الخاصة بالرياضات لمساعدتك
               </h3>
-              <button aria-label="احجز الأن">
+              <button onClick={()=> reservationPageRef.current.click()} aria-label="احجز الأن">
                 احجز الأن <FiCalendar className='Icon' />
               </button>
             </div>

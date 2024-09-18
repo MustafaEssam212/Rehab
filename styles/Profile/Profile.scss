@@ -1,0 +1,2636 @@
+
+
+
+.profile-page-contianer{
+    width: 100%;
+    display: flex;
+    min-height: 50vh;
+    margin: 50px 0px;
+
+    .content{
+        width: 80%;
+        height: 100%;
+
+        .loading{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 100px 20px;
+        }
+
+    }
+
+
+    .buttons{
+        width: 20%;
+        height: 100%;
+        background-color: #c7c6c622;
+        display: flex;
+        flex-direction: column;
+        margin: 0px 20px;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.268);
+
+
+ 
+        button{
+            background-color: transparent;
+            font-size: 18px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            height: 75px;
+            width: 100%;
+            justify-content: flex-end;
+            padding-right: 25px;
+            gap: 10px;
+            transition: .3s all linear;
+            -webkit-transition: .3s all linear;
+            -moz-transition: .3s all linear;
+            -ms-transition: .3s all linear;
+            -o-transition: .3s all linear;
+
+            &:hover{
+                background-color: #309c52b6;
+                color: white;
+            }
+        }
+
+
+        .active{
+            background-color: var(--Primary-Color);
+            color: white;
+
+            &:hover{
+                background-color: var(--Primary-Color);
+                color: white;
+            }
+        }
+
+
+}
+}
+
+
+.profile-component{
+    margin-left: 20px;
+    height: 100%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.268);
+    background-color: #c7c6c622;
+
+    h1{
+        margin:20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: flex-end;
+        font-weight: 800;
+
+        .icon{
+            color: var(--Primary-Color);
+        }
+    }
+
+
+}
+
+
+.reservations-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+
+    .doctor{
+        background-color: white;
+        box-shadow: 0px 0px 30px 0px rgb(221, 221, 221);
+        border: 3px solid white;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        transition: .3s all linear;
+        -webkit-transition: .3s all linear;
+        -moz-transition: .3s all linear;
+        -ms-transition: .3s all linear;
+        -o-transition: .3s all linear;
+        height: 150px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        margin-top: 25px;
+        width: 90%;
+        position: relative;
+
+
+        .edit-reservation{
+            position: absolute;
+            top: 15px;
+            left: 5px;
+
+            .ellipsis-btn{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: transparent;
+    
+                .icon{
+                    font-size: 22px;
+                    color: rgb(169, 169, 169);
+                    transition: .3s all linear;
+                    -webkit-transition: .3s all linear;
+                    -moz-transition: .3s all linear;
+                    -ms-transition: .3s all linear;
+                    -o-transition: .3s all linear;
+                }
+
+                &:hover{
+                    .icon{
+                        color: black;
+                    }
+                }
+            }
+
+            .inner-edit-choices{
+                height: 150px;
+                width: 200px;
+                background-color: white;
+                box-shadow: 0px 0px 10px #bebebe;
+                position: absolute;
+                top: 30px;
+                left: -65px;
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                -ms-border-radius: 5px;
+                -o-border-radius: 5px;
+                z-index: 1;
+
+                button{
+                    width: 100%;
+                    height: calc(100% / 2);
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0px 20px;
+                    font-weight: 700;
+                    background-color: rgb(239, 239, 239);
+                    transition: .3s all linear;
+                    -webkit-transition: .3s all linear;
+                    -moz-transition: .3s all linear;
+                    -ms-transition: .3s all linear;
+                    -o-transition: .3s all linear;
+
+
+                    .icon{
+                        font-size: 20px;
+                        color: rgb(192, 192, 192);
+                        transition: .3s all linear;
+                        -webkit-transition: .3s all linear;
+                        -moz-transition: .3s all linear;
+                        -ms-transition: .3s all linear;
+                        -o-transition: .3s all linear;
+                    }
+
+                    &:hover{
+                        background-color: var(--Primary-Color);
+                        color: white;
+
+                        .icon{
+                            color: white;
+                        }
+                    }
+                }
+}
+        }
+
+
+        div:not(.edit-reservation, .img-container){
+            width: calc((100% - 230px) / 4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            gap: 5px;
+        }
+
+        .img-container{
+            height: 90%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            width: 220px;
+
+        }
+
+
+    }
+
+    .alert-parag{
+        font-weight: 700;
+    }
+}
+
+
+.profile-settings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1{
+        align-self: flex-end;
+    }
+
+    .inputs-container{
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 60%;
+
+
+        .input-container{
+            background-color: #edf1f1;
+            width: 100%;
+            height: 60px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid transparent;
+            transition: .3s all linear;
+            -webkit-transition: .3s all linear;
+            -moz-transition: .3s all linear;
+            -ms-transition: .3s all linear;
+            -o-transition: .3s all linear;
+            
+            input{
+                width: 94%;
+                height: 100%;
+                border: none;
+                outline: none;
+                background-color: transparent;
+
+}
+
+            .icon{
+                font-size: 18px;
+                transition: .3s all linear;
+                -webkit-transition: .3s all linear;
+                -moz-transition: .3s all linear;
+                -ms-transition: .3s all linear;
+                -o-transition: .3s all linear;
+                margin-right: 13px;
+            }
+
+            .email-icon{
+                font-size: 20px;
+            }
+
+
+            &:hover{
+                border: 1px solid var(--Primary-Color);
+
+                .icon{
+                    color: var(--Primary-Color);
+                }
+            }
+
+            &:focus-within{
+                border: 1px solid var(--Primary-Color);
+
+                .icon{
+                    color: var(--Primary-Color);
+                }
+            }
+
+
+            input[type="date"]::-webkit-calendar-picker-indicator {
+                display: none;
+                -webkit-appearance: none;
+              }
+
+
+
+        }
+
+
+        .input-dropmenu{
+            background-color: #edf1f1;
+            width: 100%;
+            height: 60px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            border: 1px solid transparent;
+            transition: .3s all linear;
+            -webkit-transition: .3s all linear;
+            -moz-transition: .3s all linear;
+            -ms-transition: .3s all linear;
+            -o-transition: .3s all linear;
+            cursor: pointer;
+
+            p{
+                width: 94%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .icon{
+                    margin-left: 25px;
+                }
+
+            }
+
+            .icon{
+                font-size: 18px;
+                transition: .3s all linear;
+                -webkit-transition: .3s all linear;
+                -moz-transition: .3s all linear;
+                -ms-transition: .3s all linear;
+                -o-transition: .3s all linear;
+                margin-right: 13px;
+            }
+
+
+            .dropdown{
+                position: absolute;
+                top: 65px;
+                left: 0;
+                height: fit-content;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                z-index: 1;
+                box-shadow: 0px 0px 10px 0px rgb(205, 204, 204);
+                button{
+                    font-size: 16px;
+                    height: 55px;
+                    font-weight: 500;
+                    transition: .3s all linear;
+                    -webkit-transition: .3s all linear;
+                    -moz-transition: .3s all linear;
+                    -ms-transition: .3s all linear;
+                    -o-transition: .3s all linear;
+
+                    &:hover{
+                        background-color: var(--Primary-Color);
+                        color: white;
+                    }
+}
+            }
+
+
+            .questions-dropmenu{
+                height: 200px;
+                overflow-y: scroll;
+
+                button{
+                    flex-shrink: 0;
+                }
+            }
+
+
+            &:hover{
+                border: 1px solid var(--Primary-Color);
+
+                .icon{
+                    color: var(--Primary-Color);
+                }
+            }
+
+            &:focus-within{
+                border: 1px solid var(--Primary-Color);
+
+                .icon{
+                    color: var(--Primary-Color);
+                }
+            }
+        }
+
+
+    }
+
+    .main-button{
+        margin: 50px 0px;
+        height: 65px;
+        font-size: 17px;
+        font-weight: 700;
+        width: 200px;
+        background-color: var(--Primary-Color);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+.change-password-container{
+    @extend .profile-settings;
+}
+
+
+.reservation-pop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.205);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    height: 100%;
+    width: 100%;
+
+    .inner-reservation-pop{
+        background-color: white;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        width: 70%;
+        height: 70%;
+
+        .head-reservation-pop{
+            height: 15%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 25px;
+            border-bottom: 2px solid rgb(218, 218, 218);
+
+            button{
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 40px;
+                width: 40px;
+                background-color: transparent;
+
+                .icon{
+                    font-size: 27px;
+                    color: rgb(209, 209, 209);
+                    transition: .3s all linear;
+                    -webkit-transition: .3s all linear;
+                    -moz-transition: .3s all linear;
+                    -ms-transition: .3s all linear;
+                    -o-transition: .3s all linear;
+                }
+
+                &:hover{
+                    .icon{
+                        color: rgb(184, 184, 184);
+                    }
+                }
+            }
+        }
+
+        .body-reservation-pop{
+            height: 85%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .alert-pop{
+            @extend .body-reservation-pop;
+        }
+    }
+}
+
+
+.delete-pop-reservation{
+    .inner-reservation-pop{
+        .body-reservation-pop{
+
+            .buttons-delete-pop{
+                display: flex;
+                gap: 20px;
+
+                button{
+                    height: 65px;
+                    width: 200px;
+                    font-size: 17px;
+                    font-weight: 700;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                button:last-child{
+                    background-color: red;
+                    color: white;
+                }
+            }
+
+        }
+    }
+}
+
+.edit-pop-reservation{
+    .inner-reservation-pop{
+        .body-reservation-pop{
+            .dropmenu, .date-input{
+                width: 50%;
+            }
+
+            h4{
+                color: red;
+                font-weight: 700;
+            }
+
+            .date-input{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                
+
+                .left{
+                    display: flex;
+
+                    .input-container{
+                        background-color: #edf1f1;
+                        width: 200px;
+                        height: 50px;
+                        border-radius: 10px;
+                        -webkit-border-radius: 10px;
+                        -moz-border-radius: 10px;
+                        -ms-border-radius: 10px;
+                        -o-border-radius: 10px;
+                        overflow: hidden;
+
+                        input{
+                            width: 100%;
+                            height: 100%;
+                            background-color: transparent;
+                            text-align: center;
+                            font-size: 16px;
+                            font-weight: 700;
+                        }
+                        
+                    }
+                    button{
+                        border-radius: 50%;
+                        -webkit-border-radius: 50%;
+                        -moz-border-radius: 50%;
+                        -ms-border-radius: 50%;
+                        -o-border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 50px;
+                        width: 50px;
+                        background-color: transparent;
+        
+                        .btn-icon{
+                            font-size: 22px;
+                            color: rgb(209, 209, 209);
+                            transition: .3s all linear;
+                            -webkit-transition: .3s all linear;
+                            -moz-transition: .3s all linear;
+                            -ms-transition: .3s all linear;
+                            -o-transition: .3s all linear;
+                        }
+        
+                        &:hover{
+                            .btn-icon{
+                                color: rgb(184, 184, 184);
+                            }
+                        }
+                    }
+                }
+            }
+
+            button:not(.dropmenu-list button, .date-input .left button){
+                width: 250px;
+                height: 65px;
+                font-size: 17px;
+                font-weight: 700;
+                color: white;
+                background-color: var(--Primary-Color);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+
+  //////////// Start Desktop Screens ////////////
+  
+
+// 75%
+@media (max-width: 2048px){
+    .profile-page-contianer{
+        width: 100%;
+    
+    
+        .content{
+            width: 80%;
+        
+
+    
+        }
+    
+    
+        .buttons{
+            width: 20%;
+          
+    
+     
+            button{
+             
+                font-size: 17px;
+              
+                height: 70px;
+                width: 100%;
+            
+                padding-right: 25px;
+                gap: 10px;
+            
+            }
+    
+    
+
+    
+    
+    }
+    }
+
+    .profile-component{
+        margin-left: 20px;
+
+    
+        h1{
+            font-size: 30px;
+        }
+    
+    
+    }
+
+    .reservations-container{
+
+    
+        .doctor{
+                  
+            height: 140px;
+
+            .edit-reservation{
+
+                top: 15px;
+                left: 5px;
+    
+                .ellipsis-btn{
+
+        
+                    .icon{
+                        font-size: 20px;
+                    }
+    
+
+                }
+    
+                .inner-edit-choices{
+                    height: 140px;
+                    width: 180px;
+                    top: 30px;
+                    left: -65px;
+    
+                    button{
+
+                        font-size: 12px;
+    
+                        .icon{
+                            font-size: 18px;
+                        }
+    
+
+                    }
+    }
+            }
+
+            div:not(.edit-reservation, .img-container){
+                width: calc((100% - 210px) / 4);
+                
+                h4{
+                    font-size: 14px;
+                }
+
+                h5{
+                    font-size: 12px;
+                }
+            }
+
+            .img-container{
+                height: 90%;
+             
+                width: 200px;
+
+            }
+
+            .check{
+                .icon{
+                    font-size: 33px;
+                
+                }
+            }
+
+
+
+        }
+    
+        .alert-parag{
+            font-size: 15px;
+        }
+    }
+
+    .reservation-pop{
+     
+    
+        .inner-reservation-pop{
+            width: 70%;
+            height: 70%;
+    
+            .head-reservation-pop{
+                height: 15%;
+                padding: 0px 25px;
+               
+    
+                button{
+                    height: 35px;
+                    width: 35px;
+                 
+    
+                    .icon{
+                        font-size: 25px;
+                    }
+
+                }
+
+                h1{
+                    font-size: 27px;
+                }
+            }
+    
+            .body-reservation-pop{
+                height: 85%;
+
+                h1{
+                    font-size: 27px;
+                }
+            }
+    
+            .alert-pop{
+                h1{
+                    font-size: 27px;
+                }
+            }
+        }
+    }
+
+
+    .edit-pop-reservation{
+        .inner-reservation-pop{
+            .body-reservation-pop{
+
+
+                .dropmenu, .date-input{
+                    width: 50%;
+                }
+    
+                h4{
+                    font-size: 15px;
+                }
+    
+                .date-input{
+                 
+    
+                    .left{
+                    
+    
+                        .input-container{
+                        
+                            width: 190px;
+                            height: 50px;
+                          
+    
+                            input{
+                            
+                                font-size: 15px;
+
+                            }
+                            
+                        }
+                        button{
+                      
+                            height: 50px;
+                            width: 50px;
+                         
+            
+                            .btn-icon{
+                                font-size: 20px;
+                             
+                            }
+            
+
+                        }
+                    }
+
+                    h3{
+                        font-size: 16px;
+                    }
+                }
+
+                .dropmenu{
+                
+                    height: 55px;
+                  
+                    p{
+                        font-size: 14px;
+                    }
+
+                    .icon{
+                        font-size: 16px;
+                    }
+
+                    button{
+                        font-size: 14px;
+                        height: 50px;
+                    }
+
+                    .heighted{
+                        max-height: 250px;
+                    }
+                }
+    
+                button:not(.dropmenu-list button, .date-input .left button){
+                    width: 230px;
+                    height: 60px;
+                    font-size: 16px;
+                   
+                }
+            }
+        }
+    }
+
+    .delete-pop-reservation{
+        .inner-reservation-pop{
+            .body-reservation-pop{
+    
+                .buttons-delete-pop{
+
+                    gap: 20px;
+    
+                    button{
+                        height: 60px;
+                        width: 190px;
+                        font-size: 16px;
+                      
+                    }
+    
+
+                }
+    
+            }
+        }
+    }
+}
+
+
+// 80%
+@media (max-width: 1921px){
+    .profile-page-contianer{
+        width: 100%;
+    
+    
+        .content{
+            width: 80%;
+        
+
+    
+        }
+    
+    
+        .buttons{
+            width: 20%;
+          
+    
+     
+            button{
+             
+                font-size: 15px;
+              
+                height: 65px;
+                width: 100%;
+            
+                padding-right: 25px;
+                gap: 10px;
+            
+            }
+    
+    
+
+    
+    
+    }
+    }
+
+    .profile-component{
+        margin-left: 20px;
+
+    
+        h1{
+            font-size: 27px;
+        }
+    
+    
+    }
+
+    .reservations-container{
+
+    
+        .doctor{
+                  
+            height: 130px;
+
+
+            .edit-reservation{
+
+                top: 15px;
+                left: 5px;
+    
+                .ellipsis-btn{
+
+        
+                    .icon{
+                        font-size: 18px;
+                    }
+    
+
+                }
+    
+                .inner-edit-choices{
+                    height: 130px;
+                    width: 160px;
+                    top: 30px;
+                    left: -55px;
+    
+                    button{
+
+                        font-size: 11px;
+                        padding: 0px 15px;
+                        .icon{
+                            font-size: 16px;
+                        }
+    
+
+                    }
+    }
+            }
+
+            div:not(.edit-reservation, .img-container){
+                width: calc((100% - 200px) / 4);
+                
+                h4{
+                    font-size: 13px;
+                }
+
+                h5{
+                    font-size: 11px;
+                }
+            }
+
+            .img-container{
+                height: 90%;
+             
+                width: 190px;
+
+            }
+
+            .check{
+                .icon{
+                    font-size: 31px;
+                
+                }
+            }
+
+
+
+        }
+    
+        .alert-parag{
+            font-size: 14px;
+        }
+    }
+
+    .profile-settings{
+
+
+    
+        .inputs-container{
+            margin: 20px;
+
+            gap: 15px;
+            width: 60%;
+    
+    
+            .input-container{
+
+                height: 55px;
+
+                input{
+                    width: 94%;
+                    font-size: 11px;
+    
+    }
+    
+                .icon{
+                    font-size: 16px;
+
+                }
+    
+                .email-icon{
+                    font-size: 18px;
+                }
+    
+    
+      
+            
+    
+   
+    
+    
+            }
+    
+    
+            .input-dropmenu{
+
+                height: 55px;
+
+    
+                p{
+                    width: 94%;
+                    font-size: 13px;
+    
+                    .icon{
+                        margin-left: 25px;
+                        font-size: 14px;
+                    }
+    
+                }
+    
+                .icon{
+                    font-size: 16px;
+
+                    margin-right: 13px;
+                }
+    
+    
+                .dropdown{
+
+                    top: 65px;
+
+                    button{
+                        font-size: 14px;
+                        height: 55px;
+
+    }
+                }
+    
+    
+                .questions-dropmenu{
+                    height: 200px;
+
+                }
+    
+
+
+            }
+    
+    
+        }
+    
+        .main-button{
+            margin: 50px 0px;
+            height: 55px;
+            font-size: 13px;
+            width: 180px;
+        }
+    }
+
+    .reservation-pop{
+     
+    
+        .inner-reservation-pop{
+            width: 70%;
+            height: 70%;
+    
+            .head-reservation-pop{
+                height: 15%;
+                padding: 0px 25px;
+               
+    
+                button{
+                    height: 35px;
+                    width: 35px;
+                 
+    
+                    .icon{
+                        font-size: 25px;
+                    }
+
+                }
+
+                h1{
+                    font-size: 25px;
+                }
+            }
+    
+            .body-reservation-pop{
+                height: 85%;
+
+                h1{
+                    font-size: 25px;
+                }
+            }
+    
+            .alert-pop{
+                h1{
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+
+
+    .edit-pop-reservation{
+        .inner-reservation-pop{
+            .body-reservation-pop{
+
+
+                .dropmenu, .date-input{
+                    width: 50%;
+                }
+    
+                h4{
+                    font-size: 14px;
+                }
+    
+                .date-input{
+                 
+    
+                    .left{
+                    
+    
+                        .input-container{
+                        
+                            width: 180px;
+                            height: 50px;
+                          
+    
+                            input{
+                            
+                                font-size: 15px;
+
+                            }
+                            
+                        }
+                        button{
+                      
+                            height: 50px;
+                            width: 50px;
+                         
+            
+                            .btn-icon{
+                                font-size: 20px;
+                             
+                            }
+            
+
+                        }
+                    }
+
+                    h3{
+                        font-size: 16px;
+                    }
+                }
+
+                .dropmenu{
+                
+                    height: 55px;
+                  
+                    p{
+                        font-size: 14px;
+                    }
+
+                    .icon{
+                        font-size: 16px;
+                    }
+
+                    button{
+                        font-size: 14px;
+                        height: 50px;
+                    }
+
+                    .heighted{
+                        max-height: 250px;
+                    }
+                }
+    
+                button:not(.dropmenu-list button, .date-input .left button){
+                    width: 210px;
+                    height: 55px;
+                    font-size: 15px;
+                   
+                }
+            }
+        }
+    }
+
+    .delete-pop-reservation{
+        .inner-reservation-pop{
+            .body-reservation-pop{
+    
+                .buttons-delete-pop{
+
+                    gap: 20px;
+    
+                    button{
+                        height: 55px;
+                        width: 180px;
+                        font-size: 15px;
+                      
+                    }
+    
+
+                }
+    
+            }
+        }
+    }
+
+}
+
+
+// 90%
+@media (max-width: 1707px){
+    .profile-page-contianer{
+        width: 100%;
+    
+    
+        .content{
+            width: 80%;
+        
+
+    
+        }
+    
+    
+        .buttons{
+            width: 20%;
+          
+    
+     
+            button{
+             
+                font-size: 14px;
+              
+                height: 60px;
+                width: 100%;
+            
+                padding-right: 25px;
+                gap: 10px;
+            
+            }
+    
+    
+
+    
+    
+    }
+    }
+
+    .profile-component{
+        margin-left: 20px;
+
+    
+        h1{
+            font-size: 24px;
+        }
+    
+    
+    }
+
+
+    .reservations-container{
+
+    
+        .doctor{
+                  
+            height: 120px;
+
+            .edit-reservation{
+
+                top: 15px;
+                left: 5px;
+    
+                .ellipsis-btn{
+
+        
+                    .icon{
+                        font-size: 16px;
+                    }
+    
+
+                }
+    
+                .inner-edit-choices{
+                    height: 120px;
+                    width: 150px;
+                    top: 30px;
+                    left: -55px;
+    
+                    button{
+
+                        font-size: 10px;
+                        padding: 0px 15px;
+                        .icon{
+                            font-size: 14px;
+                        }
+    
+
+                    }
+    }
+            }
+
+            div:not(.edit-reservation, .img-container){
+                width: calc((100% - 190px) / 4);
+                
+                h4{
+                    font-size: 12px;
+                }
+
+                h5{
+                    font-size: 10px;
+                }
+            }
+
+            .img-container{
+                height: 90%;
+             
+                width: 180px;
+
+            }
+
+            .check{
+                .icon{
+                    font-size: 28px;
+                
+                }
+            }
+
+
+
+        }
+    
+        .alert-parag{
+            font-size: 13px;
+        }
+    }
+
+
+    .profile-settings{
+
+
+    
+        .inputs-container{
+            margin: 20px;
+
+            gap: 15px;
+            width: 60%;
+    
+    
+            .input-container{
+
+                height: 50px;
+
+                input{
+                    width: 94%;
+                    font-size: 10px;
+    
+    }
+    
+                .icon{
+                    font-size: 14px;
+
+                }
+    
+                .email-icon{
+                    font-size: 16px;
+                }
+    
+    
+      
+            
+    
+   
+    
+    
+            }
+    
+    
+            .input-dropmenu{
+
+                height: 50px;
+
+    
+                p{
+                    width: 94%;
+                    font-size: 12px;
+    
+                    .icon{
+                        margin-left: 25px;
+                        font-size: 12px;
+                    }
+    
+                }
+    
+                .icon{
+                    font-size: 14px;
+
+                    margin-right: 13px;
+                }
+    
+    
+                .dropdown{
+
+                    top: 55px;
+
+                    button{
+                        font-size: 12px;
+                        height: 50px;
+
+    }
+                }
+    
+    
+                .questions-dropmenu{
+                    height: 200px;
+
+                }
+    
+
+
+            }
+    
+    
+        }
+    
+        .main-button{
+            margin: 50px 0px;
+            height: 50px;
+            font-size: 11px;
+            width: 160px;
+        }
+    }
+
+
+    .reservation-pop{
+     
+    
+        .inner-reservation-pop{
+            width: 70%;
+            height: 70%;
+    
+            .head-reservation-pop{
+                height: 15%;
+                padding: 0px 20px;
+               
+    
+                button{
+                    height: 33px;
+                    width: 33px;
+                 
+    
+                    .icon{
+                        font-size: 25px;
+                    }
+
+                }
+
+                h1{
+                    font-size: 22px;
+                }
+            }
+    
+            .body-reservation-pop{
+                height: 85%;
+
+                h1{
+                    font-size: 22px;
+                }
+            }
+    
+            .alert-pop{
+                h1{
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+
+    .edit-pop-reservation{
+        .inner-reservation-pop{
+            .body-reservation-pop{
+
+
+                .dropmenu, .date-input{
+                    width: 50%;
+                }
+    
+                h4{
+                    font-size: 13px;
+                }
+    
+                .date-input{
+                 
+    
+                    .left{
+                    
+    
+                        .input-container{
+                        
+                            width: 170px;
+                            height: 45px;
+                          
+    
+                            input{
+                            
+                                font-size: 13px;
+
+                            }
+                            
+                        }
+                        button{
+                      
+                            height: 45px;
+                            width: 45px;
+                         
+            
+                            .btn-icon{
+                                font-size: 18px;
+                             
+                            }
+            
+
+                        }
+                    }
+
+                    h3{
+                        font-size: 14px;
+                    }
+                }
+
+                .dropmenu{
+                
+                    height: 50px;
+                  
+                    p{
+                        font-size: 12px;
+                    }
+
+                    .icon{
+                        font-size: 14px;
+                    }
+
+                    button{
+                        font-size: 12px;
+                        height: 50px;
+                    }
+
+                    .dropmenu-list{
+                        top: 55px;
+                    }
+
+                    .heighted{
+                        max-height: 200px;
+                    }
+                }
+    
+                button:not(.dropmenu-list button, .date-input .left button){
+                    width: 190px;
+                    height: 50px;
+                    font-size: 13px;
+                   
+                }
+            }
+        }
+    }
+
+
+    .delete-pop-reservation{
+        .inner-reservation-pop{
+            .body-reservation-pop{
+    
+                .buttons-delete-pop{
+
+                    gap: 15px;
+    
+                    button{
+                        height: 50px;
+                        width: 170px;
+                        font-size: 14px;
+                      
+                    }
+    
+
+                }
+    
+            }
+        }
+    }
+}
+
+
+// 100%
+@media (max-width: 1537px){
+    .profile-page-contianer{
+        width: 100%;
+    
+    
+        .content{
+            width: 80%;
+        
+
+    
+        }
+    
+    
+        .buttons{
+            width: 20%;
+          
+    
+     
+            button{
+             
+                font-size: 12px;
+              
+                height: 55px;
+                width: 100%;
+            
+                padding-right: 25px;
+                gap: 7px;
+            
+            }
+    
+    
+
+    
+    
+    }
+    }
+
+    .profile-component{
+        margin-left: 20px;
+
+    
+        h1{
+            font-size: 20px;
+        }
+    
+    
+    }
+
+
+    .reservations-container{
+
+    
+        .doctor{
+                  
+            height: 110px;
+
+            .edit-reservation{
+
+                top: 15px;
+                left: 5px;
+    
+                .ellipsis-btn{
+
+        
+                    .icon{
+                        font-size: 14px;
+                    }
+    
+
+                }
+    
+                .inner-edit-choices{
+                    height: 110px;
+                    width: 135px;
+                    top: 25px;
+                    left: -50px;
+    
+                    button{
+
+                        font-size: 9px;
+                        padding: 0px 10px;
+                        .icon{
+                            font-size: 14px;
+                        }
+    
+
+                    }
+    }
+            }
+
+            div:not(.edit-reservation, .img-container){
+                width: calc((100% - 180px) / 4);
+                
+                h4{
+                    font-size: 11px;
+                }
+
+                h5{
+                    font-size: 9px;
+                }
+            }
+
+            .img-container{
+                height: 90%;
+             
+                width: 170px;
+
+            }
+
+            .check{
+                .icon{
+                    font-size: 25px;
+                
+                }
+            }
+
+
+
+        }
+    
+        .alert-parag{
+            font-size: 12px;
+        }
+    }
+
+
+    .profile-settings{
+
+
+    
+        .inputs-container{
+            margin: 20px;
+
+            gap: 15px;
+            width: 60%;
+    
+    
+            .input-container{
+
+                height: 45px;
+
+                input{
+                    width: 94%;
+                    font-size: 9px;
+    
+    }
+    
+                .icon{
+                    font-size: 12px;
+
+                }
+    
+                .email-icon{
+                    font-size: 14px;
+                }
+    
+    
+      
+            
+    
+   
+    
+    
+            }
+    
+    
+            .input-dropmenu{
+
+                height: 45px;
+
+    
+                p{
+                    width: 94%;
+                    font-size: 10px;
+    
+                    .icon{
+                        margin-left: 25px;
+                        font-size: 10px;
+                    }
+    
+                }
+    
+                .icon{
+                    font-size: 12px;
+
+                    margin-right: 13px;
+                }
+    
+    
+                .dropdown{
+
+                    top: 50px;
+
+                    button{
+                        font-size: 10px;
+                        height: 50px;
+
+    }
+                }
+    
+    
+                .questions-dropmenu{
+                    height: 200px;
+
+                }
+    
+
+
+            }
+    
+    
+        }
+    
+        .main-button{
+            margin: 50px 0px;
+            height: 45px;
+            font-size: 10px;
+            width: 140px;
+        }
+    }
+
+    .reservation-pop{
+     
+    
+        .inner-reservation-pop{
+            width: 70%;
+            height: 70%;
+    
+            .head-reservation-pop{
+                height: 15%;
+                padding: 0px 20px;
+               
+    
+                button{
+                    height: 31px;
+                    width: 31px;
+                 
+    
+                    .icon{
+                        font-size: 23px;
+                    }
+
+                }
+
+                h1{
+                    font-size: 20px;
+                }
+            }
+    
+            .body-reservation-pop{
+                height: 85%;
+                h1{
+                    font-size: 20px;
+                }
+            }
+    
+            .alert-pop{
+                h1{
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+
+    .edit-pop-reservation{
+        .inner-reservation-pop{
+            .body-reservation-pop{
+
+
+                .dropmenu, .date-input{
+                    width: 50%;
+                }
+    
+                h4{
+                    font-size: 12px;
+                }
+    
+                .date-input{
+                 
+    
+                    .left{
+                    
+    
+                        .input-container{
+                        
+                            width: 150px;
+                            height: 40px;
+                          
+    
+                            input{
+                            
+                                font-size: 12px;
+
+                            }
+                            
+                        }
+                        button{
+                      
+                            height: 40px;
+                            width: 40px;
+                         
+            
+                            .btn-icon{
+                                font-size: 16px;
+                             
+                            }
+            
+
+                        }
+                    }
+
+                    h3{
+                        font-size: 12px;
+                    }
+                }
+
+                .dropmenu{
+                
+                    height: 45px;
+                  
+                    p{
+                        font-size: 11px;
+                    }
+
+                    .icon{
+                        font-size: 12px;
+                    }
+
+                    button{
+                        font-size: 11px;
+                        height: 45px;
+                    }
+
+                    .dropmenu-list{
+                        top: 50px;
+                    }
+
+                    .heighted{
+                        max-height: 180px;
+                    }
+                }
+    
+                button:not(.dropmenu-list button, .date-input .left button){
+                    width: 170px;
+                    height: 45px;
+                    font-size: 11px;
+                   
+                }
+            }
+        }
+    }
+
+    .delete-pop-reservation{
+        .inner-reservation-pop{
+            .body-reservation-pop{
+    
+                .buttons-delete-pop{
+
+                    gap: 10px;
+    
+                    button{
+                        height: 50px;
+                        width: 150px;
+                        font-size: 12px;
+                      
+                    }
+    
+
+                }
+    
+            }
+        }
+    }
+}
+
+@media (max-width: 1230px){
+    .reservations-container{
+        .doctor{
+                  
+            height: 90px;
+
+            .edit-reservation{
+
+                top: 15px;
+                left: 5px;
+    
+                .ellipsis-btn{
+
+        
+                    .icon{
+                        font-size: 12px;
+                    }
+    
+
+                }
+    
+                .inner-edit-choices{
+                    height: 100px;
+                    width: 125px;
+                    top: 20px;
+                    left: -45px;
+    
+                    button{
+
+                        font-size: 9px;
+                        padding: 0px 10px;
+                        .icon{
+                            font-size: 12px;
+                        }
+    
+
+                    }
+    }
+            }
+
+            div:not(.edit-reservation, .img-container){
+                width: calc((100% - 160px) / 4);
+                
+                h4{
+                    font-size: 10px;
+                }
+
+                h5{
+                    font-size: 8px;
+                }
+            }
+
+            .img-container{
+                height: 90%;
+             
+                width: 150px;
+
+            }
+
+            .check{
+                .icon{
+                    font-size: 20px;
+                
+                }
+            }
+
+
+
+        }
+
+        .alert-parag{
+            font-size: 11px;
+        }
+    }
+
+    .reservation-pop{
+     
+    
+        .inner-reservation-pop{
+            width: 70%;
+            height: 70%;
+    
+            .head-reservation-pop{
+                height: 15%;
+                padding: 0px 15px;
+               
+    
+                button{
+                    height: 30px;
+                    width: 30px;
+                 
+    
+                    .icon{
+                        font-size: 22px;
+                    }
+
+                }
+
+                h1{
+                    font-size: 18px;
+                }
+            }
+    
+            .body-reservation-pop{
+                height: 85%;
+                h1{
+                    font-size: 18px;
+                }
+            }
+    
+            .alert-pop{
+                h1{
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    .edit-pop-reservation{
+        .inner-reservation-pop{
+            .body-reservation-pop{
+
+
+                .dropmenu, .date-input{
+                    width: 50%;
+                }
+    
+                h4{
+                    font-size: 11px;
+                }
+    
+                .date-input{
+                 
+    
+                    .left{
+                    
+    
+                        .input-container{
+                        
+                            width: 140px;
+                            height: 35px;
+                          
+    
+                            input{
+                            
+                                font-size: 11px;
+
+                            }
+                            
+                        }
+                        button{
+                      
+                            height: 35px;
+                            width: 35px;
+                         
+            
+                            .btn-icon{
+                                font-size: 14px;
+                             
+                            }
+            
+
+                        }
+                    }
+
+                    h3{
+                        font-size: 11px;
+                    }
+                }
+
+                .dropmenu{
+                
+                    height: 40px;
+                  
+                    p{
+                        font-size: 10px;
+                    }
+
+                    .icon{
+                        font-size: 11px;
+                    }
+
+                    button{
+                        font-size: 10px;
+                        height: 40px;
+                    }
+
+                    .dropmenu-list{
+                        top: 45px;
+                    }
+
+                    .heighted{
+                        max-height: 160px;
+                    }
+                }
+    
+                button:not(.dropmenu-list button, .date-input .left button){
+                    width: 150px;
+                    height: 40px;
+                    font-size: 10px;
+                   
+                }
+            }
+        }
+    }
+
+    .delete-pop-reservation{
+        .inner-reservation-pop{
+            .body-reservation-pop{
+    
+                .buttons-delete-pop{
+
+                    gap: 10px;
+    
+                    button{
+                        height: 45px;
+                        width: 130px;
+                        font-size: 11px;
+                      
+                    }
+    
+
+                }
+    
+            }
+        }
+    }
+}
+
+
+//////////// Start Tablet Screens //////////// 
+
+@media (max-width: 1107px){
+    .profile-page-contianer{
+        
+        flex-direction: column;
+        gap: 25px;
+        margin: 25px 0px;
+
+
+        .content{
+            width: 98%; 
+            order: 1;
+            margin: 0px auto;
+        }
+    
+    
+        .buttons{
+            width: 98%;
+            order: 0;
+            margin: 0 auto;
+            flex-direction: row-reverse;
+            
+
+
+            button{
+                font-size: 10px;
+                height: 55px;
+                width: 100%;
+                gap: 7px;
+                justify-content: center;
+                padding-right: 0;
+
+                &:nth-child(1), &:nth-child(2) {
+                    border-left: 1px solid rgba(0, 0, 0, 0.268);
+                }
+            }
+    
+    
+
+    
+    
+    }
+    }
+
+    .profile-component{
+        margin-left: 0;
+    }
+
+
+    .reservations-container{
+        gap: 25px;
+        .doctor{
+            width: 95%;
+            margin-top: 0;
+
+            .edit-reservation{
+
+    
+                .inner-edit-choices{
+
+                    top: 20px;
+                    left: -20px;
+
+    }
+            }
+        }
+    }
+
+    .profile-settings{
+
+
+    
+        .inputs-container{
+            margin: 20px;
+
+            gap: 15px;
+            width: 95%;
+    
+    
+            .input-container{
+
+                height: 45px;
+                gap: 5px;
+                input{
+                    width: 94%;
+                    font-size: 9px;
+                }
+    
+                .icon{
+                    font-size: 12px;
+                    width: 6%;
+                    margin-right: 0;
+                    flex-shrink: 0;
+                    margin-right: 10px;
+                }
+    
+                .email-icon{
+                    font-size: 14px;
+                }
+    
+    
+      
+            
+    
+   
+    
+    
+            }
+    
+    
+            .input-dropmenu{
+
+                height: 45px;
+
+    
+                p{
+                    width: 94%;
+                    font-size: 10px;
+    
+                    .icon{
+                        margin-left: 25px;
+                        font-size: 10px;
+                    }
+    
+                }
+    
+                .icon{
+                    font-size: 12px;
+                    width: 6%;
+                    margin-right: 10px;
+                    flex-shrink: 0;
+                }
+    
+    
+                .dropdown{
+
+                    top: 50px;
+
+                    button{
+                        font-size: 10px;
+                        height: 50px;
+
+    }
+                }
+    
+    
+                .questions-dropmenu{
+                    height: 200px;
+
+                }
+    
+
+
+            }
+    
+    
+        }
+    
+        .main-button{
+            margin: 25px 0px;
+            height: 40px;
+            font-size: 9px;
+            width: 120px;
+        }
+    }
+
+    .reservation-pop{
+     
+    
+        .inner-reservation-pop{
+            width: 90%;
+            height: 80%;
+    
+            .head-reservation-pop{
+                height: 15%;
+                padding: 0px 15px;
+               
+    
+                button{
+                    height: 29px;
+                    width: 29px;
+                 
+    
+                    .icon{
+                        font-size: 20px;
+                    }
+
+                }
+
+                h1{
+                    font-size: 16px;
+                }
+            }
+    
+            .body-reservation-pop{
+                height: 85%;
+                h1{
+                    font-size: 16px;
+                }
+            }
+    
+            .alert-pop{
+                h1{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .edit-pop-reservation{
+        .inner-reservation-pop{
+            .body-reservation-pop{
+
+
+                .dropmenu, .date-input{
+                    width: 90%;
+                }
+
+            }
+        }
+    }
+
+    .delete-pop-reservation{
+        .inner-reservation-pop{
+            .body-reservation-pop{
+    
+                .buttons-delete-pop{
+
+                    gap: 10px;
+    
+                    button{
+                        height: 45px;
+                        width: 110px;
+                        font-size: 10px;
+                      
+                    }
+    
+
+                }
+    
+            }
+        }
+    }
+}
+
+
+@media (max-width: 791px) {
+    .reservations-container{
+        .doctor{
+              
+            height: 90px;
+
+            .edit-reservation{
+                    top: 10px;
+                    left: 0px;
+
+                
+                .inner-edit-choices{
+
+                    top: 20px;
+                    left: 0px;
+
+    }
+            }
+
+            div:not(.edit-reservation, .img-container){
+                width: calc((100% - 130px) / 4);
+                
+                h4{
+                    font-size: 10px;
+                }
+
+                h5{
+                    font-size: 8px;
+                }
+            }
+
+            .img-container{
+                height: 90%;
+             
+                width: 120px;
+
+            }
+
+            .check{
+                .icon{
+                    font-size: 20px;
+                
+                }
+            }
+
+
+
+        }
+    }
+}
+
+
+@media (max-width: 564px) {
+    .reservations-container{
+        .doctor{
+                  
+            height: 90px;
+
+            div:not(.edit-reservation, .img-container){
+                width: calc(100% / 4);
+                overflow: hidden;
+                
+                h5{
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    width: 100%;
+                    direction: rtl;  
+                }
+            }
+
+            .img-container{
+                display: none;
+
+            }
+
+
+
+
+
+        }
+    }
+}

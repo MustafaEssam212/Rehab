@@ -39,11 +39,11 @@ const SEO = {
       additionalLinkTags: [
         {
           rel: 'icon',
-          href: '/favicon.ico'
+          href: 'https://www.rehabeg.clinic/favicon.ico'
         },
         {
           rel: 'apple-touch-icon',
-          href: '/favicon.ico',
+          href: 'https://www.rehabeg.clinic/favicon.ico',
           sizes: '76x76'
         },
 

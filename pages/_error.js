@@ -1,10 +1,13 @@
 function Error({ statusCode }) {
     return (
-      <p>
-        {statusCode
-          ? `An error ${statusCode} occurred on server`
-          : 'An error occurred on client'}
-      </p>
+      <div className="error-page system-page">
+                <h1>حدث خطأ</h1>
+                <p>
+                  {statusCode
+                    ? `حدث خطأ داخلي بعنوان ${statusCode} من السيرفر الخاص بنا`
+                    : 'حدث خطأ من الواجهة الامامية الخاصة بنا'}
+                </p>
+      </div>
     )
   }
   

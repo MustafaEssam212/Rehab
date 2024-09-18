@@ -11,9 +11,20 @@ import '../styles/icofont/person.css';
 import '../styles/icofont/device.css';
 import { DefaultSeo } from 'next-seo';
 import SEO from '../next-seo.config';
+import Script from 'next/script';
+import dynamic from 'next/dynamic';
+import { Flip} from 'react-toastify';
+import '@/styles/ReactToastify.css';
+import { SessionProvider } from "next-auth/react"
 
 
-export default function App({ Component, pageProps }) {
+
+const ToastContainer = dynamic(
+  () => import('react-toastify').then(mod => mod.ToastContainer),
+  { ssr: false }
+);
+
+export default function App({ Component, pageProps: { session, ...pageProps } }) {
 
   const [loading, setLoading] = useState(true);
   const router = useRouter();
@@ -48,11 +59,41 @@ export default function App({ Component, pageProps }) {
   return (
 
     <AppProvider >
+      <SessionProvider session={session} >
       <Layout>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-ZNKCRSGR30"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+        >
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-ZNKCRSGR30');
+          `}
+        </Script>
         <DefaultSeo {...SEO} />
         {loading && <Loading />}
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar
+          newestOnTop={true}
+          closeOnClick
+          rtl={true}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+          transition= {Flip}
+          />
         <Component {...pageProps} />
       </Layout>
+      </SessionProvider>
     </AppProvider>
 
   );

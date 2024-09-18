@@ -7,6 +7,7 @@ import ContactMessagePic from '../public/contact-message.png';
 import ContactBG from '../public/contact.png';
 import { useState, useEffect } from "react";
 import { NextSeo } from 'next-seo';
+import { toast } from "react-toastify";
 
 const Contact = () => {
 
@@ -27,8 +28,38 @@ const Contact = () => {
         message: false
     });
 
-    const handleSubmitMessage = (s) => {
+    const handleSubmitMessage = async (s) => {
         s.preventDefault();
+        const hasEmptyField = Object.values(data).some(value => value === '');
+
+        if(hasEmptyField){
+            toast.warning('برجاء ادخال جميع المعلومات المطلوبة')
+        }else{
+
+            const res = await fetch(`/api/editData?method=send-contact-message`, {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            const dataOfResponse = await res.json();
+
+            if(res.status === 200){
+                toast.success(dataOfResponse.message);
+                setData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    subject: '',
+                    message: ''
+                });
+            }else{
+                toast.error(dataOfResponse.message)
+            }
+
+        }
     }
 
     const handleCheckValue = (param) => {
@@ -111,26 +142,26 @@ const Contact = () => {
                             <form onSubmit={handleSubmitMessage}>
                                 <div className="two-inputs">
                                     <div className="input">
-                                        <input type="text" onBlur={()=> handleCheckValue('name')} placeholder="الإسم" onChange={(s)=> setData({...data, name: s.target.value})}></input>
+                                        <input type="text" value={data.name} onBlur={()=> handleCheckValue('name')} placeholder="الإسم" onChange={(s)=> setData({...data, name: s.target.value})}></input>
                                         {alert.name && !data.name.length && <p>من فضلك ادخل اسمك</p>}
                                     </div>
                                     <div className="input">
-                                        <input type="text" onBlur={()=> handleCheckValue('email')} placeholder="الإيميل" onChange={(s)=> setData({...data, email: s.target.value})}></input>
+                                        <input type="text" value={data.email} onBlur={()=> handleCheckValue('email')} placeholder="الإيميل" onChange={(s)=> setData({...data, email: s.target.value})}></input>
                                         {alert.email && !data.email.length && <p>من فضلك ادخل إيميلك</p>}
                                     </div>
                                 </div>
                                 <div className="two-inputs">
                                     <div className="input">
-                                        <input type="number" onBlur={()=> handleCheckValue('phone')} placeholder="رقم الهاتف" onChange={(s)=> setData({...data, phone: s.target.value})}></input>
+                                        <input type="number" value={data.phone} onBlur={()=> handleCheckValue('phone')} placeholder="رقم الهاتف" onChange={(s)=> setData({...data, phone: s.target.value})}></input>
                                         {alert.phone && !data.phone.length && <p>من فضلك ادخل رقم هاتفك</p>}
                                     </div>
                                     <div className="input">
-                                        <input type="text" onBlur={()=> handleCheckValue('subject')} placeholder="الموضوع" onChange={(s)=> setData({...data, subject: s.target.value})}></input>
+                                        <input type="text" value={data.subject} onBlur={()=> handleCheckValue('subject')} placeholder="الموضوع" onChange={(s)=> setData({...data, subject: s.target.value})}></input>
                                         {alert.subject && !data.subject.length && <p>من فضلك ادخل اسم الموضوع</p>}
                                     </div>
                                 </div>
                                 <div className="text-area">
-                                    <textarea placeholder="رسالتك" onBlur={()=> handleCheckValue('message')} onChange={(s)=> setData({...data, message: s.target.value})}></textarea>
+                                    <textarea placeholder="رسالتك" value={data.message} onBlur={()=> handleCheckValue('message')} onChange={(s)=> setData({...data, message: s.target.value})}></textarea>
                                     {alert.message && !data.message.length && <p>من فضلك اكتب رسالتك</p>}
                                 </div>
                                 <div className="form-btn">

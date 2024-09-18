@@ -42,7 +42,9 @@ header{
                 &:hover{
                     color: var(--Primary-Color);
                 }
-}
+            }
+
+
         }
 
         .header-right-buttons{
@@ -241,7 +243,7 @@ header{
         
                     }
         
-                    button:first-child{
+                    button{
                         background-color: transparent;
                         color: var(--Primary-Color);
                         border: 1px solid var(--Primary-Color);
@@ -276,6 +278,14 @@ header{
             animation: .3s backgroundOff linear forwards;
             -webkit-animation: .3s backgroundOff linear forwards;
         }
+        
+    }
+
+    .sign-link{
+        font-size: 1px;
+        position: absolute;
+        top: 0;
+        left: -25px;
         
     }
 }

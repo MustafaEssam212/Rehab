@@ -11,7 +11,7 @@ export const AppProvider = ({children}) => {
     const [chatDefaultMessage, setChatDefaultMessage] = useState(false);
     const [cookiesAcceptance, setCookiesAcceptance] = useState(false);
     const [videoModal, setVideoModal] = useState(false);
-
+    const [authModalSection, setAuthModalSection] = useState('Register')
     
 
     useEffect(() => {
@@ -26,7 +26,7 @@ export const AppProvider = ({children}) => {
 
 
     return(
-        <AppContext.Provider value={{openChat, setOpenChat, chatDefaultMessage, setChatDefaultMessage, cookiesAcceptance, setCookiesAcceptance, videoModal, setVideoModal}}>
+        <AppContext.Provider value={{openChat, setOpenChat, chatDefaultMessage, setChatDefaultMessage, cookiesAcceptance, setCookiesAcceptance, videoModal, setVideoModal, authModalSection, setAuthModalSection}}>
             {children}
         </AppContext.Provider>
     )

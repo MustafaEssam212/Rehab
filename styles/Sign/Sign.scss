@@ -1,0 +1,3381 @@
+
+
+.sign-page-container{
+
+    .auth-modal-container{
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        height: auto;
+    }
+
+
+    @keyframes animeToLeftSignUp {
+        from{
+            right: 0;
+        }to{
+            right: 100%;
+        }
+    }
+
+    @keyframes animeToLeftSignIn {
+        from{
+            right: 0%;
+        }to{
+            right: 100%;
+        }
+    }
+
+
+    @keyframes animeToRightSignUp {
+        from{
+            right: 100%;
+        }to{
+            right: 0;
+        }
+    }
+
+    @keyframes animeToRightSignIn {
+        from{
+            right: 100%;
+        }to{
+            right: 0%;
+        }
+    }
+
+    .sign-up-container{
+        height: 110vh;
+        width: 100%;
+        display: flex;
+        flex-shrink: 0;
+        position: relative;
+        .sign-up-left{
+            width: 70%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h1{
+                font-family: 900;
+                font-size: 45px;
+                color: var(--Primary-Color);
+            }
+
+
+            h3{
+                font-weight: 500;
+            }
+
+            .icons-container{
+                display: flex;
+                gap: 20px;
+                margin: 20px;
+                button{
+                    background-color: transparent;
+                    height: 70px;
+                    width: 70px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    font-size: 25px;
+                    border: 3px solid rgba(0, 0, 0, 0.442);
+                }
+            }
+
+
+            .inputs-container{
+                margin: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                width: 50%;
+
+                .input-container{
+                    background-color: #edf1f1;
+                    width: 100%;
+                    height: 60px;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border-radius: 10px;
+                    -webkit-border-radius: 10px;
+                    -moz-border-radius: 10px;
+                    -ms-border-radius: 10px;
+                    -o-border-radius: 10px;
+                    overflow: hidden;
+                    border: 1px solid transparent;
+                    transition: .3s all linear;
+                    -webkit-transition: .3s all linear;
+                    -moz-transition: .3s all linear;
+                    -ms-transition: .3s all linear;
+                    -o-transition: .3s all linear;
+                    
+                    input{
+                        width: 94%;
+                        height: 100%;
+                        border: none;
+                        outline: none;
+                        background-color: transparent;
+
+}
+
+                    .icon{
+                        font-size: 18px;
+                        transition: .3s all linear;
+                        -webkit-transition: .3s all linear;
+                        -moz-transition: .3s all linear;
+                        -ms-transition: .3s all linear;
+                        -o-transition: .3s all linear;
+                        margin-right: 13px;
+                    }
+
+                    .email-icon{
+                        font-size: 20px;
+                    }
+
+
+                    &:hover{
+                        border: 1px solid var(--Primary-Color);
+
+                        .icon{
+                            color: var(--Primary-Color);
+                        }
+                    }
+
+                    &:focus-within{
+                        border: 1px solid var(--Primary-Color);
+
+                        .icon{
+                            color: var(--Primary-Color);
+                        }
+                    }
+
+
+                    input[type="date"]::-webkit-calendar-picker-indicator {
+                        display: none;
+                        -webkit-appearance: none;
+                      }
+
+
+
+                }
+
+
+                .input-dropmenu{
+                    background-color: #edf1f1;
+                    width: 100%;
+                    height: 60px;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border-radius: 10px;
+                    -webkit-border-radius: 10px;
+                    -moz-border-radius: 10px;
+                    -ms-border-radius: 10px;
+                    -o-border-radius: 10px;
+                    border: 1px solid transparent;
+                    transition: .3s all linear;
+                    -webkit-transition: .3s all linear;
+                    -moz-transition: .3s all linear;
+                    -ms-transition: .3s all linear;
+                    -o-transition: .3s all linear;
+                    cursor: pointer;
+
+                    p{
+                        width: 94%;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        .icon{
+                            margin-left: 25px;
+                        }
+       
+                    }
+
+                    .icon{
+                        font-size: 18px;
+                        transition: .3s all linear;
+                        -webkit-transition: .3s all linear;
+                        -moz-transition: .3s all linear;
+                        -ms-transition: .3s all linear;
+                        -o-transition: .3s all linear;
+                        margin-right: 13px;
+                    }
+
+
+                    .dropdown{
+                        position: absolute;
+                        top: 65px;
+                        left: 0;
+                        height: fit-content;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        z-index: 1;
+                        box-shadow: 0px 0px 10px 0px rgb(205, 204, 204);
+                        button{
+                            font-size: 16px;
+                            height: 55px;
+                            font-weight: 500;
+                            transition: .3s all linear;
+                            -webkit-transition: .3s all linear;
+                            -moz-transition: .3s all linear;
+                            -ms-transition: .3s all linear;
+                            -o-transition: .3s all linear;
+
+                            &:hover{
+                                background-color: var(--Primary-Color);
+                                color: white;
+                            }
+}
+                    }
+
+
+                    .questions-dropmenu{
+                        height: 200px;
+                        overflow-y: scroll;
+
+                        button{
+                            flex-shrink: 0;
+                        }
+                    }
+
+
+                    &:hover{
+                        border: 1px solid var(--Primary-Color);
+
+                        .icon{
+                            color: var(--Primary-Color);
+                        }
+                    }
+
+                    &:focus-within{
+                        border: 1px solid var(--Primary-Color);
+
+                        .icon{
+                            color: var(--Primary-Color);
+                        }
+                    }
+                }
+
+
+            }
+
+            .sign-main-button{
+                background-color: var(--Primary-Color);
+                color: white;
+                height: 75px;
+                width: 50%;
+                border: 2px solid white;
+                border-radius: 25px;
+                -webkit-border-radius: 25px;
+                -moz-border-radius: 25px;
+                -ms-border-radius: 25px;
+                -o-border-radius: 25px;
+                font-size: 20px;
+            }
+        }
+
+        .sign-up-right{
+            width: 30%;
+            height: 100%;
+            background-color: var(--Primary-Color);
+            position: relative;
+
+            .img-container{
+                position: relative;
+                height: 100%;
+                width: 100%;
+                opacity: .5;
+            }
+
+            .layer-on{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+
+                h1{
+                    font-weight: 900;
+                    font-size: 55px;
+                    color: white;
+                }
+
+                h3{
+                    color: white;
+                    font-weight: 200;
+                    width: 70%;
+                    text-align: center;
+                }
+
+                button{
+                    background-color: transparent;
+                    color: white;
+                    height: 75px;
+                    width: 60%;
+                    border: 2px solid white;
+                    border-radius: 25px;
+                    -webkit-border-radius: 25px;
+                    -moz-border-radius: 25px;
+                    -ms-border-radius: 25px;
+                    -o-border-radius: 25px;
+                    font-size: 20px;
+                    transition: .3s all linear;
+                    -webkit-transition: .3s all linear;
+                    -moz-transition: .3s all linear;
+                    -ms-transition: .3s all linear;
+                    -o-transition: .3s all linear;
+
+                    &:hover{
+                        background-color: white;
+                        color: var(--Primary-Color);
+                    }
+}
+            }
+        }
+    }
+
+    .sign-in-container{
+        height: 110vh;
+        width: 100%;
+        display: flex;
+        flex-shrink: 0;
+        position: relative;
+        .sign-in-left{
+            width: 30%;
+            height: 100%;
+            background-color: var(--Primary-Color);
+            position: relative;
+
+            .img-container{
+                position: relative;
+                height: 100%;
+                width: 100%;
+                opacity: .5;
+            }
+
+            .layer-on{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+
+                h1{
+                    font-weight: 900;
+                    font-size: 55px;
+                    color: white;
+                }
+
+                h3{
+                    color: white;
+                    font-weight: 200;
+                    width: 70%;
+                    text-align: center;
+                }
+
+                button{
+                    background-color: transparent;
+                    color: white;
+                    height: 75px;
+                    width: 60%;
+                    border: 2px solid white;
+                    border-radius: 25px;
+                    -webkit-border-radius: 25px;
+                    -moz-border-radius: 25px;
+                    -ms-border-radius: 25px;
+                    -o-border-radius: 25px;
+                    font-size: 20px;
+                    transition: .3s all linear;
+                    -webkit-transition: .3s all linear;
+                    -moz-transition: .3s all linear;
+                    -ms-transition: .3s all linear;
+                    -o-transition: .3s all linear;
+
+                    &:hover{
+                        background-color: white;
+                        color: var(--Primary-Color);
+                    }
+}
+            }
+        }
+
+        .sign-in-right{
+            width: 70%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h1{
+                font-family: 900;
+                font-size: 45px;
+                color: var(--Primary-Color);
+            }
+
+
+            h3{
+                font-weight: 500;
+            }
+
+            .icons-container{
+                display: flex;
+                gap: 20px;
+                margin: 20px;
+                button{
+                    background-color: transparent;
+                    height: 70px;
+                    width: 70px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    font-size: 25px;
+                    border: 3px solid rgba(0, 0, 0, 0.442);
+                }
+            }
+
+
+            .inputs-container{
+                margin: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                width: 50%;
+
+                .input-container{
+                    background-color: #edf1f1;
+                    width: 100%;
+                    height: 60px;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border-radius: 10px;
+                    -webkit-border-radius: 10px;
+                    -moz-border-radius: 10px;
+                    -ms-border-radius: 10px;
+                    -o-border-radius: 10px;
+                    overflow: hidden;
+                    border: 1px solid transparent;
+                    transition: .3s all linear;
+                    -webkit-transition: .3s all linear;
+                    -moz-transition: .3s all linear;
+                    -ms-transition: .3s all linear;
+                    -o-transition: .3s all linear;
+                    
+                    input{
+                        width: 94%;
+                        height: 100%;
+                        border: none;
+                        outline: none;
+                        background-color: transparent;
+
+}
+
+                    .icon{
+                        font-size: 18px;
+                        transition: .3s all linear;
+                        -webkit-transition: .3s all linear;
+                        -moz-transition: .3s all linear;
+                        -ms-transition: .3s all linear;
+                        -o-transition: .3s all linear;
+                        margin-right: 13px;
+                    }
+
+                    .email-icon{
+                        font-size: 20px;
+                    }
+
+
+                    &:hover{
+                        border: 1px solid var(--Primary-Color);
+
+                        .icon{
+                            color: var(--Primary-Color);
+                        }
+                    }
+
+                    &:focus-within{
+                        border: 1px solid var(--Primary-Color);
+
+                        .icon{
+                            color: var(--Primary-Color);
+                        }
+                    }
+
+
+                    input[type="date"]::-webkit-calendar-picker-indicator {
+                        display: none;
+                        -webkit-appearance: none;
+                      }
+
+
+
+                }
+
+
+            }
+
+            a{
+                font-weight: 700;
+                margin: 10px 0px 20px 0px;
+                color: var(--Headlines-Color);
+            }
+
+            .sign-main-button{
+                background-color: var(--Primary-Color);
+                color: white;
+                height: 75px;
+                width: 50%;
+                border: 2px solid white;
+                border-radius: 25px;
+                -webkit-border-radius: 25px;
+                -moz-border-radius: 25px;
+                -ms-border-radius: 25px;
+                -o-border-radius: 25px;
+                font-size: 20px;
+            }
+        }
+    }
+
+    .not-active-sign-up{
+        animation: animeToLeftSignUp .7s linear forwards;
+        -webkit-animation: animeToLeftSignUp .7s linear forwards;
+}
+
+    .active-sign-in{
+        animation: animeToLeftSignIn .7s linear forwards;
+        -webkit-animation: animeToLeftSignIn .7s linear forwards;
+}
+
+    .not-active-sign-in{
+        animation: animeToRightSignIn .7s linear forwards;
+        -webkit-animation: animeToRightSignIn .7s linear forwards;
+}
+
+    .active-sign-up{
+        animation: animeToRightSignUp .7s linear forwards;
+        -webkit-animation: animeToRightSignUp .7s linear forwards;
+}
+
+.no-animation{
+    animation: none;
+    -webkit-animation: none;
+}
+
+}
+
+
+.forgot-password-page{
+
+    .parags{
+        margin: 50px 20px;
+        text-align: center;
+
+        h1{
+            font-family: 900;
+            font-size: 45px;
+            color: var(--Primary-Color);
+        }
+    
+    
+        h3{
+            font-weight: 500;
+
+            a{
+                color: var(--Primary-Color);
+                text-decoration: underline;
+            }
+        }
+
+        .line{
+            height: 7px;
+            width: 70%;
+            background-color: var(--Primary-Color);
+            border-radius: 15px;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            -ms-border-radius: 15px;
+            -o-border-radius: 15px;
+            margin: 25px auto;
+
+}
+    }
+
+
+    .email-container{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 100px auto;
+        gap: 50px;
+
+        .input-container{
+            background-color: #edf1f1;
+            width: 50%;
+            height: 60px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid transparent;
+            transition: .3s all linear;
+            -webkit-transition: .3s all linear;
+            -moz-transition: .3s all linear;
+            -ms-transition: .3s all linear;
+            -o-transition: .3s all linear;
+            
+            input{
+                width: 94%;
+                height: 100%;
+                border: none;
+                outline: none;
+                background-color: transparent;
+
+}
+
+            .icon{
+                font-size: 18px;
+                transition: .3s all linear;
+                -webkit-transition: .3s all linear;
+                -moz-transition: .3s all linear;
+                -ms-transition: .3s all linear;
+                -o-transition: .3s all linear;
+                margin-right: 13px;
+            }
+
+            .email-icon{
+                font-size: 20px;
+            }
+
+
+            &:hover{
+                border: 1px solid var(--Primary-Color);
+
+                .icon{
+                    color: var(--Primary-Color);
+                }
+            }
+
+            &:focus-within{
+                border: 1px solid var(--Primary-Color);
+
+                .icon{
+                    color: var(--Primary-Color);
+                }
+            }
+
+
+            input[type="date"]::-webkit-calendar-picker-indicator {
+                display: none;
+                -webkit-appearance: none;
+              }
+
+
+
+        }
+
+
+        button{
+            font-size: 17px;
+            font-weight: 700;
+            background-color: var(--Primary-Color);
+            color: white;
+            height: 65px;
+            width: 200px;
+        }
+
+    }
+
+
+    .security-question-container{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 100px auto;
+        gap: 50px;
+
+        .input-dropmenu{
+            background-color: #edf1f1;
+            width: 50%;
+            height: 60px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            border: 1px solid transparent;
+            transition: .3s all linear;
+            -webkit-transition: .3s all linear;
+            -moz-transition: .3s all linear;
+            -ms-transition: .3s all linear;
+            -o-transition: .3s all linear;
+            cursor: pointer;
+
+            p{
+                width: 94%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .icon{
+                    margin-left: 25px;
+                }
+
+            }
+
+            .icon{
+                font-size: 18px;
+                transition: .3s all linear;
+                -webkit-transition: .3s all linear;
+                -moz-transition: .3s all linear;
+                -ms-transition: .3s all linear;
+                -o-transition: .3s all linear;
+                margin-right: 13px;
+            }
+
+
+            .dropdown{
+                position: absolute;
+                top: 65px;
+                left: 0;
+                height: fit-content;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                z-index: 1;
+                box-shadow: 0px 0px 10px 0px rgb(205, 204, 204);
+                button{
+                    font-size: 16px;
+                    height: 55px;
+                    font-weight: 500;
+                    transition: .3s all linear;
+                    -webkit-transition: .3s all linear;
+                    -moz-transition: .3s all linear;
+                    -ms-transition: .3s all linear;
+                    -o-transition: .3s all linear;
+
+                    &:hover{
+                        background-color: var(--Primary-Color);
+                        color: white;
+                    }
+}
+            }
+
+
+            .questions-dropmenu{
+                height: 200px;
+                overflow-y: scroll;
+
+                button{
+                    flex-shrink: 0;
+                }
+            }
+
+
+            &:hover{
+                border: 1px solid var(--Primary-Color);
+
+                .icon{
+                    color: var(--Primary-Color);
+                }
+            }
+
+            &:focus-within{
+                border: 1px solid var(--Primary-Color);
+
+                .icon{
+                    color: var(--Primary-Color);
+                }
+            }
+        }
+
+        .input-container{
+            background-color: #edf1f1;
+            width: 50%;
+            height: 60px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid transparent;
+            transition: .3s all linear;
+            -webkit-transition: .3s all linear;
+            -moz-transition: .3s all linear;
+            -ms-transition: .3s all linear;
+            -o-transition: .3s all linear;
+            
+            input{
+                width: 94%;
+                height: 100%;
+                border: none;
+                outline: none;
+                background-color: transparent;
+
+}
+
+            .icon{
+                font-size: 18px;
+                transition: .3s all linear;
+                -webkit-transition: .3s all linear;
+                -moz-transition: .3s all linear;
+                -ms-transition: .3s all linear;
+                -o-transition: .3s all linear;
+                margin-right: 13px;
+            }
+
+            .email-icon{
+                font-size: 20px;
+            }
+
+
+            &:hover{
+                border: 1px solid var(--Primary-Color);
+
+                .icon{
+                    color: var(--Primary-Color);
+                }
+            }
+
+            &:focus-within{
+                border: 1px solid var(--Primary-Color);
+
+                .icon{
+                    color: var(--Primary-Color);
+                }
+            }
+
+
+            input[type="date"]::-webkit-calendar-picker-indicator {
+                display: none;
+                -webkit-appearance: none;
+              }
+
+
+
+        }
+
+        .main-button{
+            font-size: 17px;
+            font-weight: 700;
+            background-color: var(--Primary-Color);
+            color: white;
+            height: 65px;
+            width: 200px;
+        }
+    }
+
+    .change-password-container{
+        @extend .email-container
+    }
+
+
+    .done{
+        margin: 110px 20px;
+        h1{
+            display: flex;
+            align-items: center;
+            flex-direction: row-reverse;
+            gap: 20px;
+            justify-content: center;
+            color: var(--Primary-Color);
+            font-weight: 800;
+            .icon{
+                font-size: 55px;
+            }
+        }
+    }
+
+}  
+
+
+
+// 75%
+@media (max-width: 2048px){
+
+    .sign-page-container{
+
+
+        .sign-up-container{
+            height: 110vh;
+    
+            .sign-up-left{
+                width: 70%;
+    
+    
+                h1{
+    
+                    font-size: 40px;
+    
+                }
+    
+    
+                h3{
+                    font-size: 16px;
+                }
+    
+    
+                .inputs-container{
+                    margin: 20px;
+    
+                    gap: 15px;
+                    width: 50%;
+    
+                    .input-container{
+    
+                        height: 60px;
+    
+                        
+                        input{
+                            width: 94%;
+    
+    
+    }
+    
+                        .icon{
+                            font-size: 18px;
+                            margin-right: 13px;
+                        }
+    
+                        .email-icon{
+                            font-size: 20px;
+                        }
+    
+    
+    
+    
+    
+    
+    
+    
+                    }
+    
+    
+                    .input-dropmenu{
+    
+                        height: 60px;
+    
+    
+                        p{
+                            width: 94%;
+    
+    
+                            .icon{
+                                margin-left: 25px;
+                            }
+           
+                        }
+    
+                        .icon{
+                            font-size: 18px;
+    
+                            margin-right: 13px;
+                        }
+    
+    
+                        .dropdown{
+    
+                            top: 65px;
+    
+                            button{
+                                font-size: 16px;
+                                height: 55px;
+    
+    }
+                        }
+    
+    
+                        .questions-dropmenu{
+                            height: 200px;
+    
+                        }
+    
+    
+    
+    
+                    }
+    
+    
+                }
+    
+                .sign-main-button{
+    
+                    height: 70px;
+                    width: 50%;
+                    font-size: 19px;
+                }
+            }
+    
+            .sign-up-right{
+                width: 30%;
+    
+    
+    
+    
+                .layer-on{
+    
+                    gap: 30px;
+    
+                    h1{
+    
+                        font-size: 55px;
+    
+                    }
+    
+                    h3{
+    
+                        width: 70%;
+                    }
+    
+                    button{
+                        height: 75px;
+                        width: 60%;
+                        font-size: 20px;
+    
+    }
+                }
+            }
+        }
+
+
+        .sign-in-container{
+
+    
+            .sign-in-right{
+                width: 70%;
+    
+    
+                h1{
+    
+                    font-size: 40px;
+    
+                }
+    
+    
+                h3{
+                    font-size: 16px;
+                }
+    
+    
+                .inputs-container{
+                    margin: 20px;
+    
+                    gap: 15px;
+                    width: 50%;
+    
+                    .input-container{
+    
+                        height: 60px;
+    
+                        
+                        input{
+                            width: 94%;
+    
+    
+    }
+    
+                        .icon{
+                            font-size: 18px;
+                            margin-right: 13px;
+                        }
+    
+                        .email-icon{
+                            font-size: 20px;
+                        }
+    
+    
+    
+    
+    
+    
+    
+    
+                    }
+    
+    
+                    .input-dropmenu{
+    
+                        height: 60px;
+    
+    
+                        p{
+                            width: 94%;
+    
+    
+                            .icon{
+                                margin-left: 25px;
+                            }
+           
+                        }
+    
+                        .icon{
+                            font-size: 18px;
+    
+                            margin-right: 13px;
+                        }
+    
+    
+                        .dropdown{
+    
+                            top: 65px;
+    
+                            button{
+                                font-size: 16px;
+                                height: 55px;
+    
+    }
+                        }
+    
+    
+                        .questions-dropmenu{
+                            height: 200px;
+    
+                        }
+    
+    
+    
+    
+                    }
+    
+    
+                }
+    
+                .sign-main-button{
+    
+                    height: 70px;
+                    width: 50%;
+                    font-size: 19px;
+                }
+            }
+    
+            .sign-in-left{
+                width: 30%;
+    
+    
+    
+    
+                .layer-on{
+    
+                    gap: 30px;
+    
+                    h1{
+    
+                        font-size: 55px;
+    
+                    }
+    
+                    h3{
+    
+                        width: 70%;
+                    }
+    
+                    button{
+                        height: 75px;
+                        width: 60%;
+                        font-size: 20px;
+    
+    }
+                }
+            }
+        }
+
+
+    }
+
+
+    .forgot-password-page{
+
+        .parags{
+        
+    
+            h1{
+                font-size: 35px;
+            }
+        
+        
+            h3{
+                
+                font-size: 16px;
+            }
+    
+            .line{
+                height: 7px;
+                width: 70%;
+            }
+        }
+    
+    
+        .email-container{
+            width: 75%;
+            margin: 100px auto;
+            gap: 50px;
+    
+            .input-container{
+                width: 50%;
+                height: 60px;
+             
+                input{
+                    width: 94%;
+                    height: 100%;
+                }
+    
+                .icon{
+                    font-size: 18px;
+                    margin-right: 13px;
+                }
+    
+                .email-icon{
+                    font-size: 20px;
+                }
+
+            }
+    
+    
+            button{
+                font-size: 16px;
+                height: 60px;
+                width: 190px;
+            }
+    
+        }
+    
+    
+        .security-question-container{
+            width: 75%;
+            margin: 100px auto;
+            gap: 50px;
+    
+            .input-dropmenu{
+    
+                height: 60px;
+
+
+                p{
+                    width: 94%;
+
+
+                    .icon{
+                        margin-left: 25px;
+                    }
+   
+                }
+
+                .icon{
+                    font-size: 18px;
+
+                    margin-right: 13px;
+                }
+
+
+                .dropdown{
+
+                    top: 65px;
+
+                    button{
+                        font-size: 16px;
+                        height: 55px;
+
+}
+                }
+
+
+                .questions-dropmenu{
+                    height: 200px;
+
+                }
+
+
+
+
+            }
+    
+            .input-container{
+    
+                height: 60px;
+
+                
+                input{
+                    width: 94%;
+
+
+}
+
+                .icon{
+                    font-size: 18px;
+                    margin-right: 13px;
+                }
+
+                .email-icon{
+                    font-size: 20px;
+                }
+
+
+
+
+
+
+
+
+            }
+    
+            .main-button{
+                font-size: 16px;
+                height: 60px;
+                width: 190px;
+            }
+        }
+    
+
+    
+    
+        .done{
+          
+            h1{
+                font-size: 30px;
+                .icon{
+                    font-size: 45px;
+                }
+            }
+        }
+    
+    }  
+
+}
+
+
+// 80%
+@media (max-width: 1921px){
+
+
+    .sign-page-container{
+
+
+        .sign-up-container{
+            height: 110vh;
+    
+            .sign-up-left{
+                width: 70%;
+    
+    
+                h1{
+    
+                    font-size: 35px;
+    
+                }
+    
+    
+                h3{
+                    font-size: 14px;
+                }
+    
+    
+                .inputs-container{
+                    margin: 20px;
+    
+                    gap: 15px;
+                    width: 50%;
+    
+                    .input-container{
+    
+                        height: 55px;
+    
+                        
+                        input{
+                            width: 94%;
+                            font-size: 11px;
+    
+    }
+    
+                        .icon{
+                            width: 6%;
+                            font-size: 16px;
+                            margin-right: 5px;
+                        }
+    
+                        .email-icon{
+                            font-size: 18px;
+                        }
+    
+    
+    
+    
+    
+    
+    
+    
+                    }
+    
+    
+                    .input-dropmenu{
+    
+                        height: 55px;
+    
+    
+                        p{
+                            width: 94%;
+                            font-size: 13px;
+                            font-weight: 500;
+    
+                            .icon{
+           
+                                margin-left: 25px;
+                                font-size: 15px;
+                            }
+           
+                        }
+    
+                        .icon{
+                            font-size: 18px;
+                            width: 6%;
+                            margin-right: 5px;
+                        }
+    
+    
+                        .dropdown{
+    
+                            top: 60px;
+    
+                            button{
+                                font-size: 13px;
+                                height: 55px;
+    
+    }
+                        }
+    
+    
+                        .questions-dropmenu{
+                            height: 200px;
+    
+                        }
+    
+    
+    
+    
+                    }
+    
+    
+                }
+    
+                .sign-main-button{
+    
+                    height: 65px;
+                    width: 50%;
+                    font-size: 16px;
+                }
+            }
+    
+            .sign-up-right{
+                width: 30%;
+    
+    
+    
+    
+                .layer-on{
+    
+                    gap: 30px;
+    
+                    h1{
+    
+                        font-size: 45px;
+    
+                    }
+    
+                    h3{
+                        font-size: 16px;
+                        width: 70%;
+                    }
+    
+                    button{
+                        height: 70px;
+                        width: 60%;
+                        font-size: 18px;
+    
+    }
+                }
+            }
+        }
+
+
+        .sign-in-container{
+
+    
+            .sign-in-right{
+                width: 70%;
+    
+    
+                h1{
+    
+                    font-size: 35px;
+    
+                }
+    
+    
+                h3{
+                    font-size: 14px;
+                }
+    
+    
+                .inputs-container{
+                    margin: 20px;
+    
+                    gap: 15px;
+                    width: 50%;
+    
+                    .input-container{
+    
+                        height: 55px;
+    
+                        
+                        input{
+                            width: 94%;
+                            font-size: 11px;
+    
+    }
+    
+                        .icon{
+                            width: 6%;
+                            font-size: 16px;
+                            margin-right: 5px;
+                        }
+    
+                        .email-icon{
+                            font-size: 18px;
+                        }
+    
+    
+    
+    
+    
+    
+    
+    
+                    }
+    
+    
+                    .input-dropmenu{
+    
+                        height: 55px;
+    
+    
+                        p{
+                            width: 94%;
+                            font-size: 13px;
+                            font-weight: 500;
+    
+                            .icon{
+           
+                                margin-left: 25px;
+                                font-size: 15px;
+                            }
+           
+                        }
+    
+                        .icon{
+                            font-size: 18px;
+                            width: 6%;
+                            margin-right: 5px;
+                        }
+    
+    
+                        .dropdown{
+    
+                            top: 60px;
+    
+                            button{
+                                font-size: 13px;
+                                height: 55px;
+    
+    }
+                        }
+    
+    
+                        .questions-dropmenu{
+                            height: 200px;
+    
+                        }
+    
+    
+    
+    
+                    }
+    
+    
+                }
+    
+                .sign-main-button{
+    
+                    height: 65px;
+                    width: 50%;
+                    font-size: 16px;
+                }
+
+                a{
+                    font-size: 13px;
+                }
+            }
+    
+            .sign-in-left{
+                width: 30%;
+    
+    
+    
+    
+                .layer-on{
+    
+                    gap: 30px;
+    
+                    h1{
+    
+                        font-size: 45px;
+    
+                    }
+    
+                    h3{
+                        font-size: 16px;
+                        width: 70%;
+                    }
+    
+                    button{
+                        height: 70px;
+                        width: 60%;
+                        font-size: 18px;
+    
+    }
+                }
+            }
+        }
+
+
+    }
+
+
+    .forgot-password-page{
+
+        .parags{
+        
+    
+            h1{
+                font-size: 30px;
+            }
+        
+        
+            h3{
+                
+                font-size: 15px;
+            }
+    
+            .line{
+                height: 6px;
+                width: 70%;
+            }
+        }
+    
+    
+        .email-container{
+            width: 80%;
+            margin: 100px auto;
+            gap: 50px;
+    
+            .input-container{
+                width: 50%;
+                height: 55px;
+             
+                input{
+                    width: 94%;
+                    height: 100%;
+                    font-size: 12px;
+                }
+    
+                .icon{
+                    font-size: 16px;
+                    margin-right: 13px;
+                }
+    
+                .email-icon{
+                    font-size: 18px;
+                }
+
+            }
+    
+    
+            button{
+                font-size: 15px;
+                height: 55px;
+                width: 180px;
+            }
+    
+        }
+    
+    
+        .security-question-container{
+            width: 80%;
+            margin: 100px auto;
+            gap: 50px;
+    
+            .input-container{
+    
+                height: 55px;
+
+                
+                input{
+                    width: 94%;
+                    font-size: 11px;
+
+}
+
+                .icon{
+                    width: 6%;
+                    font-size: 16px;
+                    margin-right: 5px;
+                }
+
+                .email-icon{
+                    font-size: 18px;
+                }
+
+
+
+
+
+
+
+
+            }
+
+
+            .input-dropmenu{
+
+                height: 55px;
+
+
+                p{
+                    width: 94%;
+                    font-size: 13px;
+                    font-weight: 500;
+
+                    .icon{
+   
+                        margin-left: 25px;
+                        font-size: 15px;
+                    }
+   
+                }
+
+                .icon{
+                    font-size: 18px;
+                    width: 6%;
+                    margin-right: 5px;
+                }
+
+
+                .dropdown{
+
+                    top: 60px;
+
+                    button{
+                        font-size: 13px;
+                        height: 55px;
+
+}
+                }
+
+
+                .questions-dropmenu{
+                    height: 200px;
+
+                }
+
+
+
+
+            }
+    
+            .main-button{
+                font-size: 15px;
+                height: 55px;
+                width: 180px;
+            }
+        }
+    
+
+    
+    
+        .done{
+          
+            h1{
+                font-size: 27px;
+                .icon{
+                    font-size: 41px;
+                }
+            }
+        }
+    
+    }  
+
+}
+
+// 90%
+@media (max-width: 1707px){
+
+    .sign-page-container{
+
+
+        .sign-up-container{
+            height: 110vh;
+    
+            .sign-up-left{
+                width: 70%;
+    
+    
+                h1{
+    
+                    font-size: 30px;
+    
+                }
+    
+    
+                h3{
+                    font-size: 12px;
+                }
+    
+    
+                .inputs-container{
+                    margin: 20px;
+    
+                    gap: 15px;
+                    width: 50%;
+    
+                    .input-container{
+    
+                        height: 50px;
+    
+                        
+                        input{
+                            width: 94%;
+                            font-size: 10px;
+    
+    }
+    
+                        .icon{
+                            width: 6%;
+                            font-size: 14px;
+                            margin-right: 5px;
+                        }
+    
+                        .email-icon{
+                            font-size: 16px;
+                        }
+    
+    
+    
+    
+    
+    
+    
+    
+                    }
+    
+    
+                    .input-dropmenu{
+    
+                        height: 50px;
+    
+    
+                        p{
+                            width: 94%;
+                            font-size: 11px;
+                            font-weight: 500;
+    
+                            .icon{
+           
+                                margin-left: 25px;
+                                font-size: 13px;
+                            }
+           
+                        }
+    
+                        .icon{
+                            font-size: 16px;
+                            width: 6%;
+                            margin-right: 5px;
+                        }
+    
+    
+                        .dropdown{
+    
+                            top: 58px;
+    
+                            button{
+                                font-size: 12px;
+                                height: 50px;
+    
+    }
+                        }
+    
+    
+                        .questions-dropmenu{
+                            height: 200px;
+    
+                        }
+    
+    
+    
+    
+                    }
+    
+    
+                }
+    
+                .sign-main-button{
+    
+                    height: 60px;
+                    width: 50%;
+                    font-size: 14px;
+                }
+            }
+    
+            .sign-up-right{
+                width: 30%;
+    
+    
+    
+    
+                .layer-on{
+    
+                    gap: 30px;
+    
+                    h1{
+    
+                        font-size: 40px;
+    
+                    }
+    
+                    h3{
+                        font-size: 14px;
+                        width: 70%;
+                    }
+    
+                    button{
+                        height: 65px;
+                        width: 60%;
+                        font-size: 15px;
+    
+    }
+                }
+            }
+        }
+
+
+        .sign-in-container{
+            height: 110vh;
+    
+            .sign-in-right{
+                width: 70%;
+    
+    
+                h1{
+    
+                    font-size: 30px;
+    
+                }
+    
+    
+                h3{
+                    font-size: 12px;
+                }
+    
+    
+                .inputs-container{
+                    margin: 20px;
+    
+                    gap: 15px;
+                    width: 50%;
+    
+                    .input-container{
+    
+                        height: 50px;
+    
+                        
+                        input{
+                            width: 94%;
+                            font-size: 10px;
+    
+    }
+    
+                        .icon{
+                            width: 6%;
+                            font-size: 14px;
+                            margin-right: 5px;
+                        }
+    
+                        .email-icon{
+                            font-size: 16px;
+                        }
+    
+    
+    
+    
+    
+    
+    
+    
+                    }
+    
+    
+                    .input-dropmenu{
+    
+                        height: 50px;
+    
+    
+                        p{
+                            width: 94%;
+                            font-size: 11px;
+                            font-weight: 500;
+    
+                            .icon{
+           
+                                margin-left: 25px;
+                                font-size: 13px;
+                            }
+           
+                        }
+    
+                        .icon{
+                            font-size: 16px;
+                            width: 6%;
+                            margin-right: 5px;
+                        }
+    
+    
+                        .dropdown{
+    
+                            top: 58px;
+    
+                            button{
+                                font-size: 12px;
+                                height: 50px;
+    
+    }
+                        }
+    
+    
+                        .questions-dropmenu{
+                            height: 200px;
+    
+                        }
+    
+    
+    
+    
+                    }
+    
+    
+                }
+    
+                .sign-main-button{
+    
+                    height: 60px;
+                    width: 50%;
+                    font-size: 14px;
+                }
+
+                a{
+                    font-size: 12px;
+                }
+            }
+    
+            .sign-in-left{
+                width: 30%;
+    
+    
+    
+    
+                .layer-on{
+    
+                    gap: 30px;
+    
+                    h1{
+    
+                        font-size: 40px;
+    
+                    }
+    
+                    h3{
+                        font-size: 14px;
+                        width: 70%;
+                    }
+    
+                    button{
+                        height: 65px;
+                        width: 60%;
+                        font-size: 15px;
+    
+    }
+                }
+            }
+        }
+
+
+    }
+
+
+    .forgot-password-page{
+
+        .parags{
+        
+    
+            h1{
+                font-size: 27px;
+            }
+        
+        
+            h3{
+                
+                font-size: 13px;
+            }
+    
+            .line{
+                height: 6px;
+                width: 70%;
+                margin: 20px auto;
+            }
+        }
+    
+    
+        .email-container{
+            width: 85%;
+            margin: 100px auto;
+            gap: 50px;
+    
+            .input-container{
+                width: 50%;
+                height: 50px;
+             
+                input{
+                    width: 94%;
+                    height: 100%;
+                    font-size: 11px;
+                }
+    
+                .icon{
+                    font-size: 14px;
+                    margin-right: 13px;
+                }
+    
+                .email-icon{
+                    font-size: 16px;
+                }
+
+            }
+    
+    
+            button{
+                font-size: 13px;
+                height: 50px;
+                width: 170px;
+            }
+    
+        }
+    
+    
+        .security-question-container{
+            width: 85%;
+            margin: 100px auto;
+            gap: 50px;
+    
+            .input-container{
+    
+                height: 50px;
+
+                
+                input{
+                    width: 94%;
+                    font-size: 10px;
+
+}
+
+                .icon{
+                    width: 6%;
+                    font-size: 14px;
+                    margin-right: 5px;
+                }
+
+                .email-icon{
+                    font-size: 16px;
+                }
+
+
+
+
+
+
+
+
+            }
+
+
+            .input-dropmenu{
+
+                height: 50px;
+
+
+                p{
+                    width: 94%;
+                    font-size: 11px;
+                    font-weight: 500;
+
+                    .icon{
+   
+                        margin-left: 25px;
+                        font-size: 13px;
+                    }
+   
+                }
+
+                .icon{
+                    font-size: 16px;
+                    width: 6%;
+                    margin-right: 5px;
+                }
+
+
+                .dropdown{
+
+                    top: 58px;
+
+                    button{
+                        font-size: 12px;
+                        height: 50px;
+
+}
+                }
+
+
+                .questions-dropmenu{
+                    height: 200px;
+
+                }
+
+
+
+
+            }
+    
+            .main-button{
+                font-size: 13px;
+                height: 50px;
+                width: 170px;
+            }
+        }
+    
+
+    
+    
+    
+        .done{
+          
+            h1{
+                font-size: 25px;
+                .icon{
+                    font-size: 38px;
+                }
+            }
+        }
+    
+    }  
+
+}
+
+
+// 100%
+@media (max-width: 1537px){
+    .sign-page-container{
+
+
+        .sign-up-container{
+            height: 120vh;
+    
+            .sign-up-left{
+                width: 70%;
+    
+    
+                h1{
+    
+                    font-size: 25px;
+    
+                }
+    
+    
+                h3{
+                    font-size: 10px;
+                }
+    
+    
+                .inputs-container{
+                    margin: 20px;
+    
+                    gap: 15px;
+                    width: 50%;
+    
+                    .input-container{
+    
+                        height: 45px;
+    
+                        
+                        input{
+                            width: 94%;
+                            font-size: 9px;
+    
+    }
+    
+                        .icon{
+                            width: 6%;
+                            font-size: 12px;
+                            margin-right: 5px;
+                        }
+    
+                        .email-icon{
+                            font-size: 14px;
+                        }
+    
+    
+    
+    
+    
+    
+    
+    
+                    }
+    
+    
+                    .input-dropmenu{
+    
+                        height: 45px;
+    
+    
+                        p{
+                            width: 94%;
+                            font-size: 10px;
+                            font-weight: 500;
+    
+                            .icon{
+           
+                                margin-left: 15px;
+                                font-size: 12px;
+                            }
+           
+                        }
+    
+                        .icon{
+                            font-size: 14px;
+                            width: 6%;
+                            margin-right: 5px;
+                        }
+    
+    
+                        .dropdown{
+    
+                            top: 50px;
+    
+                            button{
+                                font-size: 11px;
+                                height: 45px;
+    
+    }
+                        }
+    
+    
+                        .questions-dropmenu{
+                            height: 200px;
+    
+                        }
+    
+    
+    
+    
+                    }
+    
+    
+                }
+    
+                .sign-main-button{
+    
+                    height: 55px;
+                    width: 50%;
+                    font-size: 12px;
+                }
+            }
+    
+            .sign-up-right{
+                width: 30%;
+    
+    
+    
+    
+                .layer-on{
+    
+                    gap: 30px;
+    
+                    h1{
+    
+                        font-size: 35px;
+    
+                    }
+    
+                    h3{
+                        font-size: 12px;
+                        width: 70%;
+                    }
+    
+                    button{
+                        height: 55px;
+                        width: 60%;
+                        font-size: 13px;
+    
+    }
+                }
+            }
+        }
+
+
+
+        .sign-in-container{
+            height: 120vh;
+    
+            .sign-in-right{
+                width: 70%;
+    
+    
+                h1{
+    
+                    font-size: 25px;
+    
+                }
+    
+    
+                h3{
+                    font-size: 10px;
+                }
+    
+    
+                .inputs-container{
+                    margin: 20px;
+    
+                    gap: 15px;
+                    width: 50%;
+    
+                    .input-container{
+    
+                        height: 45px;
+    
+                        
+                        input{
+                            width: 94%;
+                            font-size: 9px;
+    
+    }
+    
+                        .icon{
+                            width: 6%;
+                            font-size: 12px;
+                            margin-right: 5px;
+                        }
+    
+                        .email-icon{
+                            font-size: 14px;
+                        }
+    
+    
+    
+    
+    
+    
+    
+    
+                    }
+    
+    
+                    .input-dropmenu{
+    
+                        height: 45px;
+    
+    
+                        p{
+                            width: 94%;
+                            font-size: 10px;
+                            font-weight: 500;
+    
+                            .icon{
+           
+                                margin-left: 15px;
+                                font-size: 12px;
+                            }
+           
+                        }
+    
+                        .icon{
+                            font-size: 14px;
+                            width: 6%;
+                            margin-right: 5px;
+                        }
+    
+    
+                        .dropdown{
+    
+                            top: 50px;
+    
+                            button{
+                                font-size: 11px;
+                                height: 45px;
+    
+    }
+                        }
+    
+    
+                        .questions-dropmenu{
+                            height: 200px;
+    
+                        }
+    
+    
+    
+    
+                    }
+    
+    
+                }
+    
+                .sign-main-button{
+    
+                    height: 55px;
+                    width: 50%;
+                    font-size: 12px;
+                }
+            }
+    
+            .sign-in-left{
+                width: 30%;
+    
+    
+    
+    
+                .layer-on{
+    
+                    gap: 30px;
+    
+                    h1{
+    
+                        font-size: 35px;
+    
+                    }
+    
+                    h3{
+                        font-size: 12px;
+                        width: 70%;
+                    }
+    
+                    button{
+                        height: 55px;
+                        width: 60%;
+                        font-size: 13px;
+    
+    }
+                }
+            }
+        }
+
+    }
+
+
+    .forgot-password-page{
+
+        .parags{
+        
+    
+            h1{
+                font-size: 25px;
+            }
+        
+        
+            h3{
+                
+                font-size: 11px;
+            }
+    
+            .line{
+                height: 5px;
+                width: 70%;
+                margin: 20px auto;
+            }
+        }
+    
+    
+        .email-container{
+            width: 90%;
+            margin: 100px auto;
+            gap: 50px;
+    
+            .input-container{
+                width: 50%;
+                height: 45px;
+             
+                input{
+                    width: 94%;
+                    height: 100%;
+                    font-size: 10px;
+                }
+    
+                .icon{
+                    font-size: 14px;
+                    margin-right: 13px;
+                }
+    
+                .email-icon{
+                    font-size: 15px;
+                }
+
+            }
+    
+    
+            button{
+                font-size: 12px;
+                height: 45px;
+                width: 160px;
+            }
+    
+        }
+    
+    
+        .security-question-container{
+            width: 85%;
+            margin: 100px auto;
+            gap: 50px;
+    
+            .input-container{
+    
+                height: 45px;
+
+                
+                input{
+                    width: 94%;
+                    font-size: 9px;
+
+}
+
+                .icon{
+                    width: 6%;
+                    font-size: 12px;
+                    margin-right: 5px;
+                }
+
+                .email-icon{
+                    font-size: 14px;
+                }
+
+
+
+
+
+
+
+
+            }
+
+
+            .input-dropmenu{
+
+                height: 45px;
+
+
+                p{
+                    width: 94%;
+                    font-size: 10px;
+                    font-weight: 500;
+
+                    .icon{
+   
+                        margin-left: 15px;
+                        font-size: 12px;
+                    }
+   
+                }
+
+                .icon{
+                    font-size: 14px;
+                    width: 6%;
+                    margin-right: 5px;
+                }
+
+
+                .dropdown{
+
+                    top: 50px;
+
+                    button{
+                        font-size: 11px;
+                        height: 45px;
+
+}
+                }
+
+
+                .questions-dropmenu{
+                    height: 200px;
+
+                }
+
+
+
+
+            }
+    
+            .main-button{
+                font-size: 12px;
+                height: 45px;
+                width: 160px;
+            }
+        }
+    
+
+    
+    
+        .done{
+          
+            h1{
+                font-size: 22px;
+                .icon{
+                    font-size: 38px;
+                }
+            }
+        }
+    
+    }  
+}
+
+@media (max-width: 916px){
+    .sign-page-container{
+
+
+
+        .sign-up-container{
+            flex-direction: column;
+            height: fit-content;
+
+
+            .sign-up-left{
+                width: 100%;
+                order: 1;
+                margin-top: 25px;
+                padding-bottom: 50px;
+                h1{
+    
+                    font-size: 25px;
+    
+                }
+    
+    
+                h3{
+                    font-size: 10px;
+                }
+    
+    
+                .inputs-container{
+                    margin: 20px;
+    
+                    gap: 15px;
+                    width: 50%;
+    
+                    .input-container{
+    
+                        height: 45px;
+    
+                        
+                        input{
+                            width: 94%;
+                            font-size: 9px;
+    
+    }
+    
+                        .icon{
+                            width: 6%;
+                            font-size: 12px;
+                            margin-right: 5px;
+                        }
+    
+                        .email-icon{
+                            font-size: 14px;
+                        }
+    
+    
+    
+    
+    
+    
+    
+    
+                    }
+    
+    
+                    .input-dropmenu{
+    
+                        height: 45px;
+    
+    
+                        p{
+                            width: 94%;
+                            font-size: 10px;
+                            font-weight: 500;
+    
+                            .icon{
+           
+                                margin-left: 15px;
+                                font-size: 12px;
+                            }
+           
+                        }
+    
+                        .icon{
+                            font-size: 14px;
+                            width: 6%;
+                            margin-right: 5px;
+                        }
+    
+    
+                        .dropdown{
+    
+                            top: 50px;
+    
+                            button{
+                                font-size: 11px;
+                                height: 45px;
+    
+    }
+                        }
+    
+    
+                        .questions-dropmenu{
+                            height: 200px;
+    
+                        }
+    
+    
+    
+    
+                    }
+    
+    
+                }
+    
+                .sign-main-button{
+    
+                    height: 55px;
+                    width: 50%;
+                    font-size: 12px;
+                }
+            }
+
+            .sign-up-right{
+                width: 100%;
+                height: 250px;
+
+                .layer-on{
+    
+                    gap: 15px;
+    
+                    h1{
+    
+                        font-size: 30px;
+    
+                    }
+    
+                    h3{
+                        font-size: 11px;
+                        width: 50%;
+                    }
+    
+                    button{
+                        height: 50px;
+                        width: 50%;
+                        font-size: 11px;
+    
+                    }
+                }
+            }
+        }
+
+
+        .sign-in-container{
+            flex-direction: column;
+            height: fit-content;
+
+            .sign-in-right{
+                width: 100%;
+                order: 1;
+                margin-top: 25px;
+                padding-bottom: 50px;
+                height: fit-content;
+
+                h1{
+    
+                    font-size: 25px;
+    
+                }
+    
+    
+                h3{
+                    font-size: 10px;
+                }
+    
+    
+                .inputs-container{
+                    margin: 20px;
+    
+                    gap: 15px;
+                    width: 50%;
+    
+                    .input-container{
+    
+                        height: 45px;
+    
+                        
+                        input{
+                            width: 94%;
+                            font-size: 9px;
+    
+    }
+    
+                        .icon{
+                            width: 6%;
+                            font-size: 12px;
+                            margin-right: 5px;
+                        }
+    
+                        .email-icon{
+                            font-size: 14px;
+                        }
+    
+    
+    
+    
+    
+    
+    
+    
+                    }
+    
+    
+                    .input-dropmenu{
+    
+                        height: 45px;
+    
+    
+                        p{
+                            width: 94%;
+                            font-size: 10px;
+                            font-weight: 500;
+    
+                            .icon{
+           
+                                margin-left: 15px;
+                                font-size: 12px;
+                            }
+           
+                        }
+    
+                        .icon{
+                            font-size: 14px;
+                            width: 6%;
+                            margin-right: 5px;
+                        }
+    
+    
+                        .dropdown{
+    
+                            top: 50px;
+    
+                            button{
+                                font-size: 11px;
+                                height: 45px;
+    
+    }
+                        }
+    
+    
+                        .questions-dropmenu{
+                            height: 200px;
+    
+                        }
+    
+    
+    
+    
+                    }
+    
+    
+                }
+    
+                .sign-main-button{
+    
+                    height: 55px;
+                    width: 50%;
+                    font-size: 12px;
+                }
+            }
+    
+            .sign-in-left{
+                width: 100%;
+                height: 250px;
+                order: 0;
+    
+    
+                .layer-on{
+    
+                    gap: 15px;
+    
+                    h1{
+    
+                        font-size: 30px;
+    
+                    }
+    
+                    h3{
+                        font-size: 11px;
+                        width: 50%;
+                    }
+    
+                    button{
+                        height: 50px;
+                        width: 50%;
+                        font-size: 11px;
+    
+    }
+                }
+            }
+        }
+
+    }
+}
+
+
+@media (max-width: 717px) {
+    .forgot-password-page{
+
+
+    
+    
+        .email-container{
+            width: 100%;
+            margin: 100px auto;
+            gap: 50px;
+    
+            .input-container{
+                width: 80%;
+                height: 45px;
+             
+                input{
+                    width: 94%;
+                    height: 100%;
+                    font-size: 10px;
+                }
+    
+                .icon{
+                    font-size: 14px;
+                    margin-right: 13px;
+                }
+    
+                .email-icon{
+                    font-size: 15px;
+                }
+
+            }
+    
+    
+            button{
+                font-size: 12px;
+                height: 45px;
+                width: 160px;
+            }
+    
+        }
+    
+    
+        .security-question-container{
+            width: 100%;
+            margin: 100px auto;
+            gap: 50px;
+    
+            .input-container{
+    
+                height: 45px;
+                width: 80%;
+                
+                input{
+                    width: 94%;
+                    font-size: 9px;
+
+}
+
+                .icon{
+                    width: 6%;
+                    font-size: 12px;
+                    margin-right: 5px;
+                }
+
+                .email-icon{
+                    font-size: 14px;
+                }
+
+
+
+
+
+
+
+
+            }
+
+
+            .input-dropmenu{
+                width: 80%;
+                height: 45px;
+
+
+                p{
+                    width: 94%;
+                    font-size: 10px;
+                    font-weight: 500;
+
+                    .icon{
+   
+                        margin-left: 15px;
+                        font-size: 12px;
+                    }
+   
+                }
+
+                .icon{
+                    font-size: 14px;
+                    width: 6%;
+                    margin-right: 5px;
+                }
+
+
+                .dropdown{
+
+                    top: 50px;
+
+                    button{
+                        font-size: 11px;
+                        height: 45px;
+
+}
+                }
+
+
+                .questions-dropmenu{
+                    height: 200px;
+
+                }
+
+
+
+
+            }
+    
+            .main-button{
+                font-size: 12px;
+                height: 45px;
+                width: 160px;
+            }
+        }
+    
+
+    
+    
+        .done{
+          
+            h1{
+                font-size: 22px;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column-reverse;
+
+                .icon{
+                    font-size: 38px;
+
+                }
+            }
+        }
+    
+    }  
+}
+
+@media (max-width: 517px) {
+    .sign-page-container{
+
+
+
+        .sign-up-container{
+
+
+
+            .sign-up-left{
+
+                h1{
+    
+                    font-size: 23px;
+    
+                }
+    
+    
+
+    
+                .inputs-container{
+
+                    width: 90%;
+    
+                    .input-container{
+    
+                        height: 45px;
+    
+                        
+                        input{
+                            width: 94%;
+                            font-size: 9px;
+    
+    }
+    
+                        .icon{
+                            width: 6%;
+                            font-size: 12px;
+                            margin-right: 5px;
+                        }
+    
+                        .email-icon{
+                            font-size: 14px;
+                        }
+    
+    
+    
+    
+    
+    
+    
+    
+                    }
+    
+    
+                    .input-dropmenu{
+    
+                     
+                        .questions-dropmenu{
+                            height: 150px;
+    
+                        }
+    
+    
+    
+    
+                    }
+    
+    
+                }
+    
+                .sign-main-button{
+    
+                    height: 50px;
+                    width: 50%;
+                    font-size: 11px;
+                }
+            }
+
+
+        }
+
+
+        .sign-in-container{
+
+
+            .sign-in-right{
+          
+                h1{
+    
+                    font-size: 23px;
+    
+                }
+    
+    
+
+    
+                .inputs-container{
+              
+                    width: 90%;
+
+
+    
+    
+                }
+    
+                .sign-main-button{
+    
+                    height: 50px;
+                    width: 50%;
+                    font-size: 11px;
+                }
+            }
+    
+
+        }
+
+    }
+}

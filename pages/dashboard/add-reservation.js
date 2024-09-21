@@ -176,102 +176,113 @@ const AddReservation = () => {
 
       // Utility Functions for filtering shifts
 
-    const isShiftsToday = (dateString) => {
-    const [day, month, year] = dateString.split('/').map(Number);
-    const someDate = new Date(year, month - 1, day); 
-    const today = new Date();
-    return (
-      someDate.getDate() === today.getDate() &&
-      someDate.getMonth() === today.getMonth() &&
-      someDate.getFullYear() === today.getFullYear()
-    );
-    };
+// دالة لتحويل الوقت من تنسيق 12 ساعة إلى دقائق
+const convertTo24HourFormat = (timeString) => {
+  if (!timeString) {
+
+    return null; // أو يمكنك استخدام قيمة افتراضية أخرى
+  }
   
-    const handleTodayShifts = (shifts) => {
-        const currentDate = new Date();
-        const currentHours = currentDate.getHours();
-        const currentMinutes = currentDate.getMinutes();
-        return shifts.filter(shift => {
-        let [hours, minutes] = shift.time.toString().split(':').map(Number);
-        if (!minutes) minutes = 0;
-        if (shift.period === "مساءً" && hours < 12) {
-            hours += 12;
-        } else if (shift.period === "صباحاً" && hours === 12) {
-            hours = 0;
-        }
-        return hours > currentHours || (hours === currentHours && minutes > currentMinutes);
-        });
-    };
-  
-  const filterAvailableShifts = (shifts, reservedTimes) => {
-    return shifts.filter((shift) => {
-      let [hours, minutes] = shift.time.toString().split(':').map(Number);
-      if (!minutes) minutes = 0;
-      if (shift.period === "مساءً" && hours < 12) {
-        hours += 12;
-      } else if (shift.period === "صباحاً" && hours === 12) {
-        hours = 0;
-      }
-      const shiftTimeInMinutes = hours * 60 + minutes;
-      return !reservedTimes.some((reserved) => {
-        let [reservedHours, reservedMinutes] = reserved.time.toString().split(':').map(Number);
-        if (!reservedMinutes) reservedMinutes = 0;
-        if (reserved.period === "مساءً" && reservedHours < 12) {
-          reservedHours += 12;
-        } else if (reserved.period === "صباحاً" && reservedHours === 12) {
-          reservedHours = 0;
-        }
-        const reservedTimeInMinutes = reservedHours * 60 + reservedMinutes;
-        if (reserved.category === 'كشف') {
-          return (
-            shiftTimeInMinutes >= reservedTimeInMinutes &&
-            shiftTimeInMinutes < reservedTimeInMinutes + 30
-          );
-        } else if (reserved.category === 'جلسة') {
-          return (
-            shiftTimeInMinutes >= reservedTimeInMinutes &&
-            shiftTimeInMinutes < reservedTimeInMinutes + 60
-          );
-        }
-        return false;
-      });
-    });
-  };
-  
-  // Filter shifts based on day info and selected category
-  useEffect(() => {
-    if (dayInfo && Object.keys(dayInfo).length > 0) {
-      
-      // Check if doctor.category matches selected category or if it is 'كشف وجلسات'
-      const doctorCategoryMatches = (selectedCategory) => {
-        return (
-          dayInfo.category === selectedCategory || 
-          dayInfo.category === 'كشف وجلسات'
-        );
-      };
-  
-      if (doctorCategoryMatches(category)) {
-        const availableShifts = isShiftsToday(inputDate)
-          ? handleTodayShifts(dayInfo.category === 'جلسة' ? ShiftsHours : timeSlots)
-          : dayInfo.category === 'جلسة' ? ShiftsHours : timeSlots;
-  
-        if (dayInfo.reservations.length) {
-          const reservedTimes = dayInfo.reservations.map((reservation) => ({
-            time: reservation.reservationTime.split(' ')[0],
-            period: reservation.reservationTime.split(' ')[1],
-            category: reservation.category
-          }));
-          
-          const filteredShifts = filterAvailableShifts(availableShifts, reservedTimes);
-          setAvailableShifts(filteredShifts);
-        } else {
-          setAvailableShifts(availableShifts);
-        }
-      } else {
-        setAvailableShifts([]); // No shifts available if category doesn't match
-      }
+  const [time, period] = timeString.split(' ');
+  let [hours, minutes] = time.split(':').map(Number);
+
+  if (period === 'مساءً' && hours < 12) {
+    hours += 12;
+  } else if (period === 'صباحاً' && hours === 12) {
+    hours = 0;
+  }
+
+  return hours * 60 + (minutes || 0);
+};
+
+const filterReservedTimes = (shifts, reservations) => {
+  return shifts.filter((shift) => {
+    let shiftTimeInMinutes;
+
+    // تحقق ما إذا كان shift.time رقم أم سلسلة نصية
+    if (typeof shift.time === 'number') {
+      shiftTimeInMinutes = shift.time * 60; // التحويل إلى دقائق
+    } else if (typeof shift.time === 'string') {
+      const [shiftHours, shiftMinutes] = shift.time.split(':').map(Number);
+      shiftTimeInMinutes = shiftHours * 60 + (shiftMinutes || 0);
+    } else {
+      console.error('shift.time is neither a string nor a number:', shift.time);
+      return false; // استبعاد الـ shift إذا كان التنسيق غير متوقع
     }
-  }, [dayInfo, category]);
+
+    return !reservations.some((reservation) => {
+      // بناء الوقت المحجوز من time و period
+      if (!reservation.time || !reservation.period) {
+        console.error('time or period is undefined for reservation:', reservation);
+        return false; // استبعاد الحجز إذا لم يكن الوقت متوفرًا
+      }
+
+      const reservedTimeInMinutes = convertTo24HourFormat(`${reservation.time} ${reservation.period}`);
+
+      // تأكد من أن reservedTimeInMinutes معرف
+      if (reservedTimeInMinutes === null) {
+        return false; // استبعاد الحجز إذا كان الوقت غير صالح
+      }
+
+      // بناءً على نوع الحجز
+      if (reservation.category === 'كشف') {
+        return (
+          shiftTimeInMinutes >= reservedTimeInMinutes &&
+          shiftTimeInMinutes < reservedTimeInMinutes + 30 // مدة الكشف 30 دقيقة
+        );
+      } else if (reservation.category === 'جلسة') {
+        return (
+          shiftTimeInMinutes >= reservedTimeInMinutes &&
+          shiftTimeInMinutes < reservedTimeInMinutes + 60 // مدة الجلسة 60 دقيقة
+        );
+      }
+
+      return false;
+    });
+  });
+};
+
+// دالة لتصفية المواعيد بناءً على الفترات المتاحة للدكتور
+const filterShiftsByDoctorAvailability = (shifts, startTime, endTime) => {
+  const shiftStartInMinutes = convertTo24HourFormat(startTime);
+  const shiftEndInMinutes = convertTo24HourFormat(endTime);
+
+  return shifts.filter((shift) => {
+    const shiftTimeInMinutes = convertTo24HourFormat(shift.time + ' ' + shift.period);
+    return shiftTimeInMinutes >= shiftStartInMinutes && shiftTimeInMinutes <= shiftEndInMinutes;
+  });
+};
+
+// useEffect لتحديد المواعيد المتاحة
+useEffect(() => {
+  if (dayInfo && Object.keys(dayInfo).length > 0) {
+    let availableShifts = [];
+
+    if (dayInfo.category === 'كشف') {
+      // استخدم timeSlots للأطباء الذين نوعهم كشف
+      availableShifts = filterShiftsByDoctorAvailability(timeSlots, dayInfo.shiftStartsFrom, dayInfo.shiftEndsIn);
+    } else if (dayInfo.category === 'جلسات') {
+      // استخدم ShiftsHours للأطباء الذين نوعهم جلسات
+      availableShifts = filterShiftsByDoctorAvailability(ShiftsHours, dayInfo.shiftStartsFrom, dayInfo.shiftEndsIn);
+    } else if (dayInfo.category === 'كشف وجلسات') {
+      // استخدم ShiftsHours للأطباء الذين نوعهم كشف وجلسات
+      availableShifts = filterShiftsByDoctorAvailability(timeSlots, dayInfo.shiftStartsFrom, dayInfo.shiftEndsIn);
+    }
+
+    if (dayInfo.reservations && dayInfo.reservations.length > 0) {
+      // حذف المواعيد المحجوزة من availableShifts
+      const reservedTimes = dayInfo.reservations.map((reservation) => ({
+        time: reservation.reservationTime.split(' ')[0],
+        period: reservation.reservationTime.split(' ')[1],
+        category: reservation.category
+      }));
+
+      availableShifts = filterReservedTimes(availableShifts, reservedTimes);
+    }
+
+    setAvailableShifts(availableShifts);
+  }
+}, [dayInfo, category]);
 
 
       const handleAddReservation = async () => {
@@ -377,8 +388,6 @@ const AddReservation = () => {
                             {loading && Object.keys(dayInfo).length === 0 && !dayInfo?.vacation && !dayInfo?.reservations?.length && <div className="loading"><LoadingCircle  size={`35px`} providedcolor="#309C53"/></div>}
                         </div>
                     </div>
-
-     
 
                     <div className="add">
                             <h1>اضافة حجز</h1>

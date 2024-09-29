@@ -16,7 +16,7 @@ const Layout = ({children}) => {
 
             <IntroInfo />
             <Header />
-            
+
             {children}
 
             <div className='whats-app-float'>

@@ -184,10 +184,21 @@ const Permissions = () => {
                                 <p>جميع المستخدمين</p>
                             </div>
 
+                            <div>
+                                <input checked={permissions.includes('سابقة اعمالنا')} onChange={(s)=> handleChangePermissions(s.target.checked, 'سابقة اعمالنا')} type="checkbox" aria-label="سابقة اعمالنا"></input>
+                                <p>سابقة اعمالنا</p>
+                            </div>
+
 
                             <div>
                                 <input checked={permissions.includes('كتابة مدونة')} onChange={(s)=> handleChangePermissions(s.target.checked, 'كتابة مدونة')} type="checkbox" aria-label="كتابة مدونة"></input>
                                 <p>كتابة مدونة</p>
+                            </div>
+
+
+                            <div>
+                                <input checked={permissions.includes('مسح مدونة')} onChange={(s)=> handleChangePermissions(s.target.checked, 'مسح مدونة')} type="checkbox" aria-label="مسح مدونة"></input>
+                                <p>مسح مدونة</p>
                             </div>
 
 
@@ -204,6 +215,12 @@ const Permissions = () => {
                             <div>
                                 <input checked={permissions.includes('اعياد الميلاد')} onChange={(s)=> handleChangePermissions(s.target.checked, 'اعياد الميلاد')} type="checkbox" aria-label="اعياد الميلاد"></input>
                                 <p>اعياد الميلاد</p>
+                            </div>
+
+
+                            <div>
+                                <input checked={permissions.includes('ERP')} onChange={(s)=> handleChangePermissions(s.target.checked, 'ERP')} type="checkbox" aria-label="ERP"></input>
+                                <p>ERP</p>
                             </div>
 
                         </div>

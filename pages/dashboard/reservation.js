@@ -5,6 +5,7 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import ShiftsHours from '@/utils/shiftsHours.json';
 import { toast } from "react-toastify";
 import { getSession } from "next-auth/react";
+import filterShifts from "@/utils/filterShifts";
 
 export async function getServerSideProps(context) {
     const session = await getSession(context);
@@ -185,102 +186,17 @@ const Reservation = () => {
 
     // Utility Functions for filtering shifts
 
-    const isShiftsToday = (dateString) => {
-      const [day, month, year] = dateString.split('/').map(Number);
-      const someDate = new Date(year, month - 1, day); 
-      const today = new Date();
-      return (
-        someDate.getDate() === today.getDate() &&
-        someDate.getMonth() === today.getMonth() &&
-        someDate.getFullYear() === today.getFullYear()
-      );
-      };
-    
-      const handleTodayShifts = (shifts) => {
-          const currentDate = new Date();
-          const currentHours = currentDate.getHours();
-          const currentMinutes = currentDate.getMinutes();
-          return shifts.filter(shift => {
-          let [hours, minutes] = shift.time.toString().split(':').map(Number);
-          if (!minutes) minutes = 0;
-          if (shift.period === "مساءً" && hours < 12) {
-              hours += 12;
-          } else if (shift.period === "صباحاً" && hours === 12) {
-              hours = 0;
-          }
-          return hours > currentHours || (hours === currentHours && minutes > currentMinutes);
-          });
-      };
-    
-    const filterAvailableShifts = (shifts, reservedTimes) => {
-      return shifts.filter((shift) => {
-        let [hours, minutes] = shift.time.toString().split(':').map(Number);
-        if (!minutes) minutes = 0;
-        if (shift.period === "مساءً" && hours < 12) {
-          hours += 12;
-        } else if (shift.period === "صباحاً" && hours === 12) {
-          hours = 0;
-        }
-        const shiftTimeInMinutes = hours * 60 + minutes;
-        return !reservedTimes.some((reserved) => {
-          let [reservedHours, reservedMinutes] = reserved.time.toString().split(':').map(Number);
-          if (!reservedMinutes) reservedMinutes = 0;
-          if (reserved.period === "مساءً" && reservedHours < 12) {
-            reservedHours += 12;
-          } else if (reserved.period === "صباحاً" && reservedHours === 12) {
-            reservedHours = 0;
-          }
-          const reservedTimeInMinutes = reservedHours * 60 + reservedMinutes;
-          if (reserved.category === 'كشف') {
-            return (
-              shiftTimeInMinutes >= reservedTimeInMinutes &&
-              shiftTimeInMinutes < reservedTimeInMinutes + 30
-            );
-          } else if (reserved.category === 'جلسة') {
-            return (
-              shiftTimeInMinutes >= reservedTimeInMinutes &&
-              shiftTimeInMinutes < reservedTimeInMinutes + 60
-            );
-          }
-          return false;
-        });
-      });
-    };
-    
-    // Filter shifts based on day info and selected category
+
     useEffect(() => {
       if (dayInfo && Object.keys(dayInfo).length > 0) {
         
-        // Check if doctor.category matches selected category or if it is 'كشف وجلسات'
-        const doctorCategoryMatches = (selectedCategory) => {
-          return (
-            dayInfo.category === selectedCategory || 
-            dayInfo.category === 'كشف وجلسات'
-          );
-        };
+          setAvailableShifts(filterShifts(inputDate, dayInfo.category === 'جلسات' ? ShiftsHours : timeSlots , dayInfo.shiftStartsFrom, dayInfo.shiftEndsIn, dayInfo.reservations, category, dayInfo.category))
     
-        if (doctorCategoryMatches(category)) {
-          const availableShifts = isShiftsToday(inputDate)
-            ? handleTodayShifts(dayInfo.category === 'جلسة' ? ShiftsHours : timeSlots)
-            : dayInfo.category === 'جلسة' ? ShiftsHours : timeSlots;
-    
-          if (dayInfo.reservations.length) {
-            const reservedTimes = dayInfo.reservations.map((reservation) => ({
-              time: reservation.reservationTime.split(' ')[0],
-              period: reservation.reservationTime.split(' ')[1],
-              category: reservation.category
-            }));
-            
-            const filteredShifts = filterAvailableShifts(availableShifts, reservedTimes);
-            setAvailableShifts(filteredShifts);
-          } else {
-            setAvailableShifts(availableShifts);
-          }
         } else {
-          setAvailableShifts([]); // No shifts available if category doesn't match
+          setAvailableShifts([])
         }
-      }
-    }, [dayInfo, category]);
+      
+    }, [dayInfo, category, inputDate]);
 
 
 
@@ -365,6 +281,8 @@ const Reservation = () => {
                 </div>
 
                 <div className="inner-reservation-container">
+                        
+        
 
                         <div className="information">
                             <h1>معلومات اليوم</h1>
@@ -400,6 +318,7 @@ const Reservation = () => {
 
 
                         <div className="edit">
+             
                                 <h1>تعديل ميعاد</h1>
                                 <input value={editedReversationSerial} onChange={(s)=> setEditiedReversationSerial(s.target.value)} type="number" placeholder="رقم الحجز"></input>
                                 <div onClick={()=> setOpenCategory(!openCategory)} className="dropmenu"><IoMdArrowDropdown className="icon" /> <p>{category ? category : `نوع الحجز المراد تعديله`}</p> 

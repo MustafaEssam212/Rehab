@@ -5,7 +5,7 @@ import dbConnect from "@/utils/dbConnect";
 import ContactMessage from "@/Models/ContactMessage";
 import User from "@/Models/User";
 import Blog from "@/Models/Blog";
-
+import Work from "@/Models/Work";
 
 export default async function GetData(req, res) {
     await dbConnect();
@@ -324,6 +324,19 @@ export default async function GetData(req, res) {
                     return res.status(500).send({ message: 'حدث خطأ اثناء تنفيذ العملية' });
                 }
             }
+
+            else if(req.query.method === 'get-works'){
+                try {
+                    const page = parseInt(req.query.page) || 1;
+                    const blogsPerPage = 3;
+                    const skipCount = (page - 1) * blogsPerPage;
+                    const length = await Work.countDocuments();
+                    const fingBlogs = await Work.find().skip(skipCount).limit(blogsPerPage);
+                    return res.status(200).send({ length, works: fingBlogs });
+                } catch (error) {
+                    return res.status(500).send({ message: 'حدث خطأ اثناء تنفيذ العملية' });
+                }
+            }
     
             else if(req.query.method === 'get-blog'){
            
@@ -344,6 +357,28 @@ export default async function GetData(req, res) {
                     
                 } catch (error) {
                     return res.status(500).send({blog: {}, suggestedBlogs: [], notFound: true})
+                }
+            }
+
+            else if(req.query.method === 'get-work'){
+           
+    
+                try {
+    
+                    const findBlog = await Work.findOne({name: req.query.workName});
+                    const suggestedWorks = await Work.aggregate([
+                        { $match: { name: { $ne: req.query.workName } } },
+                        { $sample: { size: 3 } }
+                    ]);
+    
+                    if(findBlog){
+                        return res.status(200).send({work: findBlog, suggestedWorks, notFound: false});
+                    }else{
+                        return res.status(404).send({work: {}, suggestedWorks: [], notFound: true})
+                    }
+                    
+                } catch (error) {
+                    return res.status(500).send({work: {}, suggestedWorks: [], notFound: true})
                 }
             }
     
@@ -407,7 +442,15 @@ export default async function GetData(req, res) {
                 }
             }
     
-    
+            else if(req.query.method === 'get-blogs-names'){
+                try {
+                    const findBlogs = await Blog.find({}, {_id: false, name: true});
+        
+                    return res.status(200).send({message: 'تم جلب البيانات بنجاح', blogsNames: findBlogs})
+                } catch (error) {
+                    return res.status(500).send({message: 'حدث خطأ اثناء تنفيذ العملية', blogsNames: []})
+                }
+            }
     
         }
       

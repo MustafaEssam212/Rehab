@@ -4,6 +4,9 @@ import ContactMessage from "@/Models/ContactMessage";
 import User from "@/Models/User";
 import { compare } from 'bcryptjs';
 import bcrypt from 'bcryptjs';
+import Blog from "@/Models/Blog";
+import path from 'path';
+import fs from 'fs'
 
 export default async function EditData(req, res) {
     await dbConnect();
@@ -498,7 +501,7 @@ export default async function EditData(req, res) {
 
     else if(req.method === 'DELETE'){
 
-        if(req.query.method === 'delete-reservation'){
+        if(req.query.method === 'delete-resrevation'){
 
 
             try {
@@ -517,6 +520,35 @@ export default async function EditData(req, res) {
             } catch (error) {
                 return res.status(500).send({message: 'حدث خطأ اثناء تنفيذ العملية'})
             }
+        }
+
+        if(req.query.method === 'delete-blog'){
+                try {
+                const folderPath = path.join(process.cwd(), `./uploads/blogs/${req.query.blogName.replace(/ /g, "_")}`);
+                
+
+                if (fs.existsSync(folderPath)) {
+                    try {
+         
+                      await fs.promises.rm(folderPath, { recursive: true, force: true });
+                      const deleteBlog = await Blog.deleteOne({ name: req.query.blogName });
+          
+                      if (deleteBlog.deletedCount > 0) {
+                        return res.status(200).send({ message: 'تم حذف المدونة بنجاح' });
+                      } else {
+                        return res.status(500).send({ message: 'حدث خطأ اثناء تنفيذ العملية' });
+                      }
+                    } catch (err) {
+                      return res.status(500).send({ message: 'حدث خطأ اثناء تنفيذ العملية' });
+                    }
+                  } else {
+                    return res.status(500).send({ message: 'حدث خطأ اثناء تنفيذ العملية' });
+                  }
+
+
+              } catch (error) {
+                return res.status(500).send({ message: 'حدث خطأ اثناء تنفيذ العملية' });
+              }
         }
 
     }

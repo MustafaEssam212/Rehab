@@ -5,6 +5,8 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import LoadingCircle from "../Loading-Circle";
 import { toast } from "react-toastify";
 import { FaCircleMinus, FaCirclePlus } from "react-icons/fa6";
+import filterShifts from "@/utils/filterShifts";
+
 
 const EditPop = ({sendDataToParent, reservation}) => {
 
@@ -177,99 +179,11 @@ const EditPop = ({sendDataToParent, reservation}) => {
       ];
 
 
-      const handleTodayShifts = (shifts) => {
-        const currentDate = new Date();
-        const currentHours = currentDate.getHours();
-        const currentMinutes = currentDate.getMinutes();
-      
-        // فلترة الأوقات التي مضت
-        return shifts.filter(shift => {
-          let [hours, minutes] = shift.time.toString().split(':').map(Number);
-      
-          // التعامل مع النصف ساعة (مثل 9:30)
-          if (!minutes) minutes = 0;
-      
-          // تحويل AM/PM إلى نظام 24 ساعة
-          if (shift.period === "مساءً" && hours < 12) {
-            hours += 12;
-          } else if (shift.period === "صباحاً" && hours === 12) {
-            hours = 0; // حالة منتصف الليل
-          }
-      
-          // الاحتفاظ فقط بالمواعيد التي لم تمر
-          return hours > currentHours || (hours === currentHours && minutes > currentMinutes);
-        });
-      };
+
       
       useEffect(() => {
-        const filterAvailableShifts = (shifts, reservedTimes) => {
-          return shifts.filter((shift) => {
-            let [hours, minutes] = shift.time.toString().split(':').map(Number);
-            if (!minutes) minutes = 0;
-      
-            // تحويل AM/PM إلى نظام 24 ساعة
-            if (shift.period === "مساءً" && hours < 12) {
-              hours += 12;
-            } else if (shift.period === "صباحاً" && hours === 12) {
-              hours = 0; // حالة منتصف الليل
-            }
-      
-            const shiftTimeInMinutes = hours * 60 + minutes;
-      
-            // التحقق من تضارب الأوقات مع الأوقات المحجوزة مسبقًا
-            return !reservedTimes.some((reserved) => {
-              let [reservedHours, reservedMinutes] = reserved.time.toString().split(':').map(Number);
-              if (!reservedMinutes) reservedMinutes = 0;
-              if (reserved.period === "مساءً" && reservedHours < 12) {
-                reservedHours += 12;
-              } else if (reserved.period === "صباحاً" && reservedHours === 12) {
-                reservedHours = 0;
-              }
-              const reservedTimeInMinutes = reservedHours * 60 + reservedMinutes;
-      
-              // التعامل مع الحجز بناءً على النوع
-              if (reserved.category === 'كشف') {
-                // كشف يأخذ 30 دقيقة
-                return (
-                  shiftTimeInMinutes >= reservedTimeInMinutes &&
-                  shiftTimeInMinutes < reservedTimeInMinutes + 30
-                );
-              } else if (reserved.category === 'جلسة') {
-                // جلسة تأخذ 60 دقيقة
-                return (
-                  shiftTimeInMinutes >= reservedTimeInMinutes &&
-                  shiftTimeInMinutes < reservedTimeInMinutes + 60
-                );
-              }
-              return false;
-            });
-          });
-        };
-      
         if (Object.keys(doctorObj).length !== 0) {
-          if (isToday(date)) {
-            const availableOnDay = handleTodayShifts(reservation.category === 'جلسة' ? ShiftsHours : timeSlots);
-            const reservedTimes = doctorObj.reservations.map((reservation) => ({
-              time: reservation.reservationTime.split(' ')[0],
-              period: reservation.reservationTime.split(' ')[1],
-              category: reservation.category
-            }));
-            const filteredShifts = filterAvailableShifts(availableOnDay, reservedTimes);
-            setAvailableShifts(filteredShifts);
-          } else {
-            const availableShifts = reservation.category === 'جلسة' ? ShiftsHours : timeSlots;
-            if (doctorObj.reservations.length) {
-              const reservedTimes = doctorObj.reservations.map((reservation) => ({
-                time: reservation.reservationTime.split(' ')[0],
-                period: reservation.reservationTime.split(' ')[1],
-                category: reservation.category
-              }));
-              const filteredShifts = filterAvailableShifts(availableShifts, reservedTimes);
-              setAvailableShifts(filteredShifts);
-            } else {
-              setAvailableShifts(availableShifts);
-            }
-          }
+          setAvailableShifts(filterShifts(reservation.date, doctorObj.category === 'جلسات' ? ShiftsHours : timeSlots , doctorObj.shiftStartsFrom, doctorObj.shiftEndsIn, doctorObj.reservations, reservation.category, doctorObj.category))
         } else {
           setAvailableShifts([]);
         }
@@ -357,7 +271,8 @@ const EditPop = ({sendDataToParent, reservation}) => {
                     <button aria-label="غلق" onClick={()=> sendDataToParent(false)}><IoCloseCircle className="icon" /></button>
                     <h1>تعديل ميعاد الحجز</h1>
                 </div>
-         
+
+               
 
                 {
                     !hasDatePassed(reservation) ? <div className="body-reservation-pop">

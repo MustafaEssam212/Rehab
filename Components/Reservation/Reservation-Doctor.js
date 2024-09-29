@@ -213,7 +213,9 @@ const ReservationDoctor = ({sendDataToParent}) => {
     doctorSerial: '',
     img: '',
     reservations: [],
-    doctorCategory: ''
+    doctorCategory: '',
+    startShiftTime: '',
+    endShiftTime: ''
   })
 
   const handleSubmit = async () => {
@@ -267,6 +269,8 @@ const ReservationDoctor = ({sendDataToParent}) => {
     { "time": "9:30", "period": "مساءً" },
     { "time": 10, "period": "مساءً" }
   ];
+
+
   
     return(
         <div className="reservation-page-doctor">
@@ -283,7 +287,7 @@ const ReservationDoctor = ({sendDataToParent}) => {
                       {
                         filteredArray.map((e, key) => {
                           return(
-                            <div key={key} onClick={()=> setSelectedDoctor({doctorName: e.doctorName, doctorSerial: e.doctor, reservations: e.reservations, img: `/api/getImage?method=get-doctor-image&doctor=${e.doctor}&image=${e.cover}`, doctorCategory: e.category})} className={selectedDoctor.doctorSerial === e.doctor ? "doctor active" : "doctor"}>
+                            <div key={key} onClick={()=> setSelectedDoctor({doctorName: e.doctorName, doctorSerial: e.doctor, reservations: e.reservations, img: `/api/getImage?method=get-doctor-image&doctor=${e.doctor}&image=${e.cover}`, doctorCategory: e.category, startShiftTime: e.shiftStartsFrom, endShiftTime: e.shiftEndsIn})} className={selectedDoctor.doctorSerial === e.doctor ? "doctor active" : "doctor"}>
                                 <div className="check">
                                   <FaCircleCheck className="icon" />
                                 </div>

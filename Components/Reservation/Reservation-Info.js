@@ -6,7 +6,7 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { toast } from "react-toastify";
 import { getSession } from "next-auth/react";
 import isValidEgyptianPhoneNumber from "@/utils/isValidEgyptianNumber";
-
+import filterShifts from "@/utils/filterShifts";
 
 const ReservationInfo = ({sendDataToParent, data, handleStep}) => {
 
@@ -102,119 +102,13 @@ const ReservationInfo = ({sendDataToParent, data, handleStep}) => {
         { "time": 10, "period": "مساءً" }
       ];
 
-      const isToday = (dateString) => {
-        // Convert the dateString (e.g., "14/9/2024") to a Date object
-        const [day, month, year] = dateString.split('/').map(Number);
-        const someDate = new Date(year, month - 1, day); // months are zero-based
-      
-        // Get today's date
-        const today = new Date();
-      
-        // Check if the parsed date is today
-        return (
-          someDate.getDate() === today.getDate() &&
-          someDate.getMonth() === today.getMonth() &&
-          someDate.getFullYear() === today.getFullYear()
-        );
-      };
-
-      const handleTodayShifts = (shifts) => {
-        const currentDate = new Date();
-        const currentHours = currentDate.getHours();
-        const currentMinutes = currentDate.getMinutes();
-    
-        // Filter out shifts that are in the past if today is selected
-        return shifts.filter(shift => {
-            let [hours, minutes] = shift.time.toString().split(':').map(Number);
-            
-            // Handle half-hour shifts (like 9:30)
-            if (!minutes) minutes = 0;
-    
-            // Convert AM/PM to 24-hour format
-            if (shift.period === "مساءً" && hours < 12) {
-                hours += 12;
-            } else if (shift.period === "صباحاً" && hours === 12) {
-                hours = 0; // Midnight special case
-            }
-    
-            // Only keep shifts that are in the future
-            return hours > currentHours || (hours === currentHours && minutes > currentMinutes);
-        });
-    };
 
     useEffect(() => {
-        const filterAvailableShifts = (shifts, reservedTimes) => {
-          return shifts.filter((shift) => {
-            // احصل على الساعة والدقيقة من الوقت الحالي
-            let [hours, minutes] = shift.time.toString().split(':').map(Number);
-            if (!minutes) minutes = 0;
-      
-            // تحويل AM/PM إلى صيغة 24 ساعة
-            if (shift.period === "مساءً" && hours < 12) {
-              hours += 12;
-            } else if (shift.period === "صباحاً" && hours === 12) {
-              hours = 0; // حالة منتصف الليل
-            }
-      
-            // إنشاء صيغة موحدة للوقت لإجراء المقارنة بسهولة
-            const shiftTimeInMinutes = hours * 60 + minutes;
-      
-            // التحقق إذا كان الوقت الحالي متضارب مع أي حجز مسبق
-            return !reservedTimes.some((reserved) => {
-              let [reservedHours, reservedMinutes] = reserved.time.toString().split(':').map(Number);
-              if (!reservedMinutes) reservedMinutes = 0;
-              if (reserved.period === "مساءً" && reservedHours < 12) {
-                reservedHours += 12;
-              } else if (reserved.period === "صباحاً" && reservedHours === 12) {
-                reservedHours = 0;
-              }
-              const reservedTimeInMinutes = reservedHours * 60 + reservedMinutes;
-      
-              // حساب التداخل بناءً على نوع الحجز
-              if (reserved.category === 'كشف') {
-                // لو الحجز كشف، نحذف الأوقات اللي تتداخل مع مدة نصف ساعة
-                return (
-                  shiftTimeInMinutes >= reservedTimeInMinutes &&
-                  shiftTimeInMinutes < reservedTimeInMinutes + 30
-                );
-              } else if (reserved.category === 'جلسة') {
-                // لو الحجز جلسة، نحذف الأوقات اللي تتداخل مع مدة ساعة
-                return (
-                  shiftTimeInMinutes >= reservedTimeInMinutes &&
-                  shiftTimeInMinutes < reservedTimeInMinutes + 60
-                );
-              }
-              return false;
-            });
-          });
-        };
-      
-        if (isToday(data.date)) {
-          const availableOnDay = handleTodayShifts(data.category === 'جلسة' ? ShiftsHours : timeSlots);
-          const reservedTimes = data.reservations.map((reservation) => ({
-            time: reservation.reservationTime.split(' ')[0],
-            period: reservation.reservationTime.split(' ')[1],
-            category: reservation.category
-          }));
-          const filteredShifts = filterAvailableShifts(availableOnDay, reservedTimes);
-          setAvailableShifts(filteredShifts);
-        } else {
-          const availableShifts = data.category === 'جلسة' ? ShiftsHours : timeSlots;
-          if (data.reservations.length) {
-            const reservedTimes = data.reservations.map((reservation) => ({
-              time: reservation.reservationTime.split(' ')[0],
-              period: reservation.reservationTime.split(' ')[1],
-              category: reservation.category
-            }));
-            const filteredShifts = filterAvailableShifts(availableShifts, reservedTimes);
-            setAvailableShifts(filteredShifts);
-          } else {
-            setAvailableShifts(availableShifts);
-          }
+        if(data.date){
+          setAvailableShifts(filterShifts(data.date, data.doctorCategory === 'جلسات' ? ShiftsHours : timeSlots ,data.startShiftTime, data.endShiftTime, data.reservations, data.category, data.doctorCategory))
         }
       }, [data]);
       
-
 
 
 

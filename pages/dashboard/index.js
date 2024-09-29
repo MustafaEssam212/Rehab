@@ -7,11 +7,12 @@ import { IoTicket } from "react-icons/io5";
 import { MdEventAvailable } from "react-icons/md";
 import { getSession } from "next-auth/react";
 import { useEffect, useState } from "react";
-import { FaUnlock, FaBloggerB, FaBirthdayCake, FaTrash} from "react-icons/fa";
+import { FaUnlock, FaBloggerB, FaBirthdayCake, FaTrash, FaCoins} from "react-icons/fa";
 import { BsCalendar2MonthFill } from "react-icons/bs";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 import { BiSolidBookAdd } from "react-icons/bi";
+import { MdWork } from "react-icons/md";
 
 
 export async function getServerSideProps(context) {
@@ -81,10 +82,13 @@ const Dashboard = ({permissions}) => {
             <Link href="#" onClick={(e)=> {e.preventDefault(); handleRoute('تبديل حجز', '/dashboard/switch-reservation')}} aria-label="تبديل حجز" title="تبديل حجز"><FaArrowsRotate className="icon" /> تبديل حجز</Link>
             <Link href="#" onClick={(e)=> {e.preventDefault(); handleRoute('المواعيد المتاحة', '/dashboard/available-appointments')}} aria-label="المواعيد المتاحة" title="المواعيد المتاحة"><MdEventAvailable className="icon" /> المواعيد المتاحة</Link>
             <Link href="#" onClick={(e)=> {e.preventDefault(); handleRoute('جميع المستخدمين', '/dashboard/all-users')}} aria-label="جميع المستخدمين" title="جميع المستخدمين"><FaUsers className="icon" /> جميع المستخدمين</Link>
+            <Link href="#" onClick={(e)=> {e.preventDefault(); handleRoute('سابقة اعمالنا', '/dashboard/write-previous-work')}} aria-label="سابقة اعمالنا" title="سابقة اعمالنا"><MdWork className="icon" /> سابقة اعمالنا</Link>
             <Link href="#" onClick={(e)=> {e.preventDefault(); handleRoute('كتابة مدونة', '/dashboard/write-blog')}} aria-label="كتابة مدونة" title="كتابة مدونة"><FaBloggerB className="icon" /> كتابة مدونة</Link>
+            <Link href="#" onClick={(e)=> {e.preventDefault(); handleRoute('مسح مدونة', '/dashboard/remove-blog')}} aria-label="مسح مدونة" title="مسح مدونة"><FaTrash className="icon" /> مسح مدونة</Link>
             <Link href="#" onClick={(e)=> {e.preventDefault(); handleRoute('رسائل التواصل', '/dashboard/contact-messages')}} aria-label="رسائل التواصل" title="رسائل التواصل"><RiMessage2Fill className="icon" /> رسائل التواصل <span>{number}</span></Link>
             <Link href="#" onClick={(e)=> {e.preventDefault(); handleRoute('تحميل بيانات العملاء', '/dashboard/download-data')}} aria-label="تحميل بيانات العملاء" title="تحميل بيانات العملاء"><FaDownload className="icon" /> تحميل بيانات العملاء</Link>
             <Link href="#" onClick={(e)=> {e.preventDefault(); handleRoute('اعياد الميلاد', '/dashboard/users-birthdays')}} aria-label="اعياد الميلاد" title="اعياد الميلاد"><FaBirthdayCake className="icon" /> اعياد الميلاد <span>{birthdaysNum}</span></Link>
+            <Link href="#" onClick={(e)=> {e.preventDefault(); handleRoute('ERP', '/dashboard/ERP')}} aria-label="ERP" title="ERP"><FaCoins className="icon" />ERP </Link>
 
         </div>
     )

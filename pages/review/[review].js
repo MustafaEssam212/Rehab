@@ -1,7 +1,7 @@
 
 
 import Image from "next/image";
-import BlogCover from '../../public/previous-work-cover.webp';
+import BlogCover from '../../public/reviews-cover.png';
 import { FaUserDoctor, FaCalendar } from "react-icons/fa6";
 import Link from "next/link";
 import SpecializationNormalPic from '../../public/specialization1.png';
@@ -13,10 +13,10 @@ import { useEffect, useState } from "react";
 import { NextSeo } from 'next-seo';
 
 export async function getServerSideProps(context) {
-    const { work } = context.params;
-    const formatted = work.replace(/_/g, ' ');
+    const { review } = context.params;
+    const formatted = review.replace(/_/g, ' ');
   
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getData?method=get-work&workName=${formatted}`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getData?method=get-review&reviewName=${formatted}`);
     const data = await res.json();
   
   
@@ -33,16 +33,16 @@ export async function getServerSideProps(context) {
 }
 
 
-const Work = ({ data }) => {
+const Review = ({ data }) => {
 
     const [images, setImages] = useState([]);
 
 
     useEffect(()=> {
-        if(data.work.type === 'مجموعة صور'){
-            const images = data.work.gallery.map(image => ({
-                original: `/api/getImage?method=get-work-image&work=${data.work.name.replace(/ /g, '_')}&image=${image}`,
-                thumbnail: `/api/getImage?method=get-work-image&work=${data.work.name.replace(/ /g, '_')}&image=${image}`,
+        if(data.review.type === 'مجموعة صور'){
+            const images = data.review.gallery.map(image => ({
+                original: `/api/getImage?method=get-review-image&review=${data.review.name.replace(/ /g, '_')}&image=${image}`,
+                thumbnail: `/api/getImage?method=get-review-image&review=${data.review.name.replace(/ /g, '_')}&image=${image}`,
             }));
             setImages(images)
         }
@@ -56,24 +56,24 @@ const Work = ({ data }) => {
 
 
 <NextSeo
-            title={data.work.name ? `${data.work.name} - مركز ريهاب للعلاج الطبيعي والتأهيل` : 'مركز ريهاب للعلاج الطبيعي والتأهيل'}
+            title={data.review.name ? `${data.review.name} - مركز ريهاب للعلاج الطبيعي والتأهيل` : 'مركز ريهاب للعلاج الطبيعي والتأهيل'}
             openGraph={{
-              url: data.work.name ? `https://rehabeg.clinic/work/${data.work.name.replace(/ /g, '_')}` : '',
+              url: data.review.name ? `https://rehabeg.clinic/review/${data.review.name.replace(/ /g, '_')}` : '',
 
             }}
             additionalMetaTags={[
               {
                 name: 'keywords',
-                content: data.work.keywords?.length ? data.work.keywords.join(', ') : ''
+                content: data.review.keywords?.length ? data.review.keywords.join(', ') : ''
               }
             ]}
-            canonical={data.work.name ? `https://rehabeg.clinic/work/${data.work.name.replace(/ /g, '_')}` : ''}
+            canonical={data.review.name ? `https://rehabeg.clinic/review/${data.review.name.replace(/ /g, '_')}` : ''}
           />
 
             <div className="blog-page-intro">
                 <div className="img-container"><Image src={BlogCover.src} fill style={{objectFit: 'cover'}} alt="Rehab EG Center"></Image></div>
                 <div className="layer-on">
-                    <h1>سابقة اعمالنا</h1>
+                    <h1>اراء عملائنا</h1>
                 </div>
             </div>
 
@@ -82,37 +82,37 @@ const Work = ({ data }) => {
             <div className="blog-page-second-container">
                 <div className="blogs-tags">
 
-                    <h2>اعمالنا السابقة</h2>
+                    <h2>اراء سابقة</h2>
 
                     <div className="recent-blogs">
 
 
 
                       {
-                        data.suggestedWorks.map((e, key) => {
+                        data.suggestedReviews.map((e, key) => {
                           return(
                             <div key={key} className="blog">
                               <div className="img-container">
                                 {
 
-                                    e.type === 'صورة' && <Image sizes="(min-width: 2060px) 190px, (min-width: 1720px) 180px, (min-width: 1540px) 150px, (min-width: 640px) 130px, calc(10.94vw + 62px)" loading="lazy" src={`/api/getImage?method=get-work-image&work=${e.name.replace(/ /g, '_')}&image=${e.pic}`} fill style={{objectFit: 'cover'}} alt={e.name}></Image>
+                                    e.type === 'صورة' && <Image sizes="(min-width: 2060px) 190px, (min-width: 1720px) 180px, (min-width: 1540px) 150px, (min-width: 640px) 130px, calc(10.94vw + 62px)" loading="lazy" src={`/api/getImage?method=get-review-image&review=${e.name.replace(/ /g, '_')}&image=${e.pic}`} fill style={{objectFit: 'cover'}} alt={e.name}></Image>
 
                                 }
 
                                 {
 
-                                    e.type === 'مجموعة صور' && <Image sizes="(min-width: 2060px) 190px, (min-width: 1720px) 180px, (min-width: 1540px) 150px, (min-width: 640px) 130px, calc(10.94vw + 62px)" loading="lazy" src={`/api/getImage?method=get-work-image&work=${e.name.replace(/ /g, '_')}&image=${e.gallery[0]}`} fill style={{objectFit: 'cover'}} alt={e.name}></Image>
+                                    e.type === 'مجموعة صور' && <Image sizes="(min-width: 2060px) 190px, (min-width: 1720px) 180px, (min-width: 1540px) 150px, (min-width: 640px) 130px, calc(10.94vw + 62px)" loading="lazy" src={`/api/getImage?method=get-review-image&review=${e.name.replace(/ /g, '_')}&image=${e.gallery[0]}`} fill style={{objectFit: 'cover'}} alt={e.name}></Image>
 
                                 }
 
                                                                 {
 
-                                    e.type === 'فيديو' && <Image sizes="(min-width: 2060px) 190px, (min-width: 1720px) 180px, (min-width: 1540px) 150px, (min-width: 640px) 130px, calc(10.94vw + 62px)" loading="lazy" src={`/api/getImage?method=get-work-image&work=${e.name.replace(/ /g, '_')}&image=${e.videoThumbnail}`} fill style={{objectFit: 'cover'}} alt={e.name}></Image>
+                                    e.type === 'فيديو' && <Image sizes="(min-width: 2060px) 190px, (min-width: 1720px) 180px, (min-width: 1540px) 150px, (min-width: 640px) 130px, calc(10.94vw + 62px)" loading="lazy" src={`/api/getImage?method=get-review-image&review=${e.name.replace(/ /g, '_')}&image=${e.videoThumbnail}`} fill style={{objectFit: 'cover'}} alt={e.name}></Image>
 
                                 }
                               </div>
                               <div className="blog-info">
-                              <Link href={`/work/${e.name.replace(/ /g, '_')}`} title={e.name}>{e.name}</Link>
+                              <Link href={`/review/${e.name.replace(/ /g, '_')}`} title={e.name}>{e.name}</Link>
                               <div className="bottom-blog-info">
                                   <p><FaUserDoctor className="icon" />مسؤول</p>
                                   <p><FaCalendar className="icon" /> {e.date}</p>
@@ -168,7 +168,7 @@ const Work = ({ data }) => {
                     <h2>العلامات</h2>
 
                     <div className="tags">
-                        {data.work.keywords.map((e, key) => {
+                        {data.review.keywords.map((e, key) => {
                             return(
                                 <h3 key={key} title={e}>{e}</h3>
                             )
@@ -186,20 +186,20 @@ const Work = ({ data }) => {
                     <div className="work-content">
 
                         {
-                            data.work.type === 'صورة' && <div className="img-container"><Image sizes="(min-width: 1120px) 48.99vw, 70vw" src={`/api/getImage?method=get-work-image&work=${data.work.name.replace(/ /g, '_')}&image=${data.work.pic}`} fill style={{objectFit: 'cover'}} alt={data.work.name}></Image></div>
+                            data.review.type === 'صورة' && <div className="img-container"><Image sizes="(min-width: 1120px) 48.99vw, 70vw" src={`/api/getImage?method=get-review-image&review=${data.review.name.replace(/ /g, '_')}&image=${data.review.pic}`} fill style={{objectFit: 'cover'}} alt={data.review.name}></Image></div>
                         }
 
                         {
-                            data.work.type === 'فيديو' && <div className="img-container">
+                            data.review.type === 'فيديو' && <div className="img-container">
                                 <video controls>
-                                    <source src={`/api/getImage?method=get-video&work=${data.work.name.replace(/ /g, '_')}&video=${data.work.video}`} type="video/mp4" />
+                                    <source src={`/api/getImage?method=get-video-review&review=${data.review.name.replace(/ /g, '_')}&video=${data.review.video}`} type="video/mp4" />
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
                         }
 
                         {
-                            data.work.type === 'مجموعة صور' && <ImageGallery
+                            data.review.type === 'مجموعة صور' && <ImageGallery
                             items={images}
                   
                             showThumbnails={false}
@@ -208,8 +208,8 @@ const Work = ({ data }) => {
                             />
                         }
                         
-                        <h1>{data.work.name}</h1>
-                        <h3>{data.work.description}</h3>
+                        <h1>{data.review.name}</h1>
+                        <h3>{data.review.description}</h3>
 
                     </div>
 
@@ -222,4 +222,4 @@ const Work = ({ data }) => {
     )
 }
 
-export default Work;
+export default Review;

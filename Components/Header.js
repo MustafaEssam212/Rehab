@@ -95,10 +95,10 @@ const Header = () => {
 
 
                             <div className="mobile-header-pages">
-                                <Link className={router.pathname === '/about' ? "active" : ""} title="معلومات عن مركز ريهاب" href="#">معلومات عنا <FaInfo className="icon" /></Link>
-                                <Link className={router.pathname === '/reviews' ? "active" : ""} title="اراء عملائنا" href="#">اراء عملائنا <FaCommentDots className="icon" /></Link>
-                                <Link className={router.pathname === '/previous-work' ? "active" : ""} title="سابقة اعمالنا" href="#">سابقة اعمالنا <MdWork className="icon" /></Link>
-                                <Link className={router.pathname === '/blogs' ? "active" : ""} title="مدوناتنا" href="#">مدوناتنا <FaBloggerB className="icon" /></Link>
+                                <Link className={router.pathname === '/about' ? "active" : ""} title="معلومات عن مركز ريهاب" href="/about">معلومات عنا <FaInfo className="icon" /></Link>
+                                <Link className={router.pathname === '/reviews' ? "active" : ""} title="اراء عملائنا" href="/reviews">اراء عملائنا <FaCommentDots className="icon" /></Link>
+                                <Link className={router.pathname === '/previous-work' ? "active" : ""} title="سابقة اعمالنا" href="/previous-work">سابقة اعمالنا <MdWork className="icon" /></Link>
+                                <Link className={router.pathname === '/blogs' ? "active" : ""} title="مدوناتنا" href="/blogs">مدوناتنا <FaBloggerB className="icon" /></Link>
                                 <Link className={router.pathname === '/contact' ? "active" : ""} title="تواصل معنا" href="/contact">تواصل معنا <FaPhone className="icon" /></Link>
                                 <Link className={router.pathname === '/' ? "active" : ""} title="الصفحة الرئيسية" href="/">الرئيسية <FaHome className="icon" /></Link>
 

@@ -6,6 +6,8 @@ import ContactMessage from "@/Models/ContactMessage";
 import User from "@/Models/User";
 import Blog from "@/Models/Blog";
 import Work from "@/Models/Work";
+import Review from "@/Models/Review";
+
 
 export default async function GetData(req, res) {
     await dbConnect();
@@ -337,6 +339,19 @@ export default async function GetData(req, res) {
                     return res.status(500).send({ message: 'حدث خطأ اثناء تنفيذ العملية' });
                 }
             }
+
+            else if(req.query.method === 'get-reviews'){
+                try {
+                    const page = parseInt(req.query.page) || 1;
+                    const blogsPerPage = 3;
+                    const skipCount = (page - 1) * blogsPerPage;
+                    const length = await Review.countDocuments();
+                    const fingBlogs = await Review.find().skip(skipCount).limit(blogsPerPage);
+                    return res.status(200).send({ length, reviews: fingBlogs });
+                } catch (error) {
+                    return res.status(500).send({ message: 'حدث خطأ اثناء تنفيذ العملية' });
+                }
+            }
     
             else if(req.query.method === 'get-blog'){
            
@@ -379,6 +394,28 @@ export default async function GetData(req, res) {
                     
                 } catch (error) {
                     return res.status(500).send({work: {}, suggestedWorks: [], notFound: true})
+                }
+            }
+
+            else if(req.query.method === 'get-review'){
+           
+    
+                try {
+    
+                    const findBlog = await Review.findOne({name: req.query.reviewName});
+                    const suggestedReviews = await Review.aggregate([
+                        { $match: { name: { $ne: req.query.reviewName } } },
+                        { $sample: { size: 3 } }
+                    ]);
+    
+                    if(findBlog){
+                        return res.status(200).send({review: findBlog, suggestedReviews, notFound: false});
+                    }else{
+                        return res.status(404).send({review: {}, suggestedReviews: [], notFound: true})
+                    }
+                    
+                } catch (error) {
+                    return res.status(500).send({review: {}, suggestedReviews: [], notFound: true})
                 }
             }
     

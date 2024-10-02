@@ -11,7 +11,7 @@ import { FaUnlock, FaBloggerB, FaBirthdayCake, FaTrash, FaCoins} from "react-ico
 import { BsCalendar2MonthFill } from "react-icons/bs";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
-import { BiSolidBookAdd } from "react-icons/bi";
+import { BiSolidBookAdd, BiSolidCommentAdd } from "react-icons/bi";
 import { MdWork } from "react-icons/md";
 
 
@@ -82,6 +82,7 @@ const Dashboard = ({permissions}) => {
             <Link href="#" onClick={(e)=> {e.preventDefault(); handleRoute('تبديل حجز', '/dashboard/switch-reservation')}} aria-label="تبديل حجز" title="تبديل حجز"><FaArrowsRotate className="icon" /> تبديل حجز</Link>
             <Link href="#" onClick={(e)=> {e.preventDefault(); handleRoute('المواعيد المتاحة', '/dashboard/available-appointments')}} aria-label="المواعيد المتاحة" title="المواعيد المتاحة"><MdEventAvailable className="icon" /> المواعيد المتاحة</Link>
             <Link href="#" onClick={(e)=> {e.preventDefault(); handleRoute('جميع المستخدمين', '/dashboard/all-users')}} aria-label="جميع المستخدمين" title="جميع المستخدمين"><FaUsers className="icon" /> جميع المستخدمين</Link>
+            <Link href="#" onClick={(e)=> {e.preventDefault(); handleRoute('كتابة اراء عملائنا', '/dashboard/write-review')}} aria-label="كتابة اراء عملائنا" title="كتابة اراء عملائنا"><BiSolidCommentAdd className="icon" /> كتابة اراء عملائنا</Link>
             <Link href="#" onClick={(e)=> {e.preventDefault(); handleRoute('سابقة اعمالنا', '/dashboard/write-previous-work')}} aria-label="سابقة اعمالنا" title="سابقة اعمالنا"><MdWork className="icon" /> سابقة اعمالنا</Link>
             <Link href="#" onClick={(e)=> {e.preventDefault(); handleRoute('كتابة مدونة', '/dashboard/write-blog')}} aria-label="كتابة مدونة" title="كتابة مدونة"><FaBloggerB className="icon" /> كتابة مدونة</Link>
             <Link href="#" onClick={(e)=> {e.preventDefault(); handleRoute('مسح مدونة', '/dashboard/remove-blog')}} aria-label="مسح مدونة" title="مسح مدونة"><FaTrash className="icon" /> مسح مدونة</Link>

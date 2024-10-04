@@ -185,8 +185,25 @@ const Permissions = () => {
                             </div>
 
                             <div>
+                                <input checked={permissions.includes('كتابة اراء عملائنا')} onChange={(s)=> handleChangePermissions(s.target.checked, 'كتابة اراء عملائنا')} type="checkbox" aria-label="كتابة اراء عملائنا"></input>
+                                <p>كتابة اراء عملائنا</p>
+                            </div>
+
+
+                            <div>
+                                <input checked={permissions.includes('مسح اراء عملائنا')} onChange={(s)=> handleChangePermissions(s.target.checked, 'مسح اراء عملائنا')} type="checkbox" aria-label="مسح اراء عملائنا"></input>
+                                <p>مسح اراء عملائنا</p>
+                            </div>
+
+                            <div>
                                 <input checked={permissions.includes('سابقة اعمالنا')} onChange={(s)=> handleChangePermissions(s.target.checked, 'سابقة اعمالنا')} type="checkbox" aria-label="سابقة اعمالنا"></input>
                                 <p>سابقة اعمالنا</p>
+                            </div>
+
+
+                            <div>
+                                <input checked={permissions.includes('مسح سابقة اعمالنا')} onChange={(s)=> handleChangePermissions(s.target.checked, 'مسح سابقة اعمالنا')} type="checkbox" aria-label="مسح سابقة اعمالنا"></input>
+                                <p>مسح سابقة اعمالنا</p>
                             </div>
 
 

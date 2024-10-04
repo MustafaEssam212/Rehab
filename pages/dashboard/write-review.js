@@ -204,7 +204,7 @@ const WritePerviousWork = () => {
                 type: 'صورة',
                 pic: '',
                 gallery: [],
-                video: ''
+                video: ''   
             });
             setGalleryPreviews([]);
             setVideoPreview('');

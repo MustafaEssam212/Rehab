@@ -7,6 +7,8 @@ import bcrypt from 'bcryptjs';
 import Blog from "@/Models/Blog";
 import path from 'path';
 import fs from 'fs'
+import Review from "@/Models/Review";
+import Work from "@/Models/Work";
 
 export default async function EditData(req, res) {
     await dbConnect();
@@ -500,12 +502,12 @@ export default async function EditData(req, res) {
     }
 
     else if(req.method === 'DELETE'){
+       
+        if(req.query.method === 'delete-reservation'){
 
-        if(req.query.method === 'delete-resrevation'){
-
-
+            console.log('here')
             try {
-                
+              
                 const deleteReservation = await Schedule.updateOne(
                     { date: req.query.date, "doctors.reservations.reservationSerial": parseInt(req.query.deletedReservationSerial) },
                     { $pull: { "doctors.$.reservations": { reservationSerial: parseInt(req.query.deletedReservationSerial) } } }
@@ -522,7 +524,7 @@ export default async function EditData(req, res) {
             }
         }
 
-        if(req.query.method === 'delete-blog'){
+        else if(req.query.method === 'delete-blog'){
                 try {
                 const folderPath = path.join(process.cwd(), `./uploads/blogs/${req.query.blogName.replace(/ /g, "_")}`);
                 
@@ -535,6 +537,64 @@ export default async function EditData(req, res) {
           
                       if (deleteBlog.deletedCount > 0) {
                         return res.status(200).send({ message: 'تم حذف المدونة بنجاح' });
+                      } else {
+                        return res.status(500).send({ message: 'حدث خطأ اثناء تنفيذ العملية' });
+                      }
+                    } catch (err) {
+                      return res.status(500).send({ message: 'حدث خطأ اثناء تنفيذ العملية' });
+                    }
+                  } else {
+                    return res.status(500).send({ message: 'حدث خطأ اثناء تنفيذ العملية' });
+                  }
+
+
+              } catch (error) {
+                return res.status(500).send({ message: 'حدث خطأ اثناء تنفيذ العملية' });
+              }
+        }
+
+        else if(req.query.method === 'delete-review'){
+            try {
+                const folderPath = path.join(process.cwd(), `./uploads/reviews/${req.query.reviewName.replace(/ /g, "_")}`);
+                
+
+                if (fs.existsSync(folderPath)) {
+                    try {
+         
+                      await fs.promises.rm(folderPath, { recursive: true, force: true });
+                      const deleteBlog = await Review.deleteOne({ name: req.query.reviewName });
+          
+                      if (deleteBlog.deletedCount > 0) {
+                        return res.status(200).send({ message: 'تم حذف العمل بنجاح' });
+                      } else {
+                        return res.status(500).send({ message: 'حدث خطأ اثناء تنفيذ العملية' });
+                      }
+                    } catch (err) {
+                      return res.status(500).send({ message: 'حدث خطأ اثناء تنفيذ العملية' });
+                    }
+                  } else {
+                    return res.status(500).send({ message: 'حدث خطأ اثناء تنفيذ العملية' });
+                  }
+
+
+              } catch (error) {
+                return res.status(500).send({ message: 'حدث خطأ اثناء تنفيذ العملية' });
+              }
+        }
+
+        else if(req.query.method === 'delete-previous-work'){
+            try {
+                const folderPath = path.join(process.cwd(), `./uploads/works/${req.query.previousWork.replace(/ /g, "_")}`);
+                
+
+                if (fs.existsSync(folderPath)) {
+                    try {
+         
+                      await fs.promises.rm(folderPath, { recursive: true, force: true });
+                      const deleteBlog = await Work.deleteOne({ name: req.query.previousWork });
+          
+                      if (deleteBlog.deletedCount > 0) {
+                        return res.status(200).send({ message: 'تم حذف العمل بنجاح' });
                       } else {
                         return res.status(500).send({ message: 'حدث خطأ اثناء تنفيذ العملية' });
                       }

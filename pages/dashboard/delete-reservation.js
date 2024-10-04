@@ -141,8 +141,9 @@ const DeleteReservation = () => {
 
     const handleDeleteReservation = async () => {
         if(!inputDate || !deletedReservationSerial){
-          toast.warning('برجاء ادخال المعلومات المطلوبة')
+          toast.warning('برجاء ادخال المعلومات المطلوبة');
         }else{
+    
           const res = await fetch(`/api/editData?method=delete-reservation&date=${inputDate}&deletedReservationSerial=${deletedReservationSerial}`, {
             method: 'DELETE',
             headers: {

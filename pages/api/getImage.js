@@ -19,11 +19,13 @@ export default async function GetImage(req, res) {
     
             if (mimeType.startsWith('image/jpeg')) {
                 processedImage = await sharp(fileContent)
+                    .withMetadata()
                     .resize({ width: 800 })
                     .jpeg({ quality: 80 })
                     .toBuffer();
             } else if (mimeType.startsWith('image/png')) {
                 processedImage = await sharp(fileContent)
+                    .withMetadata()
                     .resize({ width: 800 })
                     .png({ compressionLevel: 8 })
                     .toBuffer();
@@ -52,11 +54,13 @@ export default async function GetImage(req, res) {
     
             if (mimeType.startsWith('image/jpeg')) {
                 processedImage = await sharp(fileContent)
+                    .withMetadata()
                     .resize({ width: 800 })
                     .jpeg({ quality: 80 })
                     .toBuffer();
             } else if (mimeType.startsWith('image/png')) {
                 processedImage = await sharp(fileContent)
+                    .withMetadata()
                     .resize({ width: 800 })
                     .png({ compressionLevel: 8 })
                     .toBuffer();
@@ -131,11 +135,13 @@ export default async function GetImage(req, res) {
     
             if (mimeType.startsWith('image/jpeg')) {
                 processedImage = await sharp(fileContent)
+                    .withMetadata()
                     .resize({ width: 800 })
                     .jpeg({ quality: 80 })
                     .toBuffer();
             } else if (mimeType.startsWith('image/png')) {
                 processedImage = await sharp(fileContent)
+                    .withMetadata()
                     .resize({ width: 800 })
                     .png({ compressionLevel: 8 })
                     .toBuffer();
@@ -210,11 +216,13 @@ export default async function GetImage(req, res) {
     
             if (mimeType.startsWith('image/jpeg')) {
                 processedImage = await sharp(fileContent)
+                    .withMetadata()
                     .resize({ width: 800 })
                     .jpeg({ quality: 80 })
                     .toBuffer();
             } else if (mimeType.startsWith('image/png')) {
                 processedImage = await sharp(fileContent)
+                    .withMetadata()
                     .resize({ width: 800 })
                     .png({ compressionLevel: 8 })
                     .toBuffer();

@@ -288,7 +288,7 @@ export default async function Upload(req, res) {
     else if(req.method === 'POST' && req.query.method === 'add-review'){
         form.parse(req, async (err, fields, files) => {
 
-
+            console.log(fields, files)
             const workNameForStorage = fields.name[0].replace(/ /g, '_');
             const workNameForDatabase = fields.name[0];
             const workKeywords = JSON.parse(fields.keywords[0]);

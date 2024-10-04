@@ -488,6 +488,27 @@ export default async function GetData(req, res) {
                     return res.status(500).send({message: 'حدث خطأ اثناء تنفيذ العملية', blogsNames: []})
                 }
             }
+
+
+            else if(req.query.method === 'get-reviews-names'){
+                try {
+                    const findBlogs = await Review.find({}, {_id: false, name: true});
+        
+                    return res.status(200).send({message: 'تم جلب البيانات بنجاح', reviewNames: findBlogs})
+                } catch (error) {
+                    return res.status(500).send({message: 'حدث خطأ اثناء تنفيذ العملية', reviewNames: []})
+                }
+            }
+
+            else if(req.query.method === 'get-previous-works-names'){
+                try {
+                    const findBlogs = await Work.find({}, {_id: false, name: true});
+        
+                    return res.status(200).send({message: 'تم جلب البيانات بنجاح', previousWorks: findBlogs})
+                } catch (error) {
+                    return res.status(500).send({message: 'حدث خطأ اثناء تنفيذ العملية', previousWorks: []})
+                }
+            }
     
         }
       

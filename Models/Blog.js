@@ -8,7 +8,8 @@ const Blog = new mongoose.Schema({
     cover: {type: String, required: true},
     html: {type: String, required: true},
     date: {type: String, required: true},
-    serial: {type: Number, required: true}
+    serial: {type: Number, required: true},
+    category: {type: String, required: true},
 })
 
 export default mongoose.models.Blog || mongoose.model("Blog", Blog)

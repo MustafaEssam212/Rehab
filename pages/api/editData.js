@@ -9,6 +9,7 @@ import path from 'path';
 import fs from 'fs'
 import Review from "@/Models/Review";
 import Work from "@/Models/Work";
+import Doctor from "@/Models/Doctor";
 
 export default async function EditData(req, res) {
     await dbConnect();
@@ -35,7 +36,8 @@ export default async function EditData(req, res) {
                                     "doctors.$.shiftStartsFrom": req.body.shiftStartsFrom,
                                     "doctors.$.shiftEndsIn": req.body.shiftEndsIn,
                                     "doctors.$.vacation": req.body.vacation,
-                                    "doctors.$.category": req.body.category
+                                    "doctors.$.category": req.body.category,
+                                    "doctors.$.specializedIn": req.body.specializedIn
                                 }}
                             );
                             if (updateDoctor.modifiedCount > 0) {
@@ -278,50 +280,82 @@ export default async function EditData(req, res) {
                 // Get the number of days in the given month and year
                 const daysInMonth = new Date(year, monthIndex + 1, 0).getDate(); // Last day of the month
         
+                // Define periods
+                const periodOneDays = [6, 1, 3];  // Saturday (6), Monday (1), Wednesday (3)
+                const periodTwoDays = [0, 2, 4];  // Sunday (0), Tuesday (2), Thursday (4)
+        
+                // Determine the chosen period
+                let selectedPeriodDays;
+                if (req.body.period === 'periodOne') {
+                    selectedPeriodDays = periodOneDays;
+                } else if (req.body.period === 'periodTwo') {
+                    selectedPeriodDays = periodTwoDays;
+                } else {
+                    return res.status(400).send({ message: 'فترة غير صحيحة' });
+                }
+        
                 // Loop over all days in the month
                 for (let day = 1; day <= daysInMonth; day++) {
-                    // Format the date as "D/M/YYYY"
-                    const date = `${day}/${monthIndex + 1}/${year}`;
+                    const currentDay = new Date(year, monthIndex, day).getDay(); // Get the day of the week
         
-                    // Check if the day already exists
-                    const getTheScheduleDay = await Schedule.findOne({ date });
+                    // Only process the days that match the selected period
+                    if (selectedPeriodDays.includes(currentDay)) {
+                        // Format the date as "D/M/YYYY"
+                        const date = `${day}/${monthIndex + 1}/${year}`;
         
-                    // Day exists in the schedule
-                    if (getTheScheduleDay) {
-                        const searchAboutDoctor = await Schedule.findOne({
-                            date: date,
-                            doctors: { $elemMatch: { doctor: req.body.doctor } }
-                        });
+                        // Check if the day already exists
+                        const getTheScheduleDay = await Schedule.findOne({ date });
         
-                        // The doctor already exists for this day
-                        if (searchAboutDoctor) {
-                            if (req.body.vacation === false) {
-                                await Schedule.updateOne(
-                                    { date: date, "doctors.doctor": req.body.doctor },
-                                    {
-                                        $set: {
-                                            "doctors.$.shiftStartsFrom": req.body.shiftStartsFrom,
-                                            "doctors.$.shiftEndsIn": req.body.shiftEndsIn,
-                                            "doctors.$.vacation": req.body.vacation,
-                                            "doctors.$.category": req.body.category,
+                        // Day exists in the schedule
+                        if (getTheScheduleDay) {
+                            const searchAboutDoctor = await Schedule.findOne({
+                                date: date,
+                                doctors: { $elemMatch: { doctor: req.body.doctor } }
+                            });
+        
+                            // The doctor already exists for this day
+                            if (searchAboutDoctor) {
+                                if (req.body.vacation === false) {
+                                    await Schedule.updateOne(
+                                        { date: date, "doctors.doctor": req.body.doctor },
+                                        {
+                                            $set: {
+                                                "doctors.$.shiftStartsFrom": req.body.shiftStartsFrom,
+                                                "doctors.$.shiftEndsIn": req.body.shiftEndsIn,
+                                                "doctors.$.vacation": req.body.vacation,
+                                                "doctors.$.category": req.body.category,
+                                                "doctors.$.specializedIn": req.body.specializedIn
+                                            }
                                         }
-                                    }
-                                );
-                            } else {
-                                await Schedule.updateOne(
-                                    { date: date, "doctors.doctor": req.body.doctor },
-                                    {
-                                        $set: {
-                                            "doctors.$.shiftStartsFrom": '',
-                                            "doctors.$.shiftEndsIn": '',
-                                            "doctors.$.vacation": req.body.vacation
+                                    );
+                                } else {
+                                    await Schedule.updateOne(
+                                        { date: date, "doctors.doctor": req.body.doctor },
+                                        {
+                                            $set: {
+                                                "doctors.$.shiftStartsFrom": '',
+                                                "doctors.$.shiftEndsIn": '',
+                                                "doctors.$.vacation": req.body.vacation
+                                            }
                                         }
-                                    }
+                                    );
+                                }
+                            }
+                            // Doctor does not exist, add to day
+                            else {
+                                const { month, ...doctor } = req.body;
+                                doctor.reservations = [];
+                                await Schedule.updateOne(
+                                    { date: date },
+                                    { $push: { doctors: doctor } }
                                 );
                             }
                         }
-                        // Doctor does not exist, add to day
+                        // Day does not exist, create new day and add doctor
                         else {
+                            const newDay = new Schedule({ date: date });
+                            await newDay.save();
+        
                             const { month, ...doctor } = req.body;
                             doctor.reservations = [];
                             await Schedule.updateOne(
@@ -329,18 +363,6 @@ export default async function EditData(req, res) {
                                 { $push: { doctors: doctor } }
                             );
                         }
-                    }
-                    // Day does not exist, create new day and add doctor
-                    else {
-                        const newDay = new Schedule({ date: date });
-                        await newDay.save();
-        
-                        const { month, ...doctor } = req.body;
-                        doctor.reservations = [];
-                        await Schedule.updateOne(
-                            { date: date },
-                            { $push: { doctors: doctor } }
-                        );
                     }
                 }
         
@@ -609,6 +631,22 @@ export default async function EditData(req, res) {
               } catch (error) {
                 return res.status(500).send({ message: 'حدث خطأ اثناء تنفيذ العملية' });
               }
+        }
+
+        else if(req.query.method === 'delete-doctor'){
+            try {
+                
+                const deleteDoctor = await Doctor.deleteOne({serial: parseInt(req.query.doctor)});
+
+                if(deleteDoctor.deletedCount > 0){
+                    return res.status(200).send({message: 'تم حذف الدكتور بنجاح'})
+                }else{
+                    return res.status(500).send({message: 'حدث خطأ اثناء تنفيذ العملية'})
+                }
+
+            } catch (error) {
+                return res.status(500).send({message: 'حدث خطأ اثناء تنفيذ العملية'})
+            }
         }
 
     }

@@ -270,6 +270,19 @@
 
         .right{
             align-self: start;
+            padding-bottom: 30px;
+            input{
+                width: calc(70% - 10px);
+                background-color: #edf1f1;
+                height: 60px;
+                padding-right: 10px;
+                border-radius: 10px;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                -ms-border-radius: 10px;
+                -o-border-radius: 10px;
+            }
+
             .main-button{
                 width: 70%;
                 height: 65px;
@@ -1210,6 +1223,23 @@
                     }
                 }
 
+                .dropmenu{
+                    width: 42%;
+
+                    p{
+                        font-weight: 500;
+                        font-size: 14px;
+                    }
+
+                    .icon{
+                        font-size: 16px;
+                    }
+
+                    button{
+                        font-size: 15px;
+                    }
+                }
+
             }
 
             .bottom-left{
@@ -1462,6 +1492,19 @@
                 color: white;
                 height: 65px;
                 margin: 25px auto;
+            }
+
+            input{
+                width: calc(100% - 10px);
+                background-color: #edf1f1;
+                height: 60px;
+                padding-right: 10px;
+                border-radius: 10px;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                -ms-border-radius: 10px;
+                -o-border-radius: 10px;
+                margin-top: 25px;
             }
         }
 
@@ -2248,6 +2291,23 @@
                 }
             }
 
+            .dropmenu{
+                width: 500px;
+
+                p{
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+
+                .icon{
+                    font-size: 16px;
+                }
+
+                button{
+                    font-size: 15px;
+                }
+            }
+
         }
 
         .main-button-div{
@@ -2306,6 +2366,35 @@
         }
     }
 
+}
+
+
+.remove-doctor-container{
+    .inner-remove-doctor{
+        margin: 100px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        width: 60%;
+        text-align: center;
+        .dropmenu{
+            width: 100%;
+        }
+
+        .main-btn{
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: red;
+            height: 65px;
+            width: 200px;
+        }
+    }
 }
 
 
@@ -2368,8 +2457,8 @@
             span{
                 position: absolute;
                 color: white;
-                right: -90px;
-                width: 80px;
+                left: 110%;
+                width: auto;
                 height: 30px;
                 background-color: var(--Primary-Color);
                 display: flex;
@@ -2382,7 +2471,9 @@
                 -o-border-radius: 10px;
                 z-index: 1;
                 visibility: hidden;
-            }
+                white-space: nowrap;
+                padding: 0px 10px;
+}
 
 
             &:hover{
@@ -2423,8 +2514,9 @@
     padding-right: 20px;
     gap: 25px;
     border-bottom: 4px solid rgba(128, 128, 128, 0.09);
+    position: relative;
 
-    button{
+    button:not(.price-bar-erp-container button, .package-bar-erp-container button){
         background-color: var(--Primary-Color);
         height: 60%;
         width: 300px;
@@ -2437,6 +2529,63 @@
 
         .icon{
             font-size: 19px;
+        }
+    }
+
+
+}
+
+
+.price-bar-erp-container, .package-bar-erp-container{
+    position: absolute;
+    top: 100px;
+    height: 100px;
+    border-bottom: 4px solid rgba(128, 128, 128, 0.09);
+    width: 100%;
+    right: 0;
+    background-color: rgba(240, 240, 240, 0.626);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 25px;
+    }
+
+
+    .left-price-bar-erp, .left-package-bar-erp{
+
+        button{
+            width: 200px;
+            height: 60px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        button:last-child{
+            background-color: var(--Primary-Color);
+            color: white;
+        }
+
+        button:first-child{
+            background-color: rgb(220, 220, 220);
+            color: rgb(55, 55, 55);
+        }
+    }
+
+    .right-price-bar-erp, .right-package-bar-erp{
+        input{
+            width: 300px;
+            background-color: #d7d7d7;
+            height: 50px;
+            text-align: center;
+        }
+
+        input::placeholder{
+            text-align: center;
         }
     }
 }
@@ -3049,6 +3198,22 @@
                             .icon{
                                 font-size: 17px;
                             }
+                        }
+                    }
+
+                    .dropmenu{
+                        width: 52%;
+    
+                        p{
+                            font-size: 14px;
+                        }
+    
+                        .icon{
+                            font-size: 16px;
+                        }
+    
+                        button{
+                            font-size: 15px;
                         }
                     }
     
@@ -3719,6 +3884,26 @@
                     .video-preview{
                         width: 100%;
                         height: 400px;
+                    }
+                }
+
+                .dropmenu{
+                    width: 450px;
+                    height: 55px;
+                    p{
+                        font-size: 13px;
+                    }
+    
+                    .icon{
+                        font-size: 15px;
+                    }
+    
+                    button{
+                        font-size: 14px;
+                    }
+
+                    .dropmenu-list{
+                        top: 60px;
                     }
                 }
     
@@ -5020,6 +5205,31 @@
                         height: 350px;
                     }
                 }
+
+                .dropmenu{
+                    width: 400px;
+                    height: 50px;
+                    p{
+                        font-size: 12px;
+                    }
+    
+                    .icon{
+                        font-size: 13px;
+                    }
+    
+                    button{
+                        font-size: 12px;
+                        height: 50px;
+                    }
+
+                    .dropmenu-list{
+                        top: 55px;
+                    }
+
+                    .heighted{
+                        height: 250px;
+                    }
+                }
     
             }
     
@@ -5033,6 +5243,9 @@
         }
     
     }
+
+
+    
 }
 
 // 90%
@@ -5648,6 +5861,31 @@
                             .icon{
                                 font-size: 14px;
                             }
+                        }
+                    }
+
+                    .dropmenu{
+                        width: 53%;
+                        height: 50px;
+                        p{
+                            font-size: 11px;
+                        }
+    
+                        .icon{
+                            font-size: 13px;
+                        }
+    
+                        button{
+                            font-size: 12px;
+                            height: 50px;
+                        }
+
+                        .dropmenu-list{
+                            top: 55px;
+                        }
+
+                        .heighted{
+                            height: 250px;
                         }
                     }
     
@@ -6328,6 +6566,32 @@
                     .video-preview{
                         width: 100%;
                         height: 300px;
+                    }
+                }
+
+
+                .dropmenu{
+                    width: 350px;
+                    height: 45px;
+                    p{
+                        font-size: 11px;
+                    }
+    
+                    .icon{
+                        font-size: 12px;
+                    }
+    
+                    button{
+                        font-size: 11px;
+                        height: 50px;
+                    }
+
+                    .dropmenu-list{
+                        top: 50px;
+                    }
+
+                    .heighted{
+                        height: 250px;
                     }
                 }
     
@@ -7640,6 +7904,31 @@
                         height: 250px;
                     }
                 }
+
+                .dropmenu{
+                    width: 300px;
+                    height: 40px;
+                    p{
+                        font-size: 10px;
+                    }
+    
+                    .icon{
+                        font-size: 11px;
+                    }
+    
+                    button{
+                        font-size: 10px;
+                        height: 50px;
+                    }
+
+                    .dropmenu-list{
+                        top: 45px;
+                    }
+
+                    .heighted{
+                        height: 250px;
+                    }
+                }
     
             }
     
@@ -7885,6 +8174,11 @@
                         }
                     }
                 }
+
+                input{
+                    width: calc(70% - 10px);
+                    height: 50px;
+                }
             }
     
             .right{
@@ -7957,6 +8251,10 @@
                     height: 50px;
                   
                     font-size: 12px;
+                }
+
+                input{
+                    height: 50px;
                 }
             }
     
@@ -8269,6 +8567,31 @@
                             .icon{
                                 font-size: 11px;
                             }
+                        }
+                    }
+
+                    .dropmenu{
+                        width: 63%;
+                        height: 50px;
+                        p{
+                            font-size: 11px;
+                        }
+    
+                        .icon{
+                            font-size: 13px;
+                        }
+    
+                        button{
+                            font-size: 12px;
+                            height: 50px;
+                        }
+
+                        .dropmenu-list{
+                            top: 55px;
+                        }
+
+                        .heighted{
+                            height: 250px;
                         }
                     }
     
@@ -8948,6 +9271,31 @@
                         height: 200px;
                     }
                 }
+
+                .dropmenu{
+                    width: 250px;
+                    height: 35px;
+                    p{
+                        font-size: 9px;
+                    }
+    
+                    .icon{
+                        font-size: 10px;
+                    }
+    
+                    button{
+                        font-size: 9px;
+                        height: 45px;
+                    }
+
+                    .dropmenu-list{
+                        top: 40px;
+                    }
+
+                    .heighted{
+                        height: 200px;
+                    }
+                }
     
             }
     
@@ -9473,6 +9821,31 @@
                             .icon{
                                 font-size: 11px;
                             }
+                        }
+                    }
+
+                    .dropmenu{
+                        width: 97.5%;
+                        height: 50px;
+                        p{
+                            font-size: 11px;
+                        }
+    
+                        .icon{
+                            font-size: 13px;
+                        }
+    
+                        button{
+                            font-size: 12px;
+                            height: 50px;
+                        }
+
+                        .dropmenu-list{
+                            top: 55px;
+                        }
+
+                        .heighted{
+                            height: 250px;
                         }
                     }
     

@@ -10,7 +10,8 @@ const Work = new mongoose.Schema({
     date: {type: String, required: true},
     gallery: [],
     video: {type: String, default: ''},
-    videoThumbnail: {type: String, default: ''}
+    videoThumbnail: {type: String, default: ''},
+    category: {type: String, required: true},
 })
 
 export default mongoose.models.Work || mongoose.model("Work", Work)

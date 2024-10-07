@@ -7,6 +7,8 @@ import { FaRegCalendarDays } from "react-icons/fa6";
 import { NextSeo } from 'next-seo';
 import { useState, useEffect } from 'react';
 import LoadingCircle from '@/Components/Loading-Circle';
+import FilterComponent from '@/Components/filterComponent';
+import filterCategories from '@/utils/filterCategories';
 
 export async function getServerSideProps() {
 
@@ -22,6 +24,8 @@ const Blogs = ({data}) => {
     const [blogs, setBlogs] = useState(data.blogs);
     const [page, setPage] = useState(1);
     const [btnLoading, setBtnLoading] = useState(false);
+    const [filtered, setFiltered] = useState([]);
+    const [category, setCategory] = useState('الكل');
 
     const getData = async (pageNum) => {
         setBtnLoading(true);
@@ -44,6 +48,18 @@ const Blogs = ({data}) => {
         }
     }, [page]);
 
+
+    const getDataFromChild = (param) => {
+        setCategory(param);
+        setFiltered(filterCategories(blogs, param));
+    }
+
+
+    useEffect(() => {
+        setFiltered(filterCategories(blogs, category));
+    }, [blogs])
+
+
     return(
         <div className="blogs-page-container">
 
@@ -58,16 +74,18 @@ const Blogs = ({data}) => {
                 </div>
             </div>
 
+            <FilterComponent sendDataToParent={getDataFromChild} />
+
             <div className='blogs-container'>
 
                 <div className='inner-blogs-container'>
 
 
                     {
-                        blogs.length > 0 && <>
+                        filtered.length > 0 && <>
                         
                         {
-                            blogs.map((e, key) => {
+                            filtered.map((e, key) => {
                                 return(
 
                                     <div className="blog" key={key}>

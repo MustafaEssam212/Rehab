@@ -40,6 +40,8 @@ const ScheduleMonthly = () => {
        const [openCategory, setOpenCategory] = useState(false);
        const [openMonth, setOpenMonth] = useState(false);
 
+       const [openPeriod, setOpenPeriod] = useState(false);
+
        const [loading, setLoading] = useState(false);
 
        const [innerData, setInnerData] = useState({
@@ -49,7 +51,9 @@ const ScheduleMonthly = () => {
         vacation: false,
         doctorName: '',
         category: '',
-        month: ''
+        month: '',
+        period: 'periodOne',
+        specializedIn: ''
       });
 
        useEffect(()=> {
@@ -62,9 +66,11 @@ const ScheduleMonthly = () => {
        }, []);
 
        const obj = {
-        true: 'نعم',
-        false: 'لا'
+        "periodOne": 'السبت والاثنين والاربعاء',
+        "periodTwo": 'الاحد والثلاثاء والخميس'
       }
+
+      
 
 
         // Arabic month list
@@ -78,8 +84,12 @@ const ScheduleMonthly = () => {
         const currentMonth = new Date().getMonth();
 
       const handleSubmit = async () => {
+
+        setLoading(true);
+
         if(Object.values(innerData).some((e)=> e === '')){
-          toast.warning('برجاء ملئ المعلومات المطلوبة')
+          toast.warning('برجاء ملئ المعلومات المطلوبة');
+          setLoading(false);
         }else{
           const res = await fetch(`/api/editData?method=add-monthly-schedule`,{
             body: JSON.stringify(innerData),
@@ -100,10 +110,14 @@ const ScheduleMonthly = () => {
               vacation: false,
               doctorName: '',
               category: '',
-              month: ''
+              month: '',
+              period: '',
+              specializedIn: ''
             });
+            setLoading(false);
           }else{
             toast.error(dataOfResponse.message);
+            setLoading(false);
           }
         }
       }
@@ -136,6 +150,7 @@ const ScheduleMonthly = () => {
                         <button aria-label="كشف وجلسات" onClick={()=> setInnerData({...innerData, category: `كشف وجلسات`})}>كشف وجلسات</button>
                           </div>}
                     </div>
+                    <input type="text" placeholder="متخصص في" value={innerData.specializedIn} onChange={(s)=> setInnerData({...innerData, specializedIn: s.target.value})}></input>
                     <div onClick={innerData.vacation ? ()=> {return} : ()=> setOpenShiftStart(!openShiftStart)} className={innerData.vacation ? "dropmenu disabled" : "dropmenu"}><IoMdArrowDropdown className="icon" /> <p>{innerData.shiftStartsFrom ? innerData.shiftStartsFrom : `ميعاد بداية الشيفت`}</p> 
                       {openShiftStart &&  <div className="dropmenu-list heighted">
                             {ShiftsHours.map((e,key) =>{
@@ -168,6 +183,16 @@ const ScheduleMonthly = () => {
                               {e}
                             </button>
                           ))}
+                        </div>
+                      )}
+                    </div>
+                    <div onClick={() => setOpenPeriod(!openPeriod)} className="dropmenu">
+                      <IoMdArrowDropdown className="icon" />
+                      <p>{innerData.period ? obj[innerData.period] : 'قم بإختيار ايام الشيفت'}</p>
+                      {openPeriod && (
+                        <div className="dropmenu-list">
+                          <button onClick={() => setInnerData({ ...innerData, period: 'periodOne' })}>السبت والاثنين والاربعاء</button>
+                          <button onClick={() => setInnerData({ ...innerData, period: 'periodTwo' })}>الاحد والثلاثاء والخميس</button>
                         </div>
                       )}
                     </div>

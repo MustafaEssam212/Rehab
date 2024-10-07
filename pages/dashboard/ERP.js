@@ -2,7 +2,7 @@ import { getSession } from "next-auth/react";
 import ERPStatistics from "@/Components/System/ERP-Statistics";
 import { IoIosStats } from "react-icons/io";
 import { useState } from "react";
-import {FaMoneyBill} from 'react-icons/fa'
+import {FaMoneyBill, FaUserAltSlash} from 'react-icons/fa'
 import { GiSwapBag } from "react-icons/gi";
 import { FaMoneyBillTrendUp } from "react-icons/fa6";
 import TopBar from "@/Components/System/Top-Bar";
@@ -38,6 +38,7 @@ const ERP = () => {
             <div className="left-ERP">
                   <button onClick={()=> setSection('statistics')} className={section === 'statistics' && "active"} aria-label="احصائيات"><IoIosStats className="icon" /> <span>احصائيات</span></button>
                   <button onClick={()=> setSection('billing')} className={section === 'billing' && "active"} aria-label="الدفع"><FaMoneyBill className="icon" /> <span>الدفع</span></button> 
+                  <button onClick={()=> setSection('non-users')} className={section === 'non-users' && "active"} aria-label="العملاء غير المسجلين"><FaUserAltSlash className="icon" /> <span>العملاء غير المسجلين</span></button> 
                   <button onClick={()=> setSection('packages')} className={section === 'packages' && "active"} aria-label="باكيدچ"><GiSwapBag className="icon" /> <span>باكيدچ</span></button>
                   <button onClick={()=> setSection('outgoing')} className={section === 'outgoing' && "active"} aria-label="الصادرات"><FaMoneyBillTrendUp className="icon" /> <span>الصادرات</span></button>
             </div>

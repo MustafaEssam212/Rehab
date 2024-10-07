@@ -73,6 +73,7 @@ const Dashboard = ({permissions}) => {
         <div className="dashboard-page-container">
             <Link href="#" onClick={(e)=> {e.preventDefault(); handleRoute('اعطاء صلاحيات', '/dashboard/permissions')}} aria-label="اعطاء صلاحيات" title="اعطاء صلاحيات"><FaUnlock className="icon" />اعطاء صلاحيات</Link>
             <Link href="#" onClick={(e)=> {e.preventDefault(); handleRoute('اضافة دكتور', '/dashboard/add-doctor')}} aria-label="اضافة دكتور" title="اضافة دكتور"><FaUserDoctor className="icon" /> اضافة دكتور</Link>
+            <Link href="#" onClick={(e)=> {e.preventDefault(); handleRoute('مسح دكتور', '/dashboard/remove-doctor')}} aria-label="مسح دكتور" title="مسح دكتور"><FaTrash className="icon" /> مسح دكتور</Link>
             <Link href="#" onClick={(e)=> {e.preventDefault(); handleRoute('اضافة جدول يومي', '/dashboard/schedule')}} aria-label="اضافة جدول يومي" title="اضافة جدول يومي"><AiFillSchedule className="icon" /> اضافة جدول يومي</Link>
             <Link href="#" onClick={(e)=> {e.preventDefault(); handleRoute('اضافة جدول شهري', '/dashboard/schedule-monthly')}} aria-label="اضافة جدول شهري" title="اضافة جدول شهري"><BsCalendar2MonthFill className="icon" /> اضافة جدول شهري</Link>
             <Link href="#" onClick={(e)=> {e.preventDefault(); handleRoute('جدول وحجوزات', '/dashboard/schedule-booking')}} aria-label="جدول و حجوزات" title="جدول و حجوزات"><RiCalendarScheduleFill className="icon" /> جدول و حجوزات</Link>

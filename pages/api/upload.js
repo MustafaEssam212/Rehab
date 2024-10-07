@@ -76,7 +76,7 @@ export default async function Upload(req, res) {
             const directoryPath = `./uploads/blogs/${blogNameForStorage}`;
             const coverName = Date.now() + files.cover[0].originalFilename.replace(/\s/g, '');
             const newPathOfCover = `${directoryPath}/${coverName}`;
-
+            const blogCategory = fields.category[0];
 
             const findBlog = await Blog.findOne({name: blogNameForDatabase});
             if(findBlog){
@@ -117,7 +117,8 @@ export default async function Upload(req, res) {
                     keywords: blogKeywords,
                     description: blogDescription,
                     html: blogHTML,
-                    date: formatDate(Date.now())
+                    date: formatDate(Date.now()),
+                    category: blogCategory
                 });
     
                 await newBlog.save();
@@ -147,7 +148,7 @@ export default async function Upload(req, res) {
             const workDescription = fields.description[0];
             const directoryPath = `./uploads/works/${workNameForStorage}`;
             const workType = fields.type[0];
-
+            const workCategory = fields.category[0];
 
             const formatDate = (timestamp) => {
                 const date = new Date(timestamp); // Create a Date object from the timestamp
@@ -193,7 +194,8 @@ export default async function Upload(req, res) {
                         keywords: workKeywords,
                         description: workDescription,
                         date: formatDate(Date.now()),
-                        type: workType
+                        type: workType,
+                        category: workCategory
                     });
         
                     await newWork.save();
@@ -234,6 +236,7 @@ export default async function Upload(req, res) {
                         description: workDescription,
                         date: formatDate(Date.now()),
                         type: workType,
+                        category: workCategory
                     });
         
                     await newWork.save();
@@ -271,7 +274,8 @@ export default async function Upload(req, res) {
                         description: workDescription,
                         date: formatDate(Date.now()),
                         type: workType,
-                        videoThumbnail: videoThumbnail
+                        videoThumbnail: videoThumbnail,
+                        category: workCategory
                     });
         
                     await newWork.save();

@@ -9,6 +9,8 @@ import dynamic from 'next/dynamic';
 import 'react-quill/dist/quill.snow.css';
 import { toast } from "react-toastify";
 import { getSession } from "next-auth/react";
+import { IoMdArrowDropdown } from "react-icons/io";
+
 
 export async function getServerSideProps(context) {
     const session = await getSession(context);
@@ -43,10 +45,12 @@ const WriteBlog = () => {
         name: '',
         coverPicture: '',
         description: '',
-        keywords: []
+        keywords: [],
+        category: ''
     });
     const [coverPreviewURL, setCoverPreviewURL] = useState('');
     const [keyword, setKeyword] = useState('');
+    const [openMenu, setOpenMenu] = useState(false);
 
     useEffect(() => {
         if (data.coverPicture) {
@@ -134,6 +138,7 @@ const WriteBlog = () => {
           formData.append('description', data.description);
           formData.append('keywords', JSON.stringify(data.keywords));
           formData.append('html', editorValue);
+          formData.append('category', data.category);
 
           const res = await fetch(`/api/upload?method=add-blog`, {
             method: 'POST',
@@ -149,7 +154,8 @@ const WriteBlog = () => {
               name: '',
               coverPicture: '',
               description: '',
-              keywords: []
+              keywords: [],
+              category: ''
           });
           setCoverPreviewURL('');
           setKeyword('');
@@ -164,7 +170,7 @@ const WriteBlog = () => {
           setConfirmLoading(false);
         }
       }
- 
+      
 
   return (
     <div className="write-blog-page system-page">
@@ -198,6 +204,24 @@ const WriteBlog = () => {
                         className="keyword-input"
                     />
 
+
+                    <div onClick={() => setOpenMenu(!openMenu)} className="dropmenu">
+                        <IoMdArrowDropdown className="icon" />
+                        <p>{data.category ? data.category : 'قم بإختيار الفئة'}</p>
+                        {openMenu && (
+                        <div className="dropmenu-list heighted">
+                            <button onClick={() => setData({...data, category: 'تأهيل امراض الأعصاب وجراحاتها'})}>تأهيل امراض الأعصاب وجراحاتها</button>
+                            <button onClick={() => setData({...data, category: 'تأهيل امراض العظام والعمود الفقري وجراحاتها'})}>تأهيل امراض العظام والعمود الفقري وجراحاتها</button>
+                            <button onClick={() => setData({...data, category: 'تأهيل اصابات الرياضيين'})}>تأهيل اصابات الرياضيين</button>
+                            <button onClick={() => setData({...data, category: 'التغذية العلاجية ونحت وتنسيق القوام'})}>التغذية العلاجية ونحت وتنسيق القوام</button>
+                            <button onClick={() => setData({...data, category: 'تأهيل امراض الصدر'})}>تأهيل امراض الصدر</button>
+                            <button onClick={() => setData({...data, category: 'تأهيل امراض النسا والولادة'})}>تأهيل امراض النسا والولادة</button>
+                            <button onClick={() => setData({...data, category: 'تأهيل امراض القلب'})}>تأهيل امراض القلب</button>
+                            <button onClick={() => setData({...data, category: 'تأهيل امراض الباطنة والمسنين'})}>تأهيل امراض الباطنة والمسنين</button>
+                            <button onClick={() => setData({...data, category: 'اخرى'})}>اخرى</button>
+                        </div>
+                        )}
+                    </div>
 
                 </div>
 

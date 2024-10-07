@@ -90,7 +90,8 @@ const Schedule = () => {
       shiftEndsIn: '',
       vacation: false,
       doctorName: '',
-      category: ''
+      category: '',
+      specializedIn: ''
     })
 
     const [openDoctorsList, setOpenDoctorsList] = useState(false);
@@ -166,7 +167,8 @@ const Schedule = () => {
                 shiftStartsFrom: '',
                 shiftEndsIn: '',
                 vacation: false,
-                doctorName: ''
+                doctorName: '',
+                specializedIn: ''
               });
               setLoading(false)
             }else{
@@ -315,6 +317,7 @@ const Schedule = () => {
                         <button aria-label="كشف وجلسات" onClick={()=> setInnerData({...innerData, category: `كشف وجلسات`})}>كشف وجلسات</button>
                           </div>}
                     </div>
+                    <input type="text" disabled={innerData.vacation} placeholder="متخصص في" value={innerData.specializedIn} onChange={(s)=> setInnerData({...innerData, specializedIn: s.target.value})}></input>
                     <div onClick={innerData.vacation ? ()=> {return} : ()=> setOpenShiftStart(!openShiftStart)} className={innerData.vacation ? "dropmenu disabled" : "dropmenu"}><IoMdArrowDropdown className="icon" /> <p>{innerData.shiftStartsFrom ? innerData.shiftStartsFrom : `ميعاد بداية الشيفت`}</p> 
                       {openShiftStart &&  <div className="dropmenu-list heighted">
                             {ShiftsHours.map((e,key) =>{

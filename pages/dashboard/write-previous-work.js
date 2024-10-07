@@ -6,7 +6,7 @@ import Image from "next/image";
 import { FaPlus } from "react-icons/fa";
 import LoadingCircle from "@/Components/Loading-Circle";
 import { toast } from "react-toastify";
-
+import { IoMdArrowDropdown } from "react-icons/io";
 
 export async function getServerSideProps(context) {
     const session = await getSession(context);
@@ -38,7 +38,8 @@ const WritePerviousWork = () => {
         type: 'صورة',
         pic: '',
         gallery: [],
-        video: ''
+        video: '',
+        category: ''
     });
 
     const [videoThumbnail, setVideoThumbnail] = useState('');
@@ -63,6 +64,8 @@ const WritePerviousWork = () => {
     const videoInputRef = useRef();
     const [videoPreview, setVideoPreview] = useState('');
     const [btnLoading, setBtnLoading] = useState(false);
+    const [openMenu, setOpenMenu] = useState(false);
+
     
     const handleGalleryUpload = (e) => {
         const files = Array.from(e.target.files);
@@ -187,6 +190,7 @@ const WritePerviousWork = () => {
        formData.append('video', data.video);
        formData.append('type', data.type);
        formData.append('thumbnail', videoThumbnail);
+       formData.append('category', data.category);
 
        const res = await fetch(`/api/upload?method=add-previous-work`, {
         method: 'POST',
@@ -204,7 +208,8 @@ const WritePerviousWork = () => {
                 type: 'صورة',
                 pic: '',
                 gallery: [],
-                video: ''
+                video: '',
+                category: ''
             });
             setGalleryPreviews([]);
             setVideoPreview('');
@@ -276,6 +281,27 @@ const WritePerviousWork = () => {
                     </div>
                 
                     <h2>الكلمات المفتاحية</h2>
+                </div>
+
+                <div className="input-container">
+                    <div onClick={() => setOpenMenu(!openMenu)} className="dropmenu">
+                        <IoMdArrowDropdown className="icon" />
+                        <p>{data.category ? data.category : 'قم بإختيار الفئة'}</p>
+                        {openMenu && (
+                        <div className="dropmenu-list heighted">
+                            <button onClick={() => setData({...data, category: 'تأهيل امراض الأعصاب وجراحاتها'})}>تأهيل امراض الأعصاب وجراحاتها</button>
+                            <button onClick={() => setData({...data, category: 'تأهيل امراض العظام والعمود الفقري وجراحاتها'})}>تأهيل امراض العظام والعمود الفقري وجراحاتها</button>
+                            <button onClick={() => setData({...data, category: 'تأهيل اصابات الرياضيين'})}>تأهيل اصابات الرياضيين</button>
+                            <button onClick={() => setData({...data, category: 'التغذية العلاجية ونحت وتنسيق القوام'})}>التغذية العلاجية ونحت وتنسيق القوام</button>
+                            <button onClick={() => setData({...data, category: 'تأهيل امراض الصدر'})}>تأهيل امراض الصدر</button>
+                            <button onClick={() => setData({...data, category: 'تأهيل امراض النسا والولادة'})}>تأهيل امراض النسا والولادة</button>
+                            <button onClick={() => setData({...data, category: 'تأهيل امراض القلب'})}>تأهيل امراض القلب</button>
+                            <button onClick={() => setData({...data, category: 'تأهيل امراض الباطنة والمسنين'})}>تأهيل امراض الباطنة والمسنين</button>
+                            <button onClick={() => setData({...data, category: 'اخرى'})}>اخرى</button>
+                        </div>
+                        )}
+                    </div>
+                    <h2>الفئة</h2>
                 </div>
 
 

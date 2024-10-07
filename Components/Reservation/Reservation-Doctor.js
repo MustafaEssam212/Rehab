@@ -297,7 +297,7 @@ const ReservationDoctor = ({sendDataToParent}) => {
                                 </div>
                                 <div className="info">
                                     <h4>التخصص</h4>
-                                    <h5>علاج طبيعي</h5>
+                                    <h5>{e.specializedIn ? e.specializedIn : 'علاج طبيعي'}</h5>
                                 </div>
                                 <div className="info">
                                     <h4>الإسم</h4>

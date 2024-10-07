@@ -6,6 +6,8 @@ import { useState, useEffect } from 'react';
 import LoadingCircle from '@/Components/Loading-Circle';
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { FaRegCalendarDays } from "react-icons/fa6";
+import FilterComponent from '@/Components/filterComponent';
+import filterCategories from '@/utils/filterCategories';
 
 export async function getServerSideProps() {
 
@@ -22,6 +24,8 @@ const PerviousWork = ({ data }) => {
     const [blogs, setBlogs] = useState(data.works);
     const [page, setPage] = useState(1);
     const [btnLoading, setBtnLoading] = useState(false);
+    const [filtered, setFiltered] = useState([]);
+    const [category, setCategory] = useState('الكل');
 
     const getData = async (pageNum) => {
         setBtnLoading(true);
@@ -45,6 +49,16 @@ const PerviousWork = ({ data }) => {
     }, [page]);
 
 
+    const getDataFromChild = (param) => {
+        setCategory(param);
+        setFiltered(filterCategories(blogs, param));
+    }
+
+
+    useEffect(() => {
+        setFiltered(filterCategories(blogs, category));
+    }, [blogs])
+
     return(
         <div className="blogs-page-container">
             <NextSeo title={'سابقة اعمالنا - مركز ريهاب للعلاج الطبيعي والتأهيل'} />
@@ -54,7 +68,7 @@ const PerviousWork = ({ data }) => {
                     <h1>سابقة اعمالنا</h1>
                 </div>
             </div>
-
+            <FilterComponent sendDataToParent={getDataFromChild} />
             <div className='blogs-container'>
 
                 <div className='inner-blogs-container'>
@@ -63,10 +77,10 @@ const PerviousWork = ({ data }) => {
 
 
                     {
-                        blogs.length > 0 && <>
+                        filtered.length > 0 && <>
                         
                         {
-                            blogs.map((e, key) => {
+                            filtered.map((e, key) => {
                                 return(
 
                                     <div className="blog" key={key}>

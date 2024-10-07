@@ -133,6 +133,12 @@ const Permissions = () => {
 
 
                             <div>
+                                <input checked={permissions.includes('مسح دكتور')} onChange={(s)=> handleChangePermissions(s.target.checked, 'مسح دكتور')} type="checkbox" aria-label="مسح دكتور"></input>
+                                <p>مسح دكتور</p>
+                            </div>
+
+
+                            <div>
                                 <input checked={permissions.includes('اضافة جدول يومي')} onChange={(s)=> handleChangePermissions(s.target.checked, 'اضافة جدول يومي')} type="checkbox" aria-label="اضافة جدول يومي"></input>
                                 <p>اضافة جدول يومي</p>
                             </div>

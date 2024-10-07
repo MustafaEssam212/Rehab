@@ -208,6 +208,38 @@ input[type=number] {
 }
 
 
+.filter-component-container{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px 25px;
+    height: 100px;
+
+    .right{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+        .dropmenu-container-filter{
+            width: 450px;
+        }
+
+        &::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 8px;
+            background-color: var(--Primary-Color);
+            bottom: 0;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+}
+    }
+}
+
+
 // 75%
 @media (max-width: 2048px) {
     .whats-app-float{
@@ -220,6 +252,43 @@ input[type=number] {
     
             .icon{
                 font-size: 45px;
+            }
+        }
+    }
+
+    .filter-component-container{
+        padding: 0px 25px;
+        height: 95px;
+    
+        .right{
+            gap: 20px;
+
+            h2{
+                font-size: 22px;
+            }
+
+            .dropmenu-container-filter{
+                width: 430px;
+
+                .dropmenu{
+                    p{
+                        font-size: 15px;
+                    }
+
+                    .icon{
+                        font-size: 16px;
+                    }
+
+                    button{
+                        font-size: 15px;
+                    }
+                }
+            }
+    
+            &::after{
+
+                height: 7px;
+             
             }
         }
     }
@@ -240,6 +309,49 @@ input[type=number] {
             }
         }
     }
+
+    .filter-component-container{
+        padding: 0px 25px;
+        height: 90px;
+    
+        .right{
+            gap: 20px;
+
+            h2{
+                font-size: 20px;
+            }
+
+            .dropmenu-container-filter{
+                width: 400px;
+
+                .dropmenu{
+                    height: 55px;
+
+                    p{
+                        font-size: 13px;
+                    }
+
+                    .icon{
+                        font-size: 14px;
+                    }
+
+                    button{
+                        font-size: 14px;
+                    }
+
+                    .dropmenu-list{
+                        top: 60px;
+                    }
+                }
+            }
+    
+            &::after{
+
+                height: 6px;
+             
+            }
+        }
+    }
 }
 
 // 90%
@@ -257,6 +369,50 @@ input[type=number] {
             }
         }
     }
+
+    .filter-component-container{
+        padding: 0px 25px;
+        height: 80px;
+    
+        .right{
+            gap: 20px;
+
+            h2{
+                font-size: 18px;
+            }
+
+            .dropmenu-container-filter{
+                width: 350px;
+
+                .dropmenu{
+                    height: 50px;
+
+                    p{
+                        font-size: 12px;
+                    }
+
+                    .icon{
+                        font-size: 12px;
+                    }
+
+                    button{
+                        font-size: 12px;
+                        height: 55px;
+                    }
+
+                    .dropmenu-list{
+                        top: 55px;
+                    }
+                }
+            }
+    
+            &::after{
+
+                height: 6px;
+             
+            }
+        }
+    }
 }
 
 // 100%
@@ -271,6 +427,104 @@ input[type=number] {
     
             .icon{
                 font-size: 35px;
+            }
+        }
+    }
+
+    .filter-component-container{
+        padding: 0px 25px;
+        height: 70px;
+    
+        .right{
+            gap: 20px;
+
+            h2{
+                font-size: 16px;
+            }
+
+            .dropmenu-container-filter{
+                width: 300px;
+
+                .dropmenu{
+                    height: 45px;
+
+                    p{
+                        font-size: 10px;
+                    }
+
+                    .icon{
+                        font-size: 11px;
+                    }
+
+                    button{
+                        font-size: 10px;
+                        height: 50px;
+                    }
+
+                    .dropmenu-list{
+                        top: 50px;
+                    }
+
+                    .heighted{
+                        height: 250px;
+                    }
+                }
+            }
+    
+            &::after{
+
+                height: 5px;
+             
+            }
+        }
+    }
+}
+
+@media (max-width: 1107px) {
+    .filter-component-container{
+        padding: 0px 15px;
+        height: 60px;
+    
+        .right{
+            gap: 10px;
+
+            h2{
+                font-size: 14px;
+            }
+
+            .dropmenu-container-filter{
+                width: 250px;
+
+                .dropmenu{
+                    height: 40px;
+
+                    p{
+                        font-size: 9px;
+                    }
+
+                    .icon{
+                        font-size: 10px;
+                    }
+
+                    button{
+                        font-size: 9px;
+                        height: 45px;
+                    }
+
+                    .dropmenu-list{
+                        top: 45px;
+                    }
+
+                    .heighted{
+                        height: 220px;
+                    }
+                }
+            }
+    
+            &::after{
+
+                height: 4px;
+             
             }
         }
     }
@@ -314,4 +568,58 @@ input[type=number] {
  
         }
       }
+}
+
+
+@media (max-width: 373px) {
+    .filter-component-container{
+        padding: 0px;
+        height: 65px;
+    
+        .right{
+            width: 100%;
+            gap: 0;
+            justify-content: space-between;
+            margin: 0px 10px;
+            gap: 10px;
+            h2{
+                font-size: 14px;
+            }
+
+            .dropmenu-container-filter{
+                width: 250px;
+
+                .dropmenu{
+                    height: 40px;
+
+                    p{
+                        font-size: 9px;
+                    }
+
+                    .icon{
+                        font-size: 10px;
+                    }
+
+                    button{
+                        font-size: 9px;
+                        height: 45px;
+                    }
+
+                    .dropmenu-list{
+                        top: 45px;
+                    }
+
+                    .heighted{
+                        height: 220px;
+                    }
+                }
+            }
+    
+            &::after{
+
+                height: 4px;
+             
+            }
+        }
+    }
 }

@@ -32,7 +32,12 @@ const SignUp = () => {
         dateOfBirth: '',
         gender: '',
         securityQuestion: '',
-        answerSecurityQuestion: ''
+        answerSecurityQuestion: '',
+        package: {
+            name: null,
+            sessions: null,
+            price: null
+        }
     });
 
     useEffect(()=> {

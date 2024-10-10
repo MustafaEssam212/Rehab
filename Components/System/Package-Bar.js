@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from "react";
+import LoadingCircle from "../Loading-Circle";
+import { toast } from "react-toastify";
 
 const PackageBar = ({sendDataToParent}) => {
 
@@ -6,7 +8,8 @@ const PackageBar = ({sendDataToParent}) => {
         name: '',
         sessions: null,
         price: null
-    })
+    });
+    const [loading, setLoading] = useState(false);
 
     const divRef = useRef();
 
@@ -25,11 +28,46 @@ const PackageBar = ({sendDataToParent}) => {
         };
     }, []);
 
+
+    const handleSubmit = async () => {
+        setLoading(true);
+        if(!packageData.name || !packageData.sessions || !packageData.price){
+            toast.warning('برجاء ادخال المعلومات المطلوبة');
+            setLoading(false);
+        }else {
+
+            const res = await fetch(`/api/ERP?method=create-new-package`, {
+                method: 'POST',
+                body: JSON.stringify(packageData),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            const dataOfResponse = await res.json();
+
+
+            if(res.status === 200){
+                toast.success(dataOfResponse.message);
+                setPackageData({
+                    name: '',
+                    price: 0,
+                    sessions: 0
+                })
+                setLoading(false);
+            }else{
+                toast.error(dataOfResponse.message);
+                setLoading(false);
+            }
+
+        }
+    }
+
     return(
         <div ref={divRef} className="package-bar-erp-container">
                 <div className="left-package-bar-erp">
                     <button onClick={()=> sendDataToParent('package', false)}>الغاء</button>
-                    <button>موافق</button>
+                    <button onClick={handleSubmit}>{loading ? <LoadingCircle providedcolor="white" size={`25px`} /> : `موافق`}</button>
                 </div>
 
                 <div className="right-package-bar-erp">

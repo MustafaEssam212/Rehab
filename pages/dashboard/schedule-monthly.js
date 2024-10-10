@@ -52,7 +52,7 @@ const ScheduleMonthly = () => {
         doctorName: '',
         category: '',
         month: '',
-        period: 'periodOne',
+        days: [],
         specializedIn: ''
       });
 
@@ -111,7 +111,7 @@ const ScheduleMonthly = () => {
               doctorName: '',
               category: '',
               month: '',
-              period: '',
+              days: [],
               specializedIn: ''
             });
             setLoading(false);
@@ -121,6 +121,24 @@ const ScheduleMonthly = () => {
           }
         }
       }
+
+
+      const handleChangeDays = (s, name) => {
+        // Update the days array based on the value of s
+        if (s) {
+          // If s is true, add name to the days array
+          setInnerData((prevData) => ({
+            ...prevData,
+            days: [...prevData.days, name]
+          }));
+        } else {
+          // If s is false, remove name from the days array
+          setInnerData((prevData) => ({
+            ...prevData,
+            days: prevData.days.filter((e) => e !== name)
+          }));
+        }
+      };
     return(
         <div className="schedule-monthly-page system-page">
             <HeadSystem name={`اضافة جدول شهري`} />
@@ -177,8 +195,8 @@ const ScheduleMonthly = () => {
                           {monthsInArabic.map((e, index) => (
                             <button
                               key={index}
-                              onClick={index <= currentMonth ? ()=> {return} : () => setInnerData({ ...innerData, month: e })}
-                              className={index <= currentMonth ? "disabled-btn" : ""}
+                              onClick={() => setInnerData({ ...innerData, month: e })}
+                      
                             >
                               {e}
                             </button>
@@ -186,16 +204,46 @@ const ScheduleMonthly = () => {
                         </div>
                       )}
                     </div>
-                    <div onClick={() => setOpenPeriod(!openPeriod)} className="dropmenu">
-                      <IoMdArrowDropdown className="icon" />
-                      <p>{innerData.period ? obj[innerData.period] : 'قم بإختيار ايام الشيفت'}</p>
-                      {openPeriod && (
-                        <div className="dropmenu-list">
-                          <button onClick={() => setInnerData({ ...innerData, period: 'periodOne' })}>السبت والاثنين والاربعاء</button>
-                          <button onClick={() => setInnerData({ ...innerData, period: 'periodTwo' })}>الاحد والثلاثاء والخميس</button>
-                        </div>
-                      )}
-                    </div>
+
+                      <div className="week-days">
+                          <div className="day">
+                            <input checked={innerData.days.includes('السبت')} onChange={(s)=> handleChangeDays(s.target.checked, 'السبت')} type="checkbox"></input>
+                            <p>السبت</p>
+                          </div>
+
+                          <div className="day">
+                            <input checked={innerData.days.includes('الاحد')} onChange={(s)=> handleChangeDays(s.target.checked, 'الاحد')} type="checkbox"></input>
+                            <p>الاحد</p>
+                          </div>
+
+
+                          <div className="day">
+                            <input checked={innerData.days.includes('الاثنين')} onChange={(s)=> handleChangeDays(s.target.checked, 'الاثنين')} type="checkbox"></input>
+                            <p>الاثنين</p>
+                          </div>
+
+
+                          <div className="day">
+                            <input checked={innerData.days.includes('الثلاثاء')} onChange={(s)=> handleChangeDays(s.target.checked, 'الثلاثاء')} type="checkbox"></input>
+                            <p>الثلاثاء</p>
+                          </div>
+
+                          <div className="day">
+                            <input checked={innerData.days.includes('الاربعاء')} onChange={(s)=> handleChangeDays(s.target.checked, 'الاربعاء')} type="checkbox"></input>
+                            <p>الاربعاء</p>
+                          </div>
+
+                          <div className="day">
+                            <input checked={innerData.days.includes('الخميس')} onChange={(s)=> handleChangeDays(s.target.checked, 'الخميس')} type="checkbox"></input>
+                            <p>الخميس</p>
+                          </div>
+
+                          <div className="day">
+                            <input checked={innerData.days.includes('الجمعة')} onChange={(s)=> handleChangeDays(s.target.checked, 'الجمعة')} type="checkbox"></input>
+                            <p>الجمعة</p>
+                          </div>
+                      </div>
+
                     {loading ? <button className="main-button" style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}><LoadingCircle providedcolor="white" size={`25px`} /></button> : <button className="main-button" aria-label="اضافة" onClick={handleSubmit}>اضافة</button>}
                 </div>
 

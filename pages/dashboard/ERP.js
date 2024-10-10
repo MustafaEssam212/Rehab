@@ -6,6 +6,8 @@ import {FaMoneyBill, FaUserAltSlash} from 'react-icons/fa'
 import { GiSwapBag } from "react-icons/gi";
 import { FaMoneyBillTrendUp } from "react-icons/fa6";
 import TopBar from "@/Components/System/Top-Bar";
+import Package from "@/Components/System/Package";
+
 
 export async function getServerSideProps(context) {
     const session = await getSession(context);
@@ -47,6 +49,7 @@ const ERP = () => {
             <div className="right-ERP">
                 
                 <TopBar />
+                {section === 'packages' && <Package />}
 
             </div>
 

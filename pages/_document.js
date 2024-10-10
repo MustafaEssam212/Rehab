@@ -1,10 +1,23 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import { useEffect } from "react";
+
 
 export default function Document() {
+
+  useEffect(() => {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'AW-16732284578');
+  }, []);
+
   return (
     <Html lang="en">
       <Head>
-
+      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16732284578"></script>
            {/* Meta Pixel Code */}
         <script
           dangerouslySetInnerHTML={{

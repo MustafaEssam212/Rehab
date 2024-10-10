@@ -280,26 +280,30 @@ export default async function EditData(req, res) {
                 // Get the number of days in the given month and year
                 const daysInMonth = new Date(year, monthIndex + 1, 0).getDate(); // Last day of the month
         
-                // Define periods
-                const periodOneDays = [6, 1, 3];  // Saturday (6), Monday (1), Wednesday (3)
-                const periodTwoDays = [0, 2, 4];  // Sunday (0), Tuesday (2), Thursday (4)
+                // Map Arabic day names to their numeric equivalents
+                const daysMapping = {
+                    'الاحد': 0,
+                    'الاثنين': 1,
+                    'الثلاثاء': 2,
+                    'الاربعاء': 3,
+                    'الخميس': 4,
+                    'الجمعة': 5,
+                    'السبت': 6,
+                };
         
-                // Determine the chosen period
-                let selectedPeriodDays;
-                if (req.body.period === 'periodOne') {
-                    selectedPeriodDays = periodOneDays;
-                } else if (req.body.period === 'periodTwo') {
-                    selectedPeriodDays = periodTwoDays;
-                } else {
-                    return res.status(400).send({ message: 'فترة غير صحيحة' });
+                // Get the selected days from the request body
+                const selectedDays = req.body.days.map(day => daysMapping[day]).filter(day => day !== undefined);
+        
+                if (selectedDays.length === 0) {
+                    return res.status(400).send({ message: 'لا توجد أيام صحيحة' });
                 }
         
                 // Loop over all days in the month
                 for (let day = 1; day <= daysInMonth; day++) {
                     const currentDay = new Date(year, monthIndex, day).getDay(); // Get the day of the week
         
-                    // Only process the days that match the selected period
-                    if (selectedPeriodDays.includes(currentDay)) {
+                    // Only process the days that match the selected days
+                    if (selectedDays.includes(currentDay)) {
                         // Format the date as "D/M/YYYY"
                         const date = `${day}/${monthIndex + 1}/${year}`;
         
@@ -369,9 +373,11 @@ export default async function EditData(req, res) {
                 return res.status(200).send({ message: 'تم اضافة الجدول الشهري بنجاح' });
         
             } catch (error) {
+                console.error(error); // Log the error for debugging
                 return res.status(500).send({ message: 'حدث خطأ اثناء تنفيذ العملية' });
             }
         }
+        
 
         else if(req.query.method === 'switch-reservation'){
            

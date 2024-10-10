@@ -1494,7 +1494,7 @@
                 margin: 25px auto;
             }
 
-            input{
+            input:not([type="checkbox"]){
                 width: calc(100% - 10px);
                 background-color: #edf1f1;
                 height: 60px;
@@ -1505,6 +1505,19 @@
                 -ms-border-radius: 10px;
                 -o-border-radius: 10px;
                 margin-top: 25px;
+            }
+
+            .week-days{
+                display: flex;
+                width: 100%;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin-top: 25px;
+                flex-direction: row-reverse;
+
+                input{
+                    accent-color: var(--Primary-Color);
+                }
             }
         }
 
@@ -2516,7 +2529,7 @@
     border-bottom: 4px solid rgba(128, 128, 128, 0.09);
     position: relative;
 
-    button:not(.price-bar-erp-container button, .package-bar-erp-container button){
+    .regular-top-bar-btn{
         background-color: var(--Primary-Color);
         height: 60%;
         width: 300px;
@@ -2526,17 +2539,37 @@
         justify-content: center;
         gap: 7px;
         color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         .icon{
             font-size: 19px;
         }
     }
 
+    .red-btn{
+        background-color: rgb(218, 29, 29);
+        height: 60%;
+        width: 300px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
+        .icon{
+            font-size: 15px;
+        }
+    }
 }
 
 
-.price-bar-erp-container, .package-bar-erp-container{
+.price-bar-erp-container, .package-bar-erp-container, .delete-package-bar-erp{
     position: absolute;
     top: 100px;
     height: 100px;
@@ -2548,7 +2581,7 @@
     justify-content: space-around;
     align-items: center;
 
-    div{
+    div:not(.dropmenu-list){
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -2556,13 +2589,16 @@
     }
 
 
-    .left-price-bar-erp, .left-package-bar-erp{
+    .left-price-bar-erp, .left-package-bar-erp, .left-delete-package-bar-erp{
 
         button{
             width: 200px;
             height: 60px;
             font-size: 14px;
             font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         button:last-child{
@@ -2588,8 +2624,148 @@
             text-align: center;
         }
     }
+
+    .right-delete-package-bar-erp{
+        .dropmenu-container{
+            width: 550px;
+
+            .dropmenu{
+                width: 78%;
+            }
+        }
+    }
 }
 
+
+.search-component-erp{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-bottom: 4px solid rgba(128, 128, 128, 0.09);
+
+    .inner-search-erp{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-right: 20px;
+
+        input{
+            background-color: #edf1f1;
+            padding-right: 10px;
+            height: 55px;
+            width: 350px;
+        }
+    }
+
+}
+
+
+.package-component-erp{
+
+
+    .inner-package-component-erp{
+        height: 100%;
+        
+        .alert{
+            margin-top: 200px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .package-users{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+            padding-bottom: 30px;
+            .user{
+                display: flex;
+                align-items: center;
+                height: 70px;
+                background-color: #edf1f1;
+
+                div:not(.dropmenu, .edit-package-counter, .dropmenu-list){
+                    display: flex;
+                    align-items: center;
+                    width: calc(100% / 6);
+                    justify-content: center;
+                    border-left: 3px white solid;
+                    height: 100%;
+                    gap: 15px;
+
+                    span{
+                        font-weight: 700;
+                        color: var(--Primary-Color);
+                    }
+
+                    button:not(.dropmenu-list button){
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 45px;
+                        height: 45px;
+                        border-radius: 50%;
+                        -webkit-border-radius: 50%;
+                        -moz-border-radius: 50%;
+                        -ms-border-radius: 50%;
+                        -o-border-radius: 50%;
+                        font-size: 16px;
+                        font-weight: 700;
+                    }
+
+                    .edit-package-counter{
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
+
+                        button:last-child{
+                            background-color: var(--Primary-Color);
+                            color: white;
+                        }
+
+                        button:first-child{
+                            background-color: rgb(210, 210, 210);
+                            color: black;
+                        }
+                    }
+
+                    .check-icon{
+                        width: 40px;
+                        height: 40px;
+                        cursor: pointer;
+                        margin-top: 7px;
+                        color: var(--Primary-Color);
+                        transition: .3s all linear;
+                        -webkit-transition: .3s all linear;
+                        -moz-transition: .3s all linear;
+                        -ms-transition: .3s all linear;
+                        -o-transition: .3s all linear;
+
+                        &:hover{
+                            color: green;
+                        }
+}
+
+                }
+
+                .dropmenu{
+                    background-color: rgb(205, 205, 205);
+                    width: 75%;
+                }
+                .delete-package-erp{
+                    button{
+                        background-color: red;
+                        color: white;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+}
 
 // 75%
 @media (max-width: 2048px){

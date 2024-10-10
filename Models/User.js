@@ -11,7 +11,12 @@ const User = new mongoose.Schema({
     securityQuestion: {type: String, required: true},
     answerSecurityQuestion: {type: String, required: true},
     role: {type: String, default: 'regular'},
-    permissions: []
+    permissions: [],
+    package: {type: Object, default: {
+        name: null,
+        sessions: null,
+        price: null
+    }}
 
 })
 

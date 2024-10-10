@@ -56,6 +56,9 @@ export default function App({ Component, pageProps: { session, ...pageProps } })
     };
   }, [router]);
 
+
+ 
+
   return (
 
     <AppProvider >

@@ -91,7 +91,7 @@ const Blogs = ({data}) => {
                                     <div className="blog" key={key}>
 
                                     <div className="blog-img">
-                                        <Image sizes="(min-width: 2060px) calc(1.7vw + 549px), (min-width: 1720px) calc(4.06vw + 417px), (min-width: 1540px) 400px, (min-width: 1380px) 350px, (min-width: 1120px) calc(13.75vw + 163px), (min-width: 440px) 350px, calc(79.17vw + 18px)" loading="lazy" src={`/api/getImage?method=get-blog-image&blog=${e.name.replace(/ /g, '_')}&image=${e.cover}`} fill style={{objectFit: 'cover'}} alt={e.name}></Image>
+                                        <Image sizes="(min-width: 2060px) calc(1.7vw + 549px), (min-width: 1720px) calc(4.06vw + 417px), (min-width: 1540px) 400px, (min-width: 1380px) 350px, (min-width: 1120px) calc(13.75vw + 163px), (min-width: 440px) 350px, calc(79.17vw + 18px)" loading="lazy" src={`/api/getImage?method=get-blog-image&blog=${e.name.replace(/ /g, '_')}&image=${e.cover}`} fill style={{objectFit: 'fill'}} alt={e.name}></Image>
                                     </div>
             
                                     <Link href={`/blog/${e.name.replace(/ /g, '_')}`} title={e.name} className="blog-info">

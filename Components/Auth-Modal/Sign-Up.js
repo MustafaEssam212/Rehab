@@ -37,7 +37,8 @@ const SignUp = () => {
             name: null,
             sessions: null,
             price: null
-        }
+        },
+        history: []
     });
 
     useEffect(()=> {
@@ -127,7 +128,7 @@ const SignUp = () => {
     <div ref={componentRef} className={"sign-up-container no-animation"}>
         <div className="sign-up-left">
             <h1>تسجيل حساب جديد</h1>
-            <h3>قم بإدخال معلوماتك لتسجيل حساب جديد</h3>
+            <h3>أدخل معلوماتك لتسجيل حساب جديد</h3>
 {/* 
 
             <div className="icons-container">
@@ -185,7 +186,7 @@ const SignUp = () => {
             <div className="img-container"><Image src={SignCoverPic.src} fill style={{objectFit: 'cover'}} alt="التسجيل" /></div>
             <div className="layer-on">
                 <h1>مرحباً بك</h1>
-                <h3>انت على وشك تسجيل حساب جديد في موقعنا. اذا كنت تمتلك حساباً بالفعل قم بالضغط على تسجيل الدخول</h3>
+                <h3>انت على وشك تسجيل حساب جديد في موقعنا. إذا كان لديك حساب بالفعل، اضغط على تسجيل الدخول</h3>
                 <button onClick={()=> AppContxt.setAuthModalSection('SignIn')} aria-label="تسجيل الدخول">تسجيل الدخول</button>
             </div>
         </div> 

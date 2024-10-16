@@ -234,6 +234,7 @@ const WritePerviousWork = () => {
 
                 <h1>قم بملئ المعلومات المطلوبة</h1>
 
+
                 <div className="choose-type">
                     <div className="left">
                         <button onClick={() => setData({ ...data, type: 'صورة' })} className={data.type === 'صورة' ? "active" : undefined}>صورة</button>
@@ -245,7 +246,7 @@ const WritePerviousWork = () => {
                 </div>
 
                 <div className="input-container">
-                    <input value={data.name} onChange={(s)=> setData({...data, name: s.target.value})} type="text" placeholder="اسم العمل" aria-label="اسم العمل"></input>
+                    <input value={data.name} onChange={(s)=> setData({...data, name: s.target.value})} type="text" placeholder="اسم العمل" aria-label="اسم العمل" onBlur={() => setData({ ...data, name: data.name.trim() })}></input>
                     <h2>اسم العمل</h2>
                 </div>
 

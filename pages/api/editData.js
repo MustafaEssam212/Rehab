@@ -10,6 +10,7 @@ import fs from 'fs'
 import Review from "@/Models/Review";
 import Work from "@/Models/Work";
 import Doctor from "@/Models/Doctor";
+import Prices from "@/Models/Prices";
 
 export default async function EditData(req, res) {
     await dbConnect();
@@ -110,14 +111,17 @@ export default async function EditData(req, res) {
 
         else if(req.query.method === 'add-new-reservation'){
             try {
-                
+
+                const getPrices = await Prices.findOne({}, {_id: false, sessionPrice: true, examinationPrice: true});
        
                 const newReservation = {
                     reservationName: req.body.nameOfNewReversation,
                     reservationTime: req.body.newReversationPeriod,
                     reservationSerial: Math.floor(100000000 + Math.random() * 900000000),
                     userNumber: req.body.userNumber,
-                    category: req.body.category
+                    category: req.body.category,
+                    price: req.body.category  === 'كشف' ? getPrices.examinationPrice : getPrices.sessionPrice,
+                    paymentStatus: false
                 }
            
 

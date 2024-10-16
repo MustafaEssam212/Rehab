@@ -95,7 +95,7 @@ const Work = ({ data }) => {
                               <div className="img-container">
                                 {
 
-                                    e.type === 'صورة' && <Image sizes="(min-width: 2060px) 190px, (min-width: 1720px) 180px, (min-width: 1540px) 150px, (min-width: 640px) 130px, calc(10.94vw + 62px)" loading="lazy" src={`/api/getImage?method=get-work-image&work=${e.name.replace(/ /g, '_')}&image=${e.pic}`} fill style={{objectFit: 'cover'}} alt={e.name}></Image>
+                                    e.type === 'صورة' && <Image sizes="(min-width: 2060px) 190px, (min-width: 1720px) 180px, (min-width: 1540px) 150px, (min-width: 640px) 130px, calc(10.94vw + 62px)" loading="lazy" src={`/api/getImage?method=get-work-image&work=${e.name.replace(/ /g, '_')}&image=${e.pic}`} fill style={{objectFit: 'fill'}} alt={e.name}></Image>
 
                                 }
 

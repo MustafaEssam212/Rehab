@@ -1,5 +1,6 @@
 import dbConnect from "@/utils/dbConnect";
 import Schedule from "@/Models/Schedule";
+import User from "@/Models/User";
 
 
 
@@ -10,6 +11,7 @@ export default async function Reservation(req, res) {
         if(req.query.method === 'post-reservation'){
            
             try {
+             
 
            const getCounter = await Schedule.aggregate([
 
@@ -61,7 +63,9 @@ export default async function Reservation(req, res) {
                   userNumber: req.body.userNumber,
                   userID: req.body.userID,
                   category: req.body.category,
-                  whatsAppNumber: req.body.whatsAppNumber
+                  whatsAppNumber: req.body.whatsAppNumber,
+                  paymentStatus: req.body.paymentStatus,
+                  price: parseInt(req.body.price)
               }
   
               const update = await Schedule.updateOne(
@@ -72,13 +76,48 @@ export default async function Reservation(req, res) {
                   {
                     $push: { "doctors.$.reservations": newReservation }
                   }
-                );
+              );
+
+              if(req.body.paymentStatus){
+                const getUserInfo = await User.findOne({_id: req.body.userID}, {_id: false, package: true});
+
+                if(getUserInfo.package.sessions - 1 !== 0){
+                    const updateUser = await User.updateOne(
+                      { _id: req.body.userID},
+                      { $inc: { "package.sessions": -1 } }
+                    );
   
-                if(update){
+                    if(updateUser.modifiedCount > 0 && update.modifiedCount > 0){
+                      return res.status(200).send({message: 'لقد تم الحجز بنجاح'})
+                    }else{
+                      return res.status(500).send({message: 'حدث خطأ اثناء تنفيذ العملية'})
+                    }
+  
+                }else{
+                  const updateUser = await User.updateOne(
+                    { _id: req.body.userID},
+                    { $set: {package: {name: null, sessions: null, price: null}} }
+                  );
+  
+                  if(updateUser.modifiedCount > 0 && update.modifiedCount > 0){
+                    return res.status(200).send({message: 'لقد تم الحجز بنجاح'})
+                  }else{
+                    return res.status(500).send({message: 'حدث خطأ اثناء تنفيذ العملية'})
+                  }
+                }
+              }else{
+                if(update.modifiedCount > 0){
                   return res.status(200).send({message: 'لقد تم الحجز بنجاح'})
                 }else{
                   return res.status(500).send({message: 'حدث خطأ اثناء تنفيذ العملية'})
                 }
+              }
+
+
+
+
+  
+
   
             }
           }else{
@@ -93,7 +132,9 @@ export default async function Reservation(req, res) {
                 userNumber: req.body.userNumber,
                 userID: req.body.userID,
                 category: req.body.category,
-                whatsAppNumber: req.body.whatsAppNumber
+                whatsAppNumber: req.body.whatsAppNumber,
+                paymentStatus: req.body.paymentStatus,
+                price: parseInt(req.body.price)
             }
 
             const update = await Schedule.updateOne(
@@ -106,10 +147,39 @@ export default async function Reservation(req, res) {
                 }
               );
 
-              if(update){
-                return res.status(200).send({message: 'لقد تم الحجز بنجاح'})
+              if(req.body.paymentStatus){
+                const getUserInfo = await User.findOne({_id: req.body.userID}, {_id: false, package: true});
+
+                if(getUserInfo.package.sessions - 1 !== 0){
+                    const updateUser = await User.updateOne(
+                      { _id: req.body.userID},
+                      { $inc: { "package.sessions": -1 } }
+                    );
+  
+                    if(updateUser.modifiedCount > 0 && update.modifiedCount > 0){
+                      return res.status(200).send({message: 'لقد تم الحجز بنجاح'})
+                    }else{
+                      return res.status(500).send({message: 'حدث خطأ اثناء تنفيذ العملية'})
+                    }
+  
+                }else{
+                  const updateUser = await User.updateOne(
+                    { _id: req.body.userID},
+                    { $set: {package: {name: null, sessions: null, price: null}} }
+                  );
+  
+                  if(updateUser.modifiedCount > 0 && update.modifiedCount > 0){
+                    return res.status(200).send({message: 'لقد تم الحجز بنجاح'})
+                  }else{
+                    return res.status(500).send({message: 'حدث خطأ اثناء تنفيذ العملية'})
+                  }
+                }
               }else{
-                return res.status(500).send({message: 'حدث خطأ اثناء تنفيذ العملية'})
+                if(update.modifiedCount > 0){
+                  return res.status(200).send({message: 'لقد تم الحجز بنجاح'})
+                }else{
+                  return res.status(500).send({message: 'حدث خطأ اثناء تنفيذ العملية'})
+                }
               }
 
           }

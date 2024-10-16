@@ -264,6 +264,7 @@
 
 
 
+
     .inner-reservation-info{
 
         display: flex;
@@ -352,16 +353,33 @@
     padding: 25px;
     text-align: center;
 
+    .loading-div{
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .confirm-info{
         display: flex;
-        flex-direction: column;
-        gap: 15px;
+        align-items: center;
+        justify-content: center;
         margin: 20px;
 
-        h3{
-            span{
-                font-weight: 500;
+
+
+
+        .inner-confirm-info{
+            text-align: right;
+            margin: 0 auto;
+          
+            h3{
+                margin-top: 15px;
+                span{
+                    font-weight: 500;
+                }
             }
+
         }
     }
 
@@ -372,12 +390,13 @@
         flex-direction: column;
         gap: 15px;
         align-items: center;
+        margin-top: 15px;
 
         button{
-            height: 65px;
+            height: 75px;
             font-weight: 700;
             font-size: 17px;
-            width: 250px;
+            width: 50%;
         }
 
 
@@ -773,7 +792,7 @@
             button{
                 height: 60px;
                 font-size: 15px;
-                width: 230px;
+                width: 50%;
             }
     
 
@@ -1026,7 +1045,7 @@
             button{
                 height: 58px;
                 font-size: 14px;
-                width: 220px;
+                width: 50%;
             }
     
 
@@ -1361,7 +1380,7 @@
             button{
                 height: 55px;
                 font-size: 13px;
-                width: 200px;
+                width: 50%;
             }
     
 
@@ -1710,7 +1729,7 @@
             button{
                 height: 50px;
                 font-size: 11px;
-                width: 180px;
+                width: 80%;
             }
     
 

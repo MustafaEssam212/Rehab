@@ -182,7 +182,8 @@ const WriteBlog = () => {
             <div className="left">
                 <h1>معلومات المدونة</h1>
                 <div className="top-left">
-                    <input value={data.name} type="text" aria-label="اسم المدونة" placeholder="اسم المدونة" onChange={(s)=> setData({...data, name: s.target.value})}></input>
+               
+                    <input value={data.name} type="text" aria-label="اسم المدونة" placeholder="اسم المدونة" onChange={(s)=> setData({...data, name: s.target.value})} onBlur={() => setData({ ...data, name: data.name.trim() })}></input>
                     <textarea value={data.description} placeholder="وصف المدونة" aria-label="وصف المدونة" onChange={(s)=> setData({...data, description: s.target.value})}></textarea>
 
                     {

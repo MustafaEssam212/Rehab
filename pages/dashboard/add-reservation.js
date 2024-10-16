@@ -180,17 +180,20 @@ const AddReservation = () => {
 
 
 
-useEffect(() => {
-  if (dayInfo && Object.keys(dayInfo).length > 0) {
-    setAvailableShifts(filterShifts(inputDate, dayInfo.category === 'جلسات' ? ShiftsHours : timeSlots , dayInfo.shiftStartsFrom, dayInfo.shiftEndsIn, dayInfo.reservations, category, dayInfo.category))
-  }
-}, [dayInfo, category, inputDate]);  
+      useEffect(() => {
+        if (dayInfo && Object.keys(dayInfo).length > 0) {
+          setAvailableShifts(filterShifts(inputDate, dayInfo.category === 'جلسات' ? ShiftsHours : timeSlots , dayInfo.shiftStartsFrom, dayInfo.shiftEndsIn, dayInfo.reservations, category, dayInfo.category))
+        }
+      }, [dayInfo, category, inputDate]);  
+  
 
 
+      
       const handleAddReservation = async () => {
         if(!doctor || !inputDate || !newReversationPeriod || !nameOfNewReversation || !userNumber || !category){
           toast.warning('برجاء ادخال المعلومات المطلوبة')
         }else{
+          
           const res = await fetch(`/api/editData?method=add-new-reservation`, {
             method: 'POST',
             body: JSON.stringify({inputDate, doctor, newReversationPeriod, nameOfNewReversation, userNumber, category}),

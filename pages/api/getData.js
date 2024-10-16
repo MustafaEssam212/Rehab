@@ -7,7 +7,7 @@ import User from "@/Models/User";
 import Blog from "@/Models/Blog";
 import Work from "@/Models/Work";
 import Review from "@/Models/Review";
-
+import Prices from "@/Models/Prices";
 
 export default async function GetData(req, res) {
     await dbConnect();
@@ -48,17 +48,19 @@ export default async function GetData(req, res) {
                 if(getDate && getDate.doctors){
                     
                     const availableDoctors = getDate.doctors.filter(doctor => !doctor.vacation);
-            
+                    
+                    
     
                     var arr = [];
     
                     availableDoctors.map( async (e) => {
                         var doctorObj = e;
                         const getPic = await Doctor.findOne(({serial: e.doctor}));
+                        
                         doctorObj.cover = getPic.cover;
                         arr.push(doctorObj);
     
-                        if(arr.length === availableDoctors  .length){
+                        if(arr.length === availableDoctors.length){
                             return  res.status(200).send(arr);
                         }
                     })
@@ -507,6 +509,20 @@ export default async function GetData(req, res) {
                     return res.status(200).send({message: 'تم جلب البيانات بنجاح', previousWorks: findBlogs})
                 } catch (error) {
                     return res.status(500).send({message: 'حدث خطأ اثناء تنفيذ العملية', previousWorks: []})
+                }
+            }
+
+
+            else if(req.query.method === 'get-prices-and-user-package'){
+                try {
+                    const getPrices = await Prices.findOne({}, {_id: false, sessionPrice: true, examinationPrice: true}); 
+                    const getPackage = await User.findOne({_id: req.query.userID}, {_id: false, package: true});
+
+                    return res.status(200).send({package: getPackage.package, session: getPrices.sessionPrice, examination: getPrices.examinationPrice})
+
+                } catch (error) {
+                    console.log(error)
+                    return res.status(500).send({message: 'حدث خطأ اثناء تلقي المعلومات'});
                 }
             }
     

@@ -16,7 +16,8 @@ const User = new mongoose.Schema({
         name: null,
         sessions: null,
         price: null
-    }}
+    }},
+    history: []
 
 })
 

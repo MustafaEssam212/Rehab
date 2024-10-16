@@ -2576,10 +2576,11 @@
     border-bottom: 4px solid rgba(128, 128, 128, 0.09);
     width: 100%;
     right: 0;
-    background-color: rgba(240, 240, 240, 0.626);
+    background-color: rgb(240, 240, 240);
     display: flex;
     justify-content: space-around;
     align-items: center;
+    z-index: 1000;
 
     div:not(.dropmenu-list){
         display: flex;
@@ -2630,6 +2631,7 @@
             width: 550px;
 
             .dropmenu{
+                background-color: rgb(225, 225, 225);
                 width: 78%;
             }
         }
@@ -2643,6 +2645,8 @@
     align-items: center;
     justify-content: flex-end;
     border-bottom: 4px solid rgba(128, 128, 128, 0.09);
+    position: relative;
+
 
     .inner-search-erp{
         display: flex;
@@ -2656,6 +2660,21 @@
             height: 55px;
             width: 350px;
         }
+    }
+
+    button{
+        height: 60px;
+        width: 250px;
+        background-color: var(--Primary-Color);
+        color: white;
+        margin-right: 20px;
+        font-weight: 700;
+    }
+
+    .add-non-user-menu, .remove-non-user-menu{
+       @extend .price-bar-erp-container;
+       top: 80px;
+       z-index: 900;
     }
 
 }
@@ -2685,10 +2704,10 @@
                 height: 70px;
                 background-color: #edf1f1;
 
-                div:not(.dropmenu, .edit-package-counter, .dropmenu-list){
+                div{
                     display: flex;
                     align-items: center;
-                    width: calc(100% / 6);
+                    width: calc(100% / 4);
                     justify-content: center;
                     border-left: 3px white solid;
                     height: 100%;
@@ -2699,66 +2718,47 @@
                         color: var(--Primary-Color);
                     }
 
-                    button:not(.dropmenu-list button){
+
+                }
+
+
+                .btns-package{
+                    button{
+                        width: 40px;
+                        height: 40px;
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        width: 45px;
-                        height: 45px;
+                        font-size: 26px;
                         border-radius: 50%;
                         -webkit-border-radius: 50%;
                         -moz-border-radius: 50%;
                         -ms-border-radius: 50%;
                         -o-border-radius: 50%;
-                        font-size: 16px;
-                        font-weight: 700;
                     }
 
-                    .edit-package-counter{
-                        display: flex;
-                        align-items: center;
-                        gap: 15px;
-
-                        button:last-child{
-                            background-color: var(--Primary-Color);
-                            color: white;
-                        }
-
-                        button:first-child{
-                            background-color: rgb(210, 210, 210);
-                            color: black;
-                        }
+                    button:first-child{
+                        background-color: #2196F3;
+                        color: white;
                     }
 
-                    .check-icon{
-                        width: 40px;
-                        height: 40px;
-                        cursor: pointer;
-                        margin-top: 7px;
-                        color: var(--Primary-Color);
-                        transition: .3s all linear;
-                        -webkit-transition: .3s all linear;
-                        -moz-transition: .3s all linear;
-                        -ms-transition: .3s all linear;
-                        -o-transition: .3s all linear;
-
-                        &:hover{
-                            color: green;
-                        }
-}
-
-                }
-
-                .dropmenu{
-                    background-color: rgb(205, 205, 205);
-                    width: 75%;
-                }
-                .delete-package-erp{
-                    button{
+                    button:nth-child(2){
                         background-color: red;
                         color: white;
                     }
+
+                    button:nth-child(3){
+                        background-color: #FF9800;
+                        color: white;
+                    }
+
+                    button:last-child{
+                        background-color: var(--Primary-Color);
+                        color: white;
+                    }
                 }
+
+
             }
         }
 
@@ -2766,6 +2766,602 @@
     }
 
 }
+
+
+.pop-package-container{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.118);
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    .inner-pop-package{
+        width: 70%;
+        height: 90%;
+        background-color: white;
+        box-shadow: 0px 0px 10px #bebebe;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+
+        .main-div{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0px 20px;
+            height: 100%;
+            gap: 25px;
+        }
+
+        .delete-package-pop{
+        
+
+            h1{
+                span{
+                    color: red;
+                }
+            }
+
+            .delete-btns{
+                display: flex;
+                gap: 15px;
+                button{
+                    width: 200px;
+                    height: 65px;
+                    font-weight: 700;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                button:last-child{
+                    background-color: red;
+                    color: white;
+                }
+            }
+        }
+
+        .add-package-pop{
+            .dropmenu{
+                width: 70%;
+            }
+
+            .extra-info{
+                width: 70%;
+                
+                h1{
+                    text-align: center;
+                }
+
+                .info-div{
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-top: 15px;
+
+                    input{
+                        background-color: #edf1f1;
+                        height: 55px;
+                        width: 250px;
+                        text-align: center;
+
+                        &::placeholder{
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+
+            .main-btn{
+                width: 70%;
+                height: 65px;
+                background-color: var(--Primary-Color);
+                color: white;
+                font-size: 17px;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                -ms-border-radius: 10px;
+                -o-border-radius: 10px;
+}
+        }
+
+
+        .edit-package-pop{
+
+ 
+
+            .edit-inputs{
+                width: 70%;
+
+                .edit-individual-input{
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-top: 15px;
+
+                    input{
+                        background-color: #edf1f1;
+                        height: 55px;
+                        width: 250px;
+                        text-align: center;
+
+                        &::placeholder{
+                            text-align: center;
+                        }
+                    }
+
+                    .edit-package-counter{
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
+                        width: 250px;
+                        justify-content: space-between;
+    
+                        button{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 45px;
+                            height: 45px;
+                            border-radius: 50%;
+                            -webkit-border-radius: 50%;
+                            -moz-border-radius: 50%;
+                            -ms-border-radius: 50%;
+                            -o-border-radius: 50%;
+                            font-size: 16px;
+                            font-weight: 700;
+                        }
+                    
+                        button:last-child{
+                            background-color: var(--Primary-Color);
+                            color: white;
+                        }
+                    
+                        button:first-child{
+                            background-color: rgb(210, 210, 210);
+                            color: black;
+                        }
+                    }
+                }
+
+
+            }
+
+            .main-btn{
+                width: 70%;
+                background-color: var(--Primary-Color);
+                color: white;
+                font-size: 17px;
+                font-weight: 700;
+                border-radius: 10px;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                -ms-border-radius: 10px;
+                -o-border-radius: 10px;
+                height: 65px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+     
+}
+        }
+
+
+        .info-package-pop{
+
+            h1{
+                margin-top: 25px;       
+            }
+
+            .previous-packages{
+                width: 100%;
+                overflow: hidden;
+                overflow-y: scroll;
+                padding-bottom: 15px;
+
+
+                .pre-package{
+                    display: flex;
+                    height: 80px;
+                    width: 100%;
+                    margin-top: 15px;
+
+                    p{
+                        width: calc(100% / 7);
+                        border-left: 3px white solid;
+                        background-color: #edf1f1;
+                        height: 100%;
+                        justify-content: center;
+                        align-items: center;
+                        display: flex;
+                        flex-direction: row-reverse;
+                        gap: 7px;
+                    }
+                }
+            }
+
+        }
+
+}
+}
+
+.non-users-component-erp{
+    @extend .package-component-erp;
+}
+
+
+.pay-component-erp{
+
+    .pay-bar{
+        height: 80px;
+        border-bottom: 4px solid rgba(128, 128, 128, 0.09);
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+
+        button{
+            margin-right: 15px;
+            height: 60px;
+            width: 250px;
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        button:nth-child(1){
+            background-color: rgb(218, 29, 29);
+        }
+
+        button:nth-child(2){
+            background-color: var(--Primary-Color);
+        }
+
+
+        .add-new-pay-bar, .delete-pay-bar{
+            position: absolute;
+            top: 80px;
+            height: 100px;
+            border-bottom: 4px solid rgba(128, 128, 128, 0.09);
+            width: 100%;
+            right: 0;
+            background-color: rgb(240, 240, 240);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 1000;
+
+            .left-price-bar-erp{
+                display: flex;
+            }
+    
+
+            .right-price-bar-erp{
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                div{
+                    display: flex;
+                    align-items: center;
+                    gap: 7px;
+                }
+
+                input{
+                    width: 300px;
+                    background-color: #d7d7d7;
+                    height: 50px;
+                    text-align: center;
+                }
+        
+                input::placeholder{
+                    text-align: center;
+                }
+
+                input[type="date"]::-webkit-calendar-picker-indicator {
+                    display: none;
+                    -webkit-appearance: none;
+                  }
+            }
+
+        }
+
+    }
+
+
+    .search-bar{
+        height: 80px;
+        border-bottom: 4px solid rgba(128, 128, 128, 0.09);
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        gap: 20px;
+
+
+        h2{
+            margin-right: 20px;
+        }
+
+        div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            input{
+                height: 55px;
+                width: 300px;
+                background-color: #edf1f1;
+                text-align: center;
+
+                &::placeholder{
+                    text-align: center;
+                }
+            }
+
+            input[type="date"]::-webkit-calendar-picker-indicator {
+                display: none;
+                -webkit-appearance: none;
+            }
+        }
+    }
+
+
+    .inner-pays-component{
+        
+        .loading-page-pays{
+            margin: 100px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .pays-container{
+
+            padding-bottom: 20px;
+            
+            .no-length-pays{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 700;
+                margin: 100px 20px;
+            }
+
+            .pay-div{
+                height: 80px;
+                background-color: #edf1f1;
+                display: flex;
+                margin-top: 20px;
+                p{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
+                    width: calc(100% / 5);
+                    border-left: 3px solid white;
+                    gap: 10px;
+
+                    span{
+                        font-weight: 700;
+                    }
+                }
+
+                p:last-child{
+                    margin-right: 3px;
+                }
+            }
+
+        }
+
+        .load-more-btn{
+            width: 200px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            margin: 20px auto;
+            background-color: var(--Primary-Color);
+            color: white;
+        }
+
+    }
+
+
+}
+
+
+.session-payment-container{
+    
+    .search-bar{
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        border-bottom: 4px solid rgba(128, 128, 128, 0.09);
+
+        div{
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            gap: 10px;
+
+            input{
+                background-color: #edf1f1;
+                height: 50px;
+                padding-right: 10px;
+                width: 250px;
+            }
+        }
+     
+    }
+
+
+    .sessions-container{
+        .loading-div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 100px 20px;
+            font-weight: 700;
+        }
+
+        .session-div{
+            display: flex;
+            align-items: center;
+            height: 80px;
+
+            p,button{
+                width: calc(100% / 5);
+                background-color: #edf1f1;
+                border-left: 3px solid white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                gap: 10px;
+                flex-direction: row-reverse;
+            }
+
+            button{
+
+                font-size: 16px;
+
+                @keyframes rotate360 {
+                    from {
+                      transform: rotate(0deg);
+                    }
+                    to {
+                      transform: rotate(360deg);
+                    }
+                }
+
+                .loading-icon{
+                    animation: rotate360 2s linear infinite;
+                    -webkit-animation: rotate360 2s linear infinite;
+                }
+
+                .icon{
+                    font-size: 22px;
+                }
+            }
+
+            .paid{
+                background-color: var(--Primary-Color);
+                color: white;
+            }
+        }
+    }
+
+}
+
+
+.ERP-Statistics{
+
+
+    padding: 20px;
+
+    .current-month-stats{
+
+        h1{
+            text-align: right;
+        }
+
+        .inner-current-month-stats{
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 35px;
+            gap: 25px;
+            flex-direction: row-reverse;
+
+            .month-statistics-erp{
+                width: 600px;
+                height: fit-content; 
+                position: relative;
+                border-radius: 10px;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                -ms-border-radius: 10px;
+                -o-border-radius: 10px;
+                overflow: hidden;
+                background-color: rgba(244, 244, 244, 0.732);
+                padding: 20px;
+
+                .titles{
+                    margin: 20px 0px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 15px;
+
+
+                    p{
+                        font-weight: 700;
+                        display: flex;
+                        align-items: center;
+                        gap: 7px;
+                        flex-direction: row-reverse;
+
+                        span{
+                            display: block;
+                            width: 25px;
+                            height: 15px;
+                            background-color: red;
+                        }
+                    }
+
+                    .income{
+                        span{
+                            background-color: var(--Primary-Color);
+                        }
+                    }
+
+                    .outgoing{
+                        span{
+                            background-color: #FC89A2;
+                        }
+                    }
+                }
+            }
+        }
+
+        .loading-div{
+            margin: 100px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    }
+
+
+
+}
+
 
 // 75%
 @media (max-width: 2048px){
@@ -4095,6 +4691,585 @@
         }
     
     }
+
+
+    .ERP-page-container{
+ 
+
+        .left-ERP{
+            width: 4.5%;
+
+            button{
+                height: 95px;
+               
+                
+                .icon{
+                    font-size: 30px;
+                }
+    
+                
+    
+    
+                span{
+                   
+                    left: 110%;
+                    font-size: 12px;
+                    height: 30px;
+                   
+    }
+    
+
+    }
+ 
+        }
+    
+        .right-ERP{
+            width: 95.5%;
+            height: 100%;
+        }
+    }
+
+
+    .top-bar{
+        height: 90px;
+        gap: 25px;
+    
+        .regular-top-bar-btn{
+            height: 60%;
+            width: 290px;
+            font-size: 12px;
+    
+            .icon{
+                font-size: 17px;
+            }
+        }
+    
+        .red-btn{
+            height: 60%;
+            width: 290px;
+            font-size: 12px;
+    
+            .icon{
+                font-size: 13px;
+            }
+        }
+    }
+
+
+    .price-bar-erp-container, .package-bar-erp-container, .delete-package-bar-erp{
+       
+        top: 90px;
+        height: 90px;
+        
+    
+        div:not(.dropmenu-list){
+         
+            gap: 25px;
+        }
+    
+    
+        .left-price-bar-erp, .left-package-bar-erp, .left-delete-package-bar-erp{
+    
+            button{
+                width: 180px;
+                height: 60px;
+                font-size: 12px;
+               
+            }
+    
+        }
+    
+        .right-price-bar-erp, .right-package-bar-erp{
+            input{
+                width: 290px;
+                font-size: 12px;
+                height: 50px;
+               
+            }
+
+            p{
+                font-size: 14px;
+            }
+   
+        }
+    
+        .right-delete-package-bar-erp{
+            .dropmenu-container{
+                width: 500px;
+                
+                p{
+                    font-size: 14px;
+                }
+
+                .dropmenu{
+                    width: 78%;
+                    
+                    button{
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .search-component-erp{
+        height: 75px;
+    
+    
+    
+        .inner-search-erp{
+         
+            gap: 15px;
+ 
+    
+            input{
+                height: 50px;
+                width: 330px;
+                font-size: 13px;
+            }
+
+            p{
+                font-size: 14px;
+            }
+        }
+    
+        button{
+            height: 55px;
+            width: 240px;
+            font-size: 12px;
+        }
+    
+        .add-non-user-menu, .remove-non-user-menu{
+           top: 75px;
+        }
+    
+    }
+
+
+    .package-component-erp{
+
+
+        .inner-package-component-erp{
+            height: 100%;
+            
+            .alert{
+                font-size: 14px;
+            }
+    
+            .package-users{
+               
+                .user{
+                 
+                    height: 65px;
+                  
+                    div{
+                        font-size: 14px;
+                        gap: 15px;
+    
+    
+                    }
+    
+    
+                    .btns-package{
+                        button{
+                            width: 38px;
+                            height: 38px;
+                          
+                            font-size: 24px;
+                         
+                        }
+    
+                       
+                    }
+    
+    
+                }
+            }
+    
+    
+        }
+    
+    }
+
+
+    .pop-package-container{
+       
+    
+        .inner-pop-package{
+            width: 70%;
+            height: 90%;
+          
+            
+    
+            .delete-package-pop{
+            
+    
+                h1{
+                    font-size: 30px;
+                }
+    
+                .delete-btns{
+                 
+                    button{
+                        width: 190px;
+                        height: 60px;
+                        font-size: 13px;
+                    }
+    
+  
+                }
+            }
+    
+            .add-package-pop{
+
+                h1{
+                    font-size: 30px;
+                }
+
+                .dropmenu{
+                    width: 70%;
+
+                    p{
+                        font-size: 14px;
+                    }
+
+                    .icon{
+                        font-size: 16px;
+                    }
+
+                    button{
+                        font-size: 15px;
+                    }
+                }
+    
+                .extra-info{
+                    width: 70%;
+                    
+   
+    
+                    .info-div{
+                       
+                        p{
+                            font-size: 15px;
+                        }
+    
+                        input{
+                           
+                            height: 50px;
+                            width: 240px;
+                            font-size: 13px;
+                        }
+                    }
+                }
+    
+                .main-btn{
+                    width: 70%;
+                    height: 60px;
+                  
+                    font-size: 16px;
+                   
+    }
+            }
+    
+    
+            .edit-package-pop{
+                
+
+                h1{
+                    font-size: 30px;
+                }
+     
+    
+                .edit-inputs{
+                    width: 70%;
+    
+                    .edit-individual-input{
+
+                        p{
+                            font-size: 15px;
+                        }
+                       
+                        input{
+                            font-size: 13px;
+                            height: 50px;
+                            width: 240px;
+
+                        }
+    
+                        .edit-package-counter{
+                            
+                            gap: 15px;
+                            width: 240px;
+                          
+        
+                            button{
+                              
+                                width: 45px;
+                                height: 45px;
+                              
+                                font-size: 16px;
+                                
+                            }
+                        
+                            
+                        }
+                    }
+    
+    
+                }
+    
+                .main-btn{
+                    width: 70%;
+                  
+                    font-size: 16px;
+                  
+                    height: 65px;
+                  
+         
+    }
+            }
+    
+    
+            .info-package-pop{
+    
+                h1{
+                  font-size: 30px;
+                }
+    
+                .previous-packages{
+                   
+    
+                    .pre-package{
+                       
+                        height: 75px;
+                      
+                        p{
+                           font-size: 14px;
+                        }
+                    }
+                }
+    
+            }
+    
+    }
+    }
+
+
+    .pay-component-erp{
+
+        .pay-bar{
+            height: 75px;
+           
+    
+            button{
+                margin-right: 15px;
+                height: 55px;
+                width: 230px;
+                font-size: 12px;
+               
+            }
+    
+    
+           
+    
+            .add-new-pay-bar, .delete-pay-bar{
+               
+                top: 75px;
+                height: 90px;
+              
+    
+               button{
+                font-size: 13px;
+                width: 180px;
+                height: 55px;
+               }
+        
+    
+                .right-price-bar-erp{
+                   
+                    p{
+                        font-size: 13px;
+                    }
+    
+                    input{
+                        width: 270px;
+                        height: 45px;
+                        font-size: 12px;
+                    }
+            
+                    
+                }
+    
+            }
+    
+        }
+    
+    
+        .search-bar{
+            height: 75px;
+            gap: 20px;
+    
+    
+            h2{
+               font-size: 22px;
+            }
+    
+            div{
+               
+                p{
+                    font-size: 14px;
+                }
+
+                input{
+                    font-size: 12px;
+                    height: 50px;
+                    width: 280px;
+                   
+                }
+    
+               
+            }
+        }
+    
+    
+        .inner-pays-component{
+            
+
+    
+    
+            .pays-container{
+    
+              
+                
+                .no-length-pays{
+                    font-size: 14px;
+                }
+    
+                .pay-div{
+                    height: 75px;
+                  
+                    p{
+                      font-size: 13px;
+    
+
+                    }
+
+                }
+    
+            }
+    
+            .load-more-btn{
+                width: 190px;
+                height: 60px;
+                
+                font-size: 13px;
+               
+            }
+    
+        }
+    
+    
+    }
+
+
+    .session-payment-container{
+    
+        .search-bar{
+            height: 70px;
+            
+            div{
+                
+                p{
+                    font-size: 14px;
+                }
+
+                input{
+                    height: 50px;
+                    width: 250px;
+                    font-size: 13px;
+                }
+            }
+         
+        }
+    
+    
+        .sessions-container{
+            .loading-div{
+                font-size: 14px;
+            }
+    
+            .session-div{
+               
+                height: 70px;
+    
+                p{
+                    font-size: 13px;
+                }
+    
+                button{
+    
+                    font-size: 14px;
+    
+                    
+    
+                    .icon{
+                        font-size: 20px;
+                    }
+                }
+    
+
+            }
+        }
+    
+    }
+
+
+
+    .ERP-Statistics{
+
+
+    
+        .current-month-stats{
+    
+            h1{
+               font-size: 30px;
+            }
+    
+            .inner-current-month-stats{
+              
+    
+                .month-statistics-erp{
+                    width: 550px;
+                    
+    
+                    .titles{
+                        
+    
+                        p{
+                          
+                            font-size: 14px;
+                            span{
+
+                                width: 23px;
+                                height: 13px;
+
+                            }
+                        }
+    
+
+ 
+                    }
+                }
+            }
+    
+  
+    
+        }
+    
+    
+    
+    }
     
 }
 
@@ -5421,6 +6596,578 @@
     }
 
 
+    .ERP-page-container{
+ 
+
+        .left-ERP{
+            width: 4%;
+
+            button{
+                height: 90px;
+               
+                
+                .icon{
+                    font-size: 28px;
+                }
+    
+                
+    
+    
+                span{
+                   
+                    left: 110%;
+                    font-size: 11px;
+                    height: 28px;
+                   
+    }
+    
+
+    }
+ 
+        }
+    
+        .right-ERP{
+            width: 96%;
+            height: 100%;
+        }
+    }
+
+
+    .top-bar{
+        height: 80px;
+        gap: 25px;
+    
+        .regular-top-bar-btn{
+            height: 70%;
+            width: 270px;
+            font-size: 11px;
+    
+            .icon{
+                font-size: 16px;
+            }
+        }
+    
+        .red-btn{
+            height: 70%;
+            width: 270px;
+            font-size: 11px;
+    
+            .icon{
+                font-size: 12px;
+            }
+        }
+    }
+
+
+    .price-bar-erp-container, .package-bar-erp-container, .delete-package-bar-erp{
+       
+        top: 80px;
+        height: 80px;
+        
+    
+        div:not(.dropmenu-list){
+         
+            gap: 25px;
+        }
+    
+    
+        .left-price-bar-erp, .left-package-bar-erp, .left-delete-package-bar-erp{
+    
+            button{
+                width: 170px;
+                height: 55px;
+                font-size: 11px;
+               
+            }
+    
+        }
+    
+        .right-price-bar-erp, .right-package-bar-erp{
+            input{
+                width: 280px;
+                font-size: 11px;
+                height: 50px;
+               
+            }
+
+            p{
+                font-size: 13px;
+            }
+   
+        }
+    
+        .right-delete-package-bar-erp{
+            .dropmenu-container{
+                width: 480px;
+                
+                p{
+                    font-size: 13px;
+                }
+
+                .dropmenu{
+                    width: 78%;
+                    
+                    button{
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .search-component-erp{
+        height: 70px;
+    
+    
+    
+        .inner-search-erp{
+         
+            gap: 15px;
+ 
+    
+            input{
+                height: 50px;
+                width: 300px;
+                font-size: 12px;
+            }
+
+            p{
+                font-size: 13px;
+            }
+        }
+    
+        button{
+            height: 50px;
+            width: 220px;
+            font-size: 11px;
+        }
+    
+        .add-non-user-menu, .remove-non-user-menu{
+           top: 70px;
+        }
+    
+    }
+
+
+    .package-component-erp{
+
+
+        .inner-package-component-erp{
+            height: 100%;
+            
+            .alert{
+                font-size: 13px;
+            }
+    
+            .package-users{
+               
+                .user{
+                 
+                    height: 60px;
+                  
+                    div{
+                        font-size: 13px;
+                        gap: 15px;
+    
+    
+                    }
+    
+    
+                    .btns-package{
+                        button{
+                            width: 36px;
+                            height: 36px;
+                          
+                            font-size: 22px;
+                         
+                        }
+    
+                       
+                    }
+    
+    
+                }
+            }
+    
+    
+        }
+    
+    }
+
+
+    .pop-package-container{
+       
+    
+        .inner-pop-package{
+            width: 70%;
+            height: 90%;
+          
+            
+    
+            .delete-package-pop{
+            
+    
+                h1{
+                    font-size: 28px;
+                }
+    
+                .delete-btns{
+                 
+                    button{
+                        width: 180px;
+                        height: 55px;
+                        font-size: 12px;
+                    }
+    
+  
+                }
+            }
+    
+            .add-package-pop{
+
+                h1{
+                    font-size: 28px;
+                }
+
+                .dropmenu{
+                    width: 70%;
+
+                    p{
+                        font-size: 13px;
+                    }
+
+                    .icon{
+                        font-size: 15px;
+                    }
+
+                    button{
+                        font-size: 14px;
+                    }
+                }
+    
+                .extra-info{
+                    width: 70%;
+                    
+   
+    
+                    .info-div{
+                       
+                        p{
+                            font-size: 14px;
+                        }
+    
+                        input{
+                           
+                            height: 50px;
+                            width: 230px;
+                            font-size: 12px;
+                        }
+                    }
+                }
+    
+                .main-btn{
+                    width: 70%;
+                    height: 60px;
+                  
+                    font-size: 15px;
+                   
+    }
+            }
+    
+    
+            .edit-package-pop{
+                
+
+                h1{
+                    font-size: 28px;
+                }
+     
+    
+                .edit-inputs{
+                    width: 70%;
+    
+                    .edit-individual-input{
+
+                        p{
+                            font-size: 14px;
+                        }
+                       
+                        input{
+                            font-size: 12px;
+                            height: 46px;
+                            width: 240px;
+
+                        }
+    
+                        .edit-package-counter{
+                            
+                            gap: 15px;
+                            width: 240px;
+                            
+                            span{
+                                font-size: 13px;
+                            }
+        
+                            button{
+                              
+                                width: 43px;
+                                height: 43px;
+                              
+                                font-size: 15px;
+                                
+                            }
+                        
+                            
+                        }
+                    }
+    
+    
+                }
+    
+                .main-btn{
+                    width: 70%;
+                    font-size: 15px;
+                    height: 65px;
+                }
+            }
+    
+    
+            .info-package-pop{
+    
+                h1{
+                  font-size: 28px;
+                }
+    
+                .previous-packages{
+                   
+    
+                    .pre-package{
+                       
+                        height: 65px;
+                      
+                        p{
+                           font-size: 13px;
+                        }
+                    }
+                }
+    
+            }
+    
+    }
+    }
+
+    .pay-component-erp{
+
+        .pay-bar{
+            height: 70px;
+           
+    
+            button{
+                margin-right: 10px;
+                height: 55px;
+                width: 210px;
+                font-size: 11px;
+               
+            }
+    
+    
+           
+    
+            .add-new-pay-bar, .delete-pay-bar{
+               
+                top: 70px;
+                height: 80px;
+              
+    
+               button{
+                font-size: 12px;
+                width: 160px;
+                height: 50px;
+               }
+        
+    
+                .right-price-bar-erp{
+                   
+                    p{
+                        font-size: 12px;
+                    }
+    
+                    input{
+                        width: 250px;
+                        height: 45px;
+                        font-size: 11px;
+                    }
+            
+                    
+                }
+    
+            }
+    
+        }
+    
+    
+        .search-bar{
+            height: 70px;
+            gap: 20px;
+    
+    
+            h2{
+               font-size: 20px;
+            }
+    
+            div{
+               
+                p{
+                    font-size: 12px;
+                }
+
+                input{
+                    font-size: 11px;
+                    height: 45px;
+                    width: 260px;
+                   
+                }
+    
+               
+            }
+        }
+    
+    
+        .inner-pays-component{
+            
+
+    
+    
+            .pays-container{
+    
+              
+                
+                .no-length-pays{
+                    font-size: 13px;
+                }
+    
+                .pay-div{
+                    height: 70px;
+                  
+                    p{
+                      font-size: 12px;
+                    }
+
+                }
+    
+            }
+    
+            .load-more-btn{
+                width: 180px;
+                height: 55px;
+                
+                font-size: 12px;
+               
+            }
+    
+        }
+    
+    
+    }
+
+
+    .session-payment-container{
+    
+        .search-bar{
+            height: 60px;
+            
+            div{
+                
+                p{
+                    font-size: 13px;
+                }
+
+                input{
+                    height: 45px;
+                    width: 250px;
+                    font-size: 12px;
+                }
+            }
+         
+        }
+    
+    
+        .sessions-container{
+            .loading-div{
+                font-size: 13px;
+            }
+    
+            .session-div{
+               
+                height: 60px;
+    
+                p{
+                    font-size: 12px;
+                }
+    
+                button{
+    
+                    font-size: 13px;
+    
+                    
+    
+                    .icon{
+                        font-size: 18px;
+                    }
+                }
+    
+
+            }
+        }
+    
+    }
+
+
+    .ERP-Statistics{
+
+
+    
+        .current-month-stats{
+    
+            h1{
+               font-size: 28px;
+            }
+    
+            .inner-current-month-stats{
+              
+    
+                .month-statistics-erp{
+                    width: 500px;
+                    
+    
+                    .titles{
+                        
+    
+                        p{
+                          
+                            font-size: 13px;
+                            span{
+
+                                width: 21px;
+                                height: 11px;
+
+                            }
+                        }
+    
+
+ 
+                    }
+                }
+            }
+    
+  
+    
+        }
+    
+    
+    
+    }
     
 }
 
@@ -6784,6 +8531,591 @@
     
     }
 
+    .ERP-page-container{
+ 
+
+        .left-ERP{
+            width: 4%;
+
+            button{
+                height: 75px;
+               
+                
+                .icon{
+                    font-size: 23px;
+                }
+    
+                
+    
+    
+                span{
+                   
+                    left: 110%;
+                    font-size: 10px;
+                    height: 26px;
+                   
+    }
+    
+
+    }
+ 
+        }
+    
+        .right-ERP{
+            width: 96%;
+            height: 100%;
+        }
+    }
+
+
+    .top-bar{
+        height: 70px;
+        gap: 25px;
+    
+        .regular-top-bar-btn{
+            height: 70%;
+            width: 250px;
+            font-size: 10px;
+    
+            .icon{
+                font-size: 15px;
+            }
+        }
+    
+        .red-btn{
+            height: 70%;
+            width: 250px;
+            font-size: 10px;
+    
+            .icon{
+                font-size: 11px;
+            }
+        }
+    }
+
+
+    .price-bar-erp-container, .package-bar-erp-container, .delete-package-bar-erp{
+       
+        top: 70px;
+        height: 70px;
+        
+    
+        div:not(.dropmenu-list){
+         
+            gap: 25px;
+        }
+    
+    
+        .left-price-bar-erp, .left-package-bar-erp, .left-delete-package-bar-erp{
+    
+            button{
+                width: 150px;
+                height: 50px;
+                font-size: 10px;
+               
+            }
+    
+        }
+    
+        .right-price-bar-erp, .right-package-bar-erp{
+            input{
+                width: 260px;
+                font-size: 10px;
+                height: 45px;
+               
+            }
+
+            p{
+                font-size: 12px;
+            }
+   
+        }
+    
+        .right-delete-package-bar-erp{
+            .dropmenu-container{
+                width: 460px;
+                
+                p{
+                    font-size: 12px;
+                }
+
+                .dropmenu{
+                    width: 78%;
+                    height: 50px;
+                    
+                    .dropmenu-list{
+                        top: 55px;
+                    }
+                    button{
+                        height: 50px;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .search-component-erp{
+        height: 65px;
+    
+    
+    
+        .inner-search-erp{
+         
+            gap: 15px;
+ 
+    
+            input{
+                height: 45px;
+                width: 280px;
+                font-size: 11px;
+            }
+
+            p{
+                font-size: 12px;
+            }
+        }
+    
+        button{
+            height: 50px;
+            width: 200px;
+            font-size: 10px;
+        }
+    
+        .add-non-user-menu, .remove-non-user-menu{
+           top: 65px;
+        }
+    
+    }
+
+
+    .package-component-erp{
+
+
+        .inner-package-component-erp{
+            height: 100%;
+            
+            .alert{
+                font-size: 12px;
+            }
+    
+            .package-users{
+               
+                .user{
+                 
+                    height: 55px;
+                  
+                    div{
+                        font-size: 12px;
+                        gap: 15px;
+    
+    
+                    }
+    
+    
+                    .btns-package{
+                        button{
+                            width: 32px;
+                            height: 32px;
+                          
+                            font-size: 18px;
+                         
+                        }
+    
+                       
+                    }
+    
+    
+                }
+            }
+    
+    
+        }
+    
+    }
+
+
+    .pop-package-container{
+       
+    
+        .inner-pop-package{
+            width: 70%;
+            height: 90%;
+          
+            
+    
+            .delete-package-pop{
+            
+    
+                h1{
+                    font-size: 24px;
+                }
+    
+                .delete-btns{
+                 
+                    button{
+                        width: 160px;
+                        height: 50px;
+                        font-size: 11px;
+                    }
+    
+  
+                }
+            }
+    
+            .add-package-pop{
+
+                h1{
+                    font-size: 24px;
+                }
+
+                .dropmenu{
+                    width: 70%;
+                    height: 55px;
+
+                    p{
+                        font-size: 11px;
+                    }
+
+                    .icon{
+                        font-size: 13px;
+                    }
+
+                    button{
+                        font-size: 12px;
+                        height: 55px;
+                    }
+
+                    .dropmenu-list{
+                        top: 55px;
+                    }
+                }
+    
+                .extra-info{
+                    width: 70%;
+                    
+   
+    
+                    .info-div{
+                       
+                        p{
+                            font-size: 12px;
+                        }
+    
+                        input{
+                           
+                            height: 50px;
+                            width: 210px;
+                            font-size: 10px;
+                        }
+                    }
+                }
+    
+                .main-btn{
+                    width: 70%;
+                    height: 55px;
+                  
+                    font-size: 13px;
+                   
+    }
+            }
+    
+    
+            .edit-package-pop{
+                
+
+                h1{
+                    font-size: 24px;
+                }
+     
+    
+                .edit-inputs{
+                    width: 70%;
+    
+                    .edit-individual-input{
+
+                        p{
+                            font-size: 13px;
+                        }
+                       
+                        input{
+                            font-size: 11px;
+                            height: 40px;
+                            width: 220px;
+
+                        }
+    
+                        .edit-package-counter{
+                            
+                            gap: 15px;
+                            width: 220px;
+                            
+                            span{
+                                font-size: 11px;
+                            }
+        
+                            button{
+                              
+                                width: 40px;
+                                height: 40px;
+                              
+                                font-size: 14px;
+                                
+                            }
+                        
+                            
+                        }
+                    }
+    
+    
+                }
+    
+                .main-btn{
+                    width: 70%;
+                    font-size: 13px;
+                    height: 55px;
+                }
+            }
+    
+    
+            .info-package-pop{
+    
+                h1{
+                  font-size: 24px;
+                }
+    
+                .previous-packages{
+                   
+    
+                    .pre-package{
+                       
+                        height: 60px;
+                      
+                        p{
+                           font-size: 12px;
+                        }
+                    }
+                }
+    
+            }
+    
+    }
+    }
+
+
+    .pay-component-erp{
+
+        .pay-bar{
+            height: 60px;
+           
+    
+            button{
+                margin-right: 10px;
+                height: 50px;
+                width: 190px;
+                font-size: 10px;
+               
+            }
+    
+    
+           
+    
+            .add-new-pay-bar, .delete-pay-bar{
+               
+                top: 60px;
+                height: 70px;
+              
+    
+               button{
+                font-size: 10px;
+                width: 130px;
+                height: 45px;
+               }
+        
+    
+                .right-price-bar-erp{
+                   
+                    p{
+                        font-size: 11px;
+                    }
+    
+                    input{
+                        width: 200px;
+                        height: 40px;
+                        font-size: 10px;
+                    }
+            
+                    
+                }
+    
+            }
+    
+        }
+    
+    
+        .search-bar{
+            height: 70px;
+            gap: 20px;
+    
+    
+            h2{
+               font-size: 18px;
+            }
+    
+            div{
+               
+                p{
+                    font-size: 11px;
+                }
+
+                input{
+                    font-size: 10px;
+                    height: 40px;
+                    width: 230px;
+                   
+                }
+    
+               
+            }
+        }
+    
+    
+        .inner-pays-component{
+            
+
+    
+    
+            .pays-container{
+    
+              
+                
+                .no-length-pays{
+                    font-size: 12px;
+                }
+    
+                .pay-div{
+                    height: 65px;
+                  
+                    p{
+                      font-size: 11px;
+                    }
+
+                }
+    
+            }
+    
+            .load-more-btn{
+                width: 180px;
+                height: 55px;
+                
+                font-size: 12px;
+               
+            }
+    
+        }
+    
+    
+    }
+
+
+    .session-payment-container{
+    
+        .search-bar{
+            height: 60px;
+            
+            div{
+                
+                p{
+                    font-size: 12px;
+                }
+
+                input{
+                    height: 45px;
+                    width: 250px;
+                    font-size: 11px;
+                }
+            }
+         
+        }
+    
+    
+        .sessions-container{
+            .loading-div{
+                font-size: 12px;
+            }
+    
+            .session-div{
+               
+                height: 55px;
+    
+                p{
+                    font-size: 11px;
+                }
+    
+                button{
+    
+                    font-size: 12px;
+    
+                    
+    
+                    .icon{
+                        font-size: 16px;
+                    }
+                }
+    
+
+            }
+        }
+    
+    }
+
+
+    .ERP-Statistics{
+
+
+    
+        .current-month-stats{
+    
+            h1{
+               font-size: 24px;
+            }
+    
+            .inner-current-month-stats{
+              
+    
+                .month-statistics-erp{
+                    width: 450px;
+                    
+    
+                    .titles{
+                        
+    
+                        p{
+                          
+                            font-size: 12px;
+                            span{
+
+                                width: 19px;
+                                height: 9px;
+
+                            }
+                        }
+    
+
+ 
+                    }
+                }
+            }
+    
+  
+    
+        }
+    
+    
+    
+    }
+
 }
 
 
@@ -8118,6 +10450,593 @@
         }
     
     }
+
+    .ERP-page-container{
+ 
+
+        .left-ERP{
+            width: 4%;
+
+            button{
+                height: 65px;
+               
+                
+                .icon{
+                    font-size: 21px;
+                }
+    
+                
+    
+    
+                span{
+                   
+                    left: 110%;
+                    font-size: 9px;
+                    height: 24px;
+                   
+    }
+    
+
+    }
+ 
+        }
+    
+        .right-ERP{
+            width: 96%;
+            height: 100%;
+        }
+    }
+
+    .top-bar{
+        height: 60px;
+        gap: 20px;
+    
+        .regular-top-bar-btn{
+            height: 70%;
+            width: 220px;
+            font-size: 9px;
+    
+            .icon{
+                font-size: 13px;
+            }
+        }
+    
+        .red-btn{
+            height: 70%;
+            width: 220px;
+            font-size: 9px;
+    
+            .icon{
+                font-size: 10px;
+            }
+        }
+    }
+
+    .price-bar-erp-container, .package-bar-erp-container, .delete-package-bar-erp{
+       
+        top: 60px;
+        height: 60px;
+        
+    
+        div:not(.dropmenu-list){
+         
+            gap: 25px;
+        }
+    
+    
+        .left-price-bar-erp, .left-package-bar-erp, .left-delete-package-bar-erp{
+    
+            button{
+                width: 140px;
+                height: 45px;
+                font-size: 9px;
+               
+            }
+    
+        }
+    
+        .right-price-bar-erp, .right-package-bar-erp{
+            input{
+                width: 240px;
+                font-size: 9px;
+                height: 40px;
+               
+            }
+
+            p{
+                font-size: 11px;
+            }
+   
+        }
+    
+        .right-delete-package-bar-erp{
+            .dropmenu-container{
+                width: 400px;
+                
+                p{
+                    font-size: 10px;
+                }
+
+                .dropmenu{
+                    width: 78%;
+                    height: 45px;
+
+                    .icon{
+                        font-size: 15px;
+                    }
+                    
+                    .dropmenu-list{
+                        top: 50px;
+                    }
+                    button{
+                        height: 45px;
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .search-component-erp{
+        height: 60px;
+    
+    
+    
+        .inner-search-erp{
+         
+            gap: 10px;
+ 
+    
+            input{
+                height: 40px;
+                width: 240px;
+                font-size: 9px;
+            }
+
+            p{
+                font-size: 11px;
+            }
+        }
+    
+        button{
+            height: 45px;
+            width: 180px;
+            font-size: 9px;
+        }
+    
+        .add-non-user-menu, .remove-non-user-menu{
+           top: 60px;
+        }
+    
+    }
+
+    .package-component-erp{
+
+
+        .inner-package-component-erp{
+            height: 100%;
+            
+            .alert{
+                font-size: 11px;
+            }
+    
+            .package-users{
+               
+                .user{
+                 
+                    height: 50px;
+                  
+                    div{
+                        font-size: 11px;
+                        gap: 15px;
+    
+    
+                    }
+    
+    
+                    .btns-package{
+                        button{
+                            width: 30px;
+                            height: 30px;
+                          
+                            font-size: 16px;
+                         
+                        }
+    
+                       
+                    }
+    
+    
+                }
+            }
+    
+    
+        }
+    
+    }
+
+
+    .pop-package-container{
+       
+    
+        .inner-pop-package{
+            width: 70%;
+            height: 90%;
+          
+            
+    
+            .delete-package-pop{
+            
+    
+                h1{
+                    font-size: 22px;
+                }
+    
+                .delete-btns{
+                 
+                    button{
+                        width: 150px;
+                        height: 50px;
+                        font-size: 10px;
+                    }
+    
+  
+                }
+            }
+    
+            .add-package-pop{
+
+                h1{
+                    font-size: 22px;
+                }
+
+                .dropmenu{
+                    width: 70%;
+                    height: 50px;
+
+                    p{
+                        font-size: 10px;
+                    }
+
+                    .icon{
+                        font-size: 12px;
+                    }
+
+                    button{
+                        font-size: 11px;
+                        height: 50px;
+                    }
+
+                    .dropmenu-list{
+                        top: 55px;
+                    }
+                }
+    
+                .extra-info{
+                    width: 70%;
+                    
+   
+    
+                    .info-div{
+                       
+                        p{
+                            font-size: 11px;
+                        }
+    
+                        input{
+                           
+                            height: 40px;
+                            width: 190px;
+                            font-size: 9px;
+                        }
+                    }
+                }
+    
+                .main-btn{
+                    width: 70%;
+                    height: 50px;
+                  
+                    font-size: 12px;
+                   
+    }
+            }
+    
+    
+            .edit-package-pop{
+                
+
+                h1{
+                    font-size: 22px;
+                }
+     
+    
+                .edit-inputs{
+                    width: 70%;
+                
+                    .edit-individual-input{
+                        margin-top: 10px;
+                        p{
+                            font-size: 11px;
+                        }
+                       
+                        input{
+                            font-size: 10px;
+                            height: 40px;
+                            width: 200px;
+
+                        }
+    
+                        .edit-package-counter{
+                            
+                            gap: 10px;
+                            width: 200px;
+                       
+                            span{
+                                font-size: 10px;
+                            }
+        
+                            button{
+                              
+                                width: 38px;
+                                height: 38px;
+                              
+                                font-size: 12px;
+                                
+                            }
+                        
+                            
+                        }
+                    }
+    
+    
+                }
+    
+                .main-btn{
+                    width: 70%;
+                    font-size: 12px;
+                    height: 50px;
+                }
+            }
+    
+    
+            .info-package-pop{
+    
+                h1{
+                  font-size: 22px;
+                }
+    
+                .previous-packages{
+                   
+    
+                    .pre-package{
+                       
+                        height: 50px;
+                      
+                        p{
+                           font-size: 11px;
+                        }
+                    }
+                }
+    
+            }
+    
+    }
+    }
+
+
+    .pay-component-erp{
+
+        .pay-bar{
+            height: 55px;
+           
+    
+            button{
+                margin-right: 10px;
+                height: 40px;
+                width: 170px;
+                font-size: 9px;
+               
+            }
+    
+    
+           
+    
+            .add-new-pay-bar, .delete-pay-bar{
+               
+                top: 55px;
+                height: 60px;
+              
+    
+               button{
+                font-size: 9px;
+                width: 110px;
+                height: 40px;
+               }
+        
+    
+                .right-price-bar-erp{
+                   
+                    p{
+                        font-size: 10px;
+                    }
+    
+                    input{
+                        width: 180px;
+                        height: 40px;
+                        font-size: 9px;
+                    }
+            
+                    
+                }
+    
+            }
+    
+        }
+    
+    
+        .search-bar{
+            height: 60px;
+            gap: 20px;
+    
+    
+            h2{
+               font-size: 16px;
+            }
+    
+            div{
+               
+                p{
+                    font-size: 10px;
+                }
+
+                input{
+                    font-size: 9px;
+                    height: 40px;
+                    width: 200px;
+                   
+                }
+    
+               
+            }
+        }
+    
+    
+        .inner-pays-component{
+            
+
+    
+    
+            .pays-container{
+    
+              
+                
+                .no-length-pays{
+                    font-size: 11px;
+                }
+    
+                .pay-div{
+                    height: 60px;
+                  
+                    p{
+                      font-size: 10px;
+                    }
+
+                }
+    
+            }
+    
+            .load-more-btn{
+                width: 150px;
+                height: 55px;
+                
+                font-size: 11px;
+               
+            }
+    
+        }
+    
+    
+    }
+
+
+    .session-payment-container{
+    
+        .search-bar{
+            height: 60px;
+            
+            div{
+                
+                p{
+                    font-size: 11px;
+                }
+
+                input{
+                    height: 45px;
+                    width: 250px;
+                    font-size: 10px;
+                }
+            }
+         
+        }
+    
+    
+        .sessions-container{
+            .loading-div{
+                font-size: 11px;
+            }
+    
+            .session-div{
+               
+                height: 50px;
+    
+                p{
+                    font-size: 10px;
+                }
+    
+                button{
+    
+                    font-size: 11px;
+    
+                    
+    
+                    .icon{
+                        font-size: 14px;
+                    }
+                }
+    
+
+            }
+        }
+    
+    }
+
+
+    .ERP-Statistics{
+
+
+    
+        .current-month-stats{
+    
+            h1{
+               font-size: 20px;
+            }
+    
+            .inner-current-month-stats{
+              
+    
+                .month-statistics-erp{
+                    width: 400px;
+                    
+    
+                    .titles{
+                        
+    
+                        p{
+                          
+                            font-size: 11px;
+                            span{
+
+                                width: 17px;
+                                height: 7px;
+
+                            }
+                        }
+    
+
+ 
+                    }
+                }
+            }
+    
+  
+    
+        }
+    
+    
+    
+    }
+
 }
 
 

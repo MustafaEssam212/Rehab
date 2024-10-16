@@ -114,9 +114,9 @@ const AddDoctor = () => {
 
                     <div className="right">
                         <h1>معلومات الدكتور</h1>
-
+              
                         <div className="inputs-container">
-                            <input type="text" value={data.name} placeholder="اسم الدكتور" onChange={(s)=> setData({...data, name: s.target.value})}></input>
+                            <input type="text" value={data.name} placeholder="اسم الدكتور" onChange={(s)=> setData({...data, name: s.target.value})} onBlur={() => setData({ ...data, name: data.name.trim() })}></input>
                         </div>
 
                         {loading ? <button style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}><LoadingCircle providedcolor="white" size={`25px`} /></button> : <button aria-label="اضافة" onClick={handleSubmit}>اضافة</button>}

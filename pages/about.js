@@ -86,7 +86,7 @@ const About = () => {
 
                                     <div className="section">
                                         <div className="icon-container"><FaRegCircleCheck className="icon" /></div>
-                                        <h1>الاعصاب والشلل</h1>
+                                        <h1>الأعصاب والشلل</h1>
                                         <h3>يقدم مركزنا علاجًا متخصصًا للأعصاب والشلل، باستخدام أحدث التقنيات لتحسين الحركة واستعادة الوظائف الحركية</h3>
                                     </div>
 

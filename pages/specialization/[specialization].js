@@ -241,7 +241,7 @@ const Specialization = ({data}) => {
 
                     </div>
 
-                    <h2>احدث المدونات</h2>
+                    <h2>أحدث المدونات</h2>
 
                     <div className="recent-specializations">
 

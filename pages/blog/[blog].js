@@ -71,7 +71,7 @@ const BlogPost = ({ data }) => {
 
                 <div className="blogs-tags">
 
-                    <h2>احدث المدونات</h2>
+                    <h2>أحدث المدونات</h2>
 
                     <div className="recent-blogs">
 
@@ -81,7 +81,7 @@ const BlogPost = ({ data }) => {
                         data.suggestedBlogs.map((e, key) => {
                           return(
                             <div key={key} className="blog">
-                              <div className="img-container"><Image sizes="(min-width: 2060px) 190px, (min-width: 1720px) 180px, (min-width: 1540px) 150px, (min-width: 640px) 130px, calc(10.94vw + 62px)" loading="lazy" src={`/api/getImage?method=get-blog-image&blog=${e.name.replace(/ /g, '_')}&image=${e.cover}`} fill style={{objectFit: 'cover'}} alt={e.name}></Image></div>
+                              <div className="img-container"><Image sizes="(min-width: 2060px) 190px, (min-width: 1720px) 180px, (min-width: 1540px) 150px, (min-width: 640px) 130px, calc(10.94vw + 62px)" loading="lazy" src={`/api/getImage?method=get-blog-image&blog=${e.name.replace(/ /g, '_')}&image=${e.cover}`} fill style={{objectFit: 'fill'}} alt={e.name}></Image></div>
                               <div className="blog-info">
                               <Link href={`/blog/${e.name.replace(/ /g, '_')}`} title={e.name}>{e.name}</Link>
                               <div className="bottom-blog-info">

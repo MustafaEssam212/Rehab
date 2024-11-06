@@ -8,6 +8,7 @@ import Blog from "@/Models/Blog";
 import Work from "@/Models/Work";
 import Review from "@/Models/Review";
 import Prices from "@/Models/Prices";
+import NonUser from "@/Models/NonUser";
 
 export default async function GetData(req, res) {
     await dbConnect();
@@ -107,6 +108,32 @@ export default async function GetData(req, res) {
     
                 }catch(error){
                     return res.status(500).send({message: 'حدث خطأ اثناء تنفيذ العملية', list: []});
+                }
+            }
+
+            else if(req.query.method === 'get-all-doctors'){
+                try {
+                    const getDoctors = await Schedule.aggregate([
+                        { $unwind: "$doctors" }, // Unwind the doctors array to separate each doctor
+                        {
+                          $group: {
+                            _id: "$doctors.doctor", // Group by doctor ID to avoid duplicates
+                            doctorName: { $first: "$doctors.doctorName" }, // Get the first doctorName for each unique doctor ID
+                          },
+                        },
+                        {
+                          $project: {
+                            _id: 0,
+                            doctor: "$_id", // Rename _id to doctor
+                            doctorName: 1,  // Include doctorName
+                          },
+                        },
+                      ]);
+
+
+                      return res.status(200).send({doctors: getDoctors, message: 'تم تلقي البيانات بنجاح'})
+                } catch (error) {
+                    return res.status(500).send({message: 'حدث خطأ اثناء تنفيذ العملية'})
                 }
             }
     
@@ -445,6 +472,19 @@ export default async function GetData(req, res) {
             else if(req.query.method === 'download-users-data'){
                 try {
                     const users = await User.find({});
+                    if(users){
+                        return res.status(200).send(users);
+                    }else{
+                        return res.status(500).send([]);
+                    }
+                } catch (error) {
+                    return res.status(500).send([]);
+                }
+            }
+
+            else if(req.query.method === 'download-non-users-data'){
+                try {
+                    const users = await NonUser.find({});
                     if(users){
                         return res.status(200).send(users);
                     }else{

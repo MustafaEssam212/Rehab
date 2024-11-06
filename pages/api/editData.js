@@ -659,6 +659,27 @@ export default async function EditData(req, res) {
             }
         }
 
+        else if(req.query.method === 'delete-doctor-from-all-schedule'){
+            try {
+                
+                const serial = parseInt(req.query.doctor);
+
+                const deleteDoctor = await Schedule.updateMany(
+                    {},
+                    { $pull: { doctors: { doctor: serial } } }
+                  );
+                  if(deleteDoctor.modifiedCount > 0){
+                    return res.status(200).send({message: `تم مسح الدكتور بنجاح بعدد ${deleteDoctor.modifiedCount} من الجدول`})
+                  }else{
+                    return res.status(500).send({message: 'حدث خطأ اثناء تنفيذ العملية'})
+                  }
+
+            } catch (error) {
+                
+                return res.status(500).send({message: 'حدث خطأ اثناء تنفيذ العملية'})
+            }
+        }
+
     }
 
     else if(req.method === 'PUT'){

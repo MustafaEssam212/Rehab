@@ -1043,7 +1043,8 @@ export default async function ERP(req, res){
                 }
                 
 
-                if(data.sessions === 0 && data.status === 'ملغية'){
+
+                if(data.sessions === 0){
                     const updateUser = await NonUser.updateOne({phoneNumber: number}, {$set: {package: {name: null, sessions: null, price: null}}, $push: {history: data}});
                     if(updateUser.modifiedCount > 0){
                         return res.status(200).send({message: 'تم تعديل الباكيدچ بنجاح'})

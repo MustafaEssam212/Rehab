@@ -294,7 +294,7 @@ const PopPackage = ({sendDataToParent, section, user, type}) => {
             const sendData = async () =>{
                 const res = await fetch(`/api/ERP?method=${type === 'user' ? `edit-package-of-user` : `edit-package-of-non-user`}&phoneNumber=${user.phoneNumber}`, {
                     method: 'PUT',
-                    body: JSON.stringify({package: referencePackage}),
+                    body: JSON.stringify({package: referencePackage}),  
                     headers: {
                         'Content-Type': 'application/json',
                     }

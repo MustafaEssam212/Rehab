@@ -2349,6 +2349,60 @@
 }
 
 
+.delete-doctor-from-schedule{
+    .inner-delete-doctor-from-schedule{
+        .loading-div-of-doctors{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 100px 0px;
+        }
+
+        .doctors-container-of-delete{
+            margin: 100px 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+
+            .radio-doctors{
+                display: flex;
+                align-items: center;
+                gap: 25px;
+                flex-wrap: wrap;
+
+                .radio{
+                    display: flex;
+                    align-items: center;
+                    gap: 7px;
+
+                    input{
+                        accent-color: var(--Primary-Color);
+                        width: 18px;
+                        height: 18px;
+                    }
+
+                    p{
+                        font-size: 17px;
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            button{
+                height: 65px;
+                width: 200px;
+                background-color: red;
+                color: white;
+                font-weight: 700;
+                font-size: 17px;
+            }
+        }
+    }
+}
+
+
 .remove-blog-page{
 
 
@@ -2669,6 +2723,10 @@
         color: white;
         margin-right: 20px;
         font-weight: 700;
+
+        .icon{
+            font-size: 25px
+        }
     }
 
     .add-non-user-menu, .remove-non-user-menu{

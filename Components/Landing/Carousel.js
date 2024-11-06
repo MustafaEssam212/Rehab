@@ -9,6 +9,8 @@ import BackgroundAssetEight from '../../public/doc-mohamed-3.png';
 import { FiCalendar } from 'react-icons/fi';
 import { MdNavigateNext, MdNavigateBefore } from 'react-icons/md';
 import Link from 'next/link';
+import NewDocOne from '../../public/new-doctor.png';
+import NewDocTwo from '../../public/new-doctor2.png';
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -59,7 +61,7 @@ const Carousel = () => {
           </div>
           <div className='layer-on'>
             <div className='layer-on-left'>
-              <Image sizes='50vw' src={BackgroundAssetEight.src} fill style={{ objectFit: 'contain' }} alt='Rehab EG Clinic' />
+              <Image sizes='50vw' src={NewDocOne.src} fill style={{ objectFit: 'contain' }} alt='Rehab EG Clinic' />
               <div className='layer-on-asset'></div>
             </div>
             <div className='layer-on-right'>

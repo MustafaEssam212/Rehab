@@ -3,6 +3,7 @@ import { getSession } from "next-auth/react";
 import { FaDownload } from "react-icons/fa6";
 import { toast } from "react-toastify";
 import * as XLSX from 'xlsx';
+
 export async function getServerSideProps(context) {
     const session = await getSession(context);
 
@@ -28,7 +29,7 @@ export async function getServerSideProps(context) {
 const DownloadData = () => {
 
 
-    const handleDownload = async () => {
+    const handleDownload = async () => {  
         try {
           const response = await fetch('/api/getData?method=download-users-data');
           const users = await response.json();

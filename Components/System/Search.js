@@ -3,6 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import LoadingCircle from "../Loading-Circle";
 import { toast } from "react-toastify";
+import { FaDownload } from "react-icons/fa";
+import * as XLSX from 'xlsx';
 
 const Search = ({sendDataToParent, reload, section}) => {
 
@@ -145,6 +147,48 @@ const Search = ({sendDataToParent, reload, section}) => {
         
     }
 
+
+    const handleDownloadNonUsers = async () => {
+        try {
+            const response = await fetch('/api/getData?method=download-non-users-data');
+            const users = await response.json();
+  
+        
+            if (!Array.isArray(users)) {
+              toast.error('حدث خطأ اثناء تنفيذ العملية');
+              return;
+            }
+        
+            // Format user data with Arabic headers
+            const formattedUsers = users.map(user => ({
+              'رقم الهاتف': user.phoneNumber,
+              'الاسم': user.username,
+              }));
+        
+            // Create a new workbook and worksheet
+            const workbook = XLSX.utils.book_new();
+            const worksheet = XLSX.utils.json_to_sheet(formattedUsers);
+        
+            // Set the worksheet direction to RTL
+            worksheet['!rtl'] = true;
+        
+            // Auto-fit the column widths based on content
+            const maxLengths = Object.keys(formattedUsers[0]).map(key => {
+              return Math.max(...formattedUsers.map(user => (user[key] || '').toString().length), key.length);
+            });
+        
+            worksheet['!cols'] = maxLengths.map(length => ({ wch: length + 5 })); // Adding extra padding to width
+        
+            // Append the worksheet to the workbook
+            XLSX.utils.book_append_sheet(workbook, worksheet, 'العملاء غير المسجلين');
+        
+            // Trigger download of the Excel file
+            XLSX.writeFile(workbook, 'العملاء غير المسجلين.xlsx');
+          } catch (error) {
+            toast.error('حدث خطأ اثناء تنفيذ العملية');
+          }
+    }
+
     return(
         <div className="search-component-erp">
             <div className="inner-search-erp">
@@ -155,7 +199,7 @@ const Search = ({sendDataToParent, reload, section}) => {
 
             {section === 'non-users' && <button style={{backgroundColor: 'rgb(218, 29, 29)'}} onClick={()=> setRemoveNonUserMenu(!removeNonUserMenu)}>مسح عميل غير مسجل</button>}
             {section === 'non-users' && <button onClick={()=> setAddNonUserMenu(!addNonUserMenu)}>اضافة عميل غير مسجل</button>}
-
+            {section === 'non-users' && <button onClick={handleDownloadNonUsers}><FaDownload className="icon" /></button>}
 
             {addNonUserMenu && <div ref={divRef} className="add-non-user-menu">
                 <div className="left-price-bar-erp">
